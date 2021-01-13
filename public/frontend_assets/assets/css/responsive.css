@@ -1,0 +1,106 @@
+@media screen and (max-width: 992px)
+{
+    h1.h-big{
+        font-size: 2.9rem
+    }
+    button.btn-big.btn-gradient.btn-primary:not(.with-arrow) i
+    {
+        display: none;
+    }
+
+    button.btn-rtl.btn.btn-big.btn-gradient.btn-rad35.btn-primary:not(.with-arrow) span
+    {
+        padding: 0 !important;
+    }
+    .btn-big {
+        padding: 10px 1.5rem;
+        font-size: 22px;
+    }
+
+    .footer .copyright {
+        font-size: 18px !important;
+    }
+
+    .footer .copyright a{
+        font-size: 18px !important;
+    }
+    .legal-li li{
+        font-size: 16px !important;
+    }
+    .image-card{
+        width: 50%;
+        margin: auto;
+    }
+    .header-bg .header-bottom-bg svg {
+        position: relative;
+        left: 0;
+        top: -250px;
+        width: 100%;
+    }
+    .form-group.card-group-input .input-group {
+        padding-right: 100px;
+    }
+    .w-form-inputs .input-group {
+        margin-bottom: 16px;
+    }
+    .py-7{
+        padding-top: 1rem !important;
+    }
+    .card.card-shadow {
+        box-shadow: unset;
+        border: unset;
+    }
+    /*For modal*/
+    .p-sm-1{
+        padding: 1rem
+    }
+    .font-1{
+        font-size: 20px;
+    }
+    .modal-notify-img{
+        max-width: 180px;
+        margin-top: 5px;
+    }
+
+    .modal-coin-img{
+        max-width: 80px;
+    }
+    .modal-message-card h3{
+        font-size: 22px;
+    }
+    .modal-message-card p{
+        font-size: 17px;
+    }
+    .pt-sm-0{
+        padding-top: 0 !important
+    }
+
+}
+
+a.nav-link.nav-link-modal {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+.nav-modal-icons{
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+
+input,
+input::-webkit-input-placeholder, textarea,
+textarea::-webkit-input-placeholder {
+    font-size: 18px;
+    font-weight: 600
+}
+
+
+@media only screen and (min-width: 1400px) and (min-height: 900px) {
+    .fix-heigh{
+        height: calc(100vh - (82px + 83px));
+    }
+}

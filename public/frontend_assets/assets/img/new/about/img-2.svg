@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370.5" height="307" viewBox="0 0 370.5 307">
+  <g id="Group_338" data-name="Group 338" transform="translate(-375 -731)">
+    <rect id="Rectangle_421" data-name="Rectangle 421" width="38" height="180" transform="translate(375 731)" fill="#2dd782"/>
+    <rect id="Rectangle_427" data-name="Rectangle 427" width="132" height="180" transform="translate(413 731)" fill="#2dd782" opacity="0.15"/>
+    <rect id="Rectangle_429" data-name="Rectangle 429" width="132" height="87" transform="translate(613 824)" fill="#2dd782" opacity="0.15"/>
+    <rect id="Rectangle_424" data-name="Rectangle 424" width="38" height="93" transform="translate(575 731)" fill="#b7cdcf"/>
+    <rect id="Rectangle_430" data-name="Rectangle 430" width="132" height="93" transform="translate(613 731)" fill="#b7cdcf" opacity="0.15"/>
+    <rect id="Rectangle_425" data-name="Rectangle 425" width="38" height="87" transform="translate(575 824)" fill="#2dd782"/>
+    <rect id="Rectangle_422" data-name="Rectangle 422" width="38" height="55" transform="translate(375 911)" fill="#036eed"/>
+    <rect id="Rectangle_426" data-name="Rectangle 426" width="132" height="55" transform="translate(413 911)" fill="#036eed" opacity="0.15"/>
+    <rect id="Rectangle_428" data-name="Rectangle 428" width="132" height="55" transform="translate(613 911)" fill="#036eed" opacity="0.15"/>
+    <rect id="Rectangle_423" data-name="Rectangle 423" width="38" height="55" transform="translate(575 911)" fill="#036eed"/>
+    <line id="Line_4" data-name="Line 4" x2="170" transform="translate(375.5 966.5)" fill="none" stroke="#036eed" stroke-width="2"/>
+    <line id="Line_5" data-name="Line 5" x2="170" transform="translate(575.5 966.5)" fill="none" stroke="#036eed" stroke-width="2"/>
+    <text id="الأرباح" transform="translate(479 829)" fill="#2dd782" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-21.792" y="0">الأرباح</tspan></text>
+    <text id="الأرباح-2" data-name="الأرباح" transform="translate(679 873)" fill="#2dd782" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-21.792" y="0">الأرباح</tspan></text>
+    <text id="تكلفة_إدارة_الاستثمار" data-name="تكلفة إدارة
+الاستثمار" transform="translate(679 771)" fill="#889dab" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-38.536" y="0">تكلفة إدارة</tspan><tspan y="0"></tspan><tspan x="-32.313" y="24">الاستثمار</tspan></text>
+    <text id="الاستثمار" transform="translate(680 946)" fill="#036eed" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-32.313" y="0">الاستثمار</tspan></text>
+    <text id="الإستثمار_بواسطة_الصناديق" data-name="الإستثمار بواسطة 
+الصناديق" transform="translate(660 1009)" fill="#0b4f6c" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-66.551" y="0">الإستثمار بواسطة</tspan><tspan y="0"> </tspan><tspan x="-33.816" y="24">الصناديق</tspan></text>
+    <text id="الاستثمار-2" data-name="الاستثمار" transform="translate(480 944)" fill="#036eed" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-32.313" y="0">الاستثمار</tspan></text>
+    <text id="الاستثمار_بنفسك" data-name="الاستثمار بنفسك" transform="translate(461 1009)" fill="#0b4f6c" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-60.328" y="0">الاستثمار بنفسك</tspan></text>
+    <text id="_100" data-name="100" transform="translate(394.5 943.5)" fill="#fafdfd" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-10.354" y="0">100</tspan></text>
+    <text id="_100-2" data-name="100" transform="translate(594.5 943.5)" fill="#fafdfd" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-10.354" y="0">100</tspan></text>
+    <text id="_330" data-name="330" transform="translate(394.5 825.5)" fill="#fafdfd" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-10.354" y="0">330</tspan></text>
+    <text id="_160" data-name="160" transform="translate(594.5 872)" fill="#fafdfd" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-10.354" y="0">160</tspan></text>
+    <text id="_170" data-name="170" transform="translate(594.5 782)" fill="#fafdfd" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-10.354" y="0">170</tspan></text>
+  </g>
+</svg>

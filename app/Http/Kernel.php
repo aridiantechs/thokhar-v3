@@ -84,6 +84,8 @@ class Kernel extends HttpKernel
         'prevent_back_after_logout' => \App\Http\Middleware\PreventBackAfterLogout::class,
         // prevent back after logout
         'mobile_verification' => \App\Http\Middleware\MobileVerification::class,
+
+        'subscribed_customer' => \App\Http\Middleware\SubscribedCustomer::class,
     ];
 
     /**

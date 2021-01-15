@@ -36,7 +36,7 @@
 
                     @include('frontend.notifications.warning')
 
-                    <form action="{{ route('questionnaire', app()->getLocale()) }}" method="POST">
+                    <form action="{{ route('questionnaire', locale()) }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -50,8 +50,9 @@
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
                                                 'name' => 'investing_amount[years_old]', 
-                                                'value' => $user_questionnaire->investing_amount["investing_amount"]["years_old"] ?? '',
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["years_old"] ?? '', 0),
                                                 'old_val' => "investing_amount.age_today",
+                                                'placeholder' => "0",
                                                 ])
 
                                         </div>
@@ -66,7 +67,7 @@
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
                                                 'name' => 'investing_amount[monthly_amount]', 
-                                                'value' => $user_questionnaire->investing_amount["investing_amount"]["monthly_amount"] ?? '',
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["monthly_amount"] ?? '', 0),
                                                 'old_val' => "investing_amount.monthly_amount",
                                                 ])
 
@@ -82,7 +83,7 @@
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
                                                 'name' => 'investing_amount[initial_amount]',
-                                                'value' => $user_questionnaire->investing_amount["investing_amount"]["initial_amount"] ?? '',
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["initial_amount"] ?? '', 0),
                                                 'old_val' => "investing_amount.initial_amount",
                                                 ])
                                         </div>

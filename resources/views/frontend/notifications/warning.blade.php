@@ -11,9 +11,9 @@
             <li><p class="text-dark">{{ $error }}</p></li>
         @endforeach
     </ul>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
-    </button>
+    </button> --}}
   </div>
     
 @endif
@@ -27,8 +27,9 @@
       رسالة الخطأ
     </h5>
     <p class="text-dark">{{ session('message') }}</p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
-    </button>
+    </button> --}}
   </div>
 @endif
+

@@ -50,6 +50,12 @@
         box-shadow: unset;
         border: unset;
     }
+    .subscription-bar{
+        box-shadow: unset !important;
+    }
+    .subscription-bar .btn{
+        padding: 10px 1.5rem;
+    }
     /*For modal*/
     .p-sm-1{
         padding: 1rem
@@ -75,6 +81,14 @@
         padding-top: 0 !important
     }
 
+}
+
+
+@media screen and (max-width: 768px){
+    .subscription-bar input {
+        border-radius: 11px !important;
+        background: #f8feff;
+    }
 }
 
 a.nav-link.nav-link-modal {

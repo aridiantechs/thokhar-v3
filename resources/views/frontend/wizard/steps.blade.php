@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center ">
-                        <a href="{{ route('plan', locale()) }}" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                        <a href="{{ route('income', locale()) }}" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                             <i class="fa fa-arrow-left"></i>
                             <span class="d-inline-block">إبدأ الان</span>
                         </a>

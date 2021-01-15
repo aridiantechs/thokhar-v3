@@ -99,17 +99,26 @@ class QuestionnaireController extends Controller
                 }
                 break;
 
+            case '/income':
+
+                return $this->questionnaire->update_income($request->except('_token'))
+                        ?   redirect()->route('net-worth-introduction', $locale)
+                        : redirect()->route('income', $locale);
+                break;
+
+            case '/net-worth-introduction':
+
+                return $this->questionnaire->update_income($request->except('_token'))
+                        ?   redirect()->route('next', $locale)
+                        : redirect()->route('net-worth-introduction', $locale);
+                break;
+
             case '/step_2':
-                // dd($this->questionnaire);
                 return $this->questionnaire->update_income($request->except('_token'))
                         ?   redirect()->route('step_3', $locale)
                         : redirect()->route('step_2', $locale);
                 break;
-            // case '/step_3':
-            //     return $this->questionnaire->update_expenses($request->except('_token'))
-            //             ?   redirect()->route('step_4', $locale)
-            //             : redirect()->route('step_3', $locale);
-            //     break;
+            
             case '/step_3':
                 return $this->questionnaire->update_saving_plan($request->except('_token'))
                         ?   redirect()->route('step_4', $locale)
@@ -242,15 +251,45 @@ class QuestionnaireController extends Controller
     }
 
 
+    public function plan()
+    {
+        return view('frontend.wizard.payment.plan');
+    }
+
+
     public function steps()
     {
         return view('frontend.wizard.steps');
     }
 
-    
-    public function plan()
+
+    public function income()
     {
-        return view('frontend.wizard.payment.plan');
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        return view('frontend.wizard.questions.income')
+                ->with([
+                    'title' => __('lang.questionnaire.income')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+    }
+
+
+    public function netWorthIntroduction()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->income ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.net_worth_introduction')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
     }
 
 

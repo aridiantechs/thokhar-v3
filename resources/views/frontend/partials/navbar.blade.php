@@ -17,15 +17,15 @@
                             <ul id="navigation" class="{{ ($request->segment(1) == 'ar') ? 'rtl_structure text-right' : '' }}">
                                 
                                 <li>
-                                    <a class="{{ ($request->segment(2) == 'contact') ? 'active' : '' }}" href="{{ route('contact', app()->getLocale()) }}">{{ trans('lang.site_menu.contact') }}</a>
+                                    <a class="{{ ($request->segment(2) == 'contact') ? 'active' : '' }}" href="{{ route('contact', locale()) }}">{{ trans('lang.site_menu.contact') }}</a>
                                 </li>
 
                                 <li>
-                                    <a class="{{ ($request->segment(2) == 'about') ? 'active' : '' }}" href="{{ route('about', app()->getLocale()) }}">{{ trans('lang.site_menu.about_us') }}</a>
+                                    <a class="{{ ($request->segment(2) == 'about') ? 'active' : '' }}" href="{{ route('about', locale()) }}">{{ trans('lang.site_menu.about_us') }}</a>
                                 </li>
 
                                 <li>
-                                    <a class="{{ ($request->segment(2) == 'legal') ? 'active' : '' }}" href="{{ route('legal', app()->getLocale()) }}">{{ trans('lang.site_menu.legal') }}</a>
+                                    <a class="{{ ($request->segment(2) == 'legal') ? 'active' : '' }}" href="{{ route('legal', locale()) }}">{{ trans('lang.site_menu.legal') }}</a>
                                 </li>
 
                                 @auth
@@ -33,11 +33,11 @@
                                     
                                   @else
                                     <li class="auth_resp">
-                                      <a class="login_link" href="{{ route('home', app()->getLocale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
+                                      <a class="login_link" href="{{ route('home', locale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
                                     </li>
 
                                     <li class="auth_resp">
-                                      <a class="login_link" href="{{ route('logout', app()->getLocale()) }}"
+                                      <a class="login_link" href="{{ route('logout', locale()) }}"
                                       onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
                                                    
@@ -45,14 +45,14 @@
                                       </a>
                                     </li>
 
-                                    <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout', locale()) }}" method="POST" style="display: none;">
                                       @csrf
                                     </form>
                                   @endif
                                 @else
                                     
                                   <li class="auth_resp">
-                                      <a class="{{ ($request->segment(2) == 'login') ? 'active' : '' }}" href="{{ route('login', app()->getLocale()) }}">{{ trans('lang.login') }}</a>
+                                      <a class="{{ ($request->segment(2) == 'login') ? 'active' : '' }}" href="{{ route('login', locale()) }}">{{ trans('lang.login') }}</a>
                                   </li>
                                 @endauth
 
@@ -62,7 +62,7 @@
                                           <a class="button_primary lang_btn auth_resp text-white"
                                              style="margin-bottom: 10px;" 
                                              href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                              @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
+                                              @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
                                               
                                           </a>
                                           @break
@@ -74,7 +74,7 @@
                                               <a class="button_primary lang_btn auth_resp text-white"
                                                  style="margin-bottom: 10px;" 
                                                  href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                                  @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>
+                                                  @if (locale() == $locale) style="font-weight: bold;" @endif>
                                                   {{ trans('lang.language') }}
                                                   
                                               </a>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 {{ ($request->segment(5) == 'ar') ? 'order-md-2' : '' }}">
                     <div class="logo-img">
-                        <a href="{{ route('/', app()->getLocale()) }}">
+                        <a href="{{ route('/', locale()) }}">
                             <img
                                 class="logo__img img-responsive"
                                 src="{{ althraa_logo() }}"
@@ -111,27 +111,27 @@
                             <div class="top-right links">
                                 @auth
                                 @if (auth()->user()->two_factor_code)
-                                    <a class="login_link" href="{{ route('verify.index', app()->getLocale()) }}">
+                                    <a class="login_link" href="{{ route('verify.index', locale()) }}">
                                         {{ trans('lang.frontend.verify') }}
                                     </a>
                                 @else
-                                    <a class="login_link" href="{{ route('home', app()->getLocale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
+                                    <a class="login_link" href="{{ route('home', locale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
 
 
-                                    <a class="login_link" href="{{ route('logout', app()->getLocale()) }}"
+                                    <a class="login_link" href="{{ route('logout', locale()) }}"
                                      onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
                                                    
                                       {{ trans('lang.logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout', locale()) }}" method="POST" style="display: none;">
                                       @csrf
                                     </form>
                                 @endif
                                   
                                 @else
-                                    <a class="login_link" href="{{ route('login', app()->getLocale()) }}">{{ trans('lang.login') }}</a>
+                                    <a class="login_link" href="{{ route('login', locale()) }}">{{ trans('lang.login') }}</a>
                                 @endauth
 
                                 
@@ -143,7 +143,7 @@
                                 @foreach (config('app.available_locales') as $locale)
                                   <a class="button_primary lang_btn"
                                      href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                      @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
+                                      @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
                                       
                                   </a>
                                   @break
@@ -154,7 +154,7 @@
                                     @if($key == 1)
                                       <a class="button_primary lang_btn"
                                          href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                          @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>
+                                          @if (locale() == $locale) style="font-weight: bold;" @endif>
                                           {{ trans('lang.language') }}
                                       </a>
                                     @endif
@@ -216,7 +216,7 @@
                           @foreach (config('app.available_locales') as $locale)
                             <a class="nav-link facebook-a"
                                href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
+                                @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
                                 
                             </a>
                             @break
@@ -227,7 +227,7 @@
                               @if($key == 1)
                                 <a class="nav-link facebook-a"
                                    href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                    @if (app()->getLocale() == $locale) style="font-weight: bold;" @endif>
+                                    @if (locale() == $locale) style="font-weight: bold;" @endif>
                                     {{ trans('lang.language') }}
                                 </a>
                               @endif
@@ -241,18 +241,18 @@
                
             </ul>
 
-            <ul class="navbar-nav mt-lg-0 ml-auto " style="direction: rtl;">
+            <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: rtl;">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" role="button" >عن الرئيسية</a>
+                    <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >عن الرئيسية</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about', app()->getLocale()) }}" role="button" >عن ذخر</a>
+                    <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>
                 </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="{{ route('legal', app()->getLocale()) }}" role="button" >الإفصاح القانوني</a>
+                     <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact', app()->getLocale()) }}" role="button" >اتصل بنا</a>
+                    <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
                 </li>
             </ul>
              
@@ -264,7 +264,7 @@
         </div>
 
 
-         <a class="navbar-brand ml-5" href="{{ route('/', app()->getLocale()) }}">
+         <a class="navbar-brand ml-5" href="{{ route('/', locale()) }}">
 
             <img alt="Image placeholder" src="{{ althraa_logo() }}" id="navbar-logo">
         </a>
@@ -301,7 +301,7 @@
                           </div>
                       </div>
                       <div class="col-6 d-flex align-items-center justify-content-end">
-                            <a class="navbar-brand ml-5" href="{{ route('/', app()->getLocale()) }}">
+                            <a class="navbar-brand ml-5" href="{{ route('/', locale()) }}">
 
                                   <img alt="Image placeholder" src="{{ althraa_logo() }}" class="img img-fluid" id="navbar-logo">
                               </a>
@@ -312,18 +312,19 @@
          
               <ul class="navbar-nav mt-lg-0 modal-nav ml-auto " style="direction: rtl;">
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="#" role="button" >الرئيسية      </a>
+                      <a class="nav-link nav-link-modal" href="{{ route('/', locale()) }}" role="button" >الرئيسية      </a>
                   </li>
+
                   <li class="nav-item">
-                      
-                      <a class="nav-link nav-link-modal" href="{{ route('about', app()->getLocale()) }}" role="button" >عن ذخر</a>
-                      
+                      <a class="nav-link nav-link-modal" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>                      
                   </li>
+
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('legal', app()->getLocale()) }}" role="button" >الإفصاح القانوني</a>
+                      <a class="nav-link nav-link-modal" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
                   </li>
+
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('contact', app()->getLocale()) }}" role="button" >اتصل بنا</a>
+                      <a class="nav-link nav-link-modal" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
                   </li>
               </ul>
 

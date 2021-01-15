@@ -351,25 +351,50 @@
         </div>
         <div class="subscription-section mt-5 pt-5">
             <div class="subscription-bar">
-                <div class="row">
-                    <div class="col-md-6  order-2 order-lg-1">
-                        <form action="">
-                            <div class="form-group form-group-new mb-0">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button type="submit" class="btn bg__1 btn_in_group font-arabic">اشترك الان</button>
+                
+                {{-- For desktop --}}
+                <div class="d-none d-md-block">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                             <form action="">
+                                <div class="form-group form-group-new mb-0">                            
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="submit" class="btn bg__1 btn_in_group font-arabic">اشترك الان</button>
+                                        </div>
+                                        <input type="text" class="form-control text-right font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
                                     </div>
-                                    <input type="text" class="form-control text-right font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-center order-1 order-lg-1 justify-content-end ">
-                        <h3 class="txt-blue-light font-arabic text-right mb-3 mb-lg-0">
-                            النشرة البريدية
-                        </h3>
+                                 
+                             </form>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center order-1 order-lg-1 justify-content-end "> 
+                            <h3 class="txt-blue-light font-arabic text-right mb-3 mb-lg-0">
+                                        النشرة البريدية
+                            </h3>
+                        </div>                        
                     </div>
                 </div>
+
+                {{-- For mobile --}}
+                <div class="row d-block d-md-none">
+                    <div class="col-md-6 d-flex align-items-center order-1 order-lg-1 justify-content-end "> 
+                        <h2 class="txt-blue-light font-arabic text-right mb-3 mb-lg-0">
+                            النشرة البريدية
+                        </h2>
+                    </div>
+                    <div class="col-md-6  order-2 order-lg-1">
+                         <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control text-right font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group-prepend">
+                                <button type="submit" class="text-right  btn  btn-big btn-gradient btn-rad35 btn-primary ml-auto mt-3">اشترك الان</button>
+                            </div>
+                         </form>
+                    </div>                    
+                </div>
+                
             </div>
         </div>
         <div class="footer-last-section mt-5 pt-5">

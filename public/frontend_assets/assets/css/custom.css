@@ -153,8 +153,7 @@ h1.h-big{
 
 .form-group.form-group-new .form-control.input-big{
     padding: 18px 1.25rem;
-    /*font-size: 26px;*/
-    font-size: 20px;
+    font-size: 26px;
         text-align: right;
 }
 
@@ -183,7 +182,7 @@ h1.h-big{
 }
 
 .form-group.form-group-phone input:last-child{
-    /*margin: 0px !important;*/
+    margin: 0px !important;
 }
 
 .btn{
@@ -648,12 +647,11 @@ list-style: none;
 
 @media screen and (max-width: 992px)
 {
-     .py-7-pb-0-lg{
+    .py-7-pb-0-lg{
         padding-bottom: 0;
     }
 
 }
-
 
 
 

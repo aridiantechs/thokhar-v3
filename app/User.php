@@ -125,6 +125,10 @@ class User extends Authenticatable
 
 
     // functions
+    public function subscribed() {
+        return $this->hasOne('App\Order', 'user_id', 'id')->orderBy('created_at', 'DESC');
+    }
+
     public function user_questionnaires() {
         return $this->hasMany('App\Questionnaire', 'fk_user_id', 'id');
     }

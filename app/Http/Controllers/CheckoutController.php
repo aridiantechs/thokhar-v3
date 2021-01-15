@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Activitylog\Models\Activity;
 use Carbon\Carbon;
+use App\Order;
 
 class CheckoutController extends Controller
 {
@@ -30,25 +31,22 @@ class CheckoutController extends Controller
 
     public function payment(Request $request)
     {
-        // dd($request->all());
-        
         $call_back = route('payment.callback',locale());
         $return    = route('payment.return',locale());
         
         $token     = $request->token;
 
-        $url = 'https://secure-global.paytabs.com/payment/request';
+        $url = 'https://secure-global.paytabs.com/payment/request?token='.$token;
         
         $data = [
                 "profile_id" => 54876,
                 "tran_type" => "sale",
                 "tran_class" => "ecom" ,
-                "cart_id" => '2ca6efa1-efa3-4032-90bb-11196cef5bd2',
+                "cart_id" => uniqid(),
                 "cart_description" => "Dummy Order 35925502061445345",
                 "cart_currency" => "AED",
                 "cart_amount" => 600,
-                "callback" => $call_back,
-                "return" => $return
+                "return" => $return,
             ];
 
 
@@ -56,7 +54,7 @@ class CheckoutController extends Controller
         
         $payload = json_encode($data);
         curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'authorization' => 'SLJNMR9J6M-HZZNBBNBWK-NT9RWJRMLL'));
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'authorization:SLJNMR9J6M-HZZNBBNBWK-NT9RWJRMLL'));
         
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 
@@ -66,8 +64,15 @@ class CheckoutController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
         
-        dd($result);
+        // dd($result);
 
+        $order = new Order;
+        $order->fill($request->all());
+        $order->user_id = auth()->user()->id;
+        $order->transac_id = uniqid();
+        $order->save();
+
+        return redirect()->route('steps', locale());
 
     }
 

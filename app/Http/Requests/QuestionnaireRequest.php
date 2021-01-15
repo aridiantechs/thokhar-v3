@@ -47,6 +47,13 @@ class QuestionnaireRequest extends FormRequest
                             ];
                             break;
 
+                        case '/income':
+                            return [
+                                'income' => 'required|array',
+                                'income.income' => 'required|numeric',
+                            ];
+                            break;
+
                         case '/step_1':
                             return [
                                 'personal_info' => 'required|array',
@@ -190,6 +197,11 @@ class QuestionnaireRequest extends FormRequest
             'investing_amount.initial_amount' => 'Initial Amount',
             'investing_amount.monthly_amount' => 'Monthly Amount',
             'investing_amount.years_old' => 'Age',
+            
+
+            //--------------------------------------
+            // income
+            'income.income' => 'Income',
             
 
             // --------------------------------------

@@ -5,7 +5,7 @@
 @section('styles')
 <style type="text/css">
 .slice.homepage-section{
-    background-image: url('{{ asset('frontend_assets/assets/img/new/bg-home-3.svg') }}');
+    background-image: url('{{ ($request->segment(1) == 'ar') ? asset('frontend_assets/assets/img/new/bg-home-3.svg') : asset('frontend_assets/assets/img/new/bg-home-en-4.svg') }}');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -30,7 +30,7 @@
 
 @section('content')
 
-<section class="slice homepage-section" >
+{{-- <section class="slice homepage-section" >
     <div class="container">
         <div class="row row-grid">
             <div class="col-12  col-lg-6 d-none d-lg-block text-center">
@@ -43,7 +43,6 @@
                 
                 <h1 class="h-big text-gray-light-1 font-arabic text-lg-right text-center">
                    {{ ($request->segment(1) == 'ar') ? althraa_site_description_ar() : althraa_site_description() }}
-                   {{-- تحكم باستثمار أموالك بشكل كامل باحترافية --}}
                 </h1>
 
                 <span class="clearfix"></span>
@@ -53,6 +52,42 @@
                          <i class="fa fa-arrow-left"></i>
                         <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
                     </a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="text-center d-block d-lg-none">
+    <img src="{{ asset('frontend_assets/assets/img/new/bg-mobile.svg') }}" class="w-100" alt="">
+</div> --}}
+
+
+
+
+
+<section class="slice homepage-section" >
+    <div class="container">
+        <div class="row row-grid">
+            <div class="col-12  col-lg-6 d-none d-lg-block text-center">
+               
+            </div>
+            <div class="col-12  col-lg-6  pr-md-5">
+                <!-- Heading -->
+
+                <h6 class="mb-0 text-lg-right text-center font-3 font-arabic">ذخر عالمك للثراء</h6>
+                
+                <h1 class="h-big text-gray-light-1 font-arabic text-lg-right text-center">
+                   تحكم باستثمار أموالك بشكل كامل باحترافية
+                </h1>
+
+                <span class="clearfix"></span>
+                        
+                <div class="mt-4 text-lg-right text-center">
+                    <button type="button" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary">
+                         <i class="fa fa-arrow-left"></i>
+                        <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                    </button>
                 </div>
                
             </div>

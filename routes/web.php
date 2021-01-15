@@ -269,9 +269,18 @@ Route::group([
       Route::post('/payment/callback',  'CheckoutController@index')->name('payment.callback');
       Route::post('/payment/return',  'CheckoutController@index')->name('payment.return');
 
+      
       //paid version 
-      Route::get('/steps', 'QuestionnaireController@steps')->name('steps');
-
+      Route::group([
+        'middleware' => [
+          'subscribed_customer'
+          ],
+        ], function() {
+            Route::get('/steps',  'QuestionnaireController@steps')->name('steps');
+            Route::get('/income', 'QuestionnaireController@income')->name('income');
+            Route::get('/net-worth-introduction', 'QuestionnaireController@netWorthIntroduction')->name('net-worth-introduction');
+      });
+      
 
       Route::get('/step_1', 'QuestionnaireController@create')->name('step_1');
       Route::get('/step_2', 'QuestionnaireController@step_2')->name('step_2');

@@ -4,176 +4,9 @@
 
 
 <style type="text/css">
-{{-- {{ ($request->segment(1) == 'ar') ? '.slicknav_menu { text-align: right !important}' : '' }} --}}
+/* {{ ($request->segment(1) == 'ar') ? '.slicknav_menu { text-align: right !important}' : '' }} */
 
 </style>
-{{-- <div class="header-area ">
-    <div id="sticky-header" class="main-header-area">
-        <div class="container-fluid p-2">
-            <div class="row align-items-center no-gutters">
-                <div class="col-xl-5 col-lg-6 {{ ($request->segment(5) == 'ar') ? 'order-md-3' : '' }}">
-                    <div class="main-menu  d-none d-lg-block">
-                        <nav>
-                            <ul id="navigation" class="{{ ($request->segment(1) == 'ar') ? 'rtl_structure text-right' : '' }}">
-                                
-                                <li>
-                                    <a class="{{ ($request->segment(2) == 'contact') ? 'active' : '' }}" href="{{ route('contact', locale()) }}">{{ trans('lang.site_menu.contact') }}</a>
-                                </li>
-
-                                <li>
-                                    <a class="{{ ($request->segment(2) == 'about') ? 'active' : '' }}" href="{{ route('about', locale()) }}">{{ trans('lang.site_menu.about_us') }}</a>
-                                </li>
-
-                                <li>
-                                    <a class="{{ ($request->segment(2) == 'legal') ? 'active' : '' }}" href="{{ route('legal', locale()) }}">{{ trans('lang.site_menu.legal') }}</a>
-                                </li>
-
-                                @auth
-                                  @if (auth()->user()->two_factor_code)
-                                    
-                                  @else
-                                    <li class="auth_resp">
-                                      <a class="login_link" href="{{ route('home', locale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
-                                    </li>
-
-                                    <li class="auth_resp">
-                                      <a class="login_link" href="{{ route('logout', locale()) }}"
-                                      onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                                   
-                                        {{ trans('lang.logout') }}
-                                      </a>
-                                    </li>
-
-                                    <form id="logout-form" action="{{ route('logout', locale()) }}" method="POST" style="display: none;">
-                                      @csrf
-                                    </form>
-                                  @endif
-                                @else
-                                    
-                                  <li class="auth_resp">
-                                      <a class="{{ ($request->segment(2) == 'login') ? 'active' : '' }}" href="{{ route('login', locale()) }}">{{ trans('lang.login') }}</a>
-                                  </li>
-                                @endauth
-
-                                @switch($request->segment(1))
-                                    @case('ar')
-                                        @foreach (config('app.available_locales') as $locale)
-                                          <a class="button_primary lang_btn auth_resp text-white"
-                                             style="margin-bottom: 10px;" 
-                                             href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                              @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
-                                              
-                                          </a>
-                                          @break
-                                        @endforeach
-                                    @break    
-                                    @case('en')
-                                        @foreach (config('app.available_locales') as $key => $locale)
-                                            @if($key == 1)
-                                              <a class="button_primary lang_btn auth_resp text-white"
-                                                 style="margin-bottom: 10px;" 
-                                                 href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                                  @if (locale() == $locale) style="font-weight: bold;" @endif>
-                                                  {{ trans('lang.language') }}
-                                                  
-                                              </a>
-                                            @endif
-                                        @endforeach
-                                    @break    
-                                    @default
-                                        {{ $request->segment(1) }}
-                                    @break
-                                @endswitch
-                                
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 {{ ($request->segment(5) == 'ar') ? 'order-md-2' : '' }}">
-                    <div class="logo-img">
-                        <a href="{{ route('/', locale()) }}">
-                            <img
-                                class="logo__img img-responsive"
-                                src="{{ althraa_logo() }}"
-                                alt="Althraa Logo"
-                              />
-                        </a>
-                    </div>
-                </div>
-                <div 
-                    class="col-xl-5 col-lg-4 d-none d-lg-block {{ ($request->segment(5) == 'ar') ? 'order-md-1 rtl_structure_left' : '' }}" 
-                    style="{{ ($request->segment(5) == 'ar') ? 'display: flex !important' : '' }}"
-                    >
-                    <div class="book_room">
-                        
-                        @if (Route::has('login'))
-                            <div class="top-right links">
-                                @auth
-                                @if (auth()->user()->two_factor_code)
-                                    <a class="login_link" href="{{ route('verify.index', locale()) }}">
-                                        {{ trans('lang.frontend.verify') }}
-                                    </a>
-                                @else
-                                    <a class="login_link" href="{{ route('home', locale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
-
-
-                                    <a class="login_link" href="{{ route('logout', locale()) }}"
-                                     onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                                   
-                                      {{ trans('lang.logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout', locale()) }}" method="POST" style="display: none;">
-                                      @csrf
-                                    </form>
-                                @endif
-                                  
-                                @else
-                                    <a class="login_link" href="{{ route('login', locale()) }}">{{ trans('lang.login') }}</a>
-                                @endauth
-
-                                
-                                
-                            </div>
-                        @endif
-                        @switch($request->segment(1))
-                            @case('ar')
-                                @foreach (config('app.available_locales') as $locale)
-                                  <a class="button_primary lang_btn"
-                                     href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                      @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
-                                      
-                                  </a>
-                                  @break
-                                @endforeach
-                            @break    
-                            @case('en')
-                                @foreach (config('app.available_locales') as $key => $locale)
-                                    @if($key == 1)
-                                      <a class="button_primary lang_btn"
-                                         href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
-                                          @if (locale() == $locale) style="font-weight: bold;" @endif>
-                                          {{ trans('lang.language') }}
-                                      </a>
-                                    @endif
-                                @endforeach
-                            @break    
-                            @default
-                                {{ $request->segment(1) }}
-                            @break
-                        @endswitch
-                        
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="mobile_menu d-block d-lg-none"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 
 
@@ -186,9 +19,55 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Collapse -->
+        <a class="navbar-brand ml-5" href="{{ route('/', locale()) }}">
+            <img alt="Image placeholder" src="{{ althraa_logo() }}" id="navbar-logo">
+        </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
-             <ul class="nav nav-social-icons">
+            
+
+            <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: rtl;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >عن الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
+                </li>
+                @auth
+                    @if (auth()->user()->two_factor_code)
+                    
+                    @else
+                    {{-- <li class="auth_resp">
+                        <a class="login_link" href="{{ route('home', locale()) }}">{{ trans('lang.dashboard.dashboard') }}</a>
+                    </li> --}}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout', locale()) }}"
+                        onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    
+                        {{ trans('lang.logout') }}
+                        </a>
+                    </li>
+
+                    <form id="logout-form" action="{{ route('logout', locale()) }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endif
+                @else
+                    
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($request->segment(2) == 'login') ? 'active' : '' }}" href="{{ route('login', locale()) }}">{{ trans('lang.login') }}</a>
+                    </li>
+                @endauth
+            </ul>
+            <ul class="nav nav-social-icons">
                 
                 <li class="nav-item">
                     <a class="nav-link instagram-a" href="#" target="_blank">
@@ -240,21 +119,6 @@
                 </li>
                
             </ul>
-
-            <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: rtl;">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >عن الرئيسية</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>
-                </li>
-                <li class="nav-item">
-                     <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
-                </li>
-            </ul>
              
             <!-- Mobile button -->
             <div class="d-lg-none text-center">
@@ -263,11 +127,6 @@
 
         </div>
 
-
-         <a class="navbar-brand ml-5" href="{{ route('/', locale()) }}">
-
-            <img alt="Image placeholder" src="{{ althraa_logo() }}" id="navbar-logo">
-        </a>
 
     </div>
 </nav>

@@ -154,42 +154,36 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                <p class="text-muted mb-4 text-right font-arabic"><span>الرئيسية    </span><span> / </span><span>عن ذخر</span></p>
-                <h1 class="display-4 text-lg-right mb-3">
-                    <button type="button" class="float-lg-left btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary">  
-                    <i class="fa fa-arrow-left"></i>
-                    <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                <p class="text-muted mb-4 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>عن ذخر</span></p>
+                <h1 class="display-4 text-lg-{{$align}} mb-3">
+                    <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
+                    {{-- <i class="fa fa-arrow-left"></i> --}}
+                        <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                        <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                     </button>
-                    <strong class="text-primary float-right font-arabic">عن ذخر</strong> 
+                    <strong class="text-primary float-{{$align}} font-arabic">عن ذخر</strong> 
                 </h1>
             </div>
         </div>
         <div class="row row-grid">
+            <div class="col-12 col-lg-5">
+                <h3 class="txt-blue-light font-arabic text-{{$align}}">
+                    ذخر هو مستشارك المالي الشخـصي الآلــي والــذي يساعـــدك خطــوة بخطوة لبناء ثروتك والوصول الى الحرية المالية والاستفادة القصوى من مدخراتك واستثماراتك
+                </h3>
+            </div>
             <div class="col-12 col-lg-7 text-center">
                 <figure class="w-100">
                     <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/img-1.svg') }}" class="img-fluid">
                 </figure>
             </div>
-            <div class="col-12 col-lg-5">
-                <h3 class="txt-blue-light font-arabic text-right">
-                    ذخر هو مستشارك المالي الشخـصي الآلــي والــذي يساعـــدك خطــوة بخطوة لبناء ثروتك والوصول الى الحرية المالية والاستفادة القصوى من مدخراتك واستثماراتك
-                </h3>
-            </div>
         </div>
         <div class="row  mt-5 pt-0 pt-lg-5">
-            <div class="col-12 col-lg-4 order-2 order-lg-1 d-none d-lg-block">
-                <div class="py-5">
-                    <figure class="w-100">
-                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
-                    </figure>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8  order-1 order-lg-2">
-                <h1 class="h-big font-arabic text-primary text-right">
+            <div class="col-12 col-lg-8 {{--  order-1 order-lg-2 --}}">
+                <h1 class="h-big font-arabic text-primary text-{{$align}}">
                     تلماذا ذخر ؟
                 </h1>
                 <span class="clearfix"></span>
-                <h3 class="txt-blue-light-1 font-arabic text-right">
+                <h3 class="txt-blue-light-1 font-arabic text-{{$align}}">
                     مستشار مالي يوفر لك المعرفة الكاملة لتقوم باستثمار أموالك بالطريقة الأمثل مما يصل بك الى الحرية المالية ويوفر عليك رسوم إدارة صناديق الاستثمارات 
                 </h3>
                 <div class="py-5 d-block d-lg-none">
@@ -197,9 +191,16 @@
                         <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
                     </figure>
                 </div>
-                <h3 class="txt-gray-light font-arabic text-right mt-3">
+                <h3 class="txt-gray-light font-arabic text-{{$align}} mt-3">
                     عند الاستثمار بمبلغ 100 ألف ريال لمدة 25 سنة بنفسك ستحصل على أرباح تقدر بـ 330 ألف ريال ولكن في حالة الاستثمار عن طريق صناديق الاستثمار عند دفع 2% فقط ستفقد اكثر من نصف قيمة أرباحك بنهاية المدة 
                 </h3>
+            </div>
+            <div class="col-12 col-lg-4{{--  order-2 order-lg-1 --}} d-none d-lg-block">
+                <div class="py-5">
+                    <figure class="w-100">
+                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
+                    </figure>
+                </div>
             </div>
         </div>
     </div>
@@ -221,19 +222,14 @@
     </section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 text-center d-none d-lg-block">
-                <figure class="w-100">
-                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/img-4.svg') }}" class="img-fluid">
-                </figure>
-            </div>
             <div class="col-12 col-md-6 col-lg-6">
-                <h1 class="h-big font-arabic text-primary text-right">
+                <h1 class="h-big font-arabic text-success text-{{$align}}">
                     الرسالة
                 </h1>
-                <h3 class="txt-blue-light font-arabic text-right mb-5">
+                <h3 class="txt-blue-light font-arabic text-{{$align}} mb-5">
                     مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع 
                 </h3>
-                <ul class="LIST__UL text-right">
+                <ul class="LIST__UL text-{{$align}}">
                     <li>سهل ممتنع</li>
                     <li> عملي ويتيح التطبيق الفوري</li>
                     <li> حصيف وبعيد عن العشوائية</li>
@@ -242,19 +238,29 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-12 col-md-6 col-lg-6 text-center d-none d-lg-block">
+                <figure class="w-100">
+                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/img-4.svg') }}" class="img-fluid">
+                </figure>
+            </div>
         </div>
     </div>
     <div class="my-5 py-lg-5">
         <div class="container">
             <div class="row row-grid">
+                <div class="col-12 col-md-6 col-lg-6 text-center d-none d-lg-block">
+                    <figure class="w-100">
+                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/img-5.svg') }}" class="img-fluid">
+                    </figure>
+                </div>
                 <div class="col-12 col-md-6 col-lg-6">
-                    <h1 class="h-big font-arabic text-primary text-right">
+                    <h1 class="h-big font-arabic text-primary text-{{$align}}">
                         المنهجية
                     </h1>
-                    <h3 class="txt-blue-light font-arabic text-right mb-5">
+                    <h3 class="txt-blue-light font-arabic text-{{$align}} mb-5">
                         مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع 
                     </h3>
-                    <ul class="LIST__UL text-right">
+                    <ul class="LIST__UL text-{{$align}}">
                         <li>سهل ممتنع</li>
                         <li> عملي ويتيح التطبيق الفوري</li>
                         <li> حصيف وبعيد عن العشوائية</li>
@@ -263,29 +269,29 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 text-center d-none d-lg-block">
-                    <figure class="w-100">
-                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/img-5.svg') }}" class="img-fluid">
-                    </figure>
-                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <h1 class="h-big font-arabic text-primary text-right mb-4">
+        <h1 class="h-big font-arabic text-primary text-{{$align}} mb-4">
             فريق العمل
         </h1>
         <div class="team">
-            <div class="row row-grid">
+            <div class="row row-grid flex-column-reverse flex-lg-row">
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="team-member">
                         <div class="row">
+                            <div class="col-4">
+                                <div class="team__avatar">
+                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/alialsheri.png') }}" class="w-100" alt="">
+                                </div>
+                            </div>
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
-                                <div class="team__info">
-                                    <h3 class="txt-blue-light font-arabic text-right mb-2">
+                                <div class="team__info m{{$alignShort}}-auto">
+                                    <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
                                         د. علي بن عبدالرحمن الشهري
                                     </h3>
-                                    <ul class="nav mt-lg-0 ml-auto nav-social-icons text-right d-flex justify-content-end">
+                                    <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
                                             <a class="nav-link linkedin-a" href="#" target="_blank">
                                             <i class="fab fa-linkedin"></i>
@@ -302,11 +308,6 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="team__avatar">
-                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/alialsheri.png') }}" class="w-100" alt="">
                                 </div>
                             </div>
                         </div>
@@ -315,12 +316,17 @@
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="team-member">
                         <div class="row">
+                            <div class="col-4">
+                                <div class="team__avatar">
+                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/alialsheri.png') }}" class="w-100" alt="">
+                                </div>
+                            </div>
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
-                                <div class="team__info">
-                                    <h3 class="txt-blue-light font-arabic text-right mb-2">
+                                <div class="team__info m{{$alignShort}}-auto">
+                                    <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
                                         د. علي بن عبدالرحمن الشهري
                                     </h3>
-                                    <ul class="nav mt-lg-0 ml-auto nav-social-icons text-right d-flex justify-content-end">
+                                    <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
                                             <a class="nav-link linkedin-a" href="#" target="_blank">
                                             <i class="fab fa-linkedin"></i>
@@ -337,11 +343,6 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="team__avatar">
-                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/alialsheri.png') }}" class="w-100" alt="">
                                 </div>
                             </div>
                         </div>
@@ -355,6 +356,11 @@
                 {{-- For desktop --}}
                 <div class="d-none d-md-block">
                     <div class="row">
+                        <div class="col-md-6 d-flex align-items-center {{-- order-1 order-lg-1 justify-content-end --}} "> 
+                            <h3 class="txt-blue-light font-arabic text-{{$align}} mb-3 mb-lg-0">
+                                        النشرة البريدية
+                            </h3>
+                        </div> 
                         <div class="col-md-6 ">
                              <form action="">
                                 <div class="form-group form-group-new mb-0">                            
@@ -362,34 +368,29 @@
                                         <div class="input-group-prepend">
                                             <button type="submit" class="btn bg__1 btn_in_group font-arabic">اشترك الان</button>
                                         </div>
-                                        <input type="text" class="form-control text-right font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                                  
                              </form>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center order-1 order-lg-1 justify-content-end "> 
-                            <h3 class="txt-blue-light font-arabic text-right mb-3 mb-lg-0">
-                                        النشرة البريدية
-                            </h3>
-                        </div>                        
+                        </div>                       
                     </div>
                 </div>
 
                 {{-- For mobile --}}
                 <div class="row d-block d-md-none">
-                    <div class="col-md-6 d-flex align-items-center order-1 order-lg-1 justify-content-end "> 
-                        <h2 class="txt-blue-light font-arabic text-right mb-3 mb-lg-0">
+                    <div class="col-md-6 d-flex align-items-center {{-- order-1 order-lg-1 justify-content-end  --}}"> 
+                        <h2 class="txt-blue-light font-arabic text-{{$align}} mb-3 mb-lg-0">
                             النشرة البريدية
                         </h2>
                     </div>
                     <div class="col-md-6  order-2 order-lg-1">
                          <form action="">
                             <div class="input-group">
-                                <input type="text" class="form-control text-right font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group-prepend">
-                                <button type="submit" class="text-right  btn  btn-big btn-gradient btn-rad35 btn-primary ml-auto mt-3">اشترك الان</button>
+                                <button type="submit" class="text-{{$align}}  btn  btn-big btn-gradient btn-rad35 btn-primary ml-auto mt-3">اشترك الان</button>
                             </div>
                          </form>
                     </div>                    

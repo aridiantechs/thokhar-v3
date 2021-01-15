@@ -13,22 +13,17 @@
 @section('content')
 <section class="slice py-0 py-lg-5 fix-heigh">
     <div class="container">
-        <div class="row row-grid">
-            <div class="col-12  col-lg-6 order-2 order-lg-1 text-center">
-                <!-- Image -->
-                <figure class="w-100">
-                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/login-bg.svg') }}" class="img-fluid">
-                </figure>
-            </div>
-            <div class="col-12 col-lg-6 order-1 order-lg-2">
+        <div class="row row-grid flex-column-reverse flex-lg-row">
+            
+            <div class="col-12 col-lg-6">
                 <!-- Heading -->
-                <p class="text-right mb-0">
+                <p class="text-{{$align}} mb-0">
                     <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
                 </p>
-                <h1 class="display-4 text-right text-md-right mb-3">
+                <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">رمز التحقق</strong> 
                 </h1>
-                <h3 class="text-right text-md-right mb-3 ">
+                <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">
                     نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
                     اللغاية بالنسبة لنا
@@ -41,7 +36,7 @@
                 <form method="POST" id="login__form" action="{{ route('verify.store', app()->getLocale()) }}">
                     @csrf
                     <div class="form-group form-group-new form-group-phone">
-                      <div class="input-group d-flex justify-content-center justify-content-lg-end">
+                      <div class="input-group d-flex {{-- justify-content-center justify-content-lg-end --}}">
 
                         <input type="tel" name="two_factor_code[]" maxlength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}"/>
                             
@@ -53,22 +48,23 @@
 
                       </div>
                     </div>
-                    <h3 class="text-center text-lg-right mb-3 ">
+                    <h3 class="text-center text-lg-{{$align}} mb-3 ">
                         <strong class="font-arabic" id="countdown">
                         إعادة الارسال خلال  <span id="minutes">{{ trans('lang.minutes') }}</span>:<span id="seconds">{{ trans('lang.seconds') }}</span> دقيقة *
                         </strong>
                     </h3>
-                    <div class="mt-4 text-center text-lg-right">
+                    <div class="mt-4 text-center text-lg-{{$align}}">
                         
-                        <button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-                        <i class="fa fa-arrow-left"></i>
+                        <button type="submit" class="{{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                        {{-- <i class="fa fa-arrow-left"></i> --}}
                         <span class="d-inline-block">{!! trans('lang.frontend.verify') !!}</span>
+                        <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                         </button>
                     </div>
                 </form>
 
 
-                <h5 class="mt-5 {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
+                <h5 class="mt-5 text-{{$align}} }}">
                   {{ trans('lang.frontend.two_factor_message') }}
                   <a href="{{ route('verify.resend', app()->getLocale()) }}">{{ trans('lang.frontend.two_factor_here') }}</a>.
                 </h5>
@@ -85,6 +81,12 @@
                 </div> --}}
 
             </div>
+            <div class="col-12  col-lg-6 text-center">
+              <!-- Image -->
+              <figure class="w-100">
+                  <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/login-bg.svg') }}" class="img-fluid">
+              </figure>
+          </div>
         </div>
     </div>
 </section>

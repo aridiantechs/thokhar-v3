@@ -69,28 +69,30 @@
 <section class="slice homepage-section" >
     <div class="container">
         <div class="row row-grid">
-            <div class="col-12  col-lg-6 d-none d-lg-block text-center">
-               
-            </div>
             <div class="col-12  col-lg-6  pr-md-5">
                 <!-- Heading -->
 
-                <h6 class="mb-0 text-lg-right text-center font-3 font-arabic">ذخر عالمك للثراء</h6>
+                <h6 class="mb-0 text-lg-{{$align}} text-center font-3 font-arabic">ذخر عالمك للثراء</h6>
                 
-                <h1 class="h-big text-gray-light-1 font-arabic text-lg-right text-center">
+                <h1 class="h-big text-gray-light-1 font-arabic text-lg-{{$align}} text-center">
                    تحكم باستثمار أموالك بشكل كامل باحترافية
                 </h1>
 
                 <span class="clearfix"></span>
                         
-                <div class="mt-4 text-lg-right text-center">
-                    <button type="button" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary">
-                         <i class="fa fa-arrow-left"></i>
-                        <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
-                    </button>
+                <div class="mt-4 text-lg-{{$align}} text-center">
+                    <a href="{{ route('login', app()->getLocale()) }}" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary">
+                        {{-- <i class="fa fa-arrow-right"></i> --}}
+                       <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                       <i class="fa fa-arrow-{{$arrowAlign}}"></i>
+                   </a>
                 </div>
                
             </div>
+            <div class="col-12  col-lg-6 d-none d-lg-block text-center">
+               
+            </div>
+            
         </div>
 
     </div>

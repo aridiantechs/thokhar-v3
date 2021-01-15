@@ -12,24 +12,19 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                <p class="text-right mb-0">
+                <p class="text-{{$align}} mb-0">
                     <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
                 </p>
-                <h1 class="display-4 text-right text-md-right mb-3">
+                <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">اتصل بنا</strong> 
                 </h1>
             </div>
         </div>
         <div class="row row-grid">
-            <div class="col-12 col-md-5 col-lg-6 text-center">
-                <figure class="w-100">
-                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/contact-us/bg.svg') }}" class="img-fluid">
-                </figure>
-            </div>
             <div class="col-12 col-md-7 col-lg-6 pr-md-5">
                 <!-- Heading -->
-                <!--  <p class="text-muted text-center text-md-right mb-0"><span>Home</span><span> / </span><span>Login</span></p> -->
-                <h3 class="text-right text-md-right mb-3 ">
+                <!--  <p class="text-muted text-center text-md-{{$align}} mb-0"><span>Home</span><span> / </span><span>Login</span></p> -->
+                <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">
                     نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
                     العلاقة بيننا  وبين كل عميل مهمة .للغاية بالنسبة لنا
@@ -47,14 +42,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-group-new">
                                         <div class="input-group">
-                                            <input id="inputEmail" type="email" class="form-control input-big text-right" name="email" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_email_placeholder') }}">
+                                            <input id="inputEmail" type="email" class="form-control input-big text-{{$align}}" name="email" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_email_placeholder') }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-new">
                                         <div class="input-group">
-                                            <input id="inputName" type="text" class="form-control input-big text-right" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name_placeholder') }}">
+                                            <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name_placeholder') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -63,21 +58,28 @@
                                 <div class="col-md-12">
                                     <div class="form-group form-group-new mb-0">
                                         <div class="input-group">
-                                            <textarea id="inputMessage" class="form-control input-big text-right"  cols="30" rows="5" name="message" value="" required placeholder="{{ trans('lang.frontend_contact.contact_message_placeholder') }}"></textarea>
+                                            <textarea id="inputMessage" class="form-control input-big text-{{$align}}"  cols="30" rows="5" name="message" value="" required placeholder="{{ trans('lang.frontend_contact.contact_message_placeholder') }}"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class=" text-right ">
-                                <button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary mt-4">
-                                    <i class="fa fa-arrow-left"></i>
+                            <div class=" text-{{$align}} ">
+                                <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary mt-4">
+                                    {{-- <i class="fa fa-arrow-left"></i> --}}
                                     <span class="d-inline-block">{{ trans('lang.frontend_contact.contact_send') }}</span>
+                                    <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
+            <div class="col-12 col-md-5 col-lg-6 text-center">
+                <figure class="w-100">
+                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/contact-us/bg.svg') }}" class="img-fluid">
+                </figure>
+            </div>
+            
         </div>
     </div>
 </section>

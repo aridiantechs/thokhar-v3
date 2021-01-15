@@ -154,7 +154,7 @@ h1.h-big{
 .form-group.form-group-new .form-control.input-big{
     padding: 18px 1.25rem;
     font-size: 26px;
-        text-align: right;
+        /* text-align: right; */
 }
 
 .form-group.form-group-new{
@@ -181,9 +181,9 @@ h1.h-big{
     font-weight: 700;
 }
 
-.form-group.form-group-phone input:last-child{
+/* .form-group.form-group-phone input:last-child{
     margin: 0px !important;
-}
+} */
 
 .btn{
     display: inline-flex;

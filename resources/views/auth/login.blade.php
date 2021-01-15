@@ -1,6 +1,6 @@
 @inject('request', 'Illuminate\Http\Request')
 
-@extends('frontend.layouts.app', ['title' => $title ?? ''])
+@extends('frontend.layouts.app')
 
 @section('styles')
 
@@ -38,21 +38,16 @@
 <section class="slice py-7 fix-heigh">
   <div class="container">
     <div class="row row-grid flex-column-reverse flex-lg-row">
-      <div class="col-12 col-lg-6 text-center">
-        <!-- Image -->
-        <figure class="w-100">
-          <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/login-bg.svg') }}" class="img-fluid">
-        </figure>
-      </div>
+      
       <div class="col-12 col-lg-6 pr-md-5">
-        <p class="text-right mb-0">
+        <p class="{{$textAlign}} mb-0">
           <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
         </p>
-        <h1 class="display-4 text-right text-md-right mb-3">
+        <h1 class="display-4 {{$textAlign}} {{$textAlignMd}}mb-3">
           <strong class="text-primary font-arabic">تسجيل الدخول</strong> 
         </h1>
 
-        <h5 class="text-right mt-4 mb-4">تحكم باستثمار أموالك بشكل كامل باحترافية
+        <h5 class="{{$textAlign}} mt-4 mb-4">تحكم باستثمار أموالك بشكل كامل باحترافية
 تحكم باستثمار أموالك بشكل كامل باحترافية</h5>
         <span class="clearfix"></span>
 
@@ -68,28 +63,7 @@
             <div class="col-md-4"></div>
         @endif --}}
 
-
-        @if(count($errors)>0)
-            <div class="alert alert-warning alert-dismissible fade show text-right font-arabic" role="alert">
-              <div class="alert-icon">
-                 <i class="fas fa-question"></i>
-              </div>
-               <h5>
-                رسالة الخطأ
-              </h5>
-              <ul>
-                  @foreach($errors->all() as $error)
-                      <li><p class="text-dark">{{ $error }}</p></li>
-                  @endforeach
-              </ul>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            
-        @endif
-
-
+            @include('frontend.notifications.warning')
         <form method="POST" action="{{ route('authenticate', app()->getLocale()) }}">
           @csrf
           <div class="form-group form-group-new">
@@ -121,13 +95,23 @@
             </div>
           </div>
           
-          <div class="mt-4 text-lg-right text-center">
-            <button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-            <i class="fa fa-arrow-left"></i>
-            <span class="d-inline-block">{{ trans('lang.login') }}</span>
+          <div class="mt-4 text-lg-{{$align}} text-center">
+            <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+              {{-- @if ($request->segment(1) == 'ar')
+                <i class="fa fa-arrow-left"></i>
+              @endif --}}
+              <span class="d-inline-block">{{ trans('lang.login') }}</span>
+              <i class="fa fa-arrow-{{$arrowAlign}}"></i>
+              
             </button>
           </div>
         </form>
+      </div>
+      <div class="col-12 col-lg-6 text-center">
+        <!-- Image -->
+        <figure class="w-100">
+          <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/login-bg.svg') }}" class="img-fluid">
+        </figure>
       </div>
     </div>
   </div>

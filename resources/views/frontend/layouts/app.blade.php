@@ -19,11 +19,21 @@
     	}
         @if ($request->segment(1) == 'ar')
             body{
-                direction: ltr !important;
+                direction: rtl !important;
+            }
+            
+            .LIST__UL li:before {
+                right: -42px !important;
+                left: 0px !important;
             }
         @else
             body{
-                direction: rtl !important;
+                direction: ltr !important;
+            }
+
+            .LIST__UL li:before {
+                right: 0px !important;
+                left: -42px !important;
             }
         @endif
 

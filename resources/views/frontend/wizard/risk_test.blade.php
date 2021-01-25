@@ -122,7 +122,11 @@
 		height: 8px;
 		background: #01BAEF;
 		bottom: 0;
-		right: 0;
+		@if ($request->segment(1) == 'ar')
+			right: 0;
+		@else
+			left: 0;
+		@endif
 
     }
 
@@ -159,17 +163,39 @@
 	.top_info__3_sub{
 		font-size: 18px;
 	}
+
+	.risk-test .nav-tabs-wrapper.mobile .text-right.nav-link.active .step-text {
+		width: 180px;
+	}
+
+	.nav-tabs-wrapper.mobile .text-right.nav-link.active .step-text {
+		display: block !important;
+		position: absolute;
+		bottom: 100%;
+		width: 150px;
+		bottom: calc(100% + 20px);
+		display: block;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.flex-row-r{
+		flex-flow: row-reverse;
+	}
 </style>
 @endsection
 
 @section('content')
 <section class="slice py-7 risk-test">
 	<div class="container">
-		<p class="text-right mb-0">
+		<p class="text-{{$align}} mb-0">
 			<span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
 		</p>
 		<div class="row">
-			<div class="col-lg-8 order-2 order-lg-1 text-left float-lg-left text-left d-flex align-items-center risk-test-header">
+			<div class="col-lg-8 {{-- order-1 order-lg-2 --}}">
+				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">الإفصاح القانوني</strong> </h1>
+			</div>
+			<div class="col-lg-4 order-2 order-lg-1 text-{{$align}} float-lg-{{$align}} text-{{$align}} d-flex align-items-center risk-test-header">
 				{{-- <button type="button" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
 					<i class="fa fa-arrow-left"></i>
 					<span class="d-inline-block font-arabic">تحميل التقرير</span>
@@ -207,9 +233,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 order-1 order-lg-2">
-				<h1 class="display-4 text-right mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">الإفصاح القانوني</strong> </h1>
-			</div>
 		</div>
 		<h2 class="text-dark text-center my-5">
 			هل أنت مستثمر مغامر ؟
@@ -218,7 +241,7 @@
 			<div class="nav-tabs-wrapper mt-5 mobile ">
 				<ul class="nav nav-tabs d-flex align-items-center">
 					<li class="nav-item nav-item-risk-1">
-						<a class="text-left nav-link" data-toggle="tab" href="#home">
+						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#home">
 							<span class="step-parent" data-bar="1"></span>
 							<span class="step-text">
 								<span>
@@ -228,7 +251,7 @@
 						</a>
 					</li>
 					<li class="nav-item nav-item-risk-2">
-						<a class="text-left nav-link" data-toggle="tab" href="#menu1">
+						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
 							<span class="step-parent" data-bar="2"></span>
 							<span class="step-text">
 								<span>
@@ -238,7 +261,7 @@
 						</a>
 					</li>
 					<li class="nav-item nav-item-risk-3">
-						<a class="text-left nav-link active" data-toggle="tab" href="#menu1">
+						<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
 							<span class="step-parent" data-bar="3"></span>
 							<span class="step-text">
 								<span>
@@ -248,7 +271,7 @@
 						</a>
 					</li>
 					<li class="nav-item nav-item-risk-4">
-						<a class="text-left nav-link" data-toggle="tab" href="#menu1">
+						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
 							<span class="step-parent" data-bar="4"></span>
 							<span class="step-text">
 								<span>
@@ -258,7 +281,7 @@
 						</a>
 					</li>
 					<li class="nav-item nav-item-risk-5">
-						<a class="text-left nav-link" data-toggle="tab" href="#menu1">
+						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
 							<span class="step-parent" data-bar="5"></span>
 							<span class="step-text">
 								<span>
@@ -276,37 +299,37 @@
 			<div class="card-body">
 				<div class="row border-bottom-light">
 					<div class="col-12 col-lg-6">
-						<h2 class="text-right d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue">توزيع الأصول الموصى به</h2>
+						<h2 class="text-{{$align}} d-none bottom-line d-lg-block pb-4 mb-0 text-lblue">التوقعات المالية</h2>
 					</div>
 					<div class="col-12 col-lg-6">
-						<h2 class="text-right d-none bottom-line d-lg-block pb-4 mb-0 text-lblue">التوقعات المالية</h2>
+						<h2 class="text-{{$align}} d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue">توزيع الأصول الموصى به</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-lg-6  text-center pt-lg-5 pt-0 border-right-light">
-						<h2 class="text-right bottom-line mb-5 d-block d-lg-none text-blue">توزيع الأصول الموصى به</h2>
+					<div class="col-lg-6 text-center pt-5">
+						<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">التوقعات المالية</h2>
+						<div class="text-center">
+							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-2.svg') }}" class="img-fluid img" alt="">
+						</div>
+					</div>
+					<div class="col-12 col-lg-6  text-center pt-lg-5 pt-0 border-{{$align}}-light">
+						<h2 class="text-{{$align}} bottom-line mb-5 d-block d-lg-none text-blue">توزيع الأصول الموصى به</h2>
 						<div class="text-center">
 							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-1.svg') }}" class="img img-fluid" alt="">
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<ul class="LIST__UL LIST_UI_CIRCLE text-right">
+								<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
 									<li class="BLUE">سهل ممتنع</li>
 									<li class="GREEN"> عملي ويتيح التطبيق الفوري</li>
 								</ul>
 							</div>
 							<div class="col-md-6">
-								<ul class="LIST__UL LIST_UI_CIRCLE text-right">
+								<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
 									<li class="LBLUE">سهل ممتنع</li>
 									<li class="DARK"> عملي ويتيح التطبيق الفوري</li>
 								</ul>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 text-center pt-5">
-						<h2 class="text-right  bottom-line mb-5 d-block d-lg-none text-blue">التوقعات المالية</h2>
-						<div class="text-center">
-							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-2.svg') }}" class="img-fluid img" alt="">
 						</div>
 					</div>
 				</div>
@@ -315,20 +338,14 @@
 		<div class="info-card-1-1">
 			<form action="" class="p-4">
 				<div class="row">
-					<div class="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-start order-2 order-lg-1">
-						<button type="button" data-toggle="modal" data-target="#modal__1" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary ">
-							<i class="fa fa-arrow-left"></i>
-							<span class="d-inline-block">إبدأ الآن</span>
-						</button>
-					</div>
-					<div class="col-lg-9 order-1 order-lg-2">
-						{{-- <div class="d-block d-lg-flex justify-content-end text-center text-lg-right">
+					<div class="col-lg-9">
+						{{-- <div class="d-block d-lg-flex justify-content-end text-center text-lg-{{$align}}">
 							<div class="mb-3 d-block d-lg-none">
 								<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 							</div>
 							<div class="mb-4 mb-lg-0 w-100 mr-3 ">
-								<h3 class="text-center text-lg-right top_info__3 mb-0">هل تريد تقريراً مخصصاً لك ؟</h3>
-								<p class="text-center text-lg-right top_info__3_sub mb-0">
+								<h3 class="text-center text-lg-{{$align}} top_info__3 mb-0">هل تريد تقريراً مخصصاً لك ؟</h3>
+								<p class="text-center text-lg-{{$align}} top_info__3_sub mb-0">
 									تقرير مفصل يمنحك خطة استثمارية من الألف الى الياء<br>
 									مع تواصل مباشر مع مستشار خبير
 								</p>
@@ -337,6 +354,13 @@
 								<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 							</div>
 						</div> --}}
+					</div>
+					<div class="col-lg-3 d-flex flex-row-r align-items-center justify-content-center justify-content-lg-start order-2 order-lg-1">
+						<button type="button" data-toggle="modal" data-target="#modal__1" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary ">
+							{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
+							<span class="d-inline-block">إبدأ الآن</span>
+							<i class="fa fa-arrow-{{$arrowAlign}}"></i>
+						</button>
 					</div>
 				</div>
 			</form>
@@ -362,19 +386,20 @@
 					<div class="p-3">
 						<div class="row">
 							<div class="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-start order-2 order-lg-1">
-								<a href="{{ route('plan', locale()) }}" class="btn-rtl btn  btn-big btn-light btn-rad35 btn-primary ">
-									<i class="fa fa-arrow-left"></i>
+								<a href="{{ route('plan', locale()) }}" class="{{$btnAlign}} btn  btn-big btn-light btn-rad35 btn-primary ">
+									{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
 									<span class="d-inline-block">إبدأ الآن</span>
+									<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 								</a>
 							</div>
 							<div class="col-lg-9 order-1 order-lg-2">
-								<div class="d-block d-lg-flex justify-content-end text-center text-lg-right">
+								<div class="d-block d-lg-flex justify-content-end text-center text-lg-{{$align}}">
 									<div class="mb-3 d-block d-lg-none">
 										<img class="modal-coin-img" src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 									</div>
 									<div class="mb-4 mb-lg-0 w-100 mr-3 modal-message-card">
-										<h3 class="text-center text-lg-right top_info__3 mb-0">هل تريد تقريراً مخصصاً لك ؟</h3>
-										<p class="text-center text-white text-lg-right top_info__3_sub mb-0">
+										<h3 class="text-center text-lg-{{$align}} top_info__3 mb-0">هل تريد تقريراً مخصصاً لك ؟</h3>
+										<p class="text-center text-white text-lg-{{$align}} top_info__3_sub mb-0">
 											تقرير مفصل يمنحك خطة استثمارية من الألف الى الياء<br>
 											مع تواصل مباشر مع مستشار خبير
 										</p>

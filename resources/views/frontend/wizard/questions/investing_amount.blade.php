@@ -4,9 +4,9 @@
 
 @section('styles')
 <style type="text/css">
-    .input-group-prepend svg{
+    /* .input-group-prepend svg{
         color: #ffffff;
-    }
+    } */
     
 </style>
 @endsection
@@ -22,13 +22,13 @@
             <div class="col-12 col-lg-12">
                 <!-- Heading -->
 
-                <p class="text-right mb-0">
+                <p class="text-{{$align}} mb-0">
 
                   <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
 
                 </p>
                 
-                <h1 class="display-4 text-right text-lg-right mb-5">
+                <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-5">
                     <strong class="text-primary font-arabic">الوصول للحرية المالية</strong> 
                 </h1>
                 
@@ -36,7 +36,7 @@
 
                     @include('frontend.notifications.warning')
 
-                    <form action="{{ route('questionnaire', locale()) }}" method="POST">
+                    <form action="{{ route('questionnaire', locale()) }}" id="investing_form" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -45,7 +45,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-0 mb-lg-0 mb-5">
-                                            <h4 class="text-right font-arabic"><span class="color-red">*</span>عمرك الان </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span>عمرك الان </h4>
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -62,7 +62,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-right font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الشهري </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الشهري </h4>
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -78,7 +78,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-right font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الأولي </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الأولي </h4>
 
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -97,16 +97,17 @@
                         </div>
 
 
-                        <h3 class="text-right text-lg-right mb-3 mt-3">
+                        <h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
                               <strong class="font-arabic">
                                 في حالة عدم إدخاله يتم احتساب عمر التقاعد عند 60 عام
                               </strong>
                         </h3>
 
-                            <div class="mt-4 text-lg-right text-center mt-5">
-                                <button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-                                     <i class="fa fa-arrow-left"></i>
+                            <div class="mt-4 text-lg-{{$align}} text-center mt-5">
+                                <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                                    {{--  <i class="fa fa-arrow-left"></i> --}}
                                     <span class="d-inline-block">التالي</span>
+                                    <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                                 </button>
                             </div>
 
@@ -122,7 +123,7 @@
 @section('scripts')
 <script type="text/javascript">
     "use strict";
-     $('.input-big').keyup(function(){
+     $('.input-big:not([name="investing_amount[initial_amount]"])').keyup(function(){
         $(this).each(function(){
             if(isNum($(this).val())){
                 $(this).prev().find('svg').css("color", "#2bd687");
@@ -146,5 +147,52 @@
             return false;
         }
      }
+
+        $('[name="investing_amount[initial_amount]"]').on( "keyup", function( event ) {
+            
+            // When user select text in the document, also abort.
+            var selection = window.getSelection().toString();
+            if ( selection !== '' ) {
+                return;
+            }
+            
+            // When the arrow keys are pressed, abort.
+            if ( $.inArray( event.keyCode, [38,40,37,39] ) !== -1 ) {
+                return;
+            }
+            
+            
+            var $this = $( this );
+            
+            // Get the value.
+            var input = $this.val();
+            
+            var input = input.replace(/[\D\s\._\-]+/g, "");
+                    input = input ? parseInt( input, 10 ) : 0;
+
+                    $this.val( function() {
+                        return ( input === 0 ) ? 0 : input.toLocaleString( "en-US" );
+                    } );
+        } );
+        
+        /**
+         * ==================================
+         * When Form Submitted
+         * ==================================
+         */
+        $('#investing_form').on( "submit", function( event ) {
+            
+            var $this = $( this );
+            var n = '';
+            $('.form-control').each(function(i, obj) {
+                
+                $(this).val($(this).val().replace(/,/g,''));
+                
+            });
+            
+
+        
+            
+        });
 </script>
 @endsection

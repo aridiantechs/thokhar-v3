@@ -23,6 +23,26 @@
 			height: calc(100vh - (82px + 83px));
 		}
 	}
+
+	.f-right{
+		float: right;
+	}
+	
+	.f-left{
+		float: left;
+	}
+
+	.p-0-1{
+		padding: 0 1rem;	
+	}
+
+	.d-ltr{
+		direction: ltr;
+	}
+
+	.d-rtl{
+		direction: rtl;
+	}
  </style>
 @endsection
 
@@ -32,12 +52,12 @@
 		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-left nav-link" href="#">
+					<a class="text-{{$align}} nav-link" href="#">
 						<span class="step-parent" data-bar="1"></span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-left nav-link" href="#">
+					<a class="text-{{$align}} nav-link" href="#">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
@@ -47,7 +67,7 @@
 					</a>
 				</li>
 				<li class="nav-item nav-item-3">
-					<a class="text-left nav-link active" data-toggle="tab" href="#menu1">
+					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
@@ -68,86 +88,7 @@
 	</div>
 	<div class="container">
 		<div class="row row-grid">
-			<div class="col-12 col-lg-3 text-center">
-				<!-- Desktop -->
-				<div class="nav-tabs-wrapper desktop d-none d-lg-block">
-					<ul class="nav nav-tabs d-block">
-						<li class="nav-item">
-							<a class="text-left nav-link active" data-toggle="tab" href="#home">
-							<span class="step-parent step-parent-1" data-bar="1"></span>
-							<span class="step-text">
-							<span>
-							الدخل السنوي
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item" data-id="1">
-							<a class="text-left nav-link redirect" href="{{ route('net-worth-introduction', locale()) }}">
-							<span class="step-parent" data-bar="2"></span>
-							<span class="step-text">
-							<span>
-							صافي الثروة
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="text-left nav-link redirect" href="#menu1">
-							<span class="step-parent" data-bar="6"></span>
-							<span class="step-text">
-							<span>
-							التأمينات الاجتماعية
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="text-left nav-link redirect" href="#menu1">
-							<span class="step-parent" data-bar="7"></span>
-							<span class="step-text">
-							<span>
-							خطة الاستثمار
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="text-left nav-link redirect" href="#menu1">
-							<span class="step-parent" data-bar="8"></span>
-							<span class="step-text">
-							<span>
-							المخاطر
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="text-left nav-link" data-toggle="tab" href="#menu1">
-							<span class="step-parent" data-bar="9"></span>
-							<span class="step-text">
-							<span>
-							جلسة الاستشارة
-							</span>
-							</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="text-left nav-link" data-toggle="tab" href="#menu2">
-							<span class="step-parent" data-bar="10"></span>
-							<span class="step-text">
-							<span>
-							التقرير
-							</span>
-							</span>
-							</a>
-						</li>
-						
-					</ul>
-					<div class="vertical-line"></div>
-				</div>
-			</div>
-			<div class="col-12 col-lg-9 order-md-1 pr-md-5">
+			<div class="col-12 col-lg-9 {{-- order-md-1 --}} pr-md-5">
 				@include('frontend.notifications.warning')
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
@@ -156,35 +97,29 @@
 						<div class="card card-shadow has-bg-right">
 							<div class="card-body p-0">
 								<div class="row row-grid">
+									<div class="col-12 col-lg-7">
+										<div class="p-4">
+											<p class="text-muted mb-0">
+											<h4 class="txt-blue-light text-{{$align}} font-arabic">
+												هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم،
+											</h4>
+										</div>
+									</div>
 									<div class="col-12 col-lg-5 text-center">
 										<!-- Image -->
 										<figure class="w-100 div-wrapper">
 											<img alt="" src="{{ asset('frontend_assets/assets/img/new/income/bg-1.svg') }}" class="img-fluid">
 										</figure>
 									</div>
-									<div class="col-12 col-lg-7">
-										<div class="p-4">
-											<p class="text-muted mb-0">
-											<h4 class="txt-blue-light text-right font-arabic">
-												هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم،
-											</h4>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>
-						<h3 class="txt-blue-light text-right font-arabic">
+						<h3 class="txt-blue-light text-{{$align}} font-arabic">
 							الرجاء ادخال الدخل السنوي بما في ذلك الراتب والمكافأة وتأجير العقارات وغيرها
 						</h3>
 						<form id="qform" action="{{ route('questionnaire', locale()) }}" class="mt-3" method="POST">
 							@csrf
 							<div class="row flex-column-reverse flex-md-row w-form-inputs">
-								<div class="col-md-3">
-									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-										<i class="fa fa-arrow-left"></i>
-										<span class="d-inline-block">التالي</span>
-									</button>
-								</div>
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -196,6 +131,13 @@
 
                                         ])
 									</div>
+								</div>
+								<div class="col-md-3">
+									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
+										<span class="d-inline-block p-0-1">التالي</span>
+										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
+									</button>
 								</div>
 							</div>
 						</form>
@@ -210,6 +152,85 @@
 						<h3>Menu 2</h3>
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
 					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-3 text-center">
+				<!-- Desktop -->
+				<div class="nav-tabs-wrapper desktop d-none d-lg-block">
+					<ul class="nav nav-tabs d-block d-ltr">
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#home">
+							<span class="step-parent step-parent-1" data-bar="1"></span>
+							<span class="step-text">
+							<span>
+							الدخل السنوي
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item" data-id="1">
+							<a class="text-{{$align}} nav-link redirect" href="{{ route('net-worth-introduction', locale()) }}">
+							<span class="step-parent" data-bar="2"></span>
+							<span class="step-text">
+							<span>
+							صافي الثروة
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link redirect" href="#menu1">
+							<span class="step-parent" data-bar="6"></span>
+							<span class="step-text">
+							<span>
+							التأمينات الاجتماعية
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link redirect" href="#menu1">
+							<span class="step-parent" data-bar="7"></span>
+							<span class="step-text">
+							<span>
+							خطة الاستثمار
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link redirect" href="#menu1">
+							<span class="step-parent" data-bar="8"></span>
+							<span class="step-text">
+							<span>
+							المخاطر
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
+							<span class="step-parent" data-bar="9"></span>
+							<span class="step-text">
+							<span>
+							جلسة الاستشارة
+							</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu2">
+							<span class="step-parent" data-bar="10"></span>
+							<span class="step-text">
+							<span>
+							التقرير
+							</span>
+							</span>
+							</a>
+						</li>
+						
+					</ul>
+					<div class="vertical-line"></div>
 				</div>
 			</div>
 		</div>

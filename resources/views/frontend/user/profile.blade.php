@@ -38,16 +38,15 @@
 				</div> -->
 			<div class="col-12 col-md-12 col-lg-12 order-lg-1 pr-md-5">
 				<!-- Heading -->
-				<p class="text-right mb-0">
+				<p class="text-{{$align}} mb-0">
 					<span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
 				</p>
-				<h1 class="display-4 text-right text-lg-right mb-3">
+				<h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
 					<strong class="text-primary font-arabic">رمز التحقق</strong> 
 				</h1>
 				<div class="row">
-					<div class="col-lg-6"> </div>
-					<div class="col-lg-6">
-						<h3 class="text-right text-lg-right mb-3 ">
+					<div class=" col-lg-offset-6 col-lg-6">
+						<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 ">
 							<strong class="font-arabic">
 							نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
 							العلاقة بيننا  وبين كل عميل مهمة .للغاية بالنسبة لنا
@@ -150,15 +149,16 @@
 						</div>
 						<input type="file" name="profile_image" id="new_profile_button" class="d-none"> 
 					</div>
-					<h3 class="text-right text-lg-right mb-3 mt-3">
+					<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
 						<strong class="font-arabic">
 						في حالة عدم إدخاله يتم احتساب عمر التقاعد عند 60 عام
 						</strong>
 					</h3>
-					<div class="mt-4 text-lg-right text-center">
-						<button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-						<i class="fa fa-arrow-left"></i>
+					<div class="mt-4 text-lg-{{$align}} text-center">
+						<button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+						{{-- <i class="fa fa-arrow-left"></i> --}}
 						<span class="d-inline-block">التالي</span>
+						<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 						</button>
 					</div>
 				</form>

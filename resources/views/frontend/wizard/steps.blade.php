@@ -11,15 +11,15 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 col-md-12 col-lg-12 order-md-1 pr-md-5">
-                <p class="text-right mb-0">
+                <p class="text-{{$align}} mb-0">
                     <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
                 </p>
                 
-                <h1 class="display-4 text-right text-lg-right mb-3">
+                <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">ثلاث خطوات</strong> 
                 </h1>
 
-                <h3 class="mt-2 mb-5 text-right">
+                <h3 class="mt-2 mb-5 text-{{$align}}">
                       تضمن لك استثمار أفضل لمدخراتك
                 </h3>
 
@@ -28,10 +28,11 @@
                     <div class="row">                             
                         <div class="col-md-12">
                             <div class="row">
+
                                 <div class="col-lg-4">
-                                    <div class="text-center mb-5">
-                                        <img src="{{ asset('frontend_assets/assets/img/new/steps/step-1.svg') }}" alt="" />
-                                        <h5 class="mt-2">أبدأ بالاستثمار حالا</h5>
+                                    <div class="text-center mb-0">
+                                        <img src="{{ asset('frontend_assets/assets/img/new/steps/step-3.svg') }}" alt="" />
+                                        <h5 class="mt-2">قم بالإجابة عن أسئلتنا</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -40,20 +41,20 @@
                                         <h5 class="mt-2">سوف يقوم مستشارك المالي بتصميم خطة استثمار تناسب احتياجاتك</h5>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-4">
-                                    <div class="text-center mb-0">
-                                        <img src="{{ asset('frontend_assets/assets/img/new/steps/step-3.svg') }}" alt="" />
-                                        <h5 class="mt-2">قم بالإجابة عن أسئلتنا</h5>
+                                    <div class="text-center mb-5">
+                                        <img src="{{ asset('frontend_assets/assets/img/new/steps/step-1.svg') }}" alt="" />
+                                        <h5 class="mt-2">أبدأ بالاستثمار حالا</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-4 text-center ">
-                        <a href="{{ route('income', locale()) }}" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-                            <i class="fa fa-arrow-left"></i>
+                        <a href="{{ route('income', locale()) }}" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                            {{-- <i class="fa fa-arrow-left"></i> --}}
                             <span class="d-inline-block">إبدأ الان</span>
+                            <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                         </a>
                     </div>
                 </form>

@@ -114,13 +114,6 @@
 						
 						<div class="mt-3 ">
 							<div class="row flex-column-reverse flex-md-row w-form-inputs">
-								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
-										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
-									</button>
-								</div>
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -132,6 +125,13 @@
 
                                         ])
 									</div>
+								</div>
+								<div class="col-md-3">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+										{{-- <i class="fa fa-arrow-left"></i> --}}
+										<span class="d-inline-block">التالي</span>
+										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
+									</button>
 								</div>
 							</div>
 						</div>

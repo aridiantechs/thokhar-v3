@@ -32,8 +32,8 @@
                         </ul>
                     </div>
                     <div class="col-lg-6 ">
-                        <div class="copyright text-sm  text-lg-right text-center">
-                      <a href="#" class="" target="_blank">Thokhor.com</a> © {{ date('Y') }} .جميع الحقوق محفوظة
+                        <div class="copyright text-sm  text-lg-{{ $alignreverse }} text-center">
+                            <a href="#" class="" target="_blank">Thokhor.com</a> © {{ date('Y') }} .جميع الحقوق محفوظة
                         </div>
                     </div>
 

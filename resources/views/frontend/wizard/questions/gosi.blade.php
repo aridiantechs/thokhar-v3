@@ -13,7 +13,7 @@
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
-					Data 1
+					Data
 					</span>
 					</span>
 					</a>
@@ -23,7 +23,7 @@
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					الدخل السنوي
+					التأمينات الاجتماعية
 					</span>
 					</span>
 					</a>
@@ -31,9 +31,11 @@
 				
 			</ul>
 			<div class="horizontal-line">
-				<div class="step-parent-bar step-parent-bar-1"></div>
-				<div class="step-parent-bar step-parent-bar-2"></div>
-				<div class="step-parent-bar step-parent-bar-3"></div>
+				<div class="step-parent-bar step-parent-bar-1" ></div>
+				<div class="step-parent-bar step-parent-bar-2" ></div>
+				<div class="step-parent-bar step-parent-bar-3" ></div>
+				<div class="step-parent-bar step-parent-bar-4" ></div>
+				<div class="step-parent-bar step-parent-bar-5 success" ></div>
 				
 			</div>
 		</div>
@@ -45,42 +47,79 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' => 'الباقة الذهبية '])
-						<div class="card card-shadow has-bg-right">
+						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟   '])
+
+						<div class="card card-shadow has-bg-right bg-1">
 							<div class="card-body p-0">
+
 								<div class="row row-grid">
-									<div class="col-12 col-lg-7">
-										<div class="p-4">
-											<p class="text-muted mb-0">
+
+									<div class="col-12 col-md-7 col-lg-6">
+
+										<div class="p-5 pl-lg-0">
+											<h1 class="display-4 text-center text-md-right mb-3 ">
+												<strong class="text-primary-1 font-arabic">مقدمة </strong>
+											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
-												هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم،
+											هذا النـص يمكـن أن يتـــم تركيبه على أي تصمـــــيم دون مشكــــــلة فلن يبدو وكأنه نص منسوخ، غــــــير منظم، غير منسق، أو حتى مفهوم. لأنه مــــــازال نصاً بديلاً ومؤقتاً
 											</h4>
 										</div>
+
 									</div>
-									<div class="col-12 col-lg-5 text-center">
-										<!-- Image -->
+
+									<div class="col-12 col-md-5 col-lg-6 text-left d-flex align-items-end">
 										<figure class="w-100 div-wrapper">
-											<img alt="" src="{{ asset('frontend_assets/assets/img/new/income/bg-1.svg') }}" class="img-fluid">
+											<img alt="" src="{{ asset('frontend_assets/assets/img/new/goci/img-1.svg') }}" class="img-fluid">
 										</figure>
 									</div>
+									
 								</div>
+
 							</div>
 						</div>
-						<h3 class="txt-blue-light text-{{$align}} font-arabic">
-							الرجاء ادخال الدخل السنوي بما في ذلك الراتب والمكافأة وتأجير العقارات وغيرها
-						</h3>
+
+						
+						
 						<form id="qform" action="{{ route('wizard', locale()) }}" class="mt-3" method="POST">
 							@csrf
-							<input type="hidden" name="location" value="income">
+							<input type="hidden" name="location" value="gosi">
 							<div class="row w-form-inputs">
-								<div class="col-md-9">
+								<div class="col-md-3">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
-                                                'name' => 'income[income]', 
-                                                'value' => currency($user_questionnaire->income["income"]["income"] ?? '', 0),
-                                                'old_val' => "investing_amount.monthly_amount",
+                                                'name' => 'gosi[strating_year_in_plan]', 
+                                                'value' => $user_questionnaire->gosi["gosi"]["strating_year_in_plan"] ?? '',
+                                                'old_val' => "gosi.strating_year_in_plan",
                                                 'placeholder' => 'المبلغ بالريال', 
+                                                'icon' => 'calendar',
+                                                'id' => 'datepicker',
+
+                                        ])
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group form-group-new mb-0">
+										@include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'gosi[expecting_salary_at_retirement]', 
+                                                'value' => currency($user_questionnaire->gosi["gosi"]["expecting_salary_at_retirement"] ?? '', 0),
+                                                'old_val' => "gosi.expecting_salary_at_retirement",
+                                                'placeholder' => 'المبلغ بالريال', 
+                                                'no_icon' => true,
+
+                                        ])
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group form-group-new mb-0">
+										@include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'gosi[monthly_subscription]', 
+                                                'value' => currency($user_questionnaire->gosi["gosi"]["monthly_subscription"] ?? '', 0),
+                                                'old_val' => "gosi.monthly_subscription",
+                                                'placeholder' => 'المبلغ بالريال', 
+                                                'no_icon' => true,
 
                                         ])
 									</div>
@@ -103,7 +142,7 @@
 				<div class="nav-tabs-wrapper desktop d-none d-lg-block">
 					<ul class="nav nav-tabs d-block d-ltr">
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link active" href="#income">
+							<a class="text-{{ $alignreverse }} nav-link success" data-toggle="tab" href="#income">
 							<span class="step-parent step-parent-1" data-bar="1"></span>
 							<span class="step-text">
 								<span>
@@ -113,7 +152,7 @@
 							</a>
 						</li>
 						<li class="nav-item" data-id="1">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#net-worth">
+							<a class="text-{{ $alignreverse }} nav-link success" href="#net-worth">
 							<span class="step-parent" data-bar="2"></span>
 							<span class="step-text">
 								<span>
@@ -123,7 +162,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#gosi">
+							<a class="text-{{ $alignreverse }} nav-link active" href="#gosi">
 							<span class="step-parent" data-bar="6"></span>
 							<span class="step-text">
 								<span>
@@ -153,7 +192,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" href="#consultations">
+							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#consultations">
 							<span class="step-parent" data-bar="9"></span>
 							<span class="step-text">
 								<span>
@@ -163,7 +202,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" href="#">
+							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#">
 							<span class="step-parent" data-bar="10"></span>
 							<span class="step-text">
 								<span>
@@ -183,8 +222,16 @@
 </section>
 
 <script>
-	window.start_point_bar = 1;
+	window.start_point_bar = 3;
+	window.location.hash = '#gosi';
 
+	$("#datepicker").datepicker({
+	    format: "yyyy",
+	    viewMode: "years", 
+	    minViewMode: "years",
+	    endDate: '+0d',
+
+	});
 </script>
 
 @include('frontend.partials.wizard_script')

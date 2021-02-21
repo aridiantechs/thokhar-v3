@@ -24,8 +24,8 @@ class QuestionnaireRequest extends FormRequest
      */
     public function rules()
     {
-        $previous_url = str_replace(url('/'.app()->getLocale().'/'), '', url()->previous());
-        // dd($previous_url);
+        $previous_url = $this->location;
+        
         switch($this->method())
         {
             case 'GET':
@@ -47,7 +47,7 @@ class QuestionnaireRequest extends FormRequest
                             ];
                             break;
 
-                        case '/income':
+                        case 'income':
                             return [
                                 'income' => 'required|array',
                                 'income.income' => 'required|numeric',
@@ -115,17 +115,18 @@ class QuestionnaireRequest extends FormRequest
                             ];
                             break;
                         
-                        case '/step_5':
+                        case 'gosi':
                             return [
                                 // gosi
                                 'gosi' => 'required|array',
                                 'gosi.strating_year_in_plan' => 'required|date_format:Y',
                                 'gosi.expecting_salary_at_retirement' => 'required|numeric',
+                                'gosi.monthly_subscription' => 'required|numeric',
                                 // 'gosi.mothly_life_expenses_after_retirement' => 'required|numeric',
                             ];
                             break;
                         
-                        case '/step_6':
+                        case 'risk':
                             return [
                                 // risks
                                 'risks' => 'required|array',

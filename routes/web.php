@@ -279,6 +279,9 @@ Route::group([
             Route::get('/steps',  'QuestionnaireController@steps')->name('steps');
             Route::get('/income', 'QuestionnaireController@income')->name('income');
             Route::get('/net-worth-introduction', 'QuestionnaireController@netWorthIntroduction')->name('net-worth-introduction');
+            Route::get('/gosi', 'QuestionnaireController@gosi')->name('gosi');
+            Route::get('/risk', 'QuestionnaireController@risk')->name('risk');
+            Route::get('/consultations-session-time', 'QuestionnaireController@consultations')->name('consultations');
       });
       
 
@@ -291,6 +294,9 @@ Route::group([
       // Route::get('/step_7', 'QuestionnaireController@step_7')->name('step_7');
       // post
       Route::post('/questionnaire', 'QuestionnaireController@store')->name('questionnaire');
+
+      Route::get('/wizard', 'QuestionnaireController@wizard')->name('wizard');
+      Route::post('/wizard', 'QuestionnaireController@wizardStore')->name('wizard');
 
       Route::get('/current_state', 'QuestionnaireController@evaluateResult')->name('current_state');
 

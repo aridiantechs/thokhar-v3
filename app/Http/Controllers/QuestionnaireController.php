@@ -23,35 +23,77 @@ class QuestionnaireController extends Controller
         parent::__construct();
         $this->questionnaire = new Questionnaire();
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // Questionnaire::getMe()->get();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        dd('create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     
 
+    public function wizard()
+    {
+        return view('frontend.wizard.index')
+                ->with([
+                    'title' => __('lang.questionnaire.income')
+                ]);
+    }
+
+
+    public function income()
+    {
+
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        return view('frontend.wizard.questions.income')
+                ->with([
+                    'title' => __('lang.questionnaire.income')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+    }
+
+        
+    public function wizardStore(QuestionnaireRequest $request)
+    {
+        
+        $location = $request->location;        
+
+        $user_questionnaire = $this->loggedInUser->user_questionnaires()->orderBy('questionnaire_id', 'DESC')->first();
+        
+        switch ($location) {
+            case 'income':
+
+                return $this->questionnaire->update_income($request->except('_token'))
+                        ?   $this->netWorthIntroduction()
+                        : redirect()->route('income', $locale);
+                break;
+
+            case 'net-worth':
+
+                return $this->questionnaire->update_net_assets($request->except('_token'))
+                        ?   $this->gosi()
+                        : redirect()->route('net-worth-introduction', $locale);
+                break;
+
+            case 'gosi':
+
+                return $this->questionnaire->update_gosi($request->except('_token'))
+                        ?   $this->risk()
+                        : redirect()->route('net-worth-introduction', $locale);
+                break;
+
+            case 'risk':
+
+                return $this->questionnaire->update_risks($request->except('_token'))
+                        ?   $this->consultations()
+                        : redirect()->route('net-worth-introduction', $locale);
+                break;
+
+            case '/payment':
+                return auth()->user()->fill($request->all())->update()
+                        ?   redirect()->route('email-verification', $locale)
+                        : redirect()->route('payment', $locale);
+                break;
+            
+            default:
+                abort(500, 'You have skipped some step');
+                break;
+        }
+    }
+        
     public function store(QuestionnaireRequest $request)
     {
         
@@ -166,51 +208,6 @@ class QuestionnaireController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Questionnaire  $questionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Questionnaire $questionnaire)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Questionnaire  $questionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Questionnaire $questionnaire)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Questionnaire  $questionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Questionnaire $questionnaire)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Questionnaire  $questionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Questionnaire $questionnaire)
-    {
-        //
-    }
-
 
     public function awareness()
     {
@@ -263,17 +260,7 @@ class QuestionnaireController extends Controller
     }
 
 
-    public function income()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        return view('frontend.wizard.questions.income')
-                ->with([
-                    'title' => __('lang.questionnaire.income')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-    }
-
-
+    
     public function netWorthIntroduction()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
@@ -284,6 +271,62 @@ class QuestionnaireController extends Controller
             return redirect()->route('income', app()->getLocale());
         }
         return view('frontend.wizard.questions.net_worth_introduction')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function gosi()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->net_assets ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.gosi')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function risk()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->gosi ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.risk')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function consultations()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->risks ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.consultations')
                 ->with([
                     'title' => __('lang.questionnaire.step_2')
                 ])

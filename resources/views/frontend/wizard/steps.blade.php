@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center ">
-                        <a href="{{ route('income', locale()) }}" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                        <a href="{{ route('wizard', locale()) }}" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                             {{-- <i class="fa fa-arrow-left"></i> --}}
                             <span class="d-inline-block">إبدأ الان</span>
                             <i class="fa fa-arrow-{{$arrowAlign}}"></i>

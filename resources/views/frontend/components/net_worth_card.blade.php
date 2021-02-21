@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-6 text-{{$align}} d-flex align-items-end">
 				<figure class="w-100 pt-5">
-					<img alt="" src="{{ asset('frontend_assets/'. $image ?? '') }}" class="img-fluid">
+					<img alt="" src="{{ asset('frontend_assets/'. $image ?? '') }}" class="img-fluid float-left">
 				</figure>
 			</div>
 		</div>

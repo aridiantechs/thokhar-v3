@@ -92,8 +92,6 @@
 	    redirect();
 	}
 
-
-
 	$(document).ready(function(){
 		redirect();
 	});
@@ -148,6 +146,7 @@
 
 
 	$(document).on('submit', '#qform', function(e){
+		
 		e.preventDefault();
 
 		$('body').removeClass('loaded')

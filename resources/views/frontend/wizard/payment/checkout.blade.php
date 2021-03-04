@@ -184,7 +184,7 @@
 <script type="text/javascript">
    var myform = document.getElementById('payform');
    paylib.inlineForm({
-     'key': 'CDKMTH-MHT7H9-9Q22Q2-HVM69D',
+     'key': 'CPKMMB-MDNR62-T9TDH6-K7D292',
      'form': myform,
      'autosubmit': true,
      'callback': function(response) {

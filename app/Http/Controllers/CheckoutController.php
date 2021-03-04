@@ -36,17 +36,20 @@ class CheckoutController extends Controller
         
         $token     = $request->token;
 
+        // dd($request->all());
+
         $url = 'https://secure-global.paytabs.com/payment/request?token='.$token;
         
         $data = [
-                "profile_id" => 54876,
+                "profile_id" => 61157,
                 "tran_type" => "sale",
                 "tran_class" => "ecom" ,
                 "cart_id" => uniqid(),
-                "cart_description" => "Dummy Order 35925502061445345",
+                "cart_description" => "Dummy Order 3592550gjhg2061445345",
                 "cart_currency" => "AED",
                 "cart_amount" => 600,
                 "return" => $return,
+                "call_back" => $call_back,
             ];
 
 
@@ -54,7 +57,7 @@ class CheckoutController extends Controller
         
         $payload = json_encode($data);
         curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'authorization:SLJNMR9J6M-HZZNBBNBWK-NT9RWJRMLL'));
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'authorization:SBJNN2929M-JBGZGDHJBN-DGGHWRMWDT'));
         
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 
@@ -64,7 +67,13 @@ class CheckoutController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
         
-        // dd($result);
+        $paytabs_response = json_decode($result, true);
+
+        if(array_key_exists('redirect_url', $paytabs_response)){
+            return redirect($paytabs_response['redirect_url']);
+        }else{
+            dd($paytabs_response);
+        }
 
         $order = new Order;
         $order->fill($request->all());
@@ -74,6 +83,17 @@ class CheckoutController extends Controller
 
         return redirect()->route('steps', locale());
 
+    }
+
+
+    public function callback(Request $request)
+    {
+        dd('callback', $request);
+    }
+
+    public function return(Request $request)
+    {
+        dd('return', $request);
     }
 
     /**

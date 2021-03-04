@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.6.6/rickshaw.css">
-<link rel="stylesheet" type="text/css" href="{{ asset('backend_assets/dashboard/css/print.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('backend_assets/dashboard/css/print.css?v1') }}">
 @php 
 	if($request->segment(1) == 'ar'){
 		$direction = 'right';
@@ -62,10 +62,17 @@
 		page-break-after: always;
 	}
 	.highlight{
-	  background-color: #000000 !important;
+	  	background-color: #000000 !important;
 	    color: #fff !important;
 	    font-family: 'Cairo', sans-serif;
 	}
+
+	.background_effect{
+	    background-size: cover;
+	    background-position: center center;
+	    background-repeat: no-repeat;
+	}
+
 
 </style>
 
@@ -80,11 +87,11 @@
 	$pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
 	@endphp
 
-	<div id="intro" class="container-fluid mb-1 background_effect " >
+	<div id="intro" class="container-fluid mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-8">
-				<br><br><br><br><br>
+				<br><br><br><br><br><br>
 				<br><br><br><br><br>
 				<h2 class="mt-5 pt-5 mb-4">
 	                {{ 'thokhor' }}
@@ -101,12 +108,12 @@
 		
 		
 		<div class="row mt-5">
-			<div class="col-1"></div>
-			<div class="col-10">
+			<div class="col-3"></div>
+			<div class="col-7">
 				<img
                   class="img img-responsive image-main"
                   src="
-                    {{ asset('frontend_assets/img/banner/home_banner_1.svg') }}"
+                    {{ asset('frontend_assets/assets/img/report/person-with-plant.png') }}"
                   alt="Banner image"
                 />
 			</div>
@@ -114,7 +121,7 @@
 
 		<br><br><br><br><br><br>
 		
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5 pb-3">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 		
 	</div>
 
@@ -124,7 +131,7 @@
 	{{-- Page 2 start --}}
 
 
-	<div id="table_of_contents" class="container-fluid mb-1 parent-report" >
+	<div id="table_of_contents" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-8">
@@ -171,7 +178,7 @@
 		<br><br>
 		
 		
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -180,7 +187,7 @@
 	{{-- Page 3 start --}}
 
 
-	<div id="about_us" class="container-fluid mb-1 parent-report" >
+	<div id="about_us" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -240,7 +247,7 @@
 		<br><br><br><br><br>
 		<br><br><br><br><br>
 		<br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -248,7 +255,7 @@
 
 	{{-- page 4 start --}}
 
-	<div id="personal_information" class="container-fluid mb-1 parent-report" >
+	<div id="personal_information" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -478,7 +485,7 @@
 			</div>
 		</div>
 		<br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -486,7 +493,7 @@
 	{{-- Page 5 start --}}
 
 
-	<div id="personal_indicators" class="container-fluid mb-1 parent-report" >
+	<div id="personal_indicators" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -692,7 +699,7 @@
 	{{-- Page 6 start --}}
 
 
-	<div id="asset_allocation" class="container-fluid mb-1 parent-report" >
+	<div id="asset_allocation" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -891,7 +898,7 @@
 	{{-- Page 7 start --}}
 
 
-	<div id="financial_forecast" class="container-fluid mb-1 parent-report" >
+	<div id="financial_forecast" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -1038,7 +1045,7 @@
 	{{-- Page 7 with table start --}}
 
 
-	<div id="table-break"  class="container-fluid parent-report" >
+	<div id="table-break"  class="container-fluid parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		
 		<div class="row">
 			<div class="col-1"></div>
@@ -1120,7 +1127,7 @@
 	{{-- Page 8 start --}}
 
 
-	<div id="parent-report" class="container-fluid mb-5" {{ $not_found ?? '' }}>
+	<div id="parent-report" class="container-fluid mb-5 background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" {{ $not_found ?? '' }}>
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10">
@@ -1264,7 +1271,7 @@
 	{{-- Page 9 start --}}
 
 
-	<div id="disclaimer" class="container-fluid parent-report" >
+	<div id="disclaimer" class="container-fluid parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -1333,6 +1340,7 @@
 
 @section('scripts')
 {{-- <script src="html2pdf.bundle.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 {{-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> --}}
@@ -1697,15 +1705,15 @@ var myChart = new Chart(ctx, {
 // }
 // addScript('{{ asset('backend_assets/dashboard/js/print.js') }}');
 
-// $(document).ready(function(){
-// 	setTimeout(
-// 		function() {
-// 			html2pdf(document.body).set({
-// 			  pagebreak: { mode: 'avoid-all' , before: '#table-break', }
-// 			});
-// 		},
-// 	1000);
-// });
+$(document).ready(function(){
+	setTimeout(
+		function() {			
+			html2pdf(document.body, {
+			  pagebreak: { mode: 'avoid-all' , before: '#table-break', }
+			});
+		},
+	500);
+});
 
 $(document).ready(function(){
 	setTimeout(

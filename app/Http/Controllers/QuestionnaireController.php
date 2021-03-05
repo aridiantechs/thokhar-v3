@@ -9,6 +9,7 @@ use App\Http\Requests\QuestionnaireRequest;
 use App\Http\Requests\AdditionalInformationRequest;
 use Session;
 use App\Constant;
+use App\Consultations;
 use App\Report;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
@@ -65,20 +66,35 @@ class QuestionnaireController extends Controller
 
                 return $this->questionnaire->update_net_assets($request->except('_token'))
                         ?   $this->gosi()
-                        : redirect()->route('net-worth-introduction', $locale);
+                        : redirect()->route('wizard', $locale);
                 break;
 
             case 'gosi':
 
                 return $this->questionnaire->update_gosi($request->except('_token'))
                         ?   $this->risk()
-                        : redirect()->route('net-worth-introduction', $locale);
+                        : redirect()->route('wizard', $locale);
                 break;
 
             case 'risk':
 
                 return $this->questionnaire->update_risks($request->except('_token'))
                         ?   $this->consultations()
+                        : redirect()->route('wizard', $locale);
+                break;
+
+            case 'consultations':
+
+                return '';
+                return Consultations::consultations($request->except('_token'))
+                        ?   $this->consultations()
+                        : redirect()->route('wizard', $locale);
+                break;
+
+            case 'risk':
+
+                return $this->questionnaire->update_risks($request->except('_token'))
+                        ?   $this->getReport()
                         : redirect()->route('net-worth-introduction', $locale);
                 break;
 

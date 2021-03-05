@@ -146,7 +146,7 @@ class Questionnaire extends Model
                 ]);
     }
 
-    public function update_personal_info(array $data)
+    public static function update_personal_info(array $data)
     {
         // dd(Questionnaire::where('fk_user_id', auth()->user()->id)->get());
         
@@ -1943,8 +1943,9 @@ class Questionnaire extends Model
 
     public function getMonthlySavingToday(User $user = null)
     {
+        // Exception
         $savingPlan = $this->getSavingPlan($user);  
-        return $savingPlan['saving_plan']['gosi_or_ppa_monthly_subscription'] + $savingPlan['saving_plan']['monthly_saving_plan_for_retirement'] ?? 0;
+        return $savingPlan['saving_plan']['gosi_or_ppa_monthly_subscription'] ?? 0 + $savingPlan['saving_plan']['monthly_saving_plan_for_retirement'] ?? 0;
     }
 
 
@@ -1956,7 +1957,9 @@ class Questionnaire extends Model
 
     public function getNetWorthLiabilitiesToday(User $user = null)
     {
-        $netWorthAssetToday = $this->getNetAssets($user);  
+        $netWorthAssetToday = $this->getNetAssets($user);
+        // Exception
+        return 0;
         return array_sum($netWorthAssetToday['net_assets']['liabilities']) ?? 0;
     }
 
@@ -2029,7 +2032,9 @@ class Questionnaire extends Model
 
     public function getGOSIorPPAmonthlySubscription(User $user = null)
     {
-        return (integer)$this->getSavingPlan($user)['saving_plan']['gosi_or_ppa_monthly_subscription'];
+        // Exception
+        return 0;
+        return (integer)$this->getSavingPlan($user)['saving_plan']['gosi_or_ppa_monthly_subscription'] ?? 0;
     }
 
     public function getMonthlySavingPlanForRetirement(User $user = null)
@@ -2059,9 +2064,9 @@ class Questionnaire extends Model
 
     public function getAccomulativeSavingRating(User $user = null)
     {
-        $networth = $this->questionnaire->getNetWorthAssetsToday($user) - $this->questionnaire->getNetWorthLiabilitiesToday($user);
+        $networth = $this->questionnaire->getNetWorthAssetsToday($user);
         $age = $this->getCurrentAge();
-        $totalIncome = (int)$this->getIncome($user)['income']['salary'] + (int)$this->getIncome($user)['income']['private_buisness_or_freelancing'] + (int)$this->getIncome($user)['income']['other'];
+        $totalIncome = (int)$this->getIncome($user)['income'];
         $savingRating = '';
 
         if($age < 30)

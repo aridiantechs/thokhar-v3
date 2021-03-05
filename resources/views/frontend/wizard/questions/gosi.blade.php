@@ -172,7 +172,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#">
+							<a class="text-{{ $alignreverse }} nav-link redirect" href="#investing-plan">
 							<span class="step-parent" data-bar="7"></span>
 							<span class="step-text">
 								<span>

@@ -1,3 +1,8 @@
+<style type="text/css">
+.div-wrapper{
+    height: unset;
+}
+</style>
 
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-5">
@@ -13,7 +18,7 @@
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
-					Data 1
+					Data
 					</span>
 					</span>
 					</a>
@@ -23,7 +28,7 @@
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					الدخل السنوي
+					التأمينات الاجتماعية
 					</span>
 					</span>
 					</a>
@@ -31,9 +36,11 @@
 				
 			</ul>
 			<div class="horizontal-line">
-				<div class="step-parent-bar step-parent-bar-1"></div>
-				<div class="step-parent-bar step-parent-bar-2"></div>
-				<div class="step-parent-bar step-parent-bar-3"></div>
+				<div class="step-parent-bar step-parent-bar-1" ></div>
+				<div class="step-parent-bar step-parent-bar-2" ></div>
+				<div class="step-parent-bar step-parent-bar-3" ></div>
+				<div class="step-parent-bar step-parent-bar-4" ></div>
+				<div class="step-parent-bar step-parent-bar-5 success" ></div>
 				
 			</div>
 		</div>
@@ -45,46 +52,85 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' => 'الباقة الذهبية '])
-						<div class="card card-shadow has-bg-right">
+						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟   '])
+
+						<div class="card card-shadow has-bg-right bg-1">
 							<div class="card-body p-0">
+
 								<div class="row row-grid">
-									<div class="col-12 col-lg-7">
-										<div class="p-4">
-											<p class="text-muted mb-0">
+
+									<div class="col-12 col-md-7 col-lg-6">
+
+										<div class="p-5 pl-lg-0">
+											<h1 class="display-4 text-center text-md-right mb-3 ">
+												<strong class="text-primary-1 font-arabic">الوصول للحرية المالية </strong>
+											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
-												هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم،
+												هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+
 											</h4>
 										</div>
+
 									</div>
-									<div class="col-12 col-lg-5 text-center">
-										<!-- Image -->
+
+									<div class="col-12 col-md-5 col-lg-6 text-left d-flex align-items-end">
 										<figure class="w-100 div-wrapper">
-											<img alt="" src="{{ asset('frontend_assets/assets/img/new/income/bg-1.svg') }}" class="img-fluid">
+											<img alt="" src="{{ asset('frontend_assets/assets/img/new/investment-plan/img-1.svg') }}" class="img-fluid">
 										</figure>
 									</div>
+									
 								</div>
+
 							</div>
 						</div>
-						<h3 class="txt-blue-light text-{{$align}} font-arabic">
-							الرجاء ادخال الدخل السنوي بما في ذلك الراتب والمكافأة وتأجير العقارات وغيرها
-						</h3>
+
+						
+						
 						<form id="qform" action="{{ route('wizard', locale()) }}" class="mt-3" method="POST">
 							@csrf
-							<input type="hidden" name="location" value="income">
+							<input type="hidden" name="location" value="investing">
 							<div class="row w-form-inputs">
-								<div class="col-md-9">
+								
+								<div class="col-md-3">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
-                                                'name' => 'income[income]', 
-                                                'value' => currency($user_questionnaire->income["income"]["income"] ?? '', 0),
-                                                'old_val' => "investing_amount.monthly_amount",
+                                                'name' => 'saving_plan[current_saving_balance]', 
+                                                'value' => currency($user_questionnaire->saving_plan["saving_plan"]["current_saving_balance"] ?? '', 0),
+                                                'old_val' => "saving_plan.current_saving_balance",
                                                 'placeholder' => 'المبلغ بالريال', 
+                                                'no_icon' => true,
 
                                         ])
 									</div>
 								</div>
+								<div class="col-md-3">
+									<div class="form-group form-group-new mb-0">
+										@include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'saving_plan[monthly_saving_plan_for_retirement]', 
+                                                'value' => currency($user_questionnaire->saving_plan["saving_plan"]["monthly_saving_plan_for_retirement"] ?? '', 0),
+                                                'old_val' => "saving_plan.monthly_saving_plan_for_retirement",
+                                                'placeholder' => 'المبلغ بالريال', 
+                                                'no_icon' => true,
+
+                                        ])
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group form-group-new mb-0">
+										@include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'saving_plan[annual_increase_in_saving_plan]', 
+                                                'value' => currency($user_questionnaire->saving_plan["saving_plan"]["annual_increase_in_saving_plan"] ?? '', 0),
+                                                'old_val' => "saving_plan.annual_increase_in_saving_plan",
+                                                'placeholder' => 'المبلغ بالريال', 
+                                                'no_icon' => true,
+
+                                        ])
+									</div>
+								</div>
+								
 								<div class="col-md-3">
 									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
@@ -103,7 +149,7 @@
 				<div class="nav-tabs-wrapper desktop d-none d-lg-block">
 					<ul class="nav nav-tabs d-block d-ltr">
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link active" href="#income">
+							<a class="text-{{ $alignreverse }} nav-link success" data-toggle="tab" href="#income">
 							<span class="step-parent step-parent-1" data-bar="1"></span>
 							<span class="step-text">
 								<span>
@@ -113,7 +159,7 @@
 							</a>
 						</li>
 						<li class="nav-item" data-id="1">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#net-worth">
+							<a class="text-{{ $alignreverse }} nav-link success" href="#net-worth">
 							<span class="step-parent" data-bar="2"></span>
 							<span class="step-text">
 								<span>
@@ -123,7 +169,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#gosi">
+							<a class="text-{{ $alignreverse }} nav-link success" href="#gosi">
 							<span class="step-parent" data-bar="6"></span>
 							<span class="step-text">
 								<span>
@@ -133,7 +179,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link redirect" href="#investing-plan">
+							<a class="text-{{ $alignreverse }} nav-link active" href="#investing-plan">
 							<span class="step-parent" data-bar="7"></span>
 							<span class="step-text">
 								<span>
@@ -153,7 +199,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" href="#consultations">
+							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#consultations">
 							<span class="step-parent" data-bar="9"></span>
 							<span class="step-text">
 								<span>
@@ -163,7 +209,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" href="#report">
+							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#">
 							<span class="step-parent" data-bar="10"></span>
 							<span class="step-text">
 								<span>
@@ -183,7 +229,8 @@
 </section>
 
 <script>
-	window.start_point_bar = 1;
+	window.start_point_bar = 4;
+	window.location.hash = '#investing-plan';
 
 </script>
 

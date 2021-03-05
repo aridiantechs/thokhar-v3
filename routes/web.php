@@ -280,8 +280,10 @@ Route::group([
             Route::get('/income', 'QuestionnaireController@income')->name('income');
             Route::get('/net-worth-introduction', 'QuestionnaireController@netWorthIntroduction')->name('net-worth-introduction');
             Route::get('/gosi', 'QuestionnaireController@gosi')->name('gosi');
+            Route::get('/investing', 'QuestionnaireController@investing')->name('investing');
             Route::get('/risk', 'QuestionnaireController@risk')->name('risk');
             Route::get('/consultations-session-time', 'QuestionnaireController@consultations')->name('consultations');
+            Route::get('/report', 'QuestionnaireController@report')->name('report');
       });
       
 

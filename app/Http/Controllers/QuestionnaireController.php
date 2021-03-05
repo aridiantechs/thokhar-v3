@@ -57,45 +57,45 @@ class QuestionnaireController extends Controller
         switch ($location) {
             case 'income':
 
-                return $this->questionnaire->update_income($request->except('_token'))
+                return $this->questionnaire->update_income($request->except('_token', 'location'))
                         ?   $this->netWorthIntroduction()
                         : redirect()->route('income', $locale);
                 break;
 
             case 'net-worth':
 
-                return $this->questionnaire->update_net_assets($request->except('_token'))
+                return $this->questionnaire->update_net_assets($request->except('_token', 'location'))
                         ?   $this->gosi()
                         : redirect()->route('wizard', $locale);
                 break;
 
             case 'gosi':
 
-                return $this->questionnaire->update_gosi($request->except('_token'))
+                return $this->questionnaire->update_gosi($request->except('_token', 'location'))
+                        ?   $this->investing()
+                        : redirect()->route('wizard', $locale);
+                break;
+
+            case 'investing':
+
+                return $this->questionnaire->update_saving_plan($request->except('_token', 'location'))
                         ?   $this->risk()
                         : redirect()->route('wizard', $locale);
                 break;
 
             case 'risk':
 
-                return $this->questionnaire->update_risks($request->except('_token'))
+                return $this->questionnaire->update_risks($request->except('_token', 'location'))
                         ?   $this->consultations()
                         : redirect()->route('wizard', $locale);
                 break;
 
             case 'consultations':
 
-                return '';
-                return Consultations::consultations($request->except('_token'))
+                return $this->getReport();
+                return Consultations::consultations($request->except('_token', 'location'))
                         ?   $this->consultations()
                         : redirect()->route('wizard', $locale);
-                break;
-
-            case 'risk':
-
-                return $this->questionnaire->update_risks($request->except('_token'))
-                        ?   $this->getReport()
-                        : redirect()->route('net-worth-introduction', $locale);
                 break;
 
             case '/payment':
@@ -315,11 +315,29 @@ class QuestionnaireController extends Controller
     }
 
 
+    public function investing()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->gosi ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.investing_plan')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
     public function risk()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
-        if(($user_questionnaire->gosi ?? null) == null){          
+        if(($user_questionnaire->saving_plan ?? null) == null){          
             $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
             Session::flash($status['toastr'], $status['msg']);
             return redirect()->route('income', app()->getLocale());
@@ -343,6 +361,24 @@ class QuestionnaireController extends Controller
             return redirect()->route('income', app()->getLocale());
         }
         return view('frontend.wizard.consultations')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function report()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->risks ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.report')
                 ->with([
                     'title' => __('lang.questionnaire.step_2')
                 ])
@@ -2845,13 +2881,6 @@ class QuestionnaireController extends Controller
     {
         $user = loggedInUser();
 
-        // $request->validate([
-        //     'email' => 'required|email',
-        // ]);
-
-        // $user->email = $request->email;
-        // $user->save();
-
         // $initialInvestment = $this->questionnaire->getInitialInvestment($user); 
 
         
@@ -3086,14 +3115,15 @@ class QuestionnaireController extends Controller
 
 
         try{
-            Mail::to($user->email)->send(new SendMail($data));
+            // Mail::to($user->email)->send(new SendMail($data));
         }catch ( \Exception $exception) {
             dd($exception->getMessage());
         }
 
-        // dd($report->public_id, $report->user_id);
+        // return $report->public_id;
         
 
+        return $this->report();
 
         return view('dashboard.thanks')->with('message', 'Thankyou for submitting. Please check you email to print/download the report');
 

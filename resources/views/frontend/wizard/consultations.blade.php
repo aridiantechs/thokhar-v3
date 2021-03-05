@@ -59,7 +59,7 @@
 
                         <form id="qform" action="{{ route('wizard', locale()) }}" class="mt-3" method="POST">
 							@csrf
-							<input type="hidden" name="location" value="income">
+							<input type="hidden" name="location" value="consultations">
                             <div class="row">
 
                               	<div class="col-md-12">
@@ -146,7 +146,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#investing-plan">
 							<span class="step-parent" data-bar="7"></span>
 							<span class="step-text">
 								<span>
@@ -176,7 +176,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" href="#">
+							<a class="text-{{ $alignreverse }} nav-link" href="#report">
 							<span class="step-parent" data-bar="10"></span>
 							<span class="step-text">
 								<span>

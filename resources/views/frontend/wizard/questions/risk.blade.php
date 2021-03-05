@@ -459,7 +459,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a class="text-{{$alignreverse}} nav-link success" href="#">
+							<a class="text-{{$alignreverse}} nav-link success" href="#investing-plan">
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>

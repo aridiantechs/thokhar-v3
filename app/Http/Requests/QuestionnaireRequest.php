@@ -87,6 +87,17 @@ class QuestionnaireRequest extends FormRequest
                             ];
                             break;
 
+                        case 'investing':
+                            return [
+                                'saving_plan' => 'required|array',
+                                'saving_plan.current_saving_balance' => 'required|numeric',
+                                // 'saving_plan.gosi_or_ppa_monthly_subscription' => 'required|numeric',
+                                'saving_plan.monthly_saving_plan_for_retirement' => 'required|numeric',
+                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:0',
+                                
+                            ];
+                            break;
+
                         case '/step_4':
                             return [
                                 // net_assets

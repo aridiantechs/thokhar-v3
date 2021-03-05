@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Role;
 use Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use App\Questionnaire;
 
 class UserController extends Controller
 {
@@ -311,13 +312,13 @@ class UserController extends Controller
         $user = $this->loggedInUser;
         
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name'  => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,'.$user->id,
-            'dob' => 'required|date|max:255',
-            'occupation' => 'required|string|max:255',
-            'gender' => 'required|string|max:255',
+            'dob'   => 'required|date|max:255',
+            'education_level' => 'required|string|max:255',
+            'gender'          => 'required|string|max:255',
+            'profile_image'   => 'nullable|image|max:1000|mimes:jpeg,png,jpg',
             'expected_retirement_age' => 'required|numeric|max:255',
-            'profile_image' => 'nullable|image|max:1000|mimes:jpeg,png,jpg',
         ]);
 
         $destinationFilePath = 'user_assets/user_uploads/'; 
@@ -337,6 +338,18 @@ class UserController extends Controller
         $user->fill($request->all());
         $user->profile_image = ($file_profile_name != null) ? $path_profile_filename : $user->profile_image;
         $user->save();
+
+        $data = [];
+        $data['personal_info'] = [
+                'name'            => $user->name,
+                'education_level' => $request->education_level,
+                'years_old'       => \Carbon\Carbon::parse($user->dob)->age ?? 1,
+                'retirement_age'  => $user->expected_retirement_age,
+            ];
+        $data['phone_number'] = $user->phone_numbergender;
+        $data['gender']       = $user->gender;
+
+        Questionnaire::update_personal_info($data);
 
         return redirect()->route('awareness', locale());
     }

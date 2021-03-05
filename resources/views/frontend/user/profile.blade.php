@@ -103,13 +103,56 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3 mb-lg-3">
-										@include('frontend.inputs.select', [
-	                                            'name' => 'occupation', 
-	                                            'data' => ['occupation 1', 'occupation 2'],
-	                                            'selected' => '',
-	                                            'placeholder' => 'الوظيفة',
-	                                            'id' => "occupation",
-                                            ])
+										
+                                        <div class="input-group">
+										    <div class="input-group-prepend">
+										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
+										    </div>
+										    <select class="form-control input-big" name="education_level"  placeholder="الوظيفة" id="education_level">
+
+                                        
+	                                        	<option value="">
+					                          		{{ trans('lang.question.education_level') }}
+					                          	</option>
+					                          	<option {!! (isset($user_questionnaire->personal_info["personal_info"]["education_level"]) && $user_questionnaire->personal_info["personal_info"]["education_level"] == 'lang.question.education_level_options.highschool') ? 'selected' : '' !!}
+
+					                          		{!! (old('personal_info.education_level') == 'lang.question.education_level_options.highschool') ? 'selected' : '' !!}
+
+
+													value="lang.question.education_level_options.highschool" 
+
+					                          		>
+					                          		{{ trans('lang.question.education_level_options.highschool') }}
+					                          	</option>
+					                          	<option {!! (isset($user_questionnaire->personal_info["personal_info"]["education_level"]) && $user_questionnaire->personal_info["personal_info"]["education_level"] == 'lang.question.education_level_options.bachlore') ? 'selected' : '' !!}
+
+					                          		{!! (old('personal_info.education_level') == 'lang.question.education_level_options.bachlore') ? 'selected' : '' !!}
+
+					                          		value="lang.question.education_level_options.bachlore" 
+
+					                          		>
+					                          		{{ trans('lang.question.education_level_options.bachlore') }}
+					                          	</option>
+					                          	<option {!! (isset($user_questionnaire->personal_info["personal_info"]["education_level"]) && $user_questionnaire->personal_info["personal_info"]["education_level"] == 'lang.question.education_level_options.master') ? 'selected' : '' !!}
+
+					                          		{!! (old('personal_info.education_level') == 'lang.question.education_level_options.master') ? 'selected' : '' !!}
+
+					                          		value="lang.question.education_level_options.master" 
+
+					                          		>
+					                          		{{ trans('lang.question.education_level_options.master') }}
+					                          	</option>
+					                          	<option {!! (isset($user_questionnaire->personal_info["personal_info"]["education_level"]) && $user_questionnaire->personal_info["personal_info"]["education_level"] == 'lang.question.education_level_options.above') ? 'selected' : '' !!}
+
+					                          		{!! (old('personal_info.education_level') == 'lang.question.education_level_options.above') ? 'selected' : '' !!}
+
+					                          		value="lang.question.education_level_options.above" 
+
+					                          		>
+					                          		{{ trans('lang.question.education_level_options.above') }}
+					                          	</option>
+                                        	</select>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -129,13 +172,16 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3 mb-lg-3">
-										@include('frontend.inputs.select', [
-	                                            'name' => 'gender', 
-	                                            'data' => ['Male', 'Female'],
-	                                            'selected' => '',
-	                                            'placeholder' => 'الجنس',
-	                                            'id' => "gender",
-                                            ])
+				
+                                        <div class="input-group">
+										    <div class="input-group-prepend">
+										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
+										    </div>
+										    <select class="form-control input-big" name="gender"  placeholder="الجنس"  id="gender">
+										    	<option {{ (auth()->user()->gender == 'male') ? 'selected' : '' }} value="Male">{{ trans('lang.male') }}</option>
+					                            <option {{ (auth()->user()->gender == 'female') ? 'selected' : '' }} value="Female">{{ trans('lang.female') }}</option>
+										    </select>
+										</div>
 									</div>
 								</div>
 							</div>

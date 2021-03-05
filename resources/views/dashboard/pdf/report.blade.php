@@ -3,10 +3,11 @@
 @extends('dashboard.layouts.user_layout.user_report')
 
 @section('styles')
-
+{{-- <link rel="stylesheet" href="{{url('/')}}/frontend_assets/assets/css/modern-tabs.css"> --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.6.6/rickshaw.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('backend_assets/dashboard/css/print.css?v1') }}">
+
 @php 
 	if($request->segment(1) == 'ar'){
 		$direction = 'right';
@@ -73,9 +74,14 @@
 	    background-repeat: no-repeat;
 	}
 
+	.container-fluid{
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+		max-width:100% !important;
+	}
+
 
 </style>
-
 
 @endsection
 
@@ -84,7 +90,8 @@
 <div id="HTMLtoPDF" class="{{ ($request->segment(1) == 'ar') ? 'text-right' : '' }} " >
 	
 	@php 
-	$pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
+	// $pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
+	$pointer = 'active';
 	@endphp
 
 	<div id="intro" class="container-fluid mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
@@ -207,7 +214,7 @@
 		<div class="row mt-5">
 			<div class="col-1"></div>
 			<div class="col-5">
-				<img class="img img-fluid img-left" src="{{ asset('frontend_assets/img/banner/undraw_winners.png') }}">
+				<img class="img img-fluid img-left" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_winners1.png') }}">
 
 				<h1 class="page-heading invst_plan mt-5 pt-3">
                         {{ trans('lang.frontend_about.mission') }}
@@ -225,7 +232,7 @@
 
 			</div>
 			<div class="col-5">
-				<img class="img img-fluid img-right" src="{{ asset('frontend_assets/img/banner/undraw_business.png') }}">
+				<img class="img img-fluid img-right" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_business1.png') }}">
 
 				<h1 class="page-heading invst_plan mt-5 pt-3">
                         {{ trans('lang.frontend_about.method') }}
@@ -506,6 +513,89 @@
 	            <h1 class="heading-main">{{ trans('lang.report.personal_indicators') }}</h1>
 	            
 			</div>
+		</div>
+ 
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<div class="report" style="margin-top:135px !important">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link   {!! ($data['monthlySavingPercentageToday'] <= 10) ? $pointer : '' !!}" data-toggle="tab" href="#home">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.little_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 11 && $data['monthlySavingPercentageToday'] <= 20) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.good_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 21 && $data['monthlySavingPercentageToday'] <= 30) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.great_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-4">
+								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 31 && $data['monthlySavingPercentageToday'] <= 50) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
+									<span class="step-parent" data-bar="4"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.rich_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-5">
+								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >50) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
+									<span class="step-parent" data-bar="5"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.wealthy_saver') }}
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
 		</div>
 
 		
@@ -1280,8 +1370,14 @@
 	                {{ 'thokhor' }}
 	                {{-- {{ althraa_site_title() }} --}}
 	            </h2>
+
+	          
 	            
 	            <h1 class="heading-main text-center">{{ trans('lang.disclaimer') }}</h1>
+
+	             <div class="text-center">
+	           	 <img src="{{ asset('frontend_assets/assets/img/report/disclaimer.svg')}}" style="width: 40%" alt="">
+	           </div>
 	            
 			</div>
 		</div>
@@ -1314,7 +1410,7 @@
 					<div class="col-1 rem-col"></div>
 					<div class="col-10 to-12">
 						<br><br><br>
-						<br><br><br>
+					
 						<p class="text-justify">{{ trans('lang.pdf_disclaimer') }}</p>
 						<p class="text-justify">{{ trans('lang.pdf_disclaimer_para_2') }}</p>
 						<ol class="disclaimer">
@@ -1399,18 +1495,16 @@ var myChart = new Chart(ctx, {
 		// data: [20, 40, 51, 90, 20, 0, 10],
 		data: [{!! implode(", ", $data['assetAllocationDonutChartValues']) !!}],
 		backgroundColor: [
-			'#3B83FF',
-			'#F56565',
+			'#036EED',
+			'#2DD782',
 			'#FFE700',
-			'#ED8936',
-			
+			'#01BAEF',
 		],
 		borderColor: [
-			'#3B83FF',
-			'#F56565',
+			'#036EED',
+			'#2DD782',
 			'#FFE700',
-			'#ED8936',
-			
+			'#01BAEF',
 		],
 		borderWidth: 1
 		}]

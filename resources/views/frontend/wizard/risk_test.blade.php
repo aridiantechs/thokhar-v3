@@ -182,6 +182,15 @@
 	.flex-row-r{
 		flex-flow: row-reverse;
 	}
+
+	
+	.risk-test .nav-tabs-wrapper.mobile .nav-tabs {
+	    padding-right: 0;
+	}
+
+	.nav-tabs-wrapper.mobile .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span{
+	    width: 100%;
+	}
 </style>
 @endsection
 

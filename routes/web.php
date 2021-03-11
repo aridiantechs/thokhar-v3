@@ -74,9 +74,7 @@ Route::group([
   'where' => ['locale' => '[a-zA-Z]{2}'],
   'middleware' => 'setlocale',
 ], function() {
-
-
-
+ 
   Route::get('download-report', 'ReportController@downloadReport')->name('download');
   Route::post('validate-phone', 'HomeController@phoneVerification')->name('validate_phone');
 
@@ -121,21 +119,17 @@ Route::group([
         return view('frontend.pages.legal');
     })->name('legal');
     
-
     Route::get('/contact',  function () {
         return view('frontend.pages.contact');
     })->name('contact');
     
-
     Route::get('/about',  function () {
         return view('frontend.pages.about');
     })->name('about');
    
-   
     Route::get('/disclaimer',  function () {
         return view('frontend.pages.disclaimer');
     })->name('disclaimer');
-   
    
     // Route::get('/pricing',  function () {
     //     return view('frontend.pages.pricing');

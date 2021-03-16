@@ -62,7 +62,8 @@
 						@include('frontend.components.net_worth_card', [
 							'image' => 'assets/img/new/net-worth-introduction/bg-1.svg',
 							'text' => auth()->user()->name . ' ' . trans('lang.net_worth.thinks his net worth is'),
-							'btn_class' => ''
+							'btn_class' => '',
+							'heading'=>trans('lang.net_worth.Introduction')
 						])
 
 					</div>
@@ -71,12 +72,13 @@
                     <div id="cash_and_deposit" class="container tab-pane">
 						<br>						
 						
-						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟'])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Do you have money in cash')])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=> trans('lang.wizard_q.cash amount')
 							])
 						
 						<div class="mt-3 ">
@@ -115,7 +117,8 @@
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=>  trans('lang.question.equities') 
 							])
 						
 						<div class="mt-3 ">
@@ -153,7 +156,8 @@
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=>  trans('lang.question.bonds') 
 							])
 						
 						<div class="mt-3 ">
@@ -191,7 +195,8 @@
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=> trans('lang.wizard_q.Real estate')
 							])
 						
 						<div class="mt-3 ">
@@ -229,7 +234,8 @@
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=> trans('lang.question.unliquid_priavte_business')
 							])
 						
 						<div class="mt-3 ">
@@ -267,7 +273,8 @@
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
-								'btn_class' => 'd-none'
+								'btn_class' => 'd-none',
+								'heading'=> trans('lang.wizard_q.Other assets')
 							])
 						
 						<div class="mt-3 ">
@@ -333,7 +340,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             مقدمة
+											{{ trans('lang.net_worth.Introduction') }}
                                          </span>
                                      </span>
                                   </a>
@@ -344,7 +351,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             المال النقدي
+                                             {{ trans('lang.wizard_q.cash amount') }}
                                          </span>
                                      </span>
                                   </a>
@@ -366,7 +373,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             الأسهم
+											{{ trans('lang.question.equities') }}
                                          </span>
                                      </span>
                                   </a>
@@ -377,7 +384,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             السندات والصكوك
+											{{ trans('lang.question.bonds') }}
                                          </span>
                                      </span>
                                   </a>
@@ -388,7 +395,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             العقارات
+                                            {{ trans('lang.wizard_q.Real estate') }}
                                          </span>
                                      </span>
                                   </a>
@@ -399,7 +406,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             عمل خاص
+                                             {{ trans('lang.question.unliquid_priavte_business') }}
                                          </span>
                                      </span>
                                   </a>
@@ -410,7 +417,7 @@
                                      <span class="step-parent" ></span>
                                      <span class="step-text">
                                          <span>
-                                             أصول أخرى
+                                            {{ trans('lang.wizard_q.Other assets') }}
                                          </span>
                                      </span>
                                   </a>

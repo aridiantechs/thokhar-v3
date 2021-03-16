@@ -481,7 +481,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                         سؤال رقم 1
+										{{ trans('lang.question.no_1') }}
                                      </span>
                                  </span>
                               </a>
@@ -491,7 +491,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 2
+                                        {{ trans('lang.question.no_2') }}
                                      </span>
                                  </span>
                               </a>
@@ -501,7 +501,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 3
+										{{ trans('lang.question.no_3') }}
                                      </span>
                                  </span>
                               </a>
@@ -511,7 +511,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 4
+										{{ trans('lang.question.no_4') }}
                                      </span>
                                  </span>
                               </a>
@@ -521,7 +521,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 5
+                                        {{ trans('lang.question.no_5') }}
                                      </span>
                                  </span>
                               </a>
@@ -531,7 +531,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 6
+										{{ trans('lang.question.no_6') }}
                                      </span>
                                  </span>
                               </a>
@@ -541,7 +541,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 7
+                                        {{ trans('lang.question.no_7') }}
                                      </span>
                                  </span>
                               </a>
@@ -551,7 +551,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 8
+										{{ trans('lang.question.no_8') }}
                                      </span>
                                  </span>
                               </a>
@@ -561,7 +561,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        سؤال رقم 9
+										{{ trans('lang.question.no_9') }}
                                      </span>
                                  </span>
                               </a>
@@ -571,7 +571,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                       سؤال رقم 10
+										{{ trans('lang.question.no_10') }}
                                      </span>
                                  </span>
                               </a>

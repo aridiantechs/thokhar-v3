@@ -77,6 +77,7 @@ Route::group([
  
   Route::get('download-report', 'ReportController@downloadReport')->name('download');
   Route::post('validate-phone', 'HomeController@phoneVerification')->name('validate_phone');
+  Route::get('test_report', 'QuestionnaireController@getReport')->name('test_report');
 
 /*
 |--------------------------------------------------------------------------

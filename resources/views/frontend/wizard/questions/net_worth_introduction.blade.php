@@ -56,11 +56,11 @@
 				<div class="tab-content">
 					<div id="net-worth-intro" class="container tab-pane active"><br>
 
-	             		@include('frontend.components.breadcrumb' , ['heading' => 'صافي الثروة   '])
+	             		@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.net_assets')])
 
 						@include('frontend.components.net_worth_card', [
 							'image' => 'assets/img/new/net-worth-introduction/bg-1.svg',
-							'text' => 'هتعتقد نجوى أن صافي ثروتها هو النقد الوحيد في حسابها المصـرفي لكن صافي ثروتها أكبر بكثير من ذلك.',
+							'text' => auth()->user()->name . ' ' . trans('lang.net_worth.thinks his net worth is'),
 							'btn_class' => ''
 						])
 					</div>
@@ -297,7 +297,7 @@
 								<span class="step-parent step-parent-1" ></span>
 								<span class="step-text">
 									<span>
-									الدخل السنوي
+										{{ trans('lang.question_headings.income') }}
 									</span>
 								</span>
 							</a>
@@ -309,7 +309,7 @@
                                  <span class="step-parent" ></span>
                                  <span class="step-text">
                                      <span>
-                                        صافي الثروة
+                                    {{ trans('lang.question_headings.net_assets') }}
                                      </span>
                                  </span>
                               </a>
@@ -413,7 +413,7 @@
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>
-							التأمينات الاجتماعية
+								{{ trans('lang.question_headings.gosi') }}
 							</span>
 							</span>
 							</a>
@@ -423,7 +423,7 @@
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>
-							خطة الاستثمار
+								{{ trans('lang.question_headings.investing_plan') }}
 							</span>
 							</span>
 							</a>
@@ -433,7 +433,7 @@
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>
-							المخاطر
+								{{ trans('lang.question_headings.risk') }}
 							</span>
 							</span>
 							</a>
@@ -443,17 +443,17 @@
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>
-							جلسة الاستشارة
+								{{ trans('lang.question_headings.Counseling session') }}
 							</span>
 							</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{$alignreverse}} nav-link" href="#">
+							<a class="text-{{$alignreverse}} nav-link" href="#report">
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>
-							التقرير
+								{{ trans('lang.question_headings.report') }}
 							</span>
 							</span>
 							</a>

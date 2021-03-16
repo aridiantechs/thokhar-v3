@@ -64,7 +64,8 @@ class Questionnaire extends Model
 
     public function getInvestingAmountAttribute($investing_amount)
     {
-        return json_decode($investing_amount, true);
+        return (array) json_decode($investing_amount, true);
+        // return json_decode($investing_amount, true);
     }
     
     public function getPersonalInfoAttribute($value)
@@ -126,7 +127,7 @@ class Questionnaire extends Model
 
 
     // create questionnaire of logged in user
-    public function create_questionnaire(User $user, $year = '')
+    public static function create_questionnaire(User $user, $year = '')
     {
         $q = new Questionnaire;
         $q->fk_user_id = $user->id;
@@ -148,8 +149,6 @@ class Questionnaire extends Model
 
     public static function update_personal_info(array $data)
     {
-        // dd(Questionnaire::where('fk_user_id', auth()->user()->id)->get());
-        
         $user = auth()->user();
         $user->phone_number = $data['phone_number'];
         $user->gender = $data['gender'];
@@ -1936,23 +1935,27 @@ class Questionnaire extends Model
 
     public function getMonthlyIncomeToday(User $user = null)
     {
-        $monthlyIncomeToday = array_sum($this->getIncome($user)['income']) ?? 0;
+        $monthlyIncomeToday = (array_sum($this->getIncome($user)['income']) ?? 0)/12;
         // $this->getLatestQuestionnaire($user);
         return $monthlyIncomeToday;
     }
 
     public function getMonthlySavingToday(User $user = null)
     {
-        // Exception
-        $savingPlan = $this->getSavingPlan($user);  
-        return $savingPlan['saving_plan']['gosi_or_ppa_monthly_subscription'] ?? 0 + $savingPlan['saving_plan']['monthly_saving_plan_for_retirement'] ?? 0;
+        $gosi = $this->getGosi($user);
+
+        $savingPlan = $this->getSavingPlan($user);
+
+        return (int)$gosi['gosi']['monthly_subscription'] + (int)$savingPlan['saving_plan']['monthly_saving_plan_for_retirement'];
+        
     }
 
 
     public function getNetWorthAssetsToday(User $user = null)
     {
         $netWorthAssetToday = $this->getNetAssets($user);  
-        return array_sum($netWorthAssetToday['net_assets']['financial_assets']) + array_sum($netWorthAssetToday['net_assets']['real_assets']) ?? 0;
+
+        return array_sum($netWorthAssetToday['net_assets']['financial_assets']) + array_sum($netWorthAssetToday['net_assets']['real_assets']) + array_sum($netWorthAssetToday['net_assets']['other_assets']) ?? 0;
     }
 
     public function getNetWorthLiabilitiesToday(User $user = null)
@@ -1965,7 +1968,7 @@ class Questionnaire extends Model
 
     public function getAnnualSavingToday(User $user = null)
     {
-        return (($this->getSavingPlan($user)['saving_plan']['monthly_saving_plan_for_retirement']) ?? 0) * 12;
+        return (int)(($this->getSavingPlan($user)['saving_plan']['current_saving_balance']) ?? 0);
     }
 
     public function getNetReturnBeforeRetirement(User $user = null)
@@ -1975,7 +1978,9 @@ class Questionnaire extends Model
         // // dd('Risk points: '.$this->getRiskTotalPoints($user),'Before riterement constant value: ' . (float)$before_retirement->constant_value);
         // return (float)$before_retirement->constant_value ?? 7.85;
 
-        return 0;
+        $after_retirement = Constant::where('constant_attribute' , 'Net_Return/Year_(Before_Retirement)')->first();
+        return (float)$after_retirement->constant_value ?? 7.85;
+
     }
 
     public function getNetReturnAfterRetirement(User $user = null)
@@ -2032,9 +2037,7 @@ class Questionnaire extends Model
 
     public function getGOSIorPPAmonthlySubscription(User $user = null)
     {
-        // Exception
-        return 0;
-        return (integer)$this->getSavingPlan($user)['saving_plan']['gosi_or_ppa_monthly_subscription'] ?? 0;
+        return (integer)$this->getGosi($user)['gosi']['monthly_subscription'] ?? 0;
     }
 
     public function getMonthlySavingPlanForRetirement(User $user = null)
@@ -2145,26 +2148,29 @@ class Questionnaire extends Model
         if ($this->getRiskTotalPoints($user) < 20) {
 
             $points = Constant::where('constant_meta_type', 'Very_Conservative_Investor')->get();
+
         } else if ($this->getRiskTotalPoints($user) >= 20 && $this->getRiskTotalPoints($user) < 40){
 
             $points = Constant::where('constant_meta_type', 'Conservative_Investor')->get();
+
         } else if ($this->getRiskTotalPoints($user) >= 40 && $this->getRiskTotalPoints($user) < 60){
 
             $points = Constant::where('constant_meta_type', 'Natrual_Investor')->get();
+
         } else if ($this->getRiskTotalPoints($user) >= 60 && $this->getRiskTotalPoints($user) < 80){
 
             $points = Constant::where('constant_meta_type', 'Aggressive_Investor')->get();
+
         } else if ($this->getRiskTotalPoints($user) >= 80 && $this->getRiskTotalPoints($user) <= 100){
 
             $points = Constant::where('constant_meta_type', 'Very_Aggressive_Investor')->get();
         } 
 
         return [
-                'cash_and_equivlent' => (integer)$points[0]->constant_value ?? 0,
-                'equities' => (integer)$points[1]->constant_value ?? 0,
-                'fix_income' => (integer)$points[2]->constant_value ?? 0,
+                'cash_and_equivlent'      => (integer)$points[0]->constant_value ?? 0,
+                'equities'                => (integer)$points[1]->constant_value ?? 0,
+                'fix_income'              => (integer)$points[2]->constant_value ?? 0,
                 'alternative_investments' => (integer)$points[3]->constant_value ?? 0,
-                
             ];
     }
 
@@ -2203,10 +2209,13 @@ class Questionnaire extends Model
     public function getPorfolioExpectedReturn($value='')
     {
         // dd($this->getReturnAssumptions(), $this->getRecomendedAssetAllocation());
-        return  (((integer)$this->getRecomendedAssetAllocation()['cash_and_equivlent'] * (integer)$this->getReturnAssumptions()['cash_and_equivlent'])/100) + 
-                (((integer)$this->getRecomendedAssetAllocation()['equities'] * (integer)$this->getReturnAssumptions()['equities'])/100) + 
-                (((integer)$this->getRecomendedAssetAllocation()['fix_income'] * (integer)$this->getReturnAssumptions()['fix_income'])/100) + 
-                (((integer)$this->getRecomendedAssetAllocation()['alternative_investments'] * (integer)$this->getReturnAssumptions()['alternative_investments'])/100) ;
+        $asset_allocation = $this->getRecomendedAssetAllocation();
+        $return_assumptions = $this->getReturnAssumptions();
+
+        return  (((integer)$asset_allocation['cash_and_equivlent'] * (integer)$return_assumptions['cash_and_equivlent'])/100) + 
+                (((integer)$asset_allocation['equities'] * (integer)$return_assumptions['equities'])/100) + 
+                (((integer)$asset_allocation['fix_income'] * (integer)$return_assumptions['fix_income'])/100) + 
+                (((integer)$asset_allocation['alternative_investments'] * (integer)$return_assumptions['alternative_investments'])/100) ;
         
     }
 

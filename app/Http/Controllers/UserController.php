@@ -298,6 +298,7 @@ class UserController extends Controller
             return view('frontend.user.profile')
                 ->with(['title' => __('lang.user.profile')])
                 ->with('user', $this->loggedInUser)
+                ->with('user_questionnaire', $user_questionnaire)
                 ->with('href', $href)
                 ->with('disabled', $disabled);
 
@@ -335,7 +336,7 @@ class UserController extends Controller
             $path_profile_filename = 'user_assets/user_uploads/'.$file_profile_name;
         }
 
-        $user->fill($request->all());
+        $user->fill($request->except('phone_number'));
         $user->profile_image = ($file_profile_name != null) ? $path_profile_filename : $user->profile_image;
         $user->save();
 
@@ -346,9 +347,10 @@ class UserController extends Controller
                 'years_old'       => \Carbon\Carbon::parse($user->dob)->age ?? 1,
                 'retirement_age'  => $user->expected_retirement_age,
             ];
-        $data['phone_number'] = $user->phone_numbergender;
+        $data['phone_number'] = $user->phone_number;
         $data['gender']       = $user->gender;
 
+        // Create personal info in questionnaire
         Questionnaire::update_personal_info($data);
 
         return redirect()->route('awareness', locale());

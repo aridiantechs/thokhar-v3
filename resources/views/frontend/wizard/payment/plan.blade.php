@@ -26,7 +26,7 @@
 					<span>الرئيسية    </span><span> / </span><span>عن ذخر</span>
 				</p>
 				<h1 class="display-4 mb-3 text-{{$align}}">
-					<strong class="text-primary font-arabic ">الباقة الذهبية</strong>
+					<strong class="text-primary font-arabic ">{{ trans('lang.plan.Gold Plan') }}</strong>
 				</h1>
 				<h3 class="font-arabic my-5 text-{{$align}}">
 					هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشـــــكلة
@@ -59,7 +59,7 @@
 								<img src="{{ asset('frontend_assets/assets/img/new/plan-page/plan-1.svg') }}" style="height: 80px" alt="">
 							</div>
 							<div class="plan__content font-arabic text-{{$align}}">
-								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">جلسة استشارية نصف ساعة</h4>
+								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">{{ trans('lang.plan.Advisory Session for 30 Mins') }}</h4>
 								<p>هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.</p>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 								<img src="{{ asset('frontend_assets/assets/img/new/plan-page/plan-2.svg') }}" style="height: 80px" alt="">
 							</div>
 							<div class="plan__content font-arabic text-{{$align}}">
-								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">جلسة استشارية نصف ساعة</h4>
+								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">{{ trans('lang.plan.Advisory Session for 30 Mins') }}</h4>
 								<p>هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.</p>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 								<img src="{{ asset('frontend_assets/assets/img/new/plan-page/plan-3.svg') }}" style="height: 80px" alt="">
 							</div>
 							<div class="plan__content font-arabic text-{{$align}}">
-								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">جلسة استشارية نصف ساعة</h4>
+								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">{{ trans('lang.plan.Advisory Session for 30 Mins') }}</h4>
 								<p>هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.</p>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 								<img src="{{ asset('frontend_assets/assets/img/new/plan-page/plan-4.svg') }}" style="height: 80px" alt="">
 							</div>
 							<div class="plan__content font-arabic text-{{$align}}">
-								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">جلسة استشارية نصف ساعة</h4>
+								<h4 class="font-arabic font-b text-primary text-{{$align}} mb-3">{{ trans('lang.plan.Advisory Session for 30 Mins') }}</h4>
 								<p>هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.</p>
 							</div>
 						</div>
@@ -103,7 +103,7 @@
 		<div class="text-center mt-3">
 			<a href="{{ route('checkout', locale()) }}" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 				{{-- <i class="fa fa-arrow-left"></i> --}}
-				<span class="d-inline-block">اشترك الآن</span>
+				<span class="d-inline-block">{{ trans('lang.plan.Buy now') }}</span>
 				<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 			</a>
 		</div>

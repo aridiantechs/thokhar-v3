@@ -20,7 +20,7 @@
                 </h1>
 
                 <h3 class="mt-2 mb-5 text-{{$align}}">
-                      تضمن لك استثمار أفضل لمدخراتك
+                      {{ trans('lang.steps.help you with more value to your savings') }}
                 </h3>
 
                 <span class="clearfix"></span>
@@ -32,19 +32,19 @@
                                 <div class="col-lg-4">
                                     <div class="text-center mb-0">
                                         <img src="{{ asset('frontend_assets/assets/img/new/steps/step-3.svg') }}" alt="" />
-                                        <h5 class="mt-2">قم بالإجابة عن أسئلتنا</h5>
+                                        <h5 class="mt-2">{{ trans('lang.steps.Answer our personal survey') }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="text-center mb-5">
                                         <img src="{{ asset('frontend_assets/assets/img/new/steps/step-2.svg') }}" alt="" />
-                                        <h5 class="mt-2">سوف يقوم مستشارك المالي بتصميم خطة استثمار تناسب احتياجاتك</h5>
+                                        <h5 class="mt-2">{{ trans('lang.steps.Financial Advisor will design investing plan tailored to your needs') }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="text-center mb-5">
                                         <img src="{{ asset('frontend_assets/assets/img/new/steps/step-1.svg') }}" alt="" />
-                                        <h5 class="mt-2">أبدأ بالاستثمار حالا</h5>
+                                        <h5 class="mt-2">{{ trans('lang.steps.Start investing like a Pro right a way') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                     <div class="mt-4 text-center ">
                         <a href="{{ route('wizard', locale()) }}" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                             {{-- <i class="fa fa-arrow-left"></i> --}}
-                            <span class="d-inline-block">إبدأ الان</span>
+                            <span class="d-inline-block">{{ trans('lang.steps.Start Now') }}</span>
                             <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                         </a>
                     </div>

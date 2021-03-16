@@ -45,7 +45,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-0 mb-lg-0 mb-5">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span>عمرك الان </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span>{{ trans('lang.investing_amount.Your age today')  }}</h4>
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -62,7 +62,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الشهري </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> {{ trans('lang.investing_amount.Monthly investing Payment')  }} </h4>
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -78,7 +78,7 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> مبلغ الاستثمار الأولي </h4>
+                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> {{ trans('lang.investing_amount.Initial amount ( one time )')  }} </h4>
 
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -99,14 +99,14 @@
 
                         <h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
                               <strong class="font-arabic">
-                                في حالة عدم إدخاله يتم احتساب عمر التقاعد عند 60 عام
+                                {{ trans('lang.investing_amount.Retire age( 60 as default and can not changes )') }}
                               </strong>
                         </h3>
 
                             <div class="mt-4 text-lg-{{$align}} text-center mt-5">
                                 <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                                     {{--  <i class="fa fa-arrow-left"></i> --}}
-                                    <span class="d-inline-block">التالي</span>
+                                    <span class="d-inline-block">{{ trans('lang.question.next') }}</span>
                                     <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                                 </button>
                             </div>

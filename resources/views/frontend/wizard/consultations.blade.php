@@ -94,6 +94,7 @@
 													 	'no_icon' => true,
 		                                                'icon' => 'clock',
 		                                                'id' => '',
+		                                                'class' => 'text-input'
 
 		                                        	])
 											

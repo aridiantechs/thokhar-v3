@@ -63,7 +63,7 @@
             <div class="col-md-4"></div>
         @endif --}}
 
-            @include('frontend.notifications.warning')
+        @include('frontend.notifications.warning')
         <form method="POST" action="{{ route('authenticate', app()->getLocale()) }}">
           @csrf
           <div class="form-group form-group-new">

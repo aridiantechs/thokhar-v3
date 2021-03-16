@@ -14,12 +14,17 @@
 	select {
 	    overflow:hidden;
 	    width: 120%;
+	    direction: {{ $align3letter }}
 	}
-	select { direction: rtl; } 
+	
 	input[type="date"]::-webkit-inner-spin-button,
 	input[type="date"]::-webkit-calendar-picker-indicator {
 	    display: none;
 	    -webkit-appearance: none;
+	}
+
+	#dob{
+	    text-align: {{ $align }};
 	}
 	
 </style>
@@ -64,11 +69,11 @@
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3">
 										@include('frontend.inputs.input_group', [
-	                                            'type' => 'email', 
-	                                            'name' => 'email', 
+	                                            'type'  => 'email', 
+	                                            'name'  => 'email', 
 	                                            'value' => $user->email ?? '',
 	                                            'old_val' => "email",
-	                                            'placeholder' => "البريد الالكتروني",
+	                                            'placeholder' => trans('lang.user.email_address'),
 	                                            'id' => "email",
                                             ])
 									</div>
@@ -76,11 +81,11 @@
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3">
 										@include('frontend.inputs.input_group', [
-	                                            'type' => 'text', 
-	                                            'name' => 'name', 
+	                                            'type'  => 'text', 
+	                                            'name'  => 'name', 
 	                                            'value' => $user->name ?? '',
 	                                            'old_val' => "name",
-	                                            'placeholder' => "الاسم",
+	                                            'placeholder' => trans('lang.user.name'),
 	                                            'id' => "name",
                                             ])
 									</div>
@@ -90,17 +95,18 @@
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3  mb-lg-3">
 										@include('frontend.inputs.input_group', [
-	                                            'type' => 'date', 
-	                                            'name' => 'dob', 
+	                                            'type'  => 'date', 
+	                                            'name'  => 'dob', 
 	                                            'value' => $user->dob ?? '',
 	                                            'old_val' => "dob",
-	                                            'placeholder' => "الاسم",
+	                                            'placeholder' => trans('lang.user.Date of Birth'),
 	                                            'id' => "dob",
 	                                            'icon' => "calendar",
                                             ])
 										
 									</div>
 								</div>
+
 								<div class="col-lg-6">
 									<div class="form-group form-group-new mb-3 mb-lg-3">
 										
@@ -108,7 +114,7 @@
 										    <div class="input-group-prepend">
 										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
 										    </div>
-										    <select class="form-control input-big" name="education_level"  placeholder="الوظيفة" id="education_level">
+										    <select class="form-control input-big" name="education_level"  placeholder="{{ trans('lang.user.Position'), }}" id="education_level">
 
                                         
 	                                        	<option value="">
@@ -164,7 +170,7 @@
 	                                            'name' => 'expected_retirement_age', 
 	                                            'value' => $user->expected_retirement_age ?? '',
 	                                            'old_val' => "expected_retirement_age",
-	                                            'placeholder' => "* السن المتوقع للتقاعد",
+	                                            'placeholder' => trans('lang.user.Expected Retirement Age'),
 	                                            'id' => "expected_retirement_age",
                                             ])
 										
@@ -177,7 +183,7 @@
 										    <div class="input-group-prepend">
 										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
 										    </div>
-										    <select class="form-control input-big" name="gender"  placeholder="الجنس"  id="gender">
+										    <select class="form-control input-big" name="gender"  placeholder="{{ trans('lang.user.gender') }}"  id="gender">
 										    	<option {{ (auth()->user()->gender == 'male') ? 'selected' : '' }} value="Male">{{ trans('lang.male') }}</option>
 					                            <option {{ (auth()->user()->gender == 'female') ? 'selected' : '' }} value="Female">{{ trans('lang.female') }}</option>
 										    </select>
@@ -203,7 +209,7 @@
 					<div class="mt-4 text-lg-{{$align}} text-center">
 						<button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 						{{-- <i class="fa fa-arrow-left"></i> --}}
-						<span class="d-inline-block">التالي</span>
+						<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 						<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 						</button>
 					</div>

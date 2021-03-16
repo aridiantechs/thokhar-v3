@@ -60,7 +60,6 @@
         .nav-tabs .nav-link .step-text span{
             position: relative;
             background: transparent;
-     
             border-radius: 10px;
             width: calc(100% - 30px);
             /*text-align: center;*/

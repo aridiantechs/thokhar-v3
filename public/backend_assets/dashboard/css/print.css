@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, p, span,  {
 /* Stacked */
 
 canvas{
-  background:#fff;
+  background:transparent;
   height:240px;
 }
 
@@ -505,11 +505,11 @@ table {
     font-size: 11px;
   }
 }
-.factor-s p{
+/*.factor-s p{
     display: inline-block;
     width: 19.2%;
     margin-right: 8px;
-}
+}*/
 .factor-vs p{
     display: inline-block;
     width: 26%;
@@ -519,7 +519,7 @@ table {
     height: 12px;
     width: 15%;
     margin-right: 8px;
-    background: #01630a;
+    background: transparent;
     display: inline-block;
 }
 .factor-s span {
@@ -566,11 +566,11 @@ table {
 } 
 }
 
-.factor .pointer {
+/*.factor .pointer {
     display: inline-block;
     width: 16%;
     text-align: center;
-}
+}*/
 .factor-s .pointer {
     display: inline-block;
     width: 20.2%;
@@ -618,4 +618,193 @@ table {
     color: #b41d19;
     font-size: 18px;
     font-weight: 600;
+}
+.m-top-p5{
+  margin-top: 80px;
+}
+.bottom-text {
+  font-size: 15px;
+}
+.active .bottom-text {
+  font-weight: 800;
+}
+
+#personal_indicators .mt-5{
+  margin-top: 5rem !important
+}
+
+.factor-strait-line{
+    height: 5px;
+    width: 98%;
+    /*background-image: linear-gradient( 90deg, #F75B58 , #2dd782);*/
+    background: #cff3ff;
+    position: relative;
+    top: 18px;
+}
+
+.factor.circle-wraper {
+  position: relative;
+  z-index: 999;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.circle-wraper .pointer:not(:last-child) {
+    width: 24.5%;
+}
+
+.circle-wraper .pointer:last-child {
+    width: 0%;
+}
+
+
+.circle-1{
+    background: #F75B58 !important;
+}
+
+.circle-2{
+    background: #CF7460 !important;
+}
+
+.circle-3{
+    background: #8E9B6D !important;
+}
+
+.circle-4{
+    background: #65B476 !important;
+}
+
+.circle-5{
+    background: #2DD782 !important;
+}
+
+.factor p:not(.text-secondary):not(:last-child) {
+    display: inline-block;
+    width: 24%;
+    text-align: left;
+}
+.factor p:not(.text-secondary):last-child{
+    width: 1% !important;
+}
+
+.factor .pointer:not(:last-child) {
+    display: inline-block;
+    width: 24.5%;
+    text-align: left;
+}
+.factor .pointer(:last-child) {
+    display: inline-block;
+    width: 1.5%;
+    text-align: left;
+}
+
+
+.step-text {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+
+.step-text .span {
+    background: transparent linear-gradient(
+90deg
+, var(---036eed) 0%, var(---01baef) 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(
+90deg
+, #036EED 0%, #01BAEF 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 19px;
+    padding: 10px 0px;
+    color: #fff;
+}
+.step-text .span {
+    position: relative;
+    background: #036eed;
+    border-radius: 10px;
+    width: 60px;
+    font-size: 17px;
+    padding: 2px 0px 5px 0px;
+    color: #ffffff;
+    left: -14px;
+    margin-bottom: 20px;
+    /*line-height: 1;*/
+}
+
+.pointer
+.step-text .span {
+    display: inline-block;
+}
+.factor .pointer:last-child .step-text .span{
+  left: 10px !important;
+}
+
+
+
+
+.step-text .span:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+}
+.step-text .span:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid #036EED;
+    transform: translateX(100%);
+    top: 100%;
+}
+
+
+.factor-vs .pointer:not(:last-child) {
+    display: inline-block;
+    width: 49%;
+    text-align: left;
+}
+.factor-vs .pointer:last-child{
+    width: 1%;
+}
+
+.factor-vs p:not(:last-child){
+  display: inline-block;
+  text-align: left;
+  width: 49%;
+}
+.factor-vs p:last-child{
+  width: 2%;
+}
+
+.factor-vs .pointer:last-child .step-text .span{
+  left: -14px !important;
+}
+
+
+
+.factor-s .pointer:not(:last-child) {
+    display: inline-block;
+    width: 32.7%;
+    text-align: left;
+}
+.factor-s .pointer:last-child{
+    width: 1%;
+}
+.factor-s p:not(:last-child){
+  display: inline-block;
+  width: 33.33%;
+  text-align: left;
+}
+.factor-s p:last-child{
+  width: 2%;
+}
+
+.factor-s .pointer:last-child .step-text .span{
+  left: -14px !important;
 }

@@ -51,7 +51,7 @@
             <!-- Heading -->
             <p class="text-muted text-{{$align}} mb-0"><span> ابدأ تجربتك</span><span> / </span><span>خطط الدفع</span></p>
             <h1 class="display-4 text-{{$align}} mb-3">
-               <strong class="text-primary font-arabic">الباقة الذهبية</strong>
+               <strong class="text-primary font-arabic">{{ trans('lang.plan.Gold Plan') }}</strong>
             </h1>
             <span class="clearfix"></span>
             <div id="paymentErrors"></div>
@@ -61,7 +61,7 @@
                 <div class="col-md-6 {{-- order-lg-2 order-1 --}}">
                    <div class="card-wrapper">
                       <div class="form-group card-group-input form-group-new">
-                         <label for="" class="font-1 text-{{$align}} w-100 font-arabic">بيانات البطاقة</label>
+                         <label for="" class="font-1 text-{{$align}} w-100 font-arabic">{{ trans('lang.checkout.Card information') }}</label>
                          <div class="input-group">
                             <div class="icon-{{$align}}">
                                <span class="icon-2">
@@ -128,7 +128,7 @@
                           <ul class="LIST__1_ul mb-0">
                             <li class="d-flex justify-content-between">
                               <span class="LIST__1_li_2 font-arabic">
-                              الباقة الذهبية
+                              {{ trans('lang.plan.Gold Plan') }}
                               </span>
                               <span class="LIST__1_li_1">
                               600
@@ -136,7 +136,7 @@
                             </li>
                             <li class="d-flex justify-content-between">
                               <span class="LIST__1_li_2 font-arabic">
-                              ضريبة القيمة المضافة
+                                {{ trans('lang.checkout.vat') }}
                               </span>
                               <span class="LIST__1_li_1">
                               90
@@ -144,7 +144,7 @@
                             </li>
                             <li class="d-flex justify-content-between">
                               <span class="LIST__1_li_2 font-arabic">
-                              الخصم
+                              {{ trans('lang.checkout.Discount') }}
                               </span>
                               <span class="LIST__1_li_1">
                               -90
@@ -152,7 +152,7 @@
                             </li>
                             <li class="d-flex active justify-content-between">
                               <span class="LIST__1_li_2 font-arabic">
-                              الباقة الذهبية
+                              {{ trans('lang.plan.Gold Plan') }}
                               </span>
                               <span class="LIST__1_li_1">
                               600
@@ -184,7 +184,7 @@
 <script type="text/javascript">
    var myform = document.getElementById('payform');
    paylib.inlineForm({
-     'key': 'CPKMMB-MDNR62-T9TDH6-K7D292',
+     'key': 'CDKMTH-MHT7H9-9Q22Q2-HVM69D',
      'form': myform,
      'autosubmit': true,
      'callback': function(response) {

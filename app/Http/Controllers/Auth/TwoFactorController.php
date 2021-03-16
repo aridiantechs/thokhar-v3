@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Questionnaire;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class TwoFactorController extends Controller
@@ -39,7 +40,9 @@ class TwoFactorController extends Controller
         // dd($user->two_factor_expires_at->lt(now()));
 
     	if (implode("", $request->two_factor_code) == $user->two_factor_code && !$user->two_factor_expires_at->lt(now()) || implode("", $request->two_factor_code) == 9999) {
-    		$user->resetTwoFactorCode();
+    		
+            $user->resetTwoFactorCode();
+            
     		return redirect()->route('home', app()->getLocale());
     	}
 

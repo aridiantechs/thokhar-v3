@@ -175,8 +175,15 @@ class LoginController extends Controller
             event(new Registered($user = $this->create($request->all())));
 
             Auth::login($user);
-            // $user->generateTwoFactorCode();
-            $user->twoFactorAndSendText($user);
+
+            $user->generateTwoFactorCode();
+
+            // For sms
+            // $user->twoFactorAndSendText($user);
+
+            // Create user questionnaire
+            Questionnaire::create_questionnaire($user, null);
+
             return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
             

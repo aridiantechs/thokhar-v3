@@ -25,17 +25,38 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
-        $align=$request->segment(1) == 'ar' ? 'right' : 'left';
-        $align3letter=$request->segment(1) == 'ar' ? 'rtl' : 'ltr';
-        $oppositedirection=$request->segment(1) == 'ar' ? 'ltr' : 'rtl';
-        $reverseAlign3Letter=$request->segment(1) == 'ar' ? 'ltr' : 'rtl';
-        $alignShort=$request->segment(1) == 'ar' ? 'l' : 'r';
-        $arrowAlign=$request->segment(1) == 'ar' ? 'left' : 'right';
-        $textAlign=$request->segment(1) == 'ar' ? 'text-right' : '';
-        $textAlignMd=$request->segment(1) == 'ar' ? 'text-md-right' : '';
-        $btnAlign=$request->segment(1) == 'ar' ? 'btn-rtl' : 'btn-ltr';
-        $alignreverse=$request->segment(1) == 'ar' ? 'left' : 'right';
+        $align =  $request->segment(1) == 'ar' ? 'right' : 'left';
 
-        View::share(['align'=>$align,'align3letter'=>$align3letter,'reverseAlign3Letter'=>$reverseAlign3Letter,'alignShort'=>$alignShort,'arrowAlign'=>$arrowAlign,'textAlign'=>$textAlign,'textAlignMd'=>$textAlignMd,'btnAlign'=>$btnAlign,'alignreverse'=>$alignreverse,'oppositedirection'=>$oppositedirection]);
+        $align3letter =  $request->segment(1) == 'ar' ? 'rtl' : 'ltr';
+
+        $oppositedirection   =  $request->segment(1) == 'ar' ? 'ltr' : 'rtl';
+
+        $reverseAlign3Letter =  $request->segment(1) == 'ar' ? 'ltr' : 'rtl';
+
+        $alignShort   =  $request->segment(1) == 'ar' ? 'l' : 'r';
+
+        $arrowAlign   =  $request->segment(1) == 'ar' ? 'left' : 'right';
+
+        $textAlign    =  $request->segment(1) == 'ar' ? 'text-right' : '';
+
+        $textAlignMd  =  $request->segment(1) == 'ar' ? 'text-md-right' : '';
+
+        $btnAlign     =  $request->segment(1) == 'ar' ? 'btn-rtl' : 'btn-ltr';
+
+        $alignreverse =  $request->segment(1) == 'ar' ? 'left' : 'right';
+
+
+        View::share([
+                'align'  => $align,
+                'align3letter'  => $align3letter,
+                'reverseAlign3Letter'  => $reverseAlign3Letter,
+                'alignShort'  => $alignShort,
+                'arrowAlign'  => $arrowAlign,
+                'textAlign'   => $textAlign,
+                'textAlignMd' => $textAlignMd,
+                'btnAlign'    => $btnAlign,
+                'alignreverse'  => $alignreverse,
+                'oppositedirection'  => $oppositedirection
+            ]);
     }
 }

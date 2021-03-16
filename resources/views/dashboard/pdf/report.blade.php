@@ -81,6 +81,9 @@
 	}
 
 
+	
+
+
 </style>
 
 @endsection
@@ -91,7 +94,8 @@
 	
 	@php 
 	// $pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
-	$pointer = 'active';
+	$pointer = '<div class="step-text"><div class="span">' . trans('lang.you') . '</div></div>';
+	// $pointer = 'active';
 	@endphp
 
 	<div id="intro" class="container-fluid mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
@@ -126,7 +130,7 @@
 			</div>
 		</div>
 
-		<br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br>
 		
 		{{-- <p class="text-center mr-5 pb-3">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 		
@@ -182,7 +186,8 @@
 		<br><br><br><br><br>
 		<br><br><br><br><br>
 		<br><br><br><br><br>
-		<br><br>
+		<br><br><br><br><br>
+		<br><br><br>
 		
 		
 		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
@@ -253,7 +258,7 @@
 		</div>
 		<br><br><br><br><br>
 		<br><br><br><br><br>
-		<br><br>
+		<br><br><br><br>
 		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
@@ -491,7 +496,8 @@
 				</div>
 			</div>
 		</div>
-		<br><br>
+		<br><br><br><br>
+		<br><br><br><br>
 		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
@@ -504,123 +510,24 @@
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
-				{{-- <br><br><br><br><br> --}}
-				<h2 class="mt-5 mb-4">
+				<br>
+				<h2 class="mt-3 mb-4">
 	                {{ 'thokhor' }}
 	                {{-- {{ althraa_site_title() }} --}}
 	            </h2>
-	            <br><br>
+	            
 	            <h1 class="heading-main">{{ trans('lang.report.personal_indicators') }}</h1>
 	            
 			</div>
-		</div>
- 
-
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-10">
-
-				<div class="report" style="margin-top:135px !important">
-					<div class="nav-tabs-wrapper mt-5 mobile ">
-						<ul class="nav nav-tabs d-flex align-items-center">
-							<li class="nav-item nav-item-risk-1">
-								<a class="text-{{$align}} nav-link   {!! ($data['monthlySavingPercentageToday'] <= 10) ? $pointer : '' !!}" data-toggle="tab" href="#home">
-									<span class="step-parent" data-bar="1"></span>
-									<span class="step-text">
-										<span>
-										{{trans('lang.you')}}
-										</span>
-									</span>
-									<div class="bottom-text">
-										{{ trans('lang.report.little_saver') }}
-									</div>
-								</a>
-							</li>
-							<li class="nav-item nav-item-risk-2">
-								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 11 && $data['monthlySavingPercentageToday'] <= 20) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
-									<span class="step-parent" data-bar="2"></span>
-									<span class="step-text">
-										<span>
-										 {{trans('lang.you')}}
-										</span>
-									</span>
-									<div class="bottom-text">
-										 {{ trans('lang.report.good_saver') }}
-									</div>
-								</a>
-							</li>
-							<li class="nav-item nav-item-risk-3">
-								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 21 && $data['monthlySavingPercentageToday'] <= 30) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
-									<span class="step-parent" data-bar="3"></span>
-									<span class="step-text">
-										<span>
-										 {{trans('lang.you')}}
-										</span>
-									</span>
-									<div class="bottom-text">
-										{{ trans('lang.report.great_saver') }}
-									</div>
-								</a>
-							</li>
-							<li class="nav-item nav-item-risk-4">
-								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >= 31 && $data['monthlySavingPercentageToday'] <= 50) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
-									<span class="step-parent" data-bar="4"></span>
-									<span class="step-text">
-										<span>
-										 {{trans('lang.you')}}
-										</span>
-									</span>
-									<div class="bottom-text">
-										 {{ trans('lang.report.rich_saver') }}
-									</div>
-								</a>
-							</li>
-							<li class="nav-item nav-item-risk-5">
-								<a class="text-{{$align}} nav-link {!! ($data['monthlySavingPercentageToday'] >50) ? $pointer : '' !!}" data-toggle="tab" href="#menu1">
-									<span class="step-parent" data-bar="5"></span>
-									<span class="step-text">
-										<span>
-										{{trans('lang.you')}}
-										</span>
-									</span>
-									<div class="bottom-text">
-										 {{ trans('lang.report.wealthy_saver') }}
-									</div>
-								</a>
-							</li>
-						</ul>
-						<div class="horizontal-line">
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-1"></div>
 		</div>
 
 		
 		<div class="row mt-3">
 			<div class="col-1 rem-col"></div>
-			<div class="col-8 to-10">
+			<div class="col-10 to-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.monthly_saving_rate') }}</p>
-				
-				<div class="factor">
-					<p>{{ trans('lang.report.little_saver') }}</p>	
-					<p>{{ trans('lang.report.good_saver') }}</p>	
-					<p>{{ trans('lang.report.great_saver') }}</p>	
-					<p>{{ trans('lang.report.rich_saver') }}</p>	
-					<p>{{ trans('lang.report.wealthy_saver') }}</p>	
-				</div>
 
-				<div class="factor">
-					<span class="little"></span>
-					<span class="good"></span>
-					<span class="great"></span>
-					<span class="rich"></span>
-					<span class="wealthy"></span>
-				</div>
-
-				<div class="factor">
+				<div class="factor d-flex">
 					<div class="pointer">
 						{!! ($data['monthlySavingPercentageToday'] <= 10) ? $pointer : '' !!}
 					</div>
@@ -635,38 +542,56 @@
 					</div>
 					<div class="pointer">
 						{!! ($data['monthlySavingPercentageToday'] >50) ? $pointer : '' !!}
+
 					</div>
+				</div>
+
+				<div class="factor factor-strait-line">
+					
+				</div>
+				
+				<div class="factor circle-wraper d-flex">
+					<div class="pointer">
+						<div class="circle circle-1 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-2 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-3 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-4 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-5 ml-auto"></div>
+					</div>
+				</div>
+
+				
+
+				<div class="factor d-flex">
+					<p>{{ trans('lang.report.little_saver') }}</p>	
+					<p>{{ trans('lang.report.good_saver') }}</p>	
+					<p>{{ trans('lang.report.great_saver') }}</p>	
+					<p>{{ trans('lang.report.rich_saver') }}</p>	
+					<p>{{ trans('lang.report.wealthy_saver') }}</p>	
 				</div>
 
 			</div>
 
-			<div class="col-2">
-				<img src="{{ asset('backend_assets/dashboard/images/pdf_icons/002-calendar@2x.png') }}" class="factor-icon">
-			</div>
 		</div>
 
 
 		<div class="row mt-3">
 			<div class="col-1 rem-col"></div>
-			<div class="col-8 to-10">
+			<div class="col-10 to-10">
 				{{-- <p class="text-secondary mt-5">{{ trans('lang.report.current_saving_amount') }} {{ '- '.$data['personalInfo']['years_old']. trans('lang.report.year') }}</p> --}}
-				<p class="text-secondary mt-5">
+				<p class="text-secondary mt-3">
 					{{ trans('lang.report.Current_Networth_amount') }} 
 				</p>
 				
-				<div class="factor-vs">
-					<p>{{ trans('lang.report.poor_saver') }}</p>	
-					<p>{{ trans('lang.report.fair_saver') }}</p>	
-					<p>{{ trans('lang.report.ghani_saver') }}</p>	
-				</div>
-
-				<div class="factor-vs">
-					<span class="little"></span>
-					<span class="great"></span>
-					<span class="wealthy"></span>
-				</div>
-
-				<div class="factor-vs">
+				<div class="factor-vs d-flex">
 					<div class="pointer">
 						{!! ($data['commulitiveSavingRating'] == 'Poor') ? $pointer : '' !!}
 					</div>
@@ -676,39 +601,43 @@
 					<div class="pointer">
 						{!! ($data['commulitiveSavingRating'] == 'Good') ? $pointer : '' !!}
 					</div>
+				</div>
+
+				<div class="factor factor-vs factor-strait-line">
 					
+				</div>
+				
+				<div class="factor factor-vs circle-wraper d-flex">
+					<div class="pointer">
+						<div class="circle circle-1 mr-auto"></div>
+					</div>
+					
+					<div class="pointer">
+						<div class="circle circle-3 mr-auto"></div>
+					</div>
+					
+					<div class="pointer">
+						<div class="circle circle-5 ml-auto"></div>
+					</div>
+				</div>
+
+				<div class="factor-vs d-flex">
+					<p>{{ trans('lang.report.poor_saver') }}</p>	
+					<p>{{ trans('lang.report.fair_saver') }}</p>	
+					<p>{{ trans('lang.report.ghani_saver') }}</p>	
 				</div>
 
 			</div>
 
-			<div class="col-2">
-				<img src="{{ asset('backend_assets/dashboard/images/pdf_icons/001-safebox@2x.png') }}" class="factor-icon">
-			</div>
 		</div>
 
 
 		<div class="row mt-3">
 			<div class="col-1 rem-col"></div>
-			<div class="col-8 to-10">
+			<div class="col-10 to-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.early_retirement_possibility') }}</p>
 				
-				<div class="factor">
-					<p>{{ trans('lang.report.poor') }}</p>	
-					<p>{{ trans('lang.report.fair') }}</p>	
-					<p>{{ trans('lang.report.healthy') }}</p>	
-					<p>{{ trans('lang.report.very_healthy') }}</p>	
-					<p>{{ trans('lang.report.early_retire_person') }}</p>	
-				</div>
-
-				<div class="factor">
-					<span class="little"></span>
-					<span class="good"></span>
-					<span class="great"></span>
-					<span class="rich"></span>
-					<span class="wealthy"></span>
-				</div>
-
-				<div class="factor">
+				<div class="factor d-flex">
 					<div class="pointer">
 						{!! ($data['monthlySavingPercentageToday'] < 0) ? $pointer : '' !!}
 					</div>
@@ -726,36 +655,49 @@
 					</div>
 				</div>
 
+				<div class="factor factor-strait-line">
+					
+				</div>
+				
+				<div class="factor circle-wraper d-flex">
+					<div class="pointer">
+						<div class="circle circle-1 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-2 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-3 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-4 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-5 ml-auto"></div>
+					</div>
+				</div>
+
+				<div class="factor d-flex">
+					<p>{{ trans('lang.report.poor') }}</p>	
+					<p>{{ trans('lang.report.fair') }}</p>	
+					<p>{{ trans('lang.report.healthy') }}</p>	
+					<p>{{ trans('lang.report.very_healthy') }}</p>	
+					<p>{{ trans('lang.report.early_retire_person') }}</p>	
+				</div>
+
+
 			</div>
 
-			<div class="col-2">
-				<img src="{{ asset('backend_assets/dashboard/images/pdf_icons/003-beach@2x.png') }}" class="factor-icon">
-			</div>
 		</div>
 
 
 		<div class="row mt-3">
 			<div class="col-1 rem-col"></div>
-			<div class="col-8 to-10">
+			<div class="col-10 to-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.investing_diversity') }}</p>
 				
-				<div class="factor-s">
-					<p>{{ trans('lang.report.poor') }}</p>	
-					<p>{{ trans('lang.report.fair') }}</p>	
-					<p>{{ trans('lang.report.good') }}</p>	
-					<p>{{ trans('lang.report.great') }}</p>
-					
-				</div>
-
-				<div class="factor-s">
-					<span class="little"></span>
-					<span class="good"></span>
-					<span class="great"></span>
-					<span class="rich"></span>
-					
-				</div>
-
-				<div class="factor-s">
+				
+				<div class="factor-s d-flex">
 					<div class="pointer">
 						{!! ($data['assetClass'] == 1) ? $pointer : '' !!}
 					</div>
@@ -771,15 +713,41 @@
 					
 				</div>
 
+
+				<div class="factor factor-s factor-strait-line">
+					
+				</div>
+				
+				<div class="factor factor-s circle-wraper d-flex">
+					<div class="pointer">
+						<div class="circle circle-1 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-2 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-4 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-5 ml-auto"></div>
+					</div>
+				</div>
+
+
+				<div class="factor-s d-flex">
+					<p>{{ trans('lang.report.poor') }}</p>	
+					<p>{{ trans('lang.report.fair') }}</p>	
+					<p>{{ trans('lang.report.good') }}</p>	
+					<p>{{ trans('lang.report.great') }}</p>
+					
+				</div>
+
 			</div>
 
-			<div class="col-2">
-				<img src="{{ asset('backend_assets/dashboard/images/pdf_icons/004-profits@2x.png') }}" class="factor-icon">
-			</div>
 		</div>
 
 		<br><br><br><br><br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -808,24 +776,8 @@
 			<div class="col-1 rem-col"></div>
 			<div class="col-9 factor">
 				<p class="text-secondary mt-5">{{ trans('lang.report.risk_test_index') }}</p>
-				
-				<div class="factor">
-					<p>{{ trans('lang.report.very_conservative') }}</p>	
-					<p>{{ trans('lang.report.conservative') }}</p>	
-					<p>{{ trans('lang.report.natural') }}</p>	
-					<p>{{ trans('lang.report.agressive') }}</p>	
-					<p>{{ trans('lang.report.very_agressive') }}</p>	
-				</div>
 
-				<div class="factor">
-					<span class="little"></span>
-					<span class="good"></span>
-					<span class="great"></span>
-					<span class="rich"></span>
-					<span class="wealthy"></span>
-				</div>
-
-				<div class="factor">
+				<div class="factor d-flex">
 					<div class="pointer">
 						{!! ($data['riskTestIndex'] < 19) ? $pointer : '' !!}
 					</div>
@@ -841,6 +793,36 @@
 					<div class="pointer">
 						{!! ($data['riskTestIndex'] >= 80 && $data['riskTestIndex'] <= 100) ? $pointer : '' !!}
 					</div>
+				</div>
+
+				<div class="factor factor-strait-line">
+					
+				</div>
+				
+				<div class="factor circle-wraper d-flex">
+					<div class="pointer">
+						<div class="circle circle-1 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-2 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-3 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-4 mr-auto"></div>
+					</div>
+					<div class="pointer">
+						<div class="circle circle-5 ml-auto"></div>
+					</div>
+				</div>
+
+				<div class="factor d-flex">
+					<p>{{ trans('lang.report.very_conservative') }}</p>	
+					<p>{{ trans('lang.report.conservative') }}</p>	
+					<p>{{ trans('lang.report.natural') }}</p>	
+					<p>{{ trans('lang.report.agressive') }}</p>	
+					<p>{{ trans('lang.report.very_agressive') }}</p>	
 				</div>
 
 			</div>
@@ -977,8 +959,8 @@
 		</div>
 		
 
-		<br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		<br><br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -1007,9 +989,9 @@
 
 		<div class="row">
 			<div class="col-1 rem-col"></div>
-			<div class="col-lg-6 col-md-10 col-sm-10 col-10" >
+			<div class="col-lg-4 col-md-4 col-sm-4 col-4" >
 				
-				<canvas id="myChart" ></canvas>
+				<canvas id="myChart" height="170px"></canvas>
 				
 			</div>
 		</div>
@@ -1033,7 +1015,7 @@
 						<td>{{ $data['retirement_age'] }}</td>
 					</tr>
 					<tr>
-						<td>{{ trans('lang.report.monthly_saving_plan') }}</td>
+						<td style="width: 50%">{{ trans('lang.report.monthly_saving_plan') }}</td>
 						<td>{{ currencyR($data['monthlySavingPlanForRetirement']) }} {{ trans('lang.report.per_month') }}</td>
 					</tr>
 					<tr>
@@ -1047,16 +1029,16 @@
 					</td>
 					</tr>
 					<tr>
-						<td>{{ trans('lang.report.accumulative_saving_today') }}</td>
-						<td>{{ currencyR($data['accomulativeSavingtoday']) }}</td>
+						<td >{{ trans('lang.report.accumulative_saving_today') }}</td>
+						<td style="width: 50%">{{ currencyR($data['accomulativeSavingtoday']) }}</td>
 					</tr>
 
 					<tr>
-						<td><b style="color: #000000;"> * {{ trans('lang.report.All_returns_will_be_fully_reinvested') }}</b></td>
+						<td colspan="2"><b style="color: #000000;"> * {{ trans('lang.report.All_returns_will_be_fully_reinvested') }}</b></td>
 						
 					</tr>
 					<tr>
-						<td><b style="color: #000000;"> * {{ trans('lang.report.No_redemption_amount_before_retirement_year') }}</b></td>
+						<td colspan="2"><b style="color: #000000;"> * {{ trans('lang.report.No_redemption_amount_before_retirement_year') }}</b></td>
 						
 					</tr>
 					
@@ -1070,7 +1052,7 @@
 						<td>{{ percentage($data['returnAssumptions']['cash_and_equivlent']) }}</td>
 					</tr>
 					<tr>
-						<td>{{ trans('lang.report.equities') }}</td>
+						<td style="width: 50%">{{ trans('lang.report.equities') }}</td>
 						<td>{{ percentage($data['returnAssumptions']['equities']) }}</td>
 					</tr>
 					<tr>
@@ -1078,7 +1060,7 @@
 						<td>{{ percentage($data['returnAssumptions']['fix_income']) }}</td>
 					</tr>
 					<tr>
-						<td>{{ trans('lang.report.alternative_investment') }}</td>
+						<td style="width: 90%">{{ trans('lang.report.alternative_investment') }}</td>
 						<td>{{ percentage($data['returnAssumptions']['alternative_investments']) }}</td>
 					</tr>
 					<tr>
@@ -1098,7 +1080,7 @@
 
 		<div class="row financial-position">
 			<div class="col-1 rem-col"></div>
-			<div class="col-5">
+			<div class="col-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.income_and_wealth_at_retirement') }}</p>
 				<table>
 					{{-- <tr>
@@ -1126,8 +1108,9 @@
 			</div>
 			
 		</div>
-		<br><br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		<br><br><br><br>
+		<br><br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -1140,7 +1123,7 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
-				{{-- <br><br><br><br><br> --}}
+				<br><br>
 				<h2 class="mt-1 mb-2">
 	                {{ 'thokhor' }}
 	            </h2>
@@ -1208,8 +1191,8 @@
 		    </div>
 		</div>
 
-		{{-- <br><br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+		<br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -1436,7 +1419,8 @@
 
 @section('scripts')
 {{-- <script src="html2pdf.bundle.min.js"></script> --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous"></script>
+{{-- <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script> --}}
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 {{-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> --}}
@@ -1790,6 +1774,16 @@ var myChart = new Chart(ctx, {
 });
 </script>
 
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js" integrity="sha512-YLG3N5dufxTTEyEgDIKb3IMDTz/NsWiGH6+6OvzrJBu/XZNRiZb9UxuNoMn8RdTtuKgpjtzTeWm/ITkZkj2i3Q==" crossorigin="anonymous"></script>
+
+
+
+
+
 <script type="text/javascript">
 // function addScript(url) {
     // var script = document.createElement('script');
@@ -1801,7 +1795,8 @@ var myChart = new Chart(ctx, {
 
 $(document).ready(function(){
 	setTimeout(
-		function() {			
+		function() {
+
 			html2pdf(document.body, {
 			  pagebreak: { mode: 'avoid-all' , before: '#table-break', }
 			});

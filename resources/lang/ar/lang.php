@@ -403,8 +403,11 @@ return [
         'expenses' => '  خطة التقاعد ',
         'net_assets' => '   صافي الاصول      ',
         'gosi' => 'التأمينات الاجتماعية/التقاعد',
+        'investing_plan' => '   خطة الاستثمار',
+        'Counseling session' => '   جلسة الاستشارة',
         'risk' => '  المخاطر     ',
         'objectives' => '  الاهداف     ',
+        'report' => '   التقرير  ',
         
     ],
 
@@ -460,6 +463,11 @@ return [
         'maximum_wealth' => '  أقصى الثروة   ',
 
         'list_of_all_users_registered' => '   قائمة بجميع المستخدمين المسجلين  ',
+
+        'Position' => 'الوظيفة ',
+        'Date of Birth' => 'تاريخ الميلاد',
+        'Expected Retirement Age' => 'العمر المخطط للتقاعد ',
+
     ],
 
 
@@ -1100,5 +1108,51 @@ return [
     'Verification_failed_please_try_again' => 'رمز التحقق خاطئ اعد المحاولة مرة أخرى',
 
 
+    // v3 translations
 
+    'awareness' => [
+        'Reach To The Financial Freedom' => 'الوصول للحرية المالية',
+        'awareness_details' => 'ستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. ستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+    ],
+
+    'investing_amount' => [
+        'Your age today' => 'عمرك الان',
+        'Monthly investing Payment' => 'مبلغ الاستثمار الشهري ( متكرر )',
+        'Initial amount ( one time )' => 'مبلغ الاستثمار الأولي ( دفعة واحدة)',
+        'Retire age( 60 as default and can not changes )' => 'في حالة عدم إدخاله يتم احتساب عمر التقاعد عند 60 عام',
+    ],
+
+    'plan' => [
+        'Gold Plan' => 'الباقة الذهبية ',
+        'Advisory Session for 30 Mins' => 'جلسة استشارية نصف ساعة',
+        'Buy now' => 'قم بالشراء الان',
+        'Your' => 'Your',
+    ],
+
+    'checkout' => [
+        'Card information' => 'بيانات البطاقة',
+        'vat' => 'ضريبة القيمة المضافة',
+        'Discount' => 'الخصم',
+    ],
+
+
+    'steps' => [
+        'help you with more value to your savings' => 'تقدم لك إستثمار أفضل لمدخراتك',
+        'Answer our personal survey' => 'قم بالاجابة على الاستبيان الشخصي' ,
+        'Financial Advisor will design investing plan tailored to your needs' => 'سوف يقوم مستشارك المالي بتصميم خطة استثمار تناسب احتياجاتك',
+        'Start investing like a Pro right a way' => 'إبدأ بالاسثثمار كالمحترفين فورا',
+        'Start Now' => 'ابدأ الان',
+
+    ],
+
+    'income' => [
+        'Annual Income' => 'الرجاء ادخال الدخل السنوي ( بما في ذلك الراتب والمكافأة وايجارت العقارات وماشابه )',
+
+    ],
+
+    'net_worth' => [
+        'Introduction' => 'مقدمة',
+
+    ],
 ];
+

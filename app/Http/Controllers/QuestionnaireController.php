@@ -37,13 +37,125 @@ class QuestionnaireController extends Controller
 
     public function income()
     {
-
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
         return view('frontend.wizard.questions.income')
                 ->with([
                     'title' => __('lang.questionnaire.income')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
+    }
+
+
+    public function netWorthIntroduction()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->income ?? null) == null){
+            
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            
+            return redirect()->route('income', app()->getLocale());
+            
+        }
+
+        return view('frontend.wizard.questions.net_worth_introduction')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function gosi()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->net_assets ?? null) == null)         
+            return redirect()->route('income', app()->getLocale());
+
+        return view('frontend.wizard.questions.gosi')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function investing()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->gosi ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.investing_plan')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function risk()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        if(($user_questionnaire->saving_plan ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.questions.risk')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function consultations()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->risks ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.consultations')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
+    }
+
+
+    public function report()
+    {
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        if(($user_questionnaire->risks ?? null) == null){          
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->route('income', app()->getLocale());
+        }
+        return view('frontend.wizard.report')
+                ->with([
+                    'title' => __('lang.questionnaire.step_2')
+                ])
+                ->with('user_questionnaire', $user_questionnaire);
+
+
     }
 
         
@@ -275,117 +387,6 @@ class QuestionnaireController extends Controller
         return view('frontend.wizard.steps');
     }
 
-
-    
-    public function netWorthIntroduction()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-
-        if(($user_questionnaire->income ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.questions.net_worth_introduction')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
-
-
-    public function gosi()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-
-        if(($user_questionnaire->net_assets ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.questions.gosi')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
-
-
-    public function investing()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->gosi ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.questions.investing_plan')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
-
-
-    public function risk()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-
-        if(($user_questionnaire->saving_plan ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.questions.risk')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
-
-
-    public function consultations()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->risks ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.consultations')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
-
-
-    public function report()
-    {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->risks ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
-        return view('frontend.wizard.report')
-                ->with([
-                    'title' => __('lang.questionnaire.step_2')
-                ])
-                ->with('user_questionnaire', $user_questionnaire);
-
-
-    }
 
 
     public function step_1(){
@@ -2898,11 +2899,15 @@ class QuestionnaireController extends Controller
         $totalAssetsToday     = $this->questionnaire->getNetWorthAssetsToday($user);
         $totalLiabilitiesToday= $this->questionnaire->getNetWorthLiabilitiesToday($user);
 
+        // dd($monthlyIncomeToday,$monthlySavingToday,$totalAssetsToday,$totalLiabilitiesToday);
+
         $annualSavingToday    = $this->questionnaire->getAnnualSavingToday($user);
 
         $netReturnBeforeRetirement   = $this->questionnaire->getNetReturnBeforeRetirement($user);
         $porfolioExpectedReturn      = $this->questionnaire->getPorfolioExpectedReturn($user);
         $netReturnAfterRetirement    = $this->questionnaire->getNetReturnAfterRetirement($user);
+
+        // dd($annualSavingToday,$netReturnBeforeRetirement,$porfolioExpectedReturn,$netReturnAfterRetirement);
 
         //GOSI or PPA Plan
         $startingYearInPlan          = $this->questionnaire->getStartingyearInPlan($user);
@@ -2911,6 +2916,8 @@ class QuestionnaireController extends Controller
         $subscriptionMonths          = $this->questionnaire->getSubscriptionMonth($user);
         $retirementGOCIMonthlyIncome = $this->questionnaire->getRetirementGOCIMonthlyIncome($user);
 
+        // dd($startingYearInPlan,$expectedSalaryAtRetirement,$yourPlannedRetirementAge,$subscriptionMonths,$retirementGOCIMonthlyIncome);
+
         //Current Asset Allocation
         $cashAndEquivlent            = $this->questionnaire->getCashAndEquivlent($user);
         $equities                    = $this->questionnaire->getEquities($user);
@@ -2918,6 +2925,8 @@ class QuestionnaireController extends Controller
         $alternativeInvestments      = $this->questionnaire->getAlternativeInvestments($user);
 
         $totalCurrentAssetAllocation = $cashAndEquivlent + $equities + $fixIncome + $alternativeInvestments ;
+
+        // dd($cashAndEquivlent,$equities,$fixIncome,$alternativeInvestments,$totalCurrentAssetAllocation);
 
         // Output
         //Status Today
@@ -2932,7 +2941,15 @@ class QuestionnaireController extends Controller
         $accomulativeSavingtoday    = $this->questionnaire->getAccomulativeSavingtoday($user);
 
 
-        // dd($cashAndEquivlent ,$equities  ,$fixIncome ,$alternativeInvestments);
+        // dd(
+        //     $gosi_or_ppa_monthlySubscription,
+        //     $monthlySavingPlanForRetirement,
+        //     $monthlySavingPercentageToday,
+        //     $assetsToday,
+        //     $liabilitiesToday,
+        //     $netWorthToday,
+        //     $accomulativeSavingtoday
+        // );
 
         //  Current Asset Allocation
         $cashAndEquivlentPercentage = ($cashAndEquivlent / (($totalCurrentAssetAllocation == 0) ? 1 : $totalCurrentAssetAllocation))*100;
@@ -2977,9 +2994,7 @@ class QuestionnaireController extends Controller
         $riskTestIndex = $this->questionnaire->getRiskTotalPoints($user);
         $recommended   = $this->questionnaire->getRecomendedAssetAllocation($user);
 
-        // dd($riskTestIndex);
-
-
+        
         // Financial Forecast
         $valueBegYear = [];
         $plan = [];
@@ -3035,8 +3050,7 @@ class QuestionnaireController extends Controller
         else
             dd('Age Error, Please fix your age and try again.');
 
-        // dd($plan);
-
+        
         $monthlySalary = (($netReturnAfterRetirement/100)*$plan[$retirement_age]['value_end_year'] ?? 1)/12;
 
         $totalMonthlyIncome = $retirementGOCIMonthlyIncome + $monthlySalary;
@@ -3097,6 +3111,7 @@ class QuestionnaireController extends Controller
             'credits' => trans('lang.thokhor_dot_com'),
         ];
 
+        // dd($data);
 
         $report = new Report;
         $report->user_id = $user->id;

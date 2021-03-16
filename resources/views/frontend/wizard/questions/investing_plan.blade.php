@@ -61,8 +61,8 @@
 
 									<div class="col-12 col-md-7 col-lg-6">
 
-										<div class="p-5 pl-lg-0">
-											<h1 class="display-4 text-center text-md-right mb-3 ">
+										<div class="p-3">
+											<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
 												<strong class="text-primary-1 font-arabic">الوصول للحرية المالية </strong>
 											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
@@ -153,7 +153,7 @@
 							<span class="step-parent step-parent-1" data-bar="1"></span>
 							<span class="step-text">
 								<span>
-								الدخل السنوي
+									{{ trans('lang.question_headings.income') }}
 								</span>
 							</span>
 							</a>
@@ -163,7 +163,7 @@
 							<span class="step-parent" data-bar="2"></span>
 							<span class="step-text">
 								<span>
-								صافي الثروة
+									{{ trans('lang.question_headings.net_assets') }}
 								</span>
 							</span>
 							</a>
@@ -173,7 +173,7 @@
 							<span class="step-parent" data-bar="6"></span>
 							<span class="step-text">
 								<span>
-								التأمينات الاجتماعية
+									{{ trans('lang.question_headings.gosi') }}
 								</span>
 							</span>
 							</a>
@@ -183,7 +183,7 @@
 							<span class="step-parent" data-bar="7"></span>
 							<span class="step-text">
 								<span>
-								خطة الاستثمار
+									{{ trans('lang.question_headings.investing_plan') }}
 								</span>
 							</span>
 							</a>
@@ -193,7 +193,7 @@
 							<span class="step-parent" data-bar="8"></span>
 							<span class="step-text">
 								<span>
-								المخاطر
+									{{ trans('lang.question_headings.risk') }}
 								</span>
 							</span>
 							</a>
@@ -203,17 +203,17 @@
 							<span class="step-parent" data-bar="9"></span>
 							<span class="step-text">
 								<span>
-								جلسة الاستشارة
+									{{ trans('lang.question_headings.Counseling session') }}
 								</span>
 							</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#">
+							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#report">
 							<span class="step-parent" data-bar="10"></span>
 							<span class="step-text">
 								<span>
-								التقرير
+									{{ trans('lang.question_headings.report') }}
 								</span>
 							</span>
 							</a>

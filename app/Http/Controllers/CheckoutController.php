@@ -41,11 +41,11 @@ class CheckoutController extends Controller
         $url = 'https://secure-global.paytabs.com/payment/request?token='.$token;
         
         $data = [
-                "profile_id" => 61157,
+                "profile_id" => 54876,
                 "tran_type" => "sale",
                 "tran_class" => "ecom" ,
                 "cart_id" => uniqid(),
-                "cart_description" => "Dummy Order 3592550gjhg2061445345",
+                "cart_description" => "Dummy Order 3592553061445345",
                 "cart_currency" => "AED",
                 "cart_amount" => 600,
                 "return" => $return,
@@ -57,7 +57,10 @@ class CheckoutController extends Controller
         
         $payload = json_encode($data);
         curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'authorization:SBJNN2929M-JBGZGDHJBN-DGGHWRMWDT'));
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
+                        'Content-Type:application/json', 
+                        'authorization:SLJNMR9J6M-HZZNBBNBWK-NT9RWJRMLL'
+                    ));
         
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 
@@ -70,9 +73,9 @@ class CheckoutController extends Controller
         $paytabs_response = json_decode($result, true);
 
         if(array_key_exists('redirect_url', $paytabs_response)){
-            return redirect($paytabs_response['redirect_url']);
+            // return redirect($paytabs_response['redirect_url']);
         }else{
-            dd($paytabs_response);
+            // dd($paytabs_response);
         }
 
         $order = new Order;

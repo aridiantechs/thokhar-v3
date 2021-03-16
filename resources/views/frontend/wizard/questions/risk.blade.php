@@ -103,10 +103,13 @@
 	<div class="container">
 		<div class="row row-grid">
 			<div class="col-12 col-lg-9 {{-- order-md-1 --}} pr-md-5">
-				@include('frontend.notifications.warning')
+				
+				@include('frontend.notifications.ajax-warning')
+				
 				<form id="qform" action="{{ route('wizard', locale()) }}">
 				<input type="hidden" name="location" value="risk">
 				<div class="tab-content">
+
 					<div id="ques1" class="container tab-pane active"><br>
 
 	             		@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر', ]) 
@@ -165,6 +168,7 @@
 							</button>
 						</div>
 					</div>
+
 					<div id="ques3" class="container tab-pane fade">
 
 						<br>
@@ -194,8 +198,8 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-
 					</div>
+
 					<div id="ques4" class="container tab-pane fade">
 						
 						<br>
@@ -225,10 +229,9 @@
 								<span class="d-inline-block">التالي</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
-						</div>
-						
-
+						</div>	
 					</div>
+
 					<div id="ques5" class="container tab-pane fade">
 						
 						<br>
@@ -257,10 +260,8 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-
-						
-
 					</div>
+
 					<div id="ques6" class="container tab-pane fade">
 						
 						<br>
@@ -289,9 +290,8 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-						
-
 					</div>
+
 					<div id="ques7" class="container tab-pane fade">
 						
 						<br>
@@ -321,13 +321,10 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-						
-
 					</div>
-					<div id="ques8" class="container tab-pane fade">
-						
-						<br>
 
+					<div id="ques8" class="container tab-pane fade">	
+						<br>
 						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
 
 						<div class="d-flex direction-opposite">
@@ -352,9 +349,8 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-						
-
 					</div>
+
 					<div id="ques9" class="container tab-pane fade">
 						
 						<br>
@@ -383,9 +379,8 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-						
-
 					</div>
+
 					<div id="ques10" class="container tab-pane fade">
 						
 						<br>
@@ -414,7 +409,6 @@
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
-
 					</div>
 				</div>
 				</form>

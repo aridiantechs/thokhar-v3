@@ -4,7 +4,7 @@
 			<div class="col-12 col-md-6 col-lg-6">
 				<div class="p-5 p{{$alignShort}}-lg-0">
 					<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
-						<strong class="text-primary-1 font-arabic">{{ trans('lang.net_worth.Introduction') }}</strong>
+						<strong class="text-primary-1 font-arabic">{{ $heading }}</strong>
 					</h1>
 					<h3 class="txt-blue-light text-{{$align}} font-arabic">
 					{{ $text ?? '' }}

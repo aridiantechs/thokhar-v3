@@ -83,6 +83,16 @@ return [
     'about_thokhor' =>  'About Thokar',
 
     'question' => [
+        'no_1'=>'Question # 1',
+        'no_2'=>'Question # 2',
+        'no_3'=>'Question # 3',
+        'no_4'=>'Question # 4',
+        'no_5'=>'Question # 5',
+        'no_6'=>'Question # 6',
+        'no_7'=>'Question # 7',
+        'no_8'=>'Question # 8',
+        'no_9'=>'Question # 9',
+        'no_10'=>'Question # 10',
         'go_to_previous_step' => 'Go to Previous Step',
 
         'total' => 'Total',
@@ -223,7 +233,7 @@ return [
         'unliquid_properties_shared_owned' => 'Properties shared owned',
         'unliquid_international_properties_shared_owned' => 'International properties shared owned',
         'unliquid_international_properties_direct_owned' => 'International properties direct owned',
-        'unliquid_priavte_business' => 'Priavte Business',
+        'unliquid_priavte_business' => 'Private Business',
         // 'unliquid_others' => 'Others',
 
         'personal_assets' => 'Personal Assets',
@@ -1213,6 +1223,8 @@ return [
         'Monthly investing Payment' => 'Monthly investing Payment',
         'Magic of compounding returns' => 'Magic of compounding returns',
         'Initial amount ( one time )' => 'Initial amount ( one time )',
+        'Real estate'=>'Real Estate',
+        'Other assets'=>' Other assets',
     ],
 
 ];

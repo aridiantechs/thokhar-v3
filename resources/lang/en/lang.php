@@ -1157,4 +1157,26 @@ return [
 
     ],
 
+    'wizard_q' => [
+        'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other)',
+
+        'cash amount' => 'cash amount',
+        'Do you have money in cash' => 'Do you have money in cash ? ( if yes , Enter value in SAR ) ',
+        
+        'Do you have Deposits in Banks' => 'Do you have Deposits in Banks ? ( if yes , Enter  Value in SAR ) ',
+        'Do you have Stocks' => 'Do you have Stocks ? ( if yes , Enter Market Value in SAR ) ',
+        'Do you have Bonds or Sukuk' => 'Do you have Bonds or Sukuk  ( if yes , Enter Market Value in SAR ) ',
+        'Do you have Real Estate' => 'Do you have Real Estate ( lands , properties , REITS )? ( if yes , Enter Market Value in SAR ) ',
+        'Do you have Private business' => 'Do you have Private business? ( if yes , Estimated value in SAR ) ',
+        'Do you have other assets' => 'Do you have other assets ( bitcoin, gold, etc) ( if yes , Market Value in SAR ) ',
+
+        'Expecting salary at retirement' => 'Expecting salary at retirement',
+        'Monthly subscription' => 'Monthly subscription',
+        'Starting year registration in GOCI' => 'Starting year registration in GOCI ( first job year )',
+
+        'Monthly investing Payment' => 'Monthly investing Payment',
+        'Magic of compounding returns' => 'Magic of compounding returns',
+        'Initial amount ( one time )' => 'Initial amount ( one time )',
+    ],
+
 ];

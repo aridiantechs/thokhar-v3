@@ -84,7 +84,7 @@
 							@csrf
 							<input type="hidden" name="location" value="gosi">
 							<div class="row w-form-inputs">
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -94,11 +94,12 @@
                                                 'placeholder' => 'المبلغ بالريال', 
                                                 'icon' => 'calendar',
                                                 'id' => 'datepicker',
+                                                'label' => trans('lang.wizard_q.Starting year registration in GOCI')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -107,11 +108,12 @@
                                                 'old_val' => "gosi.expecting_salary_at_retirement",
                                                 'placeholder' => 'المبلغ بالريال', 
                                                 'no_icon' => true,
+                                                'label' => trans('lang.wizard_q.Expecting salary at retirement')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -120,14 +122,15 @@
                                                 'old_val' => "gosi.monthly_subscription",
                                                 'placeholder' => 'المبلغ بالريال', 
                                                 'no_icon' => true,
+                                                'label' => trans('lang.wizard_q.Monthly subscription')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
-									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+								<div class="col-md-6">
+									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;" >
 										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
-										<span class="d-inline-block p-0-1">التالي</span>
+										<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>

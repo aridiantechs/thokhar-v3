@@ -132,7 +132,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -163,7 +163,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -194,7 +194,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -226,7 +226,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>	
@@ -256,7 +256,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -286,7 +286,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -317,7 +317,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -345,7 +345,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -375,7 +375,7 @@
 						<div class="pt-5">
 							<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>
@@ -405,7 +405,7 @@
 						<div class="pt-5">
 							<button type="sumbit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 								{{-- <i class="fa fa-arrow-left"></i> --}}
-								<span class="d-inline-block">التالي</span>
+								<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 								<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 							</button>
 						</div>

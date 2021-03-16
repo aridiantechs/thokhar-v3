@@ -1104,3 +1104,8 @@ div#profile_image_back {
     background-position: center;
     background-size: cover;
 }
+
+.stick_to_bottom{
+    position: absolute;
+    bottom: 0
+}

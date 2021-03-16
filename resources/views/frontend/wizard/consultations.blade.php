@@ -103,7 +103,7 @@
                                     </div>
                                     <button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow mt-4">
 										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
-										<span class="d-inline-block p-0-1">التالي</span>
+										<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
                         		</div>

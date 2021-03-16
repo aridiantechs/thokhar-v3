@@ -349,7 +349,7 @@ class QuestionnaireController extends Controller
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
         
         if(($user_questionnaire->investing_amount ?? null) == null){          
-            return redirect()->route('investing-amount', app()->getLocale())->with(['message' => 'previous step not completed']);
+            return redirect()->route('investing-amount', locale())->with(['message' => 'previous step not completed']);
         }
 
         // dd('initial report function');
@@ -361,7 +361,13 @@ class QuestionnaireController extends Controller
 
     public function riskTest()
     {
-        return view('frontend.wizard.risk_test');
+        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+        
+        if(($user_questionnaire->investing_amount ?? null) == null){
+            return redirect()->route('investing-amount', locale())->with(['message' => 'previous step not completed']);
+        }
+        
+        return view('frontend.wizard.risk_test')->with(['investing_amount' => $user_questionnaire->investing_amount]);
     }
 
 

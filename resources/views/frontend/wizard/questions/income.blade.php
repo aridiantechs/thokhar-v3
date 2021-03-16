@@ -74,21 +74,23 @@
 							<input type="hidden" name="location" value="income">
 							<div class="row w-form-inputs">
 								<div class="col-md-9">
-									<div class="form-group form-group-new mb-0">
+									<div class="form-group form-group-new mb-0">										
+
 										@include('frontend.inputs.input_group', [
-                                                'type' => 'text', 
-                                                'name' => 'income[income]', 
+                                                'type'  => 'text', 
+                                                'name'  => 'income[income]', 
                                                 'value' => currency($user_questionnaire->income["income"]["income"] ?? '', 0),
                                                 'old_val' => "investing_amount.monthly_amount",
                                                 'placeholder' => 'المبلغ بالريال', 
+                                                'label' => trans('lang.wizard_q.Annual Income'),
 
                                         ])
+
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
-										<span class="d-inline-block p-0-1">التالي</span>
+									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+										<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>

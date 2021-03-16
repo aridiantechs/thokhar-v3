@@ -45,7 +45,6 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-0 mb-lg-0 mb-5">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span>{{ trans('lang.investing_amount.Your age today')  }}</h4>
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
@@ -53,6 +52,7 @@
                                                 'value' => currency($user_questionnaire->investing_amount["investing_amount"]["years_old"] ?? '', 0),
                                                 'old_val' => "investing_amount.age_today",
                                                 'placeholder' => "0",
+                                                'label' => trans('lang.investing_amount.Your age today')
                                                 ])
 
                                         </div>
@@ -62,13 +62,12 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> {{ trans('lang.investing_amount.Monthly investing Payment')  }} </h4>
-                                            
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
                                                 'name' => 'investing_amount[monthly_amount]', 
                                                 'value' => currency($user_questionnaire->investing_amount["investing_amount"]["monthly_amount"] ?? '', 0),
                                                 'old_val' => "investing_amount.monthly_amount",
+                                                'label' => trans('lang.investing_amount.Monthly investing Payment')
                                                 ])
 
                                         </div>
@@ -78,14 +77,15 @@
                                     <div class="col-md-4">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            <h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span> {{ trans('lang.investing_amount.Initial amount ( one time )')  }} </h4>
-
+                                            
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
                                                 'name' => 'investing_amount[initial_amount]',
                                                 'value' => currency($user_questionnaire->investing_amount["investing_amount"]["initial_amount"] ?? '', 0),
                                                 'old_val' => "investing_amount.initial_amount",
+                                                'label' => trans('lang.investing_amount.Initial amount ( one time )'),
                                                 ])
+
                                         </div>
                                     </div>
 
@@ -123,7 +123,7 @@
 @section('scripts')
 <script type="text/javascript">
     "use strict";
-     $('.input-big:not([name="investing_amount[initial_amount]"])').keyup(function(){
+     $('.input-big').keyup(function(){
         $(this).each(function(){
             if(isNum($(this).val())){
                 $(this).prev().find('svg').css("color", "#2bd687");
@@ -144,11 +144,16 @@
            return true;
         }
         else{
-            return false;
+            if (str.indexOf(',') > -1){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
      }
 
-        $('[name="investing_amount[initial_amount]"]').on( "keyup", function( event ) {
+        $('.input-big:not([name="investing_amount[years_old]"])').on( "keyup", function( event ) {
             
             // When user select text in the document, also abort.
             var selection = window.getSelection().toString();

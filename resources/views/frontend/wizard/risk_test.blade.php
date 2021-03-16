@@ -201,22 +201,22 @@
 			<span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
 		</p>
 		<div class="row">
-			<div class="col-lg-8 {{-- order-1 order-lg-2 --}}">
+			<div class="col-lg-5 {{-- order-1 order-lg-2 --}}">
 				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">الإفصاح القانوني</strong> </h1>
 			</div>
-			<div class="col-lg-4 order-2 order-lg-1 text-{{$align}} float-lg-{{$align}} text-{{$align}} d-flex align-items-center risk-test-header">
+			<div class="col-lg-7 order-2 order-lg-1 text-{{$align}} float-lg-{{$align}} text-{{$align}} d-flex align-items-center risk-test-header">
 				{{-- <button type="button" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
 					<i class="fa fa-arrow-left"></i>
 					<span class="d-inline-block font-arabic">تحميل التقرير</span>
 				</button> --}}
-				<div class="row ml-lg-3 ml-0  mt-5 mt-lg-0" id="header-info">
+				<div class="row ml-lg-3 ml-0  mt-5 mt-lg-0 w-100" id="header-info">
 					<div class="col-4">
 						<div>
 							<p class="top_info__1">
 								العمر حاليا
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏32 عام</h3>
+								<h3 class="top_info__2 mb-0">‏{{ $investing_amount['investing_amount']['years_old'] ?? 0 }} عام</h3>
 							</span>
 						</div>
 					</div>
@@ -226,7 +226,7 @@
 								المبلغ الشهري
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏‏4 ألآف</h3>
+								<h3 class="top_info__2 mb-0">‏‏{{ currency($investing_amount['investing_amount']['monthly_amount'] ?? 0) }} ألآف</h3>
 							</span>
 						</div>
 					</div>
@@ -236,7 +236,7 @@
 								المبلغ المستثمر
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏‏100 ألف</h3>
+								<h3 class="top_info__2 mb-0">{{ currency($investing_amount['investing_amount']['initial_amount'] ?? 0) }} ألف</h3>
 							</span>
 						</div>
 					</div>

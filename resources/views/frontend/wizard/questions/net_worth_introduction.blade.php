@@ -54,6 +54,7 @@
 				<form id="qform" action="{{ route('wizard', locale()) }}">
 				<input type="hidden" name="location" value="net-worth">
 				<div class="tab-content">
+					{{-- Tab 1 --}}
 					<div id="net-worth-intro" class="container tab-pane active"><br>
 
 	             		@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.net_assets')])
@@ -63,8 +64,10 @@
 							'text' => auth()->user()->name . ' ' . trans('lang.net_worth.thinks his net worth is'),
 							'btn_class' => ''
 						])
+
 					</div>
 
+					{{-- Tab 2 --}}
                     <div id="cash_and_deposit" class="container tab-pane">
 						<br>						
 						
@@ -85,21 +88,24 @@
                                             'name' => 'net_assets[financial_assets][cash_and_deposit]', 
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["cash_and_deposit"] ?? '', 0),
                                             'old_val' => "_net_assets.financial_assets.cash_and_deposit",
-                                            'placeholder' => 'المبلغ بالريال', 
+                                            'placeholder' => 'المبلغ بالريال',
+                                            'label' => trans('lang.wizard_q.Do you have Deposits in Banks')
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					{{-- Tab 3 --}}
 					<div id="equities" class="container tab-pane fade">
 
 						<br>
@@ -122,14 +128,15 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["equities"] ?? '', 0),
                                             'old_val' => "net_assets.financial_assets.equities",
                                             'placeholder' => 'المبلغ بالريال', 
+                                            'label' => trans('lang.wizard_q.Do you have Stocks')
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>
@@ -159,14 +166,15 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["bonds"] ?? '', 0),
                                             'old_val' => "net_assets.financial_assets.bonds",
                                             'placeholder' => 'المبلغ بالريال', 
+                                            'label' => trans('lang.wizard_q.Do you have Bonds or Sukuk')
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>
@@ -196,14 +204,15 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["real_assets"]["real_estate"] ?? '', 0),
                                             'old_val' => "net_assets.real_assets.real_estate",
                                             'placeholder' => 'المبلغ بالريال', 
+                                            'label' => trans('lang.wizard_q.Do you have Real Estate')
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>
@@ -233,14 +242,15 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["real_assets"]["pe"] ?? '', 0),
                                             'old_val' => "net_assets.real_assets.pe",
                                             'placeholder' => 'المبلغ بالريال', 
+                                            'label' => trans('lang.wizard_q.Do you have Private business')
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>
@@ -269,15 +279,16 @@
                                             'name' => 'net_assets[other_assets][other]', 
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["other_assets"]["other"] ?? '', 0),
                                             'old_val' => "net_assets.other_assets.other",
-                                            'placeholder' => 'المبلغ بالريال', 
+                                            'placeholder' => 'المبلغ بالريال',
+                                            'label' => trans('lang.wizard_q.Do you have other assets') 
 
                                         ])
 									</div>
 								</div>
 								<div class="col-md-3">
-									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">التالي</span>
+										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 									</button>
 								</div>

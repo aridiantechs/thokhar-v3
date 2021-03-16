@@ -1,4 +1,7 @@
 {{-- @dd($user_questionnaire) --}}
+@if(isset($label))
+	<h4 class="text-{{$align}} font-arabic"><span class="color-red">*</span>{{ $label ?? '' }}</h4>
+@endif
 <div class="input-group">
 	@if(!isset($no_icon))
 	    <div class="input-group-prepend">

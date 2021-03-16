@@ -122,6 +122,12 @@
 		
 		else if (document.location.hash == "#report")
 	        var target_route = "{{ route('report', locale()) }}"
+
+	    else{
+	    	window.location.hash = '#income';
+	        var target_route = "{{ route('income', locale()) }}"
+	    }
+
 		
 		$.ajaxSetup({
 		    headers: {

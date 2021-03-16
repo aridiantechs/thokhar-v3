@@ -50,14 +50,8 @@ class QuestionnaireController extends Controller
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
-        if(($user_questionnaire->income ?? null) == null){
-            
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            
+        if(($user_questionnaire->income ?? null) == null)
             return redirect()->route('income', app()->getLocale());
-            
-        }
 
         return view('frontend.wizard.questions.net_worth_introduction')
                 ->with([
@@ -74,11 +68,11 @@ class QuestionnaireController extends Controller
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
         if(($user_questionnaire->net_assets ?? null) == null)         
-            return redirect()->route('income', app()->getLocale());
+            return redirect()->route('net-worth-introduction', app()->getLocale());
 
         return view('frontend.wizard.questions.gosi')
                 ->with([
-                    'title' => __('lang.questionnaire.step_2')
+                    'title' => __('lang.questionnaire.gosi')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
 
@@ -89,14 +83,13 @@ class QuestionnaireController extends Controller
     public function investing()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->gosi ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
+        
+        if(($user_questionnaire->gosi ?? null) == null)         
+            return redirect()->route('gosi', app()->getLocale());
+
         return view('frontend.wizard.questions.investing_plan')
                 ->with([
-                    'title' => __('lang.questionnaire.step_2')
+                    'title' => __('lang.questionnaire.investing')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
 
@@ -108,14 +101,12 @@ class QuestionnaireController extends Controller
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
-        if(($user_questionnaire->saving_plan ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
+        if(($user_questionnaire->saving_plan ?? null) == null)          
+            return redirect()->route('investing', app()->getLocale());
+
         return view('frontend.wizard.questions.risk')
                 ->with([
-                    'title' => __('lang.questionnaire.step_2')
+                    'title' => __('lang.questionnaire.risk')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
 
@@ -126,14 +117,13 @@ class QuestionnaireController extends Controller
     public function consultations()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->risks ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
+
+        if(($user_questionnaire->risks ?? null) == null)
+            return redirect()->route('risk', app()->getLocale());
+        
         return view('frontend.wizard.consultations')
                 ->with([
-                    'title' => __('lang.questionnaire.step_2')
+                    'title' => __('lang.questionnaire.consultations')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
 
@@ -144,14 +134,13 @@ class QuestionnaireController extends Controller
     public function report()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
-        if(($user_questionnaire->risks ?? null) == null){          
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
-            Session::flash($status['toastr'], $status['msg']);
-            return redirect()->route('income', app()->getLocale());
-        }
+
+        if(($user_questionnaire->risks ?? null) == null)        
+            return redirect()->route('risk', app()->getLocale());
+
         return view('frontend.wizard.report')
                 ->with([
-                    'title' => __('lang.questionnaire.step_2')
+                    'title' => __('lang.questionnaire.report')
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
 

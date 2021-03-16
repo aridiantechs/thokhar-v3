@@ -75,7 +75,7 @@
                 <h6 class="mb-0 text-lg-{{$align}} text-center font-3 font-arabic">ذخر عالمك للثراء</h6>
                 
                 <h1 class="h-big text-gray-light-1 font-arabic text-lg-{{$align}} text-center">
-                   تحكم باستثمار أموالك بشكل كامل باحترافية
+                    {{ trans('lang.Take control of your money') }}
                 </h1>
 
                 <span class="clearfix"></span>
@@ -83,7 +83,7 @@
                 <div class="mt-4 text-lg-{{$align}} text-center">
                     <a href="{{ route('login', app()->getLocale()) }}" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary">
                         {{-- <i class="fa fa-arrow-right"></i> --}}
-                       <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                       <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                        <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                    </a>
                 </div>

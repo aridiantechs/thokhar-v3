@@ -74,6 +74,8 @@ return [
     'minutes' => 'Minutes',
     'seconds' => 'Seconds',
     'code_expired' => 'Code expired',
+    'Take control of your money'=>'Take control of your money professionally',
+    'Start Now'=>'Start Now',
 
     'question' => [
         'go_to_previous_step' => 'Go to Previous Step',
@@ -571,13 +573,17 @@ return [
     'frontend_about' => [
         'about_us' => 'ABOUT US',
         'about_our_story' => 'Our Story.',
+        'about_section1_description' => 'Thokhor is your  financial Planner  for building your portfolio step by step based on best practice in wealth management field ',
+        
+        'why_thokar'=>'Why Thokhor?',
+        'why_thokar_desc'=>'Personal financial planner that equipes you with necessary knowledge to be able to invest your money like professional with less cot compare to tradtional mutual funds.',
 
         'about_coffee_started_it_all' => 'Coffee started it all.',
-        'about_coffee_text' => 'One day, Waleed Bakarman met Dr.Ali Alshehri for a coffee to talk about investment. During the meeting, they discovered that they were not only passionate about the investment topics but they are just the ideal mix for starting the app that can help a nation.',
+        'about_coffee_text' => 'After quick twitter chat , Waleed Bakarman (Financial Analyst) met Dr.Ali Alshehri (Fintech Security) for a coffee to talk about personal investing approach. During the meeting, they discovered that they were not only passionate about the investing but they are just the ideal mix for starting a venture that addressing a need for individuals investors.',
 
 
         'mission' => 'Mission',
-        'mission_text' => 'Richness and financial independence have an equation that the rich know well but which are easy and kind. Our mission is to be an automated financial advisor for individuals who makes this equation:',
+        'mission_text' => 'Our mission is to be personal financial advisor for individuals and balance this equation:',
         'mission_text_report' => 'Our mission is to be an automated financial advisor for individuals who makes this equation:',
 
 

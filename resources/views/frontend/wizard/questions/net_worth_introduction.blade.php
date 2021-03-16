@@ -74,7 +74,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])
@@ -113,7 +113,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => '   الأسهم'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])
@@ -151,7 +151,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => ' السندات والصكوك'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])
@@ -189,7 +189,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => ' العقارات'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])
@@ -227,7 +227,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => ' عمل خاص'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])
@@ -265,7 +265,7 @@
 						@include('frontend.components.breadcrumb' , ['heading' => '  أصول أخرى'])
 
 						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-1.svg',
+								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
 								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
 								'btn_class' => 'd-none'
 							])

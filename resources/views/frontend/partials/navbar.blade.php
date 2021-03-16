@@ -26,18 +26,18 @@
 
             
 
-            <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: rtl;">
+            <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: {{ $align3letter }};">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >عن الرئيسية</a>
+                    <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >{{ trans('lang.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>
+                    <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >{{ trans('lang.site_menu.about_us') }}</a>
                 </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
+                     <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >{{ trans('lang.site_menu.legal') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
+                    <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >{{ trans('lang.site_menu.contact') }}</a>
                 </li>
                 @auth
                     @if (auth()->user()->two_factor_code)

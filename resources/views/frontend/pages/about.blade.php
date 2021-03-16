@@ -154,14 +154,14 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                <p class="text-muted mb-4 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>{{ trans('lang.Start Now') }}</span></p>
+                <p class="text-muted mb-4 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
                 <h1 class="display-4 text-lg-{{$align}} mb-3">
                     <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
                     {{-- <i class="fa fa-arrow-left"></i> --}}
                         <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                     </button>
-                    <strong class="text-primary float-{{$align}} font-arabic">{{ trans('lang.Start Now') }}</strong> 
+                    <strong class="text-primary float-{{$align}} font-arabic">{{ trans('lang.about_thokhor') }}</strong> 
                 </h1>
             </div>
         </div>
@@ -255,18 +255,14 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-6">
                     <h1 class="h-big font-arabic text-primary text-{{$align}}">
-                        {{ trans('lang.frontend_about.method') }}
+                        {{ trans('lang.frontend_about.investment') }}
                     </h1>
                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-5">
-                        مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع 
+                        {{ trans('lang.frontend_about.investment_text') }} 
                     </h3>
                     <ul class="LIST__UL text-{{$align}}">
-                        <li>سهل ممتنع</li>
-                        <li> عملي ويتيح التطبيق الفوري</li>
-                        <li> حصيف وبعيد عن العشوائية</li>
-                        <li>
-                            مناسب للاحتياجات الشخصية
-                        </li>
+                        <li>{{ trans('lang.frontend_about.investment_li_1') }}</li>
+                        <li> {{ trans('lang.frontend_about.investment_li_2') }}</li>
                     </ul>
                 </div>
             </div>
@@ -274,7 +270,7 @@
     </div>
     <div class="container">
         <h1 class="h-big font-arabic text-primary text-{{$align}} mb-4">
-            فريق العمل
+            {{ trans('lang.frontend_about.team') }}
         </h1>
         <div class="team">
             <div class="row row-grid flex-column-reverse flex-lg-row">
@@ -289,7 +285,7 @@
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
                                 <div class="team__info m{{$alignShort}}-auto">
                                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
-                                        د. علي بن عبدالرحمن الشهري
+                                        {{ trans('lang.frontend_about.team_member_1') }}
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
@@ -324,7 +320,7 @@
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
                                 <div class="team__info m{{$alignShort}}-auto">
                                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
-                                        د. علي بن عبدالرحمن الشهري
+                                        {{ trans('lang.frontend_about.team_member_2') }}
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">

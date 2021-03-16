@@ -78,21 +78,21 @@
                         <div class="col-md-4">
                            <div class="form-group form-group-new">
                               <div class="input-group">
-                                 <input type="text" data-paylib="expmonth" size="2" class="form-control input-big text-{{$align}} font-arabic" placeholder="الشهر">
+                                 <input type="text" data-paylib="expmonth" size="2" class="form-control input-big text-{{$align}} font-arabic" placeholder="{{trans('lang.checkout.month')}}">
                               </div>
                            </div>
                         </div>
                          <div class="col-md-4">
                             <div class="form-group form-group-new">
                                <div class="input-group">
-                                  <input type="text" data-paylib="expyear" size="4" class="form-control input-big text-{{$align}} font-arabic" placeholder="العام">
+                                  <input type="text" data-paylib="expyear" size="4" class="form-control input-big text-{{$align}} font-arabic" placeholder="{{trans('lang.checkout.year')}}">
                                </div>
                             </div>
                          </div>
                          <div class="col-md-4">
                             <div class="form-group form-group-new">
                                <div class="input-group">
-                                  <input type="text" data-paylib="cvv" size="4" class="form-control input-big text-{{$align}} font-arabic" placeholder="كود ">
+                                  <input type="text" data-paylib="cvv" size="4" class="form-control input-big text-{{$align}} font-arabic" placeholder="{{trans('lang.checkout.code')}}">
                                </div>
                             </div>
                          </div>
@@ -101,7 +101,7 @@
                    <div class="form-group form-group-new mb-0">
                       <div class="input-group">
                          @include('frontend.inputs.input_group', [
-                         'placeholder' => 'الاسم على البطاقة', 
+                         'placeholder' => trans('lang.checkout.name_in_card'), 
                          'type' => 'text', 
                          'name' => 'title', 
                          'value' => '',
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-md-6 {{-- order-lg-1 order-2 --}}">
                     <div class="form-group form-group-new">
-                      <label for="" class="font-1 text-{{$align}} w-100 font-arabic">ملخص الطلب</label>
+                      <label for="" class="font-1 text-{{$align}} w-100 font-arabic">{{trans('lang.checkout.summary')}}</label>
                       <div class="input-group">
                           <input type="text" name="coupon" class="form-control input-big text-{{$align}} font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
                           <div class="input-group-prepend">

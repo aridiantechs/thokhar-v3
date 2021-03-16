@@ -21,7 +21,7 @@
                     <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
-                    <strong class="text-primary font-arabic">رمز التحقق</strong> 
+                    <strong class="text-primary font-arabic">{{ trans('code') }}</strong> 
                 </h1>
                 <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">

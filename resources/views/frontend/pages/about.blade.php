@@ -154,21 +154,21 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                <p class="text-muted mb-4 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>عن ذخر</span></p>
+                <p class="text-muted mb-4 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
                 <h1 class="display-4 text-lg-{{$align}} mb-3">
                     <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
                     {{-- <i class="fa fa-arrow-left"></i> --}}
-                        <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                        <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                     </button>
-                    <strong class="text-primary float-{{$align}} font-arabic">عن ذخر</strong> 
+                    <strong class="text-primary float-{{$align}} font-arabic">{{ trans('lang.about_thokhor') }}</strong> 
                 </h1>
             </div>
         </div>
         <div class="row row-grid">
             <div class="col-12 col-lg-5">
                 <h3 class="txt-blue-light font-arabic text-{{$align}}">
-                    ذخر هو مستشارك المالي الشخـصي الآلــي والــذي يساعـــدك خطــوة بخطوة لبناء ثروتك والوصول الى الحرية المالية والاستفادة القصوى من مدخراتك واستثماراتك
+                    {{ trans('lang.frontend_about.about_section1_description') }}
                 </h3>
             </div>
             <div class="col-12 col-lg-7 text-center">
@@ -180,11 +180,11 @@
         <div class="row  mt-5 pt-0 pt-lg-5">
             <div class="col-12 col-lg-8 {{--  order-1 order-lg-2 --}}">
                 <h1 class="h-big font-arabic text-primary text-{{$align}}">
-                    تلماذا ذخر ؟
+                    {{ trans('lang.frontend_about.why_thokar') }}
                 </h1>
                 <span class="clearfix"></span>
                 <h3 class="txt-blue-light-1 font-arabic text-{{$align}}">
-                    مستشار مالي يوفر لك المعرفة الكاملة لتقوم باستثمار أموالك بالطريقة الأمثل مما يصل بك الى الحرية المالية ويوفر عليك رسوم إدارة صناديق الاستثمارات 
+                    {{ trans('lang.frontend_about.why_thokar_desc') }}
                 </h3>
                 <div class="py-5 d-block d-lg-none">
                     <figure class="w-100">
@@ -209,10 +209,10 @@
         <div class="container">
             <div class="mb-5">
                 <h1 class="h-big font-arabic text-primary text-center">
-                    القهوة بدأت كل شيء
+                    {{ trans('lang.frontend_about.about_coffee_started_it_all') }}
                 </h1>
                 <h3 class="font-arabic text-center mt-5 px-5">
-                    في يوم من الأيام تقابل وليد باكرمان مع د.علي الشهري للحديث عن مواضيع الاستثمار في احد مقاهي الرياض الجميلة. كان من الواضح لهما في نهاية تلك الجلسة انهما لم يكونا شغوفين فقط بموضوع الاستثمار بل يشكلان المزيج المثالي لبناء حل لمشكلة سوف تنفع امة.
+                    {{ trans('lang.frontend_about.about_coffee_text') }}
                 </h3>
             </div>
             <div class="w-100 text-center mt-5 pt-5">
@@ -224,17 +224,17 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <h1 class="h-big font-arabic text-success text-{{$align}}">
-                    الرسالة
+                    {{ trans('lang.frontend_about.mission') }}
                 </h1>
                 <h3 class="txt-blue-light font-arabic text-{{$align}} mb-5">
-                    مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع 
+                    {{ trans('lang.frontend_about.mission_text') }}
                 </h3>
                 <ul class="LIST__UL text-{{$align}}">
-                    <li>سهل ممتنع</li>
-                    <li> عملي ويتيح التطبيق الفوري</li>
-                    <li> حصيف وبعيد عن العشوائية</li>
+                    <li>{{ trans('lang.frontend_about.mission_li_1') }}</li>
+                    <li> {{ trans('lang.frontend_about.mission_li_2') }}</li>
+                    <li> {{ trans('lang.frontend_about.mission_li_3') }}</li>
                     <li>
-                        مناسب للاحتياجات الشخصية
+                        {{ trans('lang.frontend_about.mission_li_4') }}
                     </li>
                 </ul>
             </div>
@@ -255,18 +255,14 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-6">
                     <h1 class="h-big font-arabic text-primary text-{{$align}}">
-                        المنهجية
+                        {{ trans('lang.frontend_about.investment') }}
                     </h1>
                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-5">
-                        مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع 
+                        {{ trans('lang.frontend_about.investment_text') }} 
                     </h3>
                     <ul class="LIST__UL text-{{$align}}">
-                        <li>سهل ممتنع</li>
-                        <li> عملي ويتيح التطبيق الفوري</li>
-                        <li> حصيف وبعيد عن العشوائية</li>
-                        <li>
-                            مناسب للاحتياجات الشخصية
-                        </li>
+                        <li>{{ trans('lang.frontend_about.investment_li_1') }}</li>
+                        <li> {{ trans('lang.frontend_about.investment_li_2') }}</li>
                     </ul>
                 </div>
             </div>
@@ -274,7 +270,7 @@
     </div>
     <div class="container">
         <h1 class="h-big font-arabic text-primary text-{{$align}} mb-4">
-            فريق العمل
+            {{ trans('lang.frontend_about.team') }}
         </h1>
         <div class="team">
             <div class="row row-grid flex-column-reverse flex-lg-row">
@@ -289,7 +285,7 @@
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
                                 <div class="team__info m{{$alignShort}}-auto">
                                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
-                                        د. علي بن عبدالرحمن الشهري
+                                        {{ trans('lang.frontend_about.team_member_1') }}
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
@@ -324,7 +320,7 @@
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
                                 <div class="team__info m{{$alignShort}}-auto">
                                     <h3 class="txt-blue-light font-arabic text-{{$align}} mb-2">
-                                        د. علي بن عبدالرحمن الشهري
+                                        {{ trans('lang.frontend_about.team_member_2') }}
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">

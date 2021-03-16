@@ -27,6 +27,7 @@ return [
     'valid_email' => 'Please enter a valid email address',
 
     'login_form' => [
+        'phone_number'=>'Mobile number',
         'forgot_your_passowrd' => 'Forgot Your Password',
         'dont_have_account' => "Don't have an account?",
         'already_have_account' => "Already have an account?",
@@ -70,10 +71,16 @@ return [
         'site_management' => 'Site Management',
     ],
 
+    'code'=>'code',
     'code_will_expire_in' => 'Code will expire in',
+    'verify'=>'verify',
     'minutes' => 'Minutes',
     'seconds' => 'Seconds',
     'code_expired' => 'Code expired',
+    'Take control of your money'=>'Take control of your money professionally',
+    'Start Now'=>'Start Now',
+
+    'about_thokhor' =>  'About Thokar',
 
     'question' => [
         'go_to_previous_step' => 'Go to Previous Step',
@@ -508,6 +515,18 @@ return [
     'frontend_legal' => [
         'legal' => 'LEGAL',
         'legal_heading_text' => 'All legal documents you need to start with Althraa',
+        'legal_head_text'=>'The privacy and security of information for users and visited the site of Thakhr is a very important and priority issue for the site',
+        'legal_paragraph'=>'Please be aware that the site of Thokhor or its staff, has taken the necessary care in providing this service free of charge, so it disclaims its responsibilities for any legal effects arising from that. Sources of information and reasonable care in the data, however, it does not acknowledge that the information contained in this website or its documents is complete or free from any error or not misleading or that it is fit for a specific purpose. The document or information on this site only provides general information. Also, the information and any opinion expressed on this site or any document thereof do not provide an offer or an invitation to make an offer to buy or sell any securities or other investment products related to those securities or investments. The purpose of this site or its documents is not to offer personal advice in the investment field nor does it take into account the investment goals, financial situation, or the specific needs of any specific person who may receive this document. Investors should seek financial, legal, or tax advice from a financial company licensed by the Capital Market Authority or relevant government agencies on the appropriateness of investing in any securities, other investment, or any investment strategies discussed or recommended in this site or documents issued by it, and users should understand that data related to future expectations coming from this site may not be realized. Users should also note that income from securities of this type or other investments, if any, may be subject to fluctuations and that the price or value of those securities and investments is subject to increase or decrease. Also, fluctuations in the exchange rates of currencies may have negative effects on the value, price, or income of certain investments. Consequently, users can get a return that is less than the amount of their invested capital. The site or its officials, including the employees of the site, are not responsible for any direct or indirect damages or any other loss or damage that may arise, directly or indirectly, from any use of the information contained in this document from the documents issued from the site. The information issued by the site and any recommendations contained therein are subject to change without prior notice. Thokhor site does not bear any responsibility for updating the information contained in these documents issued by it. This document may not be changed, duplicated, transmitted, or distributed in a whole or in part, in any form or by any means. It should also be noted that these documents are not directed to or intended for distribution or use by any person or entity, whether a citizen or resident in any place, country, country or any other judicial authority, wherever such distribution, publication, availability or use of the issued documents is. The site is against the law or requires the site or its operators to make any registration or fulfill any of the licensing conditions within that country or that judicial authority.',
+
+        'legal_sub_heading1'=>'The privacy and security of information for users and visited the site of Thakhr is a very important and priority issue for the site, so we adhere to the following procedures:',
+        'legal_sub_points1'=>' Providing security measures and procedures to prevent unauthorized access to customer information, including: the use of multiple levels of control and two-factor authentication systems to achieve data security, periodic review of devices, security systems and networks',
+        'legal_sub_points2'=>'Allow only authorized personnel - whose nature and scope of their work warrant - use and view customer information.',
+        'legal_sub_points3'=>'Not to disclose to any external party information about the customer unless we have been informed in advance through disclosure statements or agreements, or we have obtained authorization from that, or that was required of us by law.',
+        'legal_sub_points4'=>'Take the necessary regulatory and disciplinary measures when a staff member violates information security and privacy controls.',
+        'legal_sub_points5'=>'In the event that you notice suspicion or exposure to an incident related to information security, we hope to inform us as soon as possible by visiting the "Contact Us" page',
+
+        'legal_form_heading'=>'Mailing list',
+        'legal_form_input_placeholder'=>'do you have coupon',
 
         'legal_heading1' => 'Heading 1',
 
@@ -571,13 +590,17 @@ return [
     'frontend_about' => [
         'about_us' => 'ABOUT US',
         'about_our_story' => 'Our Story.',
+        'about_section1_description' => 'Thokhor is your  financial Planner  for building your portfolio step by step based on best practice in wealth management field ',
+        
+        'why_thokar'=>'Why Thokhor?',
+        'why_thokar_desc'=>'Personal financial planner that equipes you with necessary knowledge to be able to invest your money like professional with less cot compare to tradtional mutual funds.',
 
         'about_coffee_started_it_all' => 'Coffee started it all.',
-        'about_coffee_text' => 'One day, Waleed Bakarman met Dr.Ali Alshehri for a coffee to talk about investment. During the meeting, they discovered that they were not only passionate about the investment topics but they are just the ideal mix for starting the app that can help a nation.',
+        'about_coffee_text' => 'After quick twitter chat , Waleed Bakarman (Financial Analyst) met Dr.Ali Alshehri (Fintech Security) for a coffee to talk about personal investing approach. During the meeting, they discovered that they were not only passionate about the investing but they are just the ideal mix for starting a venture that addressing a need for individuals investors.',
 
 
         'mission' => 'Mission',
-        'mission_text' => 'Richness and financial independence have an equation that the rich know well but which are easy and kind. Our mission is to be an automated financial advisor for individuals who makes this equation:',
+        'mission_text' => 'Our mission is to be personal financial advisor for individuals and balance this equation:',
         'mission_text_report' => 'Our mission is to be an automated financial advisor for individuals who makes this equation:',
 
 
@@ -586,7 +609,15 @@ return [
         'mission_li_3' => 'Discreet far from randomness.',
         'mission_li_4' => 'Convenient for personal need.',
 
+        'investment' => 'investment apporach',
+        'investment_text' => 'Long-term investment Approach that relies on:',
+
+        'investment_li_1' => 'Saving first.',
+        'investment_li_2' => 'Prudent investing approach , The magic of compounding returns.',
+
         'method' => 'Method',
+        'team_member_1'=>'Dr. Ali Alshehri',
+        'team_member_2'=>'Waled Bakarman',
         'method_text' => 'The investment methodology is the long-term investment methodology that relies on:',
 
         'method_li_1' => 'Saving first.',
@@ -1135,6 +1166,11 @@ return [
         'Card information' => 'Card information',
         'vat' => 'VAT',
         'Discount' => 'Discount',
+        'code'=>'code',
+        'year'=>'year',
+        'month'=>'month',
+        'name_in_card'=>'name in card',
+        'summary'=>'Order Summary',
     ],
 
     'steps' => [

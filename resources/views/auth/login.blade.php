@@ -44,7 +44,7 @@
           <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
         </p>
         <h1 class="display-4 {{$textAlign}} {{$textAlignMd}}mb-3">
-          <strong class="text-primary font-arabic">تسجيل الدخول</strong> 
+          <strong class="text-primary font-arabic">{{ trans('lang.login') }}</strong> 
         </h1>
 
         <h5 class="{{$textAlign}} mt-4 mb-4">تحكم باستثمار أموالك بشكل كامل باحترافية
@@ -74,8 +74,8 @@
                 id="phone" 
                 type="tel" 
                 class="form-control input-big @error('phone_number') is-invalid @enderror"
-                {{-- placeholder="{{ trans('lang.register_form.phone_number') }}" --}}
-                placeholder="رقم الهاتف"
+                {{-- placeholder="{{ trans('lang.register_form.phone_number') }}"
+                placeholder="رقم الهاتف" --}}
                 value=" {{ old('phone_number') }}" 
                 >
               <div class="input-group-append">

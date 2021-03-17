@@ -874,6 +874,7 @@ return [
 
         'print_save_result' => 'Print / Save Resullts',
         'suggested_risk_tolerance' => 'Suggested Risk Tolerance',
+        'Invested amount'=>'Invested amount',
 
         'cash_and_deposit' => 'Cash and Deposits',
         'local_equity' => 'Local Equity',
@@ -1008,6 +1009,10 @@ return [
             'education' => 'Education',
             'current_age' => 'Current age',
             'planned_retirement_age' => 'Planned retirement age',
+        'Are you risk taker'=>'Are you risk taker',
+        'Natural'=>'Natural',
+        'Financial Projections'=>'Financial Projections',
+        'Recommended asset allocation'=>'Recommended asset allocation',
 
         'financial_position_today' => 'Financial Position Today',
             'monthly_income_today' => 'Monthly income today',
@@ -1207,6 +1212,8 @@ return [
         'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other)',
 
         'cash amount' => 'cash amount',
+        
+        'Do you have money'=>'Do you have money',
         'Do you have money in cash' => 'Do you have money in cash ? ( if yes , Enter value in SAR ) ',
         
         'Do you have Deposits in Banks' => 'Do you have Deposits in Banks ? ( if yes , Enter  Value in SAR ) ',

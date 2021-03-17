@@ -203,7 +203,7 @@
 					</div>
 					<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
 						<strong class="font-arabic">
-						في حالة عدم إدخاله يتم احتساب عمر التقاعد عند 60 عام
+							{{ trans('lang.investing_amount.Retire age( 60 as default and can not changes )') }}
 						</strong>
 					</h3>
 					<div class="mt-4 text-lg-{{$align}} text-center">

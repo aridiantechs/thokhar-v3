@@ -52,7 +52,7 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟   '])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Do you have money')])
 
 						<div class="card card-shadow has-bg-right bg-1">
 							<div class="card-body p-0">
@@ -63,7 +63,7 @@
 
 										<div class="p-3">
 											<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
-												<strong class="text-primary-1 font-arabic">الوصول للحرية المالية </strong>
+												<strong class="text-primary-1 font-arabic">{{ trans('lang.awareness.Reach To The Financial Freedom') }} </strong>
 											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
 												هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.

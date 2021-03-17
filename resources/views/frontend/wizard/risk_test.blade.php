@@ -202,7 +202,7 @@
 		</p>
 		<div class="row">
 			<div class="col-lg-5 {{-- order-1 order-lg-2 --}}">
-				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">الإفصاح القانوني</strong> </h1>
+				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">{{ trans('lang.site_menu.legal') }}</strong> </h1>
 			</div>
 			<div class="col-lg-7 order-2 order-lg-1 text-{{$align}} float-lg-{{$align}} text-{{$align}} d-flex align-items-center risk-test-header">
 				{{-- <button type="button" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
@@ -213,10 +213,10 @@
 					<div class="col-4">
 						<div>
 							<p class="top_info__1">
-								العمر حاليا
+								{{ trans('lang.report.current_age') }}
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏{{ $investing_amount['investing_amount']['years_old'] ?? 0 }} عام</h3>
+								<h3 class="top_info__2 mb-0">‏{{ $investing_amount['investing_amount']['years_old'] ?? 0 }}</h3>
 							</span>
 						</div>
 					</div>
@@ -226,17 +226,17 @@
 								المبلغ الشهري
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏‏{{ currency($investing_amount['investing_amount']['monthly_amount'] ?? 0) }} ألآف</h3>
+								<h3 class="top_info__2 mb-0">‏‏{{ currency($investing_amount['investing_amount']['monthly_amount'] ?? 0) }} </h3>
 							</span>
 						</div>
 					</div>
 					<div class="col-4">
 						<div>
 							<p class="top_info__1">
-								المبلغ المستثمر
+								{{ trans('lang.financial_plan.Invested amount') }}
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">{{ currency($investing_amount['investing_amount']['initial_amount'] ?? 0) }} ألف</h3>
+								<h3 class="top_info__2 mb-0">{{ currency($investing_amount['investing_amount']['initial_amount'] ?? 0) }}</h3>
 							</span>
 						</div>
 					</div>
@@ -244,7 +244,7 @@
 			</div>
 		</div>
 		<h2 class="text-dark text-center my-5">
-			هل أنت مستثمر مغامر ؟
+			{{ trans('lang.report.Are you risk taker') }}
 		</h2>
 		<div style="margin-top:135px !important">
 			<div class="nav-tabs-wrapper mt-5 mobile ">
@@ -254,7 +254,7 @@
 							<span class="step-parent" data-bar="1"></span>
 							<span class="step-text">
 								<span>
-								مستثمر طبيعي
+									{{ trans('lang.report.Natural') }}
 								</span>
 							</span>
 						</a>
@@ -264,7 +264,7 @@
 							<span class="step-parent" data-bar="2"></span>
 							<span class="step-text">
 								<span>
-								مستثمر طبيعي
+								{{ trans('lang.report.Natural') }}
 								</span>
 							</span>
 						</a>
@@ -274,7 +274,7 @@
 							<span class="step-parent" data-bar="3"></span>
 							<span class="step-text">
 								<span>
-								مستثمر طبيعي
+								{{ trans('lang.report.Natural') }}
 								</span>
 							</span>
 						</a>
@@ -284,7 +284,7 @@
 							<span class="step-parent" data-bar="4"></span>
 							<span class="step-text">
 								<span>
-								مستثمر طبيعي
+								{{ trans('lang.report.Natural') }}
 								</span>
 							</span>
 						</a>
@@ -294,7 +294,7 @@
 							<span class="step-parent" data-bar="5"></span>
 							<span class="step-text">
 								<span>
-								مستثمر طبيعي
+								{{ trans('lang.report.Natural') }}
 								</span>
 							</span>
 						</a>
@@ -308,21 +308,21 @@
 			<div class="card-body">
 				<div class="row border-bottom-light">
 					<div class="col-12 col-lg-6">
-						<h2 class="text-{{$align}} d-none bottom-line d-lg-block pb-4 mb-0 text-lblue">التوقعات المالية</h2>
+						<h2 class="text-{{$align}} d-none bottom-line d-lg-block pb-4 mb-0 text-lblue"> {{ trans('lang.report.Financial Projections') }}</h2>
 					</div>
 					<div class="col-12 col-lg-6">
-						<h2 class="text-{{$align}} d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue">توزيع الأصول الموصى به</h2>
+						<h2 class="text-{{$align}} d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6 text-center pt-5">
-						<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">التوقعات المالية</h2>
+						<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">{{ trans('lang.report.Financial Projections') }}</h2>
 						<div class="text-center">
 							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-2.svg') }}" class="img-fluid img" alt="">
 						</div>
 					</div>
 					<div class="col-12 col-lg-6  text-center pt-lg-5 pt-0 border-{{$align}}-light">
-						<h2 class="text-{{$align}} bottom-line mb-5 d-block d-lg-none text-blue">توزيع الأصول الموصى به</h2>
+						<h2 class="text-{{$align}} bottom-line mb-5 d-block d-lg-none text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
 						<div class="text-center">
 							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-1.svg') }}" class="img img-fluid" alt="">
 						</div>

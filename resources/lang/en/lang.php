@@ -1209,7 +1209,8 @@ return [
     ],
 
     'wizard_q' => [
-        'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other)',
+        /* 'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other)', */
+        'Annual Income'=>'الدخل السنوي',
 
         'cash amount' => 'cash amount',
         

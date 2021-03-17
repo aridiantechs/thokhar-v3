@@ -86,7 +86,7 @@
 					<span class="step-parent" data-bar="4"></span>
 					<span class="step-text">
 					<span>
-					الدخل السنوي
+					 {{ trans('lang.wizard_q.Annual Income') }}
 					</span>
 					</span>
 					</a>

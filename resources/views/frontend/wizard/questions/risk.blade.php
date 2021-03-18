@@ -86,7 +86,7 @@
 					<span class="step-parent" data-bar="4"></span>
 					<span class="step-text">
 					<span>
-					الدخل السنوي
+					 {{ trans('lang.wizard_q.Annual Income') }}
 					</span>
 					</span>
 					</a>
@@ -112,7 +112,7 @@
 
 					<div id="ques1" class="container tab-pane active"><br>
 
-	             		@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر', ]) 
+	             		@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk'), ]) 
 	             		<div class="d-flex direction-opposite">
 	             			<span class="text-muted float-right pl-3">  10/1</span>
 	             			<h3 class="text-dark text-right"> {{ trans('lang.question.risk_age') }} </h3>
@@ -141,7 +141,7 @@
                     <div id="ques2" class="container tab-pane">
 						<br>						
 						
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/2</span>
@@ -173,7 +173,7 @@
 
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/3</span>
@@ -204,7 +204,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر'])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')])
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/4</span>
@@ -236,7 +236,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/5</span>
@@ -266,7 +266,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/6</span>
@@ -296,7 +296,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/7</span>
@@ -325,7 +325,7 @@
 
 					<div id="ques8" class="container tab-pane fade">	
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/8</span>
@@ -355,7 +355,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/9</span>
@@ -385,7 +385,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => 'المخاطر']) 
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
 							<span class="text-muted float-right pl-3">  10/10</span>

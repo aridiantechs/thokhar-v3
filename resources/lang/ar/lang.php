@@ -885,6 +885,7 @@ return [
 
         'print_save_result' => '  طباعة / حفظ النتائج  ',
         'suggested_risk_tolerance' => '  الخطر المحتمل   ',
+        'Invested amount'=>'المبلغ المستثمر',
 
         'cash_and_deposit' => ' النقد وما يعادله (الودائع والمرابحات)  ',
         'local_equity' => '   الأسهم المحلية  ',
@@ -1017,6 +1018,10 @@ return [
             'education' => 'المستوى التعليمي',
             'current_age' => 'العمر حالياً',
             'planned_retirement_age' => 'سن التقاعد المخطط له',
+        'Are you risk taker'=>'هل انت مستثمر مغامر',
+        'Natural'=>'مستثمر طبيعي',
+        'Financial Projections'=>'التوقعات المالية',
+        'Recommended asset allocation'=>'توزيع الأصول الموصى به',
 
         'financial_position_today' => 'الملاءة',
             // 'monthly_income_today' => 'المبلغ الاولي المخصص لخطة التقاعد (دفعة واحدة) ',
@@ -1214,9 +1219,11 @@ return [
     ],
 
     'wizard_q' => [
-        'Annual Income' => 'الرجاء ادخال الدخل السنوي ( بما في ذلك الراتب والمكافأة وايجارت العقارات وماشابه )',
+        /* 'Annual Income' => 'الرجاء ادخال الدخل السنوي ( بما في ذلك الراتب والمكافأة وايجارت العقارات وماشابه )', */
+        'Annual Income'=>'الدخل السنوي',
 
         'cash amount' => 'المال النقدي',
+        'Do you have money'=>'هل لديك مال نقدا؟',
         'Do you have money in cash' => 'هل لديك مال نقدا؟ (في حالة نعم ،  ادخل المبلغ بالريال السعودي )',
 
         'Do you have Deposits in Banks' => 'هل لديك وديعة او مرابحة في البنك؟ (في حالة نعم ،  ادخل القيمة السوقية بالريال السعودي )',

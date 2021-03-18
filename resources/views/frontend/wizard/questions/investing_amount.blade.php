@@ -29,7 +29,7 @@
                 </p>
                 
                 <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-5">
-                    <strong class="text-primary font-arabic">الوصول للحرية المالية</strong> 
+                    <strong class="text-primary font-arabic">{{ trans('lang.awareness.Reach To The Financial Freedom') }}</strong> 
                 </h1>
                 
                 <span class="clearfix"></span>

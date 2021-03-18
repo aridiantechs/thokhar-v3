@@ -47,7 +47,7 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟   '])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Do you have money') ])
 
 						<div class="card card-shadow has-bg-{{$align}} bg-1">
 							<div class="card-body p-0">
@@ -58,7 +58,7 @@
 
 										<div class="p-3">
 											<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
-												<strong class="text-primary-1 font-arabic">مقدمة </strong>
+												<strong class="text-primary-1 font-arabic">{{trans('lang.net_worth.Introduction')}} </strong>
 											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
 											هذا النـص يمكـن أن يتـــم تركيبه على أي تصمـــــيم دون مشكــــــلة فلن يبدو وكأنه نص منسوخ، غــــــير منظم، غير منسق، أو حتى مفهوم. لأنه مــــــازال نصاً بديلاً ومؤقتاً

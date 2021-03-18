@@ -117,7 +117,7 @@
                     <div class="form-group form-group-new">
                       <label for="" class="font-1 text-{{$align}} w-100 font-arabic">{{trans('lang.checkout.summary')}}</label>
                       <div class="input-group">
-                          <input type="text" name="coupon" class="form-control input-big text-{{$align}} font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
+                          <input type="text" name="coupon" class="form-control input-big text-{{$align}} font-arabic" placeholder="{{trans('lang.frontend_legal.legal_form_input_placeholder')}}" aria-label="" aria-describedby="basic-addon1">
                           <div class="input-group-prepend">
                             <button class="btn bg__1 btn_in_group font-arabic br-10" type="button">ارسال</button>
                           </div>

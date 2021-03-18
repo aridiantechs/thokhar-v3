@@ -354,7 +354,7 @@
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-center {{-- order-1 order-lg-1 justify-content-end --}} "> 
                             <h3 class="txt-blue-light font-arabic text-{{$align}} mb-3 mb-lg-0">
-                                        النشرة البريدية
+                                {{ trans('lang.frontend_legal.legal_form_heading') }}
                             </h3>
                         </div> 
                         <div class="col-md-6 ">
@@ -364,7 +364,7 @@
                                         <div class="input-group-prepend">
                                             <button type="submit" class="btn bg__1 btn_in_group font-arabic">اشترك الان</button>
                                         </div>
-                                        <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="لديك كوبون ؟" aria-label="" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="{{ trans('lang.frontend_legal.legal_form_input_placeholder') }}" aria-label="" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                                  

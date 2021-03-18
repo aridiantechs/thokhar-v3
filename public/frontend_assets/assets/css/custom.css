@@ -1066,7 +1066,7 @@ form input:-internal-autofill-selected{
             font-size: 18px;
             font-weight: 400;
             color: #0B4F6C;
-            width: 120px;
+            /* width: 120px; */
             margin-bottom: 7px;
         }
 

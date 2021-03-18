@@ -66,9 +66,9 @@
 								</div>
 							</div>
 						</div>
-						<h3 class="txt-blue-light text-{{$align}} font-arabic">
+						{{-- <h3 class="txt-blue-light text-{{$align}} font-arabic">
 							{{ trans('lang.income.Annual Income') }}
-						</h3>
+						</h3> --}}
 						<form id="qform" action="{{ route('wizard', locale()) }}" class="mt-3" method="POST">
 							@csrf
 							<input type="hidden" name="location" value="income">

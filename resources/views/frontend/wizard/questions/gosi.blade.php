@@ -1,6 +1,6 @@
 
 <section class="slice py-3 pb-5 fix-height" id="income">
-	<div class="mt-5">
+	<div class="mt-2">
 		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">

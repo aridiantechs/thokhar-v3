@@ -52,7 +52,7 @@
                  		@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟'])
 						
                         <div class="py-5 pl-lg-0">
-							<h3 class="txt-blue-light text-right font-arabic">
+							<h3 class="txt-blue-light text-{{$align}} font-arabic">
 							هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.
 							</h3>
 						</div>

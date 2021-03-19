@@ -85,7 +85,6 @@
                                                 'label' => trans('lang.wizard_q.Annual Income'),
 
                                         ])
-
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -97,7 +96,6 @@
 							</div>
 						</form>
 					</div>
-									   	
 				</div>
 			</div>
 			<div class="col-12 col-lg-3 text-center">

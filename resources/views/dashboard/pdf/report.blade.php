@@ -1898,9 +1898,9 @@ var myChart = new Chart(ctx, {
 $(document).ready(function(){
 	setTimeout(
 		function() {			
-			html2pdf(document.body, {
-			  pagebreak: { mode: 'avoid-all' , before: '#table-break', }
-			});
+			// html2pdf(document.body, {
+			//   pagebreak: { mode: 'avoid-all' , before: '#table-break', }
+			// });
 		},
 	500);
 });

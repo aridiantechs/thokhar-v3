@@ -70,16 +70,23 @@
 
 	.background_effect{
 	    background-size: cover;
-	    background-position: center center;
+	    background-position: 100% 100%;
 	    background-repeat: no-repeat;
 	}
 
 	.container-fluid{
-		margin-bottom: 0 !important;
+		margin-bottom: 5rem !important;
 		margin-top: 0 !important;
 		max-width:100% !important;
 	}
 
+	.b-shadow{
+		box-shadow: 0px 2px 7px 3px #e7e7e7;
+	}
+
+	.mt-4r{
+		margin-top: 4rem !important;
+	}
 
 </style>
 
@@ -87,14 +94,14 @@
 
 @section('content')
 {{-- {{ dd($data) }} --}}
-<div id="HTMLtoPDF" class="{{ ($request->segment(1) == 'ar') ? 'text-right' : '' }} " >
+<div id="HTMLtoPDF" class="container {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }} " >
 	
 	@php 
 	// $pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
 	$pointer = 'active';
 	@endphp
 
-	<div id="intro" class="container-fluid mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
+	<div id="intro" class="container-fluid mt-4r b-shadow mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-8">
@@ -138,7 +145,7 @@
 	{{-- Page 2 start --}}
 
 
-	<div id="table_of_contents" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
+	<div id="table_of_contents" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-8">
@@ -195,7 +202,7 @@
 	{{-- Page 3 start --}}
 
 
-	<div id="about_us" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
+	<div id="about_us" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -263,7 +270,7 @@
 
 	{{-- page 4 start --}}
 
-	<div id="personal_information" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="personal_information" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -411,7 +418,7 @@
 									</tr>
 									<tr>
 										<td>
-											<div class="table_color" style="background-color: #F56565;"></div>
+											<div class="table_color" style="background-color: #2dd782;"></div>
 										</td>
 										<td>
 											<p>{{ trans('lang.report.equities') }}</p>
@@ -449,7 +456,7 @@
 									</tr>
 									<tr>
 										<td>
-											<div class="table_color" style="background-color: #ED8936;"></div>
+											<div class="table_color" style="background-color: #01baef;"></div>
 										</td>
 										<td>
 											<p>{{ trans('lang.report.alternative_investment') }}</p>
@@ -502,7 +509,7 @@
 	{{-- Page 5 start --}}
 
 
-	<div id="personal_indicators" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="personal_indicators" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -841,7 +848,7 @@
 	{{-- Page 6 start --}}
 
 
-	<div id="asset_allocation" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="asset_allocation" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -993,7 +1000,7 @@
 									</tr>
 									<tr>
 										<td>
-											<div class="table_color" style="background-color: #F56565;"></div>
+											<div class="table_color" style="background-color: #2dd782;"></div>
 										</td>
 										<td>
 											<p>{{ trans('lang.report.equities') }}</p>
@@ -1029,7 +1036,7 @@
 									</tr>
 									<tr>
 										<td>
-											<div class="table_color" style="background-color: #ED8936;"></div>
+											<div class="table_color" style="background-color: #01baef;"></div>
 										</td>
 										<td>
 											<p>{{ trans('lang.report.alternative_investment') }}</p>
@@ -1084,7 +1091,7 @@
 	{{-- Page 7 start --}}
 
 
-	<div id="financial_forecast" class="container-fluid mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="financial_forecast" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -1231,7 +1238,7 @@
 	{{-- Page 7 with table start --}}
 
 
-	<div id="table-break"  class="container-fluid parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="table-break"  class="container-fluid b-shadow parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		
 		<div class="row">
 			<div class="col-1"></div>
@@ -1313,7 +1320,7 @@
 	{{-- Page 8 start --}}
 
 
-	<div id="parent-report" class="container-fluid mb-5 background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" {{ $not_found ?? '' }}>
+	<div id="parent-report" class="container-fluid b-shadow mb-5 background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" {{ $not_found ?? '' }}>
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10">
@@ -1457,7 +1464,7 @@
 	{{-- Page 9 start --}}
 
 
-	<div id="disclaimer" class="container-fluid parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+	<div id="disclaimer" class="container-fluid b-shadow parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
 		<div class="row">
 			<div class="col-1 rem-col"></div>
 			<div class="col-10">
@@ -1591,16 +1598,16 @@ var myChart = new Chart(ctx, {
 		// data: [20, 40, 51, 90, 20, 0, 10],
 		data: [{!! implode(", ", $data['assetAllocationDonutChartValues']) !!}],
 		backgroundColor: [
-			'#036EED',
-			'#2DD782',
+			'#3B83FF',
+			'#2dd782',
 			'#FFE700',
-			'#01BAEF',
+			'#01baef',
 		],
 		borderColor: [
-			'#036EED',
-			'#2DD782',
+			'#3B83FF',
+			'#2dd782',
 			'#FFE700',
-			'#01BAEF',
+			'#01baef',
 		],
 		borderWidth: 1
 		}]
@@ -1650,16 +1657,16 @@ var myChart = new Chart(ctx, {
 		data: [{!! implode(", ", $data['recommended'] ?? ['100']) !!}],
 		backgroundColor: [
 			'#3B83FF',
-			'#F56565',
+			'#2dd782',
 			'#FFE700',
-			'#ED8936',
+			'#01baef',
 			
 		],
 		borderColor: [
 			'#3B83FF',
-			'#F56565',
+			'#2dd782',
 			'#FFE700',
-			'#ED8936',
+			'#01baef',
 			
 		],
 		borderWidth: 1
@@ -1698,24 +1705,24 @@ var myChart = new Chart(ctx, {
                "fill": false,
                "lineTension": 0.1,
                "backgroundColor": [
-                "#01630A"
+                "#ad1b16"
                 
                ],
                "borderColor": [
-                "#01630A"
+                "#ad1b16"
                ],
                "borderCapStyle": "butt",
                "borderDash": [],
                "borderDashOffset": 0,
                "borderJoinStyle": "miter",
                "pointBorderColor": [
-                "#01630A"
+                "#ad1b16"
                ],
                "pointBackgroundColor": "#ffffff00",
                "pointBorderWidth": 1,
                "pointHoverRadius": 5,
-               "pointHoverBackgroundColor": "#01630A",
-               "pointHoverBorderColor": "#01630A",
+               "pointHoverBackgroundColor": "#ad1b16",
+               "pointHoverBorderColor": "#ad1b16",
                "pointHoverBorderWidth": 2,
                "pointRadius": 1,
                "pointHitRadius": 10,
@@ -1723,8 +1730,8 @@ var myChart = new Chart(ctx, {
             },{
             label: 'Contribution',
             data: [{!! implode(", ", $data['graphContribution']) !!}],
-            backgroundColor: '#2CD9C5',
-            borderColor: '#2CD9C5',
+            backgroundColor: '#2dd782',
+            borderColor: '#2dd782',
             borderWidth: 1
         	},{
           	type: 'line',

@@ -131,18 +131,19 @@ class QuestionnaireController extends Controller
     }
 
 
-    public function report()
+    public function report($report_id = NULL)
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
         if(($user_questionnaire->risks ?? null) == null)        
             return redirect()->route('risk', app()->getLocale());
-
+        
         return view('frontend.wizard.report')
                 ->with([
                     'title' => __('lang.questionnaire.report')
                 ])
-                ->with('user_questionnaire', $user_questionnaire);
+                ->with('user_questionnaire', $user_questionnaire)
+                ->with('report_id', $report_id);
 
 
     }
@@ -3133,7 +3134,7 @@ class QuestionnaireController extends Controller
         // return $report->public_id;
         
 
-        return $this->report();
+        return $this->report($report->public_id);
 
         return view('dashboard.thanks')->with('message', 'Thankyou for submitting. Please check you email to print/download the report');
 

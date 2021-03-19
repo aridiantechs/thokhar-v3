@@ -90,6 +90,7 @@ return [
     'Home'=>'الرئيسية',
     'Subscribe Now'=>'اشترك الان',
     'Contact Us'=>'اتصل بنا',
+    'Career'=>'حياة مهنية',
 
     'question' => [
         'no_1'=>'1 سؤال رقم',

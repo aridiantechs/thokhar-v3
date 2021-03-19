@@ -91,6 +91,7 @@ return [
     'Home'=>'Home',
     'Subscribe Now'=>'Subscribe Now',
     'Contact Us'=>'Contact Us',
+    'Career'=>'Career',
 
     'question' => [
         'no_1'=>'Question # 1',

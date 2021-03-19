@@ -179,12 +179,12 @@
       <div class="modal__lad text-center mt-4">
         <h3 class="font-arabic font-1 text-white">تم ارسال تقريرك الى بريدك الالكتروني</h3>
 
-        <p class="font-2-sm">asbarakat@gmail.com</p>
+        <p class="font-2-sm">{{auth()->user()->email ?? ''}}</p>
       </div>
-
+      {{-- {{dd($report_id)}} --}}
       <div class="text-center mt-0 mt-md-5">
         <button type="button" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary text-center">
-        <span class="d-inline-block font-arabic">هيا نكتشف ذلك</span>
+        <span class="d-inline-block font-arabic"><a href="{{route('download', ['q'=> $report_id, locale()] )}}" target="_blank" style="color: #ffffff">هيا نكتشف ذلك</a> </span>
       </button>
      </div>
       
@@ -199,7 +199,7 @@
 
 <script>
   window.start_point_bar = 7;
-  window.location.hash = '#report';
+  /* window.location.hash = '#report'; */
 
   $('#modal__1').modal('show')
 

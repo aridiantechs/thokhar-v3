@@ -123,6 +123,10 @@ Route::group([
     Route::get('/contact',  function () {
         return view('frontend.pages.contact');
     })->name('contact');
+
+    Route::get('/career',  function () {
+      return view('frontend.pages.career');
+    })->name('career');
     
     Route::get('/about',  function () {
         return view('frontend.pages.about');

@@ -18,7 +18,7 @@
             <div class="col-12 col-lg-6">
                 <!-- Heading -->
                 <p class="text-{{$align}} mb-0">
-                    <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+                  <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.login') }} </span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">{{ trans('code') }}</strong> 
@@ -50,7 +50,7 @@
                     </div>
                     <h3 class="text-center text-lg-{{$align}} mb-3 ">
                         <strong class="font-arabic" id="countdown">
-                        إعادة الارسال خلال  <span id="minutes">{{ trans('lang.minutes') }}</span>:<span id="seconds">{{ trans('lang.seconds') }}</span> دقيقة *
+                        {{ trans('lang.2fa.Resend verification code during') }}  <span id="minutes">{{ trans('lang.minutes') }}</span>:<span id="seconds">{{ trans('lang.seconds') }}</span>  {{ trans('lang.2fa.minute') }} *
                         </strong>
                     </h3>
                     <div class="mt-4 text-center text-lg-{{$align}}">

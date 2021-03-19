@@ -13,10 +13,10 @@
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
                 <p class="text-{{$align}} mb-0">
-                    <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+                    <span>{{ trans('lang.Home') }}    </span> <span> / </span><span>  {{ trans('lang.Contact Us') }} </span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
-                    <strong class="text-primary font-arabic">اتصل بنا</strong> 
+                    <strong class="text-primary font-arabic">{{ trans('lang.Contact Us') }} </strong> 
                 </h1>
             </div>
         </div>

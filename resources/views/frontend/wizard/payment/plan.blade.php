@@ -23,7 +23,7 @@
 			<div class="col-12 col-md-7 col-lg-6 pr-md-5">
 				<!-- Heading -->
 				<p class="text-muted mb-4 text-{{$align}} font-arabic">
-					<span>الرئيسية    </span><span> / </span><span>عن ذخر</span>
+					<span>{{ trans('lang.Home') }}    </span><span> / </span><span>{{ trans('lang.report.about_thokhor') }}</span>
 				</p>
 				<h1 class="display-4 mb-3 text-{{$align}}">
 					<strong class="text-primary font-arabic ">{{ trans('lang.plan.Gold Plan') }}</strong>
@@ -47,7 +47,7 @@
 						<h3 class="d-flex mb-0">
 							<div class="{{-- d-inline-block --}} card-price">600</div>
 						</h3>
-						<div class="{{-- d-inline-flex --}} card-price-currency font-arabic mt-2"> ريال سعودي</div>
+						<div class="{{-- d-inline-flex --}} card-price-currency font-arabic mt-2"> {{ trans('lang.report.SAR') }}</div>
 					</div>
 				</div>
 			</div>

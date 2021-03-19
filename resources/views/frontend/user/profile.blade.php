@@ -44,10 +44,10 @@
 			<div class="col-12 col-md-12 col-lg-12 order-lg-1 pr-md-5">
 				<!-- Heading -->
 				<p class="text-{{$align}} mb-0">
-					<span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+					<span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.user.profile') }} </span>
 				</p>
 				<h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
-					<strong class="text-primary font-arabic">رمز التحقق</strong> 
+					<strong class="text-primary font-arabic"> {{ trans('lang.user.profile') }}</strong> 
 				</h1>
 				<div class="row">
 					<div class=" col-lg-offset-6 col-lg-6">

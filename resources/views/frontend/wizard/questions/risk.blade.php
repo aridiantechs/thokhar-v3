@@ -114,8 +114,8 @@
 
 	             		@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk'), ]) 
 	             		<div class="d-flex direction-opposite">
-	             			<span class="text-muted float-right pl-3">  10/1</span>
-	             			<h3 class="text-dark text-right"> {{ trans('lang.question.risk_age') }} </h3>
+	             			<span class="text-muted float-right p{{$alignShort}}-3">  10/1</span>
+	             			<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.risk_age') }} </h3>
 	             		</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -144,8 +144,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/2</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.my_total_saving_and_investment_amount') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/2</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.my_total_saving_and_investment_amount') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -176,8 +176,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/3</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.during_the_next_few_years_,_the_likelihood_of_my_annual_income_change_would_be') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/3</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.during_the_next_few_years_,_the_likelihood_of_my_annual_income_change_would_be') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -207,8 +207,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')])
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/4</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.regarding_my_major_expenses_before_retirement_(including_family_expenses_such_as_education_,_buying_a_house_etc)') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/4</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.regarding_my_major_expenses_before_retirement_(including_family_expenses_such_as_education_,_buying_a_house_etc)') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -239,8 +239,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/5</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.based_on_my_current_lifestyle_and_health_state_,_the_likelihood_of_having_health_issue_during_the_next_10_years') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/5</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.based_on_my_current_lifestyle_and_health_state_,_the_likelihood_of_having_health_issue_during_the_next_10_years') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -269,8 +269,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/6</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.i_can_say_about_my_investment_experience') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/6</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.i_can_say_about_my_investment_experience') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -299,8 +299,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/7</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.i_expect_to_start_withdrawing_my_saving') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/7</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.i_expect_to_start_withdrawing_my_saving') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -328,8 +328,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/8</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/8</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -358,8 +358,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/9</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/9</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [
@@ -388,8 +388,8 @@
 						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question_headings.risk')]) 
 
 						<div class="d-flex direction-opposite">
-							<span class="text-muted float-right pl-3">  10/10</span>
-							<h3 class="text-dark text-right"> {{ trans('lang.question.when_i_buy_a_car_insurance_i_prefer') }} </h3>
+							<span class="text-muted float-right p{{$alignShort}}-3">  10/10</span>
+							<h3 class="text-dark text-{{$align}}"> {{ trans('lang.question.when_i_buy_a_car_insurance_i_prefer') }} </h3>
 						</div>
 						
 						@include('frontend.components.risk_questions', [

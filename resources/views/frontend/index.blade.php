@@ -72,7 +72,7 @@
             <div class="col-12  col-lg-6  pr-md-5">
                 <!-- Heading -->
 
-                <h6 class="mb-0 text-lg-{{$align}} text-center font-3 font-arabic">ذخر عالمك للثراء</h6>
+                <h6 class="mb-0 text-lg-{{$align}} text-center font-3 font-arabic"> {{ trans('lang.Build your wealth') }} </h6>
                 
                 <h1 class="h-big text-gray-light-1 font-arabic text-lg-{{$align}} text-center">
                     {{ trans('lang.Take control of your money') }}

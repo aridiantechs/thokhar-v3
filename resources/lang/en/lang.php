@@ -36,6 +36,12 @@ return [
         'login_with_another_account' => "login with another account",
     ],
 
+    
+    '2fa'=>[
+        'Resend verification code during'=>'Resend verification code during',
+        'minute'=>'minute',
+    ],
+
     'register_form' => [
         'name' => 'Name',
         'gender' => 'Gender',
@@ -81,6 +87,10 @@ return [
     'Start Now'=>'Start Now',
 
     'about_thokhor' =>  'About Thokar',
+    'Build your wealth'=>'Build your wealth',
+    'Home'=>'Home',
+    'Subscribe Now'=>'Subscribe Now',
+    'Contact Us'=>'Contact Us',
 
     'question' => [
         'no_1'=>'Question # 1',
@@ -274,6 +284,7 @@ return [
 
         // q1
         'risk_age' => 'Age',
+        'Monthly investing Payment'=>'Monthly investing Payment',
 
         'less_than_31' => 'Less than 31',
         '31_40' => '31 – 40',
@@ -1002,6 +1013,7 @@ return [
         'thank_you_thanks_page' => 'Thank you for being our customer. ',
         'we_hope' => 'We hope you stick with the plan you got and accomplish your financial goals! ',
 
+        'SAR'=>'SAR',
 
         'financial_health_checkup' => 'Financial Health Checkup',
         'personal_information' => 'Personal Information',
@@ -1186,6 +1198,8 @@ return [
         'month'=>'month',
         'name_in_card'=>'name in card',
         'summary'=>'Order Summary',
+        'Apply'=>'Apply',
+        'Pay Now'=>'Pay Now',
     ],
 
     'steps' => [

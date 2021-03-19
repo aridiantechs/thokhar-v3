@@ -12,7 +12,7 @@
 
         <p class="text-{{$align}} mb-0">
 
-          <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+            <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.user.profile') }} </span>
 
         </p>
         

@@ -36,6 +36,11 @@ return [
     	'login_with_another_account' => '  تسجيل الدخول بحساب آخر  ', 
     ],
 
+    '2fa'=>[
+        'Resend verification code during'=>'إعادة الارسال رمز التحقق خلال',
+        'minute'=>'دقيقة ',
+    ],
+
     'register_form' => [
     	'name' => 'اسم',
         'gender' => '  جنس      ',
@@ -81,6 +86,10 @@ return [
     'Take control of your money'=>'تحكم باستثمار أموالك بشكل كامل باحترافية',
     'Start Now'=>'ابدأ الآن بدون مقابل',
     'about_thokhor' =>  'عن ذخر',
+    'Build your wealth'=>'ذخر عالمك للثراء',
+    'Home'=>'الرئيسية',
+    'Subscribe Now'=>'اشترك الان',
+    'Contact Us'=>'اتصل بنا',
 
     'question' => [
         'no_1'=>'1 سؤال رقم',
@@ -276,6 +285,7 @@ return [
 
         // q1
         'risk_age' => '      اﻟﻌﻤﺮ              ',
+        'Monthly investing Payment'=>'المبلغ الشهري',
 
         'less_than_31' => '   اقل من 31 سنة         ',
         '31_40' => '31 – 40',
@@ -1010,7 +1020,7 @@ return [
         'thank_you_for' => 'شكرا  لك ونتشرف <br> بك في عائلة عملاء ذخر ',
         'thank_you_thanks_page' => 'شكرا  لك ونتشرف  بك في عائلة عملاء ذخر ',
         'we_hope' => 'نتمنى لك الالتزام بالخطة المالية  وتحقيق اهدافك المالية بنجاح  ',
-
+        'SAR'=>'ريال سعودي',
 
         'financial_health_checkup' => 'تقييم الصحة المالية',
         'personal_information' => 'المعلومات الشخصية',
@@ -1195,6 +1205,8 @@ return [
         'month'=>'الشهر',
         'name_in_card'=>'الاسم على البطاقة',
         'summary'=>'ملخص الطلب',
+        'Apply'=>'تطبيق',
+        'Pay Now'=>'ادفع الآن',
     ],
 
 

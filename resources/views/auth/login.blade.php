@@ -41,7 +41,7 @@
       
       <div class="col-12 col-lg-6 pr-md-5">
         <p class="{{$textAlign}} mb-0">
-          <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+          <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.login') }} </span>
         </p>
         <h1 class="display-4 {{$textAlign}} {{$textAlignMd}}mb-3">
           <strong class="text-primary font-arabic">{{ trans('lang.login') }}</strong> 

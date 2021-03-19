@@ -119,7 +119,7 @@
                       <div class="input-group">
                           <input type="text" name="coupon" class="form-control input-big text-{{$align}} font-arabic" placeholder="{{trans('lang.frontend_legal.legal_form_input_placeholder')}}" aria-label="" aria-describedby="basic-addon1">
                           <div class="input-group-prepend">
-                            <button class="btn bg__1 btn_in_group font-arabic br-10" type="button">ارسال</button>
+                            <button class="btn bg__1 btn_in_group font-arabic br-10" type="button">{{trans('lang.checkout.Apply')}}</button>
                           </div>
                       </div>
                     </div>
@@ -168,7 +168,7 @@
                      <div class="mt-4 text-{{$align}}">
                         <button type="submit" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary font-arabic with-arrow">
                         {{-- <i class="fa fa-arrow-left"></i> --}}
-                        <span class="d-inline-block">ادفع الآن</span>
+                        <span class="d-inline-block"> {{trans('lang.checkout.Pay Now')}}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                         </button>
                      </div>

@@ -223,7 +223,7 @@
 					<div class="col-4">
 						<div>
 							<p class="top_info__1">
-								المبلغ الشهري
+								{{ trans('lang.question.Monthly investing Payment') }}
 							</p>
 							<span>
 								<h3 class="top_info__2 mb-0">‏‏{{ currency($investing_amount['investing_amount']['monthly_amount'] ?? 0) }} </h3>

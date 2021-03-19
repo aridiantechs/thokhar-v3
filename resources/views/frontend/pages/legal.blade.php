@@ -11,7 +11,7 @@
 
          <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                  <p class="text-muted mb-0 text-{{$align}} font-arabic"><span>الرئيسية    </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
+                  <p class="text-muted mb-0 text-{{$align}} font-arabic"><span>{{ trans('lang.Home') }}     </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
                 <h1 class="display-4 text-{{$align}} mb-3">
                     <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
                         {{--  <i class="fa fa-arrow-left"></i> --}}
@@ -91,7 +91,7 @@
                                 <div class="form-group form-group-new mb-0">                            
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button type="submit" class="btn bg__1 btn_in_group font-arabic">اشترك الان</button>
+                                            <button type="submit" class="btn bg__1 btn_in_group font-arabic">{{trans('lang.Subscribe Now')}}</button>
                                         </div>
                                         <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="{{ trans('lang.frontend_legal.legal_form_input_placeholder') }}" aria-label="" aria-describedby="basic-addon1">
                                     </div>
@@ -115,7 +115,7 @@
                                 <input type="text" class="form-control text-{{$align}} font-arabic" placeholder="{{ trans('lang.frontend_legal.legal_form_input_placeholder') }}" aria-label="" aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group-prepend">
-                                <button type="submit" class="text-{{$align}}  btn  btn-big btn-gradient btn-rad35 btn-primary ml-auto mt-3">اشترك الان</button>
+                                <button type="submit" class="text-{{$align}}  btn  btn-big btn-gradient btn-rad35 btn-primary ml-auto mt-3">{{trans('lang.Subscribe Now')}}</button>
                             </div>
                          </form>
                     </div>                    

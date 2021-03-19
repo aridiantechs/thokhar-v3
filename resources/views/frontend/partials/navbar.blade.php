@@ -39,6 +39,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact', locale()) }}" role="button" >{{ trans('lang.site_menu.contact') }}</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('career', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
+                </li>
                 @auth
                     @if (auth()->user()->two_factor_code)
                     

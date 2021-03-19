@@ -4,6 +4,10 @@
 
 @section('styles')
 <style type="text/css">
+    .file__type{
+        font-weight: 600;
+    color: red;
+    }
 </style>
 @endsection
 
@@ -53,6 +57,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-12 order-1 order-lg-2 mb-3">
+                                    <small class="file__type">i.e .pdf .docx</small>
+                                    <div class="card image-card mb-0" id="profile_image_back">
+                                        <div class="card-body h-100 d-flex justify-content-center align-items-center">
+                                            <span class="material-icons txt-gray-light md-48" id="new_profile">add</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="file" name="profile_image" id="new_profile_button" class="d-none"> 
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -83,4 +96,31 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+$('#new_profile').click(function(){
+	$('#new_profile_button').click();
+});
+
+
+$("#new_profile_button").change(function(){
+    changeLogoImage(this);
+});
+
+
+function changeLogoImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#profile_image_back').html('');
+            $('#profile_image_back').css('background-image', 'url(' + e.target.result + ')');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }   
+}
+
+</script>
 @endsection

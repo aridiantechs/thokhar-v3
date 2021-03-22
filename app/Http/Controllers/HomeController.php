@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Session;
-use App\User;
-use App\Career;
-use App\Report;
-use App\Constant;
 use Illuminate\Http\Request;
-use App\Mail\SendContactEmail;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Support\Facades\Validator;
+use App\Mail\SendContactEmail;
+use App\User;
+use App\Constant;
+use App\Report;
+use Session;
 
 class HomeController extends Controller
 {
@@ -221,27 +219,4 @@ class HomeController extends Controller
 
         return redirect()->back()->withMessage(trans('lang.Verification_failed_please_try_again'));
     }
-
-    public function career(Request $request)
-    {
-        dd($request->all());
-
-        $request->validate([
-            'file' => 'mimes:docx,pdf',
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'message' => 'required|string|max:255',
-        ]);
-
-        $report = custom_file_upload($request->file('history_report'),'public','uploads/uploadData',null,null,null,null);
-
-        $career = Career::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'message' => $request->input('message'),
-            'file' => $report,
-        ]);
-
-        return back()->with('success',trans('lang.frontend_contact.thanks_message'));
-    } 
 }

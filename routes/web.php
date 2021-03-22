@@ -371,7 +371,6 @@ Route::group([
     // ----------------------------- Contact Email --------------------------------
 
     Route::post('/contact', 'HomeController@contactEmail')->name('contact');
-    Route::post('/career', 'HomeController@career')->name('career');
   });
 
 });

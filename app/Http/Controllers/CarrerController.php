@@ -14,7 +14,7 @@ class CarrerController extends Controller
      */
     public function index()
     {
-        //
+        return view('frontend.pages.career');
     }
 
     /**
@@ -36,7 +36,7 @@ class CarrerController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            
+            'file' => 'mimes:docx,pdf',
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:50',
             'phone_number' => 'required|string|max:50',
@@ -44,12 +44,22 @@ class CarrerController extends Controller
         ]);
 
         if ($validator->fails()) {
-
+            /* return $validator->errors(); */
             return redirect()->back()
                         ->withErrors($validator)
                         ->withInput();
         }
 
+        $report = custom_file_upload($request->file('file'),'public/uploads','career-data',null,null,null);
+        /* dd($report); */
+        $career = new Carrer;
+
+        $career->name = $request->input('name');
+        $career->email = $request->input('email');
+        $career->phone = $request->input('phone_number');
+        $career->file = $report;
+        $career->save();
+        /* dd($career); */
         return redirect()->back()->with('success', 'Application submit successfully.');
     }
 

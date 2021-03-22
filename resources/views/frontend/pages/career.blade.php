@@ -47,7 +47,7 @@
 
                 @include('frontend.notifications.success')
                 @include('frontend.notifications.warning')
-                <form method="POST" action="{{ route('career.store', locale()) }}" class="mt-3">
+                <form method="POST" action="{{ route('career.store', locale()) }}" class="mt-3" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -63,12 +63,12 @@
                                     <div class="row">
                                         <div class="col-lg-6 order-1 order-lg-2 mb-3">
                                             {{-- <small class="file__type">i.e .pdf .docx</small> --}}
-                                            <div class="card image-card mb-0" id="profile_image_back">
+                                            <div class="card image-card mb-0" id="file_back">
                                                 <div class="card-body h-100 justify-content-center align-items-center" style="display: grid;">
-                                                    <img class="img img-fluid img-upload" id="new_profile" src="{{ asset('frontend_assets/assets/img/new/contact-us/upload.svg') }}">
+                                                    <img class="img img-fluid img-upload" id="file" src="{{ asset('frontend_assets/assets/img/new/contact-us/upload.svg') }}">
                                                     <span class="text-center">ارفق سيرتك الذاتية</span>
                                                 </div>
-                                                <input type="file" accept="application/pdf" name="profile_image" id="new_profile_button" class="d-none"> 
+                                                <input type="file" accept="application/pdf" name="file" id="file_button" class="d-none"> 
                                             </div>
                                         </div>
                                         <div class="col-lg-6 order-1 order-lg-2 mb-3">
@@ -90,7 +90,6 @@
                                         
                                     </div>
                                 </div>
-                                <input type="file" name="profile_image" id="new_profile_button" class="d-none"> 
                             </div>
                            
                             <div class=" text-{{$align}} ">
@@ -117,12 +116,12 @@
 
 @section('scripts')
 <script type="text/javascript">
-$('#new_profile').click(function(){
-	$('#new_profile_button').click();
+$('#file').click(function(){
+	$('#file_button').click();
 });
 
 
-$("#new_profile_button").change(function(){
+$("#file_button").change(function(){
     changeLogoImage(this);
 });
 

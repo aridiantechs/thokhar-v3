@@ -11,7 +11,7 @@
 
          <div class="row row-grid">
             <div class="col-12 order-md-2 ">
-                  <p class="text-muted mb-0 text-{{$align}} font-arabic"><span>{{ trans('lang.Home') }}     </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
+                  <p class="text-muted mb-0 text-{{$align}} font-arabic"><span>{{ trans('lang.Home') }}     </span><span> / </span><span>{{ \Str::lower(trans('lang.frontend_legal.legal')) }}</span></p>
                 <h1 class="display-4 text-{{$align}} mb-3">
                     <a type="button" href="{{ route('login', locale()) }}" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
                         {{--  <i class="fa fa-arrow-left"></i> --}}

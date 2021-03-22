@@ -16,7 +16,7 @@
 			<div class="col-12 col-md-7 col-lg-6 pr-md-5">
 				<!-- Heading -->
 				<p class="text-muted mb-4 text-right font-arabic">
-					<span>{{ trans('lang.Home') }}    </span><span> / </span><span>{{ trans('lang.report.about_thokhor') }}</span>
+					<span>{{ trans('lang.Home') }}    </span><span> / </span><span>{{ trans('lang.plan.Gold Plan') }}</span>
 				</p>
 				<h1 class="display-4 mb-3 text-right">
 					<strong class="text-primary font-arabic ">الباقة الذهبية</strong>

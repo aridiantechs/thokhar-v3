@@ -179,7 +179,7 @@
 <section class="slice py-7 risk-test">
 	<div class="container">
 		<p class="text-{{$align}} mb-0">
-			<span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+			<span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.question_headings.Risk Test') }} </span>
 		</p>
 		<div class="row">
 			<div class="col-lg-5 {{-- order-1 order-lg-2 --}}">

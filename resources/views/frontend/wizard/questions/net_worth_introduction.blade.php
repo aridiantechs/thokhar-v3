@@ -72,7 +72,7 @@
                     <div id="cash_and_deposit" class="container tab-pane">
 						<br>						
 						
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.cash amount')])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -112,7 +112,7 @@
 
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question.equities') ])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -151,7 +151,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question.bonds') ])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -190,7 +190,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Real estate')])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -229,7 +229,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.question.unliquid_priavte_business')])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -268,7 +268,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ''])
+						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Other assets')])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',

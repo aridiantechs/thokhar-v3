@@ -11,8 +11,7 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 col-md-12 col-lg-12 order-md-1 pr-md-5">
-                <p class="text-{{$align}} mb-0">
-                    <span>  اتصل بنا</span><span> / </span><span>الرئيسية    </span>
+                <p class="text-{{$align}} mb-0"><span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.frontend.steps') }} </span>
                 </p>
                 
                 <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">

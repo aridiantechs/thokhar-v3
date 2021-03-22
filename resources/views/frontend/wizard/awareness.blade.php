@@ -12,7 +12,7 @@
 
         <p class="text-{{$align}} mb-0">
 
-            <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.user.profile') }} </span>
+            <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ \Str::ucFirst(trans('lang.awareness.title')) }} </span>
 
         </p>
         

@@ -49,7 +49,7 @@
             </div> -->
          <div class="col-12 col-md-12 col-lg-12  pr-md-5">
             <!-- Heading -->
-            <p class="text-muted text-{{$align}} mb-0"><span> ابدأ تجربتك</span><span> / </span><span>خطط الدفع</span></p>
+            <p class="text-muted text-{{$align}} mb-0"><span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.checkout.title') }} </span></p>
             <h1 class="display-4 text-{{$align}} mb-3">
                <strong class="text-primary font-arabic">{{ trans('lang.plan.Gold Plan') }}</strong>
             </h1>

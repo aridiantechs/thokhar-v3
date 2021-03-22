@@ -143,7 +143,7 @@ function currency($value, $currency = 1)
     
     if(($value) && $currency == 1)
     // if(is_numeric($value) && $currency == 1)
-        return 'SAR '. number_format((is_numeric($value)) ? $value : 0, 0);
+        return  number_format((is_numeric($value)) ? $value : 0, 0).' SAR';
     else
         return 0;
 }
@@ -151,7 +151,7 @@ function currency($value, $currency = 1)
 function currencyR($value, $currency = 1)
 {
     if($value == null)
-        return 'SAR ' . 0;
+        return  0 .' SAR';
     else if(($value) && $currency == 0)
     // else if(is_numeric($value) && $currency == 0)
         return number_format((is_numeric($value)) ? $value : 0, 0);
@@ -159,7 +159,7 @@ function currencyR($value, $currency = 1)
     
     if(($value) && $currency == 1)
     // if(is_numeric($value) && $currency == 1)
-        return 'SAR ' . number_format((is_numeric($value)) ? $value : 0, 0);
+        return  number_format((is_numeric($value)) ? $value : 0, 0).' SAR';
     else
         return 0;
 }

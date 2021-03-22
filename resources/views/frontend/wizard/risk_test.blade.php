@@ -417,10 +417,11 @@
 									<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 								</a>
 							</div>
-							<div class="col-lg-9 order-1 order-lg-2">
+							<div class="col-lg-9 {{-- order-1 order-lg-2 --}}">
 								<div class="d-block d-lg-flex justify-content-end text-center text-lg-{{$align}}">
-									<div class="mb-3 d-block d-lg-none">
-										<img class="modal-coin-img" src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
+									
+									<div class="d-none d-lg-inline-block">
+										<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 									</div>
 									<div class="mb-4 mb-lg-0 w-100 mr-3 modal-message-card">
 										<h3 class="text-center text-lg-{{$align}} top_info__3 mb-0">هل تريد تقريراً مخصصاً لك ؟</h3>
@@ -429,8 +430,8 @@
 											مع تواصل مباشر مع مستشار خبير
 										</p>
 									</div>
-									<div class="d-none d-lg-inline-block">
-										<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
+									<div class="mb-3 d-block d-lg-none">
+										<img class="modal-coin-img" src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 									</div>
 								</div>
 							</div>

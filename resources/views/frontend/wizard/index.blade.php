@@ -147,7 +147,7 @@
 					$('body').addClass('loaded')
 				},
 				error: function(error){
-					window.location.href('{{ route('wizard',locale()) }}')
+					window.location.href('{{ route('plan',locale()) }}')
 				}
 			});
 		}
@@ -165,6 +165,7 @@
 		
 		var $this = $( this );
         var n = '';
+        
         $('.form-control').each(function(i, obj) {
             
             $(this).val($(this).val().replace(/,/g,''));
@@ -174,26 +175,38 @@
 		$.ajax({
 
 			type: "POST",
+
 			url: $(this).attr("action"),
+
 			data: $(this).serialize(),
 
 			success: function(html){
+
 				$(".wizard-wrapper").html(html)
+
 				$('body').addClass('loaded')
 				
 			},
 			error: function(error){
+
 				var errors = JSON.parse(error.responseText);
+
 				var errors_list = '';
+
 				jQuery.each(errors.errors, function(index, item) {
+
 				    errors_list += `<li><p class="text-dark" >` +item+ `</p></li>`
+
 				}.bind(this));
 
 				$('.alert ul').html(errors_list);
+
 				$('.alert').show();
 
 				$('.slice').removeClass('fix-heigh');
+
             	$('.slice').removeClass('fix-height');
+
             	$('body').addClass('loaded')
 				
 			}

@@ -91,7 +91,7 @@
                                                 'name' => 'gosi[strating_year_in_plan]', 
                                                 'value' => $user_questionnaire->gosi["gosi"]["strating_year_in_plan"] ?? '',
                                                 'old_val' => "gosi.strating_year_in_plan",
-                                                'placeholder' => 'المبلغ بالريال', 
+                                                'placeholder' => ' ', 
                                                 'icon' => 'calendar',
                                                 'id' => 'datepicker',
                                                 'label' => trans('lang.wizard_q.Starting year registration in GOCI')
@@ -106,7 +106,7 @@
                                                 'name' => 'gosi[expecting_salary_at_retirement]', 
                                                 'value' => currency($user_questionnaire->gosi["gosi"]["expecting_salary_at_retirement"] ?? '', 0),
                                                 'old_val' => "gosi.expecting_salary_at_retirement",
-                                                'placeholder' => 'المبلغ بالريال', 
+                                                'placeholder' => '', 
                                                 'no_icon' => true,
                                                 'label' => trans('lang.wizard_q.Expecting salary at retirement')
 
@@ -120,7 +120,7 @@
                                                 'name' => 'gosi[monthly_subscription]', 
                                                 'value' => currency($user_questionnaire->gosi["gosi"]["monthly_subscription"] ?? '', 0),
                                                 'old_val' => "gosi.monthly_subscription",
-                                                'placeholder' => 'المبلغ بالريال', 
+                                                'placeholder' => '', 
                                                 'no_icon' => true,
                                                 'label' => trans('lang.wizard_q.Monthly subscription')
 

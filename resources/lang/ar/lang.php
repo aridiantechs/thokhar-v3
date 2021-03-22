@@ -39,6 +39,7 @@ return [
     '2fa'=>[
         'Resend verification code during'=>'إعادة الارسال رمز التحقق خلال',
         'minute'=>'دقيقة ',
+        'code' => 'رمز التحقق ',
     ],
 
     'register_form' => [
@@ -1029,7 +1030,7 @@ return [
             'education' => 'المستوى التعليمي',
             'current_age' => 'العمر حالياً',
             'planned_retirement_age' => 'سن التقاعد المخطط له',
-        'Are you risk taker'=>'هل انت مستثمر مغامر',
+        'Are you risk taker'=>'هل انت مستثمر مغامر؟',
         'Natural'=>'مستثمر طبيعي',
         'Financial Projections'=>'التوقعات المالية',
         'Recommended asset allocation'=>'توزيع الأصول الموصى به',
@@ -1248,7 +1249,7 @@ return [
 
         'Expecting salary at retirement' => 'الراتب المتوقع عند التقاعد',
         'Monthly subscription' => 'المبلغ المستقطع من الراتب للتأمينات الإجتماعية ',
-        'Starting year registration in GOCI' => 'بدء التسجيل بالتأمينات ( اول سنة وظيفة )',
+        'Starting year registration in GOCI' => 'بدء التسجيل بالتأمينات ',
 
         'Monthly investing Payment' => 'مبلغ الاستثمار الشهري ( متكرر )',
         'Magic of compounding returns' => 'سحر العائد التراكمي',
@@ -1257,5 +1258,9 @@ return [
         'Other assets'=>'أصول أخرى',
 
     ],
+
+    'free_report' => 'التقرير المجاني',
+    '3_steps_page' => 'ثلاث خطوات',
+    'consultation_session' => 'الجلسة الاستشارية',
 ];
 

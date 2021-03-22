@@ -13,11 +13,11 @@
             <div class="col-12 order-md-2 ">
                   <p class="text-muted mb-0 text-{{$align}} font-arabic"><span>{{ trans('lang.Home') }}     </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
                 <h1 class="display-4 text-{{$align}} mb-3">
-                    <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
+                    <a type="button" href="{{ route('login', locale()) }}" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
                         {{--  <i class="fa fa-arrow-left"></i> --}}
                         <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
-                   </button>
+                   </a>
                     <strong class="text-primary font-arabic"> {{ trans('lang.frontend_legal.legal') }}</strong> 
                 </h1>
             </div>

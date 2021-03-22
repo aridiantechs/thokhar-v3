@@ -72,7 +72,7 @@
                     <div id="cash_and_deposit" class="container tab-pane">
 						<br>						
 						
-						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.Do you have money in cash')])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -112,7 +112,7 @@
 
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => '   الأسهم'])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -151,7 +151,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ' السندات والصكوك'])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -190,7 +190,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ' العقارات'])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -229,7 +229,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => ' عمل خاص'])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
@@ -268,7 +268,7 @@
 						
 						<br>
 
-						@include('frontend.components.breadcrumb' , ['heading' => '  أصول أخرى'])
+						@include('frontend.components.breadcrumb' , ['heading' => ''])
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',

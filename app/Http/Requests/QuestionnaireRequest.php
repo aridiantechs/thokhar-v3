@@ -37,12 +37,13 @@ class QuestionnaireRequest extends FormRequest
                 {
                     switch ($previous_url) {
 
-                        case '/investing-amount':
+                        case 'investing-amount':
                             return [
                                 'investing_amount' => 'required|array',
                                 'investing_amount.initial_amount' => 'required|numeric',
                                 'investing_amount.monthly_amount' => 'required|numeric',
-                                'investing_amount.years_old' => 'required|numeric|max:120|min:5',
+                                // 'investing_amount.years_old' => 'required|numeric|max:120|min:5',
+                                'investing_amount.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:0',
                                 // 'investing_amount.retirement_age' => 'required|numeric|gte:investing_amount.years_old|max:120',
                             ];
                             break;

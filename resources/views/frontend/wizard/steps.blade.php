@@ -16,7 +16,7 @@
                 </p>
                 
                 <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
-                    <strong class="text-primary font-arabic">ثلاث خطوات</strong> 
+                    <strong class="text-primary font-arabic">{{ trans('lang.3_steps_page') }}</strong> 
                 </h1>
 
                 <h3 class="mt-2 mb-5 text-{{$align}}">

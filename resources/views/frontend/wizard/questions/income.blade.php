@@ -45,7 +45,7 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active">
 						<br>
-						@include('frontend.components.breadcrumb' , ['heading' =>trans('lang.plan.Gold Plan') ])
+						@include('frontend.components.breadcrumb' , ['heading' =>trans('lang.question_headings.income') ])
 						<div class="card card-shadow has-bg-right">
 							<div class="card-body p-0">
 								<div class="row row-grid">

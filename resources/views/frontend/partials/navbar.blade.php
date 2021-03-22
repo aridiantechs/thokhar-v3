@@ -41,7 +41,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('career', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
+                    <a class="nav-link" href="{{ route('career.index', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
                 </li>
                 @auth
                     @if (auth()->user()->two_factor_code)
@@ -73,7 +73,7 @@
             </ul>
             <ul class="nav nav-social-icons">
                 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link instagram-a" href="#" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -87,9 +87,9 @@
                     <a class="nav-link snapchat-a" href="#" target="_blank">
                         <i class="fab fa-snapchat"></i>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link twitter-a" href="#" target="_blank">
+                    <a class="nav-link twitter-a" href="https://twitter.com/thokhor1" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>

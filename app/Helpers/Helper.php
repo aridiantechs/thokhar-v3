@@ -141,7 +141,7 @@ function currency($value, $currency = 1)
     
     if(($value) && $currency == 1)
     // if(is_numeric($value) && $currency == 1)
-        return 'SAR ' . number_format((is_numeric($value)) ? $value : 0, 0);
+        return 'SAR '. number_format((is_numeric($value)) ? $value : 0, 0);
     else
         return 0;
 }
@@ -252,3 +252,76 @@ if (!function_exists('locale')) {
 
 
 
+
+// Custom Helpers for to convert in Million
+if (!function_exists('convertToMillion')) {
+    /**
+     * Generate Unique String with Model
+     *
+     * @param $condition
+     * @param $value
+     * @return null
+     */
+    function convertToMillion($n) {
+        // first strip any formatting;
+        $n = (0+str_replace(",", "", $n));
+
+        // is this a number?
+        if (!is_numeric($n)) return false;
+
+        // now filter it;
+        if ($n > 1000000000000) return round(($n/1000000000000), 2).' T';
+        elseif ($n > 1000000000) return round(($n/1000000000), 2).' B';
+        elseif ($n > 1000000) return round(($n/1000000), 2).' M';
+        elseif ($n > 1000) return round(($n/1000), 2).' thousand';
+
+        return number_format($n);
+    }
+}
+
+
+
+if (!function_exists('custom_file_upload'))
+{
+    /**
+     * // Check if Property Exists then Echo it
+     *
+     * @param $condition
+     * @param $value
+     * @return null
+     */
+    function custom_file_upload($file, $path = 'uploads', $slug = null, $default = 'default.jpg', $height = null, $width = null)
+    {
+        if (isset($file))
+        {
+            $currentDate = Carbon::now()->toDateString();
+            $image_name = $slug . '-' . $currentDate .'-'.uniqid(). '.' . $file->getClientOriginalExtension();
+
+            if ($height || $width)
+            {
+                $file = \Image::make($file)->resize($width,$height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                // dd($file->encode('jpg')->__toString());
+                $saved =  Storage::put($path .'/'. $image_name, $file->encode());
+                // $saved = Storage::putFileAs($path, $file->encode('jpg')->__toString(), $image_name);
+
+                if ($saved)
+                {
+                    return $image_name;
+                }
+            }
+
+            $path = Storage::putFileAs($path, $file, $image_name);
+            if ($path)
+            {
+                return $image_name;
+            }
+        }
+        else
+        {
+            return $default;
+        }
+
+    }
+}

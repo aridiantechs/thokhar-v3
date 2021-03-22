@@ -275,6 +275,11 @@ class Questionnaire extends Model
         return $this->getLatestQuestionnaire($user)->personal_info ?? null;
     }
 
+    public function getInvestingAmount(? User $user = null)
+    {
+        return $this->getLatestQuestionnaire($user)->investing_amount ?? null;
+    }
+
     public function getIncome(? User $user = null)
     {
         return $this->getLatestQuestionnaire($user)->income ?? null;
@@ -2050,6 +2055,11 @@ class Questionnaire extends Model
         return (integer)$this->getSavingPlan($user)['saving_plan']['current_saving_balance'];
     }
 
+    public function getInitialAccomulativeSavingtoday(User $user = null)
+    {
+        return (integer)$this->getInvestingAmount($user)['investing_amount']['initial_amount'] ?? 0;
+    }
+
     public function getCurrentAge(User $user = null)
     {
         return (integer)$this->getPersonalInfo($user)['personal_info']['years_old'];
@@ -2058,6 +2068,11 @@ class Questionnaire extends Model
     public function getAnnualIncreaseInSavingPlan(User $user = null)
     {
         return (integer)$this->getSavingPlan($user)['saving_plan']['annual_increase_in_saving_plan'];
+    }
+
+    public function getAnnualIncreaseInInitialInvestment(User $user = null)
+    {
+        return (integer)$this->getInvestingAmount($user)['investing_amount']['annual_increase_in_saving_plan'];
     }
 
     public function getuserInfo(User $user = null)

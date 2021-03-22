@@ -11,24 +11,24 @@
                     <div class="col-md-6 d-none d-lg-block">
                         <ul class="nav mt-3 mt-md-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    اتصل بنا
+                                <a class="nav-link" href="{{ route('contact', locale()) }}">
+                                    {{ trans('lang.site_menu.contact') }}
                                 </a>
                             </li><li class="nav-item">
-                                <a class="nav-link" href="#">
-                                   الإفصاح القانوني
+                                <a class="nav-link" href="{{ route('legal', locale()) }}">
+                                    {{ trans('lang.site_menu.legal') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                   عن ذخر
+                                <a class="nav-link" href="{{ route('about', locale()) }}">
+                                    {{ trans('lang.site_menu.about_us') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    الرئيسية
+                            {{-- <li class="nav-item">
+                                <a class="nav-link" href="{{ route('/', locale()) }}">
+                                    {{ trans('lang.home') }}
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-lg-6 ">

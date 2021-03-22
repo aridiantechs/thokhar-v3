@@ -63,7 +63,7 @@
 
 										<div class="p-3">
 											<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
-												<strong class="text-primary-1 font-arabic">{{ trans('lang.awareness.Reach To The Financial Freedom') }} </strong>
+												<strong class="text-primary-1 font-arabic" style="font-size: 1.7rem;">{{ trans('lang.awareness.Reach To The Financial Freedom') }} </strong>
 											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
 												هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
@@ -128,7 +128,7 @@
                                                 'old_val' => "saving_plan.annual_increase_in_saving_plan",
                                                 'placeholder' => 'المبلغ بالريال', 
                                                 'no_icon' => true,
-                                                'label' => trans('lang.wizard_q.Magic of compounding returns')
+                                                'label' => trans('lang.question.annual_increase_in_saving_plan')
 
                                         ])
 									</div>

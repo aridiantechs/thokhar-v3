@@ -115,6 +115,7 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js" integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q==" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $('#file').click(function(){
 	$('#file_button').click();
@@ -139,5 +140,8 @@ function changeLogoImage(input) {
     }   
 }
 
+$(document).ready(function(){
+    $('[name="phone_number"]').inputmask({"mask": "+(999) 99-999-9999"}); //specifying options
+})
 </script>
 @endsection

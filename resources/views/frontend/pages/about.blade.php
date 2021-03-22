@@ -156,11 +156,11 @@
             <div class="col-12 order-md-2 ">
                 <p class="text-muted mb-4 text-{{$align}} font-arabic"><span> {{ trans('lang.Home') }}    </span><span> / </span><span>{{ trans('lang.about_thokhor') }}</span></p>
                 <h1 class="display-4 text-lg-{{$align}} mb-3">
-                    <button type="button" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
+                    <a type="button" href="{{ route('login', locale()) }}" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
                     {{-- <i class="fa fa-arrow-left"></i> --}}
                         <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
-                    </button>
+                    </a>
                     <strong class="text-primary float-{{$align}} font-arabic">{{ trans('lang.about_thokhor') }}</strong> 
                 </h1>
             </div>
@@ -191,9 +191,9 @@
                         <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
                     </figure>
                 </div>
-                <h3 class="txt-gray-light font-arabic text-{{$align}} mt-3">
+                {{-- <h3 class="txt-gray-light font-arabic text-{{$align}} mt-3">
                     عند الاستثمار بمبلغ 100 ألف ريال لمدة 25 سنة بنفسك ستحصل على أرباح تقدر بـ 330 ألف ريال ولكن في حالة الاستثمار عن طريق صناديق الاستثمار عند دفع 2% فقط ستفقد اكثر من نصف قيمة أرباحك بنهاية المدة 
-                </h3>
+                </h3> --}}
             </div>
             <div class="col-12 col-lg-4{{--  order-2 order-lg-1 --}} d-none d-lg-block">
                 <div class="py-5">

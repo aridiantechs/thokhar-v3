@@ -49,7 +49,7 @@
 				<div class="tab-content">
 					<div id="home" class="container tab-pane active"><br>
                  		
-                 		@include('frontend.components.breadcrumb' , ['heading' => 'هل لديك مال نقدا؟'])
+                 		@include('frontend.components.breadcrumb' , ['heading' => trans('lang.consultation_session')])
 						
                         <div class="py-5 pl-lg-0">
 							<h3 class="txt-blue-light text-{{$align}} font-arabic">

@@ -35,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
 
         $alignShort   =  $request->segment(1) == 'ar' ? 'l' : 'r';
 
+        $alignShortRev=  $request->segment(1) == 'ar' ? 'r' : 'l';
+
         $arrowAlign   =  $request->segment(1) == 'ar' ? 'left' : 'right';
 
         $textAlign    =  $request->segment(1) == 'ar' ? 'text-right' : '';
@@ -49,12 +51,13 @@ class AppServiceProvider extends ServiceProvider
         View::share([
                 'align'  => $align,
                 'align3letter'  => $align3letter,
-                'reverseAlign3Letter'  => $reverseAlign3Letter,
-                'alignShort'  => $alignShort,
-                'arrowAlign'  => $arrowAlign,
-                'textAlign'   => $textAlign,
-                'textAlignMd' => $textAlignMd,
-                'btnAlign'    => $btnAlign,
+                'reverseAlign3Letter' => $reverseAlign3Letter,
+                'alignShort'    => $alignShort,
+                'alignShortRev' => $alignShortRev,
+                'arrowAlign'    => $arrowAlign,
+                'textAlign'     => $textAlign,
+                'textAlignMd'   => $textAlignMd,
+                'btnAlign'      => $btnAlign,
                 'alignreverse'  => $alignreverse,
                 'oppositedirection'  => $oppositedirection
             ]);

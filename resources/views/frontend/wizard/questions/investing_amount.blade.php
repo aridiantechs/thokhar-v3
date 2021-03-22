@@ -38,6 +38,7 @@
 
                     <form action="{{ route('questionnaire', locale()) }}" id="investing_form" method="POST">
                         @csrf
+                        <input type="hidden" name="location" value="investing-amount">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row flex-column-reverse flex-lg-row">
@@ -48,11 +49,11 @@
                                             
                                             @include('frontend.inputs.input_group', [
                                                 'type' => 'text', 
-                                                'name' => 'investing_amount[years_old]', 
-                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["years_old"] ?? '', 0),
+                                                'name' => 'investing_amount[annual_increase_in_saving_plan]', 
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["annual_increase_in_saving_plan"] ?? '', 0),
                                                 'old_val' => "investing_amount.age_today",
                                                 'placeholder' => "0",
-                                                'label' => trans('lang.investing_amount.Your age today')
+                                                'label' => trans('lang.question.annual_increase_in_saving_plan')
                                                 ])
 
                                         </div>

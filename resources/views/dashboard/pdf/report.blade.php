@@ -1312,7 +1312,7 @@
 		</div>
 
 		<br><br><br>
-		<p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
 	</div>
 
 
@@ -1455,7 +1455,6 @@
 		<br><br><br><br><br>
 		<br><br><br><br><br>
 		
-		<p class="text-center mr-5">{{ $data['credits'] }}</p>
 	</div>
 
 

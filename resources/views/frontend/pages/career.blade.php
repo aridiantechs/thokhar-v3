@@ -8,6 +8,15 @@
         font-weight: 600;
     color: red;
     }
+    .img-upload{
+        width: 100%;
+        max-width: 85%;
+        margin: auto;
+        padding: 15px;
+    }
+    .card{
+        border: unset !important;
+    }
 </style>
 @endsection
 
@@ -17,7 +26,7 @@
         <div class="row row-grid">
             <div class="col-12 order-md-2 ">
                 <p class="text-{{$align}} mb-0">
-                    <span>{{ trans('lang.Home') }}    </span> <span> / </span><span>  {{ trans('lang.Career') }} </span>
+                    <span> {{ trans('lang.Home') }} </span> <span> / </span> <span> {{ trans('lang.Career') }} </span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">{{ trans('lang.Career') }} </strong> 
@@ -38,44 +47,52 @@
 
                 @include('frontend.notifications.success')
                 @include('frontend.notifications.warning')
-                <form method="POST" action="{{ route('career', locale()) }}" class="mt-3">
+                <form method="POST" action="{{ route('career.store', locale()) }}" class="mt-3">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12 p{{ $alignShortRev }}-0">
                                     <div class="form-group form-group-new">
                                         <div class="input-group">
-                                            <input id="inputEmail" type="email" class="form-control input-big text-{{$align}}" name="email" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_email_placeholder') }}">
+                                            <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name') }}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-new">
-                                        <div class="input-group">
-                                            <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name_placeholder') }}">
+                                <div class="col-md-12 p-0">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-1 order-lg-2 mb-3">
+                                            {{-- <small class="file__type">i.e .pdf .docx</small> --}}
+                                            <div class="card image-card mb-0" id="profile_image_back">
+                                                <div class="card-body h-100 justify-content-center align-items-center" style="display: grid;">
+                                                    <img class="img img-fluid img-upload" id="new_profile" src="{{ asset('frontend_assets/assets/img/new/contact-us/upload.svg') }}">
+                                                    <span class="text-center">ارفق سيرتك الذاتية</span>
+                                                </div>
+                                                <input type="file" accept="application/pdf" name="profile_image" id="new_profile_button" class="d-none"> 
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 order-1 order-lg-2 mb-3">
-                                    <small class="file__type">i.e .pdf .docx</small>
-                                    <div class="card image-card mb-0" id="profile_image_back">
-                                        <div class="card-body h-100 d-flex justify-content-center align-items-center">
-                                            <span class="material-icons txt-gray-light md-48" id="new_profile">add</span>
+                                        <div class="col-lg-6 order-1 order-lg-2 mb-3">
+                                            <div class="col-md-12">
+                                                <div class="form-group form-group-new">
+                                                    <div class="input-group">
+                                                        <input id="inputEmail" type="email" class="form-control input-big text-{{$align}}" name="email" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_email') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group form-group-new">
+                                                    <div class="input-group">
+                                                        <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="phone_number" value="" required autocomplete="email" placeholder="{{ trans('lang.login_form.phone_number') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <input type="file" name="profile_image" id="new_profile_button" class="d-none"> 
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group form-group-new mb-0">
-                                        <div class="input-group">
-                                            <textarea id="inputMessage" class="form-control input-big text-{{$align}}"  cols="30" rows="5" name="message" value="" required placeholder="{{ trans('lang.frontend_contact.contact_message_placeholder') }}"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div class=" text-{{$align}} ">
                                 <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary mt-4">
                                     {{-- <i class="fa fa-arrow-left"></i> --}}
@@ -115,8 +132,9 @@ function changeLogoImage(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#profile_image_back').html('');
-            $('#profile_image_back').css('background-image', 'url(' + e.target.result + ')');
+            // $('#profile_image_back').html('');
+            // $('#profile_image_back').css('background-image', 'url(' + e.target.result + ')');
+            $('#profile_image_back').css('background-color', '#e7fff3');
         }
         reader.readAsDataURL(input.files[0]);
     }   

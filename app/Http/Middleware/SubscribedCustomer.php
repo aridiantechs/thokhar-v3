@@ -16,7 +16,7 @@ class SubscribedCustomer
     public function handle($request, Closure $next)
     {
         if(auth()->user()){
-            if(auth()->user()->subscribed->transac_id)
+            if(isset(auth()->user()->subscribed->transac_id))
                 return $next($request);
                 
         }

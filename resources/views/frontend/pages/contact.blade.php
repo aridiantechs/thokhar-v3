@@ -76,7 +76,7 @@
             </div>
             <div class="col-12 col-md-5 col-lg-6 text-center">
                 <figure class="w-100">
-                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/contact-us/user-with-table.svg') }}" class="img-fluid">
+                    <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/contact-us/bg.svg') }}" class="img-fluid">
                 </figure>
             </div>
             

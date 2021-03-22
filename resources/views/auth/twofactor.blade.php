@@ -21,7 +21,7 @@
                   <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.login') }} </span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
-                    <strong class="text-primary font-arabic">{{ trans('code') }}</strong> 
+                    <strong class="text-primary font-arabic">{{ trans('lang.2fa.code') }}</strong> 
                 </h1>
                 <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">

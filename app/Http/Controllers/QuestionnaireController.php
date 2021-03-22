@@ -339,7 +339,7 @@ class QuestionnaireController extends Controller
         
         return view('frontend.wizard.questions.investing_amount')
                 ->with([
-                    'title' => __('lang.questionnaire.step_1')
+                    'title' => 'Investing amount',
                 ])
                 ->with('user_questionnaire', $user_questionnaire);
     }
@@ -353,22 +353,125 @@ class QuestionnaireController extends Controller
             return redirect()->route('investing-amount', locale())->with(['message' => 'previous step not completed']);
         }
 
-        // dd('initial report function');
-        // Do the initial report things here
-
         return redirect()->route('risk-test', locale());
+    }
+
+
+    public function getRecomendedAssetClass()
+    {
+
+        $asset['Very_Conservative_Investor']= Constant::where('constant_meta_type', 'Very_Conservative_Investor')->get()->toArray();
+
+        $asset['Conservative_Investor']     = Constant::where('constant_meta_type', 'Conservative_Investor')->get()->toArray();
+
+        $asset['Natrual_Investor']          = Constant::where('constant_meta_type', 'Natrual_Investor')->get()->toArray();
+
+        $asset['Aggressive_Investor']       = Constant::where('constant_meta_type', 'Aggressive_Investor')->get()->toArray();
+
+        $asset['Very_Aggressive_Investor']  = Constant::where('constant_meta_type', 'Very_Aggressive_Investor')->get()->toArray();
+
+        $data = [];
+        foreach ($asset as $key => $value) {
+            foreach ($value as $key1 => $val) {
+                $data[$key][] = $val['constant_value'];
+            }
+        }
+
+        return $data;
+    }
+
+
+    public function getValueAtRetirement()
+    {
+        $user = auth()->user();
+
+        $retirement_age = $this->questionnaire->getPlannedRetirementAge($user);
+
+        $current_age    = $this->questionnaire->getCurrentAge($user);
+
+        $accomulativeSavingtoday    = $this->questionnaire->getInitialAccomulativeSavingtoday($user);
+        $annualSavingToday          = $this->questionnaire->getAnnualSavingToday($user);
+        $annualIncreaseInSavingPlan = $this->questionnaire->getAnnualIncreaseInInitialInvestment($user);
+        $netReturnAfterRetirement   = $this->questionnaire->getNetReturnAfterRetirement($user);
+        $porfolioExpectedReturn     = 7.85;
+
+        // dd($accomulativeSavingtoday);
+
+        $valueBegYear = [];
+        $plan         = [];
+        $graphContribution = [];
+        $uncertain_top     = [];
+        $uncertain_bottom  = [];
+        $uncertainty  = $constants["( In Returns , Saving )"]["constant_value"] ?? null;
+
+
+        $graph_limit = ($retirement_age < 65) ? 65 : $retirement_age;
+        if($current_age < $retirement_age){
+            for ($i = (int) $current_age; $i <= $graph_limit; $i++) {
+            
+                if ($i == $current_age) 
+                {
+                    
+                    $plan[$i]['age'] = $i;
+    
+                    $plan[$i]['value_beginning_of_year'] = $accomulativeSavingtoday;
+                    
+                    $plan[$i]['contribution'] = $annualSavingToday;
+    
+                    $plan[$i]['returns']      = ($plan[$i]['value_beginning_of_year'] + ($plan[$i]['contribution'])/2)*($porfolioExpectedReturn / 100);
+    
+                    $plan[$i]['value_end_year'] = $plan[$i]['value_beginning_of_year'] + $plan[$i]['contribution'] + $plan[$i]['returns'];
+
+    
+                }
+                else
+                {
+                    
+                    $plan[$i]['age']= $i;
+                    
+                    $plan[$i]['value_beginning_of_year'] = ($plan[$i-1]['value_end_year']);
+    
+                    $plan[$i]['contribution'] = ($i >= $retirement_age) ? 0 : ($plan[$i-1]['contribution'] * ((100 + $annualIncreaseInSavingPlan) / 100));
+
+                    if($i > $retirement_age)
+                        $plan[$i]['retirementValue'] = $retirementValue = $netReturnAfterRetirement;
+                    else
+                        $plan[$i]['retirementValue'] = $retirementValue = $porfolioExpectedReturn;
+    
+                    $plan[$i]['returns'] = ($plan[$i]['value_beginning_of_year'] + ($plan[$i]['contribution'])/2)*($retirementValue / 100);
+    
+                    $plan[$i]['value_end_year'] = $plan[$i]['value_beginning_of_year'] + $plan[$i]['contribution'] + $plan[$i]['returns'];
+    
+    
+                }
+    
+            }
+        }
+
+        return $plan;
     }
 
 
     public function riskTest()
     {
-        $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
+
+        $asset_class         = $this->getRecomendedAssetClass();  
+
+        $value_at_retirement = $this->getValueAtRetirement();        
+
+        $user_questionnaire  = $this->loggedInUser->user_latest_questionnaire();
+
+        $current_age         = $this->questionnaire->getCurrentAge(auth()->user());
         
         if(($user_questionnaire->investing_amount ?? null) == null){
             return redirect()->route('investing-amount', locale())->with(['message' => 'previous step not completed']);
         }
         
-        return view('frontend.wizard.risk_test')->with(['investing_amount' => $user_questionnaire->investing_amount]);
+        return view('frontend.wizard.risk_test')
+            ->with('asset_class', $asset_class)
+            ->with('current_age', $current_age)
+            ->with('value_at_retirement', $value_at_retirement)
+            ->with(['investing_amount' => $user_questionnaire->investing_amount]);
     }
 
 
@@ -608,11 +711,7 @@ class QuestionnaireController extends Controller
                 ->with('not_found', $not_found)
                 ->with('suggestion', $suggestion);
     }
-
-
-
     
-
 
     // user panel
     public function saving_evaluation($locale = 'en', ? User $user = null)
@@ -2889,7 +2988,7 @@ class QuestionnaireController extends Controller
 
         // Process
         // Status today
-        $personalInfo = $this->questionnaire->getuserInfo($user);
+        $personalInfo         = $this->questionnaire->getuserInfo($user);
         $monthlyIncomeToday   = $this->questionnaire->getMonthlyIncomeToday($user);
         $monthlySavingToday   = $this->questionnaire->getMonthlySavingToday($user);
         $totalAssetsToday     = $this->questionnaire->getNetWorthAssetsToday($user);

@@ -3,34 +3,9 @@
 @extends('frontend.layouts.app')
 
 @section('styles')
+<link rel="stylesheet" href="{{url('/')}}/frontend_assets/assets/css/modern-tabs.css">
 <style>
-    .risk-test .nav-tabs-wrapper.mobile .nav-tabs{
-        justify-content: space-between;
-    }
-    .risk-test .nav-tabs-wrapper.mobile .nav-tabs .nav-item{
-        position: static;
-    }
     
-    .risk-test .nav-tabs-wrapper > .horizontal-line{
-        background: #B7CDCF;
-        left: 5px;
-        width: 99%;
-        background: transparent linear-gradient(270deg, var(---2dd782) 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
-        background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
-    }
-
-    .risk-test .nav-tabs-wrapper.mobile .text-left.nav-link.active .step-text{
-        width: 180px;
-    }
-
-    .risk-test .nav-tabs .nav-link .step-parent{
-        border: 9px solid;
-    }
-
-    .risk-test .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-parent:before{
-
-    }
-
     .risk-test  .nav-tabs .nav-link .step-parent{
         width: 35px;
         height: 35px;
@@ -191,6 +166,12 @@
 	.nav-tabs-wrapper.mobile .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span{
 	    width: 100%;
 	}
+	.w-custom{
+		position: relative;
+		top: -170px;
+		margin: auto;
+		width: fit-content
+	}
 </style>
 @endsection
 
@@ -202,7 +183,7 @@
 		</p>
 		<div class="row">
 			<div class="col-lg-5 {{-- order-1 order-lg-2 --}}">
-				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">{{ trans('lang.site_menu.legal') }}</strong> </h1>
+				<h1 class="display-4 text-{{$align}} mb-3 mt-3 mt-lg-0"> <strong class="text-primary font-arabic">{{ trans('lang.free_report') }}</strong> </h1>
 			</div>
 			<div class="col-lg-7 order-2 order-lg-1 text-{{$align}} float-lg-{{$align}} text-{{$align}} d-flex align-items-center risk-test-header">
 				{{-- <button type="button" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary d-none d-lg-inline-block">  
@@ -212,17 +193,17 @@
 				<div class="row ml-lg-3 ml-0  mt-5 mt-lg-0 w-100" id="header-info">
 					<div class="col-4">
 						<div>
-							<p class="top_info__1">
+							<p class="">
 								{{ trans('lang.report.current_age') }}
 							</p>
 							<span>
-								<h3 class="top_info__2 mb-0">‏{{ $investing_amount['investing_amount']['years_old'] ?? 0 }}</h3>
+								<h3 class="top_info__2 mb-0">‏{{ $current_age ?? 0 }}</h3>
 							</span>
 						</div>
 					</div>
 					<div class="col-4">
 						<div>
-							<p class="top_info__1">
+							<p class="">
 								{{ trans('lang.question.Monthly investing Payment') }}
 							</p>
 							<span>
@@ -232,7 +213,7 @@
 					</div>
 					<div class="col-4">
 						<div>
-							<p class="top_info__1">
+							<p class="">
 								{{ trans('lang.financial_plan.Invested amount') }}
 							</p>
 							<span>
@@ -246,109 +227,144 @@
 		<h2 class="text-dark text-center my-5">
 			{{ trans('lang.report.Are you risk taker') }}
 		</h2>
-		<div style="margin-top:135px !important">
-			<div class="nav-tabs-wrapper mt-5 mobile ">
-				<ul class="nav nav-tabs d-flex align-items-center">
-					<li class="nav-item nav-item-risk-1">
-						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#home">
-							<span class="step-parent" data-bar="1"></span>
-							<span class="step-text">
-								<span>
-									{{ trans('lang.report.Natural') }}
-								</span>
-							</span>
-						</a>
-					</li>
-					<li class="nav-item nav-item-risk-2">
-						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
-							<span class="step-parent" data-bar="2"></span>
-							<span class="step-text">
-								<span>
-								{{ trans('lang.report.Natural') }}
-								</span>
-							</span>
-						</a>
-					</li>
-					<li class="nav-item nav-item-risk-3">
-						<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
-							<span class="step-parent" data-bar="3"></span>
-							<span class="step-text">
-								<span>
-								{{ trans('lang.report.Natural') }}
-								</span>
-							</span>
-						</a>
-					</li>
-					<li class="nav-item nav-item-risk-4">
-						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
-							<span class="step-parent" data-bar="4"></span>
-							<span class="step-text">
-								<span>
-								{{ trans('lang.report.Natural') }}
-								</span>
-							</span>
-						</a>
-					</li>
-					<li class="nav-item nav-item-risk-5">
-						<a class="text-{{$align}} nav-link" data-toggle="tab" href="#menu1">
-							<span class="step-parent" data-bar="5"></span>
-							<span class="step-text">
-								<span>
-								{{ trans('lang.report.Natural') }}
-								</span>
-							</span>
-						</a>
-					</li>
-				</ul>
-				<div class="horizontal-line">
+		<div style="margin-top:100px !important">
+			<div class="row">
+				<div class="col-12">
+
+					<div class="report m-top-p5">
+						<div class="nav-tabs-wrapper mt-5 mobile ">
+							<ul class="nav nav-tabs d-flex align-items-center">
+								<li class="nav-item nav-item-risk-1">
+									<a class="text-{{$align}} nav-link " onclick="indicator('Very_Conservative_Investor')" data-toggle="tab" href="#very_conservative">
+										<span class="step-parent" data-bar="1"></span>
+										<span class="step-text">
+											<span>
+											{{ trans('lang.report.very_conservative') }}
+											</span>
+										</span>
+										
+									</a>
+								</li>
+								<li class="nav-item nav-item-risk-2">
+									<a class="text-{{$align}} nav-link " onclick="indicator('Conservative_Investor')" data-toggle="tab" href="#">
+										<span class="step-parent" data-bar="2"></span>
+										<span class="step-text">
+											<span>
+												{{ trans('lang.report.conservative') }}
+											</span>
+										</span>
+										
+									</a>
+								</li>
+								<li class="nav-item nav-item-risk-3">
+									<a class="text-{{$align}} nav-link active" onclick="indicator('Natrual_Investor')" data-toggle="tab" href="#">
+										<span class="step-parent" data-bar="3"></span>
+										<span class="step-text">
+											<span>
+												{{ trans('lang.report.natural') }}
+											</span>
+										</span>
+										
+									</a>
+								</li>
+								<li class="nav-item nav-item-risk-4">
+									<a class="text-{{$align}} nav-link " onclick="indicator('Aggressive_Investor')" data-toggle="tab" href="#">
+										<span class="step-parent" data-bar="4"></span>
+										<span class="step-text">
+											<span>
+												{{ trans('lang.report.agressive') }}
+											</span>
+										</span>
+										
+									</a>
+								</li>
+								<li class="nav-item nav-item-risk-5">
+									<a class="text-{{$align}} nav-link " onclick="indicator('Very_Aggressive_Investor')" data-toggle="tab" href="#">
+										<span class="step-parent" data-bar="5"></span>
+										<span class="step-text">
+											<span>
+											{{ trans('lang.report.very_agressive') }}
+											</span>
+										</span>
+										
+									</a>
+								</li>
+							</ul>
+							<div class="horizontal-line">
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
-		<div class="card card-shadow mt-5">
-			<div class="card-body">
-				<div class="row border-bottom-light">
-					<div class="col-12 col-lg-6">
-						<h2 class="text-{{$align}} d-none bottom-line d-lg-block pb-4 mb-0 text-lblue"> {{ trans('lang.report.Financial Projections') }}</h2>
-					</div>
-					<div class="col-12 col-lg-6">
-						<h2 class="text-{{$align}} d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 text-center pt-5">
-						<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">{{ trans('lang.report.Financial Projections') }}</h2>
-						<div class="text-center">
-							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-2.svg') }}" class="img-fluid img" alt="">
-						</div>
-					</div>
-					<div class="col-12 col-lg-6  text-center pt-lg-5 pt-0 border-{{$align}}-light">
-						<h2 class="text-{{$align}} bottom-line mb-5 d-block d-lg-none text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
-						<div class="text-center">
-							<img src="{{ asset('frontend_assets/assets/img/new/risk-test/chart-1.svg') }}" class="img img-fluid" alt="">
+
+		<div class="tab-content">
+
+			<div id="very_conservative" class="container tab-pane active">
+				<div class="card card-shadow mt-5">
+					<div class="card-body">
+						<div class="row border-bottom-light">
+							<div class="col-12 col-lg-6">
+								<h2 class="text-{{$align}} d-none bottom-line d-lg-block pb-4 mb-0 text-lblue"> {{ trans('lang.report.Financial Projections') }}</h2>
+							</div>
+							<div class="col-12 col-lg-6">
+								<h2 class="text-{{$align}} d-none text-lblue bottom-line d-lg-block pb-4 mb-0 text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
+							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
-								<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
-									<li class="BLUE">سهل ممتنع</li>
-									<li class="GREEN"> عملي ويتيح التطبيق الفوري</li>
-								</ul>
+							<div class="col-lg-6 text-center pt-5">
+								<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">{{ trans('lang.report.Financial Projections') }}</h2>
+								<h1>
+									{{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }}
+								</h1>
+								<span>
+									{{ trans('lang.current_state.at_age') }} 60 {{ trans('lang.current_state.you_will_have_savings_balance_of') }}  {{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }} 
+								<div class="text-center">
+									<canvas id="myChart" width="400" height="250"></canvas>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
-									<li class="LBLUE">سهل ممتنع</li>
-									<li class="DARK"> عملي ويتيح التطبيق الفوري</li>
-								</ul>
+							<div class="col-12 col-lg-6  text-center pt-lg-5 pt-0 border-{{$align}}-light">
+								<h2 class="text-{{$align}} bottom-line mb-5 d-block d-lg-none text-blue"> {{ trans('lang.report.Recommended asset allocation') }}</h2>
+								<div class="text-center">
+									
+									<canvas id="donut_chart" width="250" height="250"></canvas>
+
+								</div>
+
+								<div class="w-custom text-center">
+									<h5>{{ trans('lang.financial_plan.Invested amount') }}</h5>
+									<span style="font-size: 2rem;">{{ $investing_amount['investing_amount']['initial_amount'] ?? 0 }}</span>
+									<h5>{{ trans('lang.report.SAR') }}</h5>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
+											<li class="BLUE">{!! trans('lang.report.cash_and_equivalent') !!}</li>
+											<li class="DARK">{!! trans('lang.report.fix_income')  !!}</li>							
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<ul class="LIST__UL LIST_UI_CIRCLE text-{{$align}}">
+											<li class="LBLUE">{!! trans('lang.report.equities') !!}</li>
+											<li class="GREEN">{!! trans('lang.report.alternative_investment') !!}</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			
 		</div>
 		<div class="info-card-1-1">
 			<form action="" class="p-4">
 				<div class="row">
-					<div class="col-lg-9">
-						{{-- <div class="d-block d-lg-flex justify-content-end text-center text-lg-{{$align}}">
+					{{-- <div class="col-lg-9">
+						<div class="d-block d-lg-flex justify-content-end text-center text-lg-{{$align}}">
 							<div class="mb-3 d-block d-lg-none">
 								<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 							</div>
@@ -362,12 +378,12 @@
 							<div class="d-none d-lg-inline-block">
 								<img src="{{ asset('frontend_assets/assets/img/new/risk-test/currency.svg') }}" alt="">
 							</div>
-						</div> --}}
-					</div>
-					<div class="col-lg-3 d-flex flex-row-r align-items-center justify-content-center justify-content-lg-start order-2 order-lg-1">
+						</div>
+					</div> --}}
+					<div class="col-lg-3 d-flex justify-content-center justify-content-lg-start">
 						<button type="button" data-toggle="modal" data-target="#modal__1" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary ">
 							{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
-							<span class="d-inline-block">إبدأ الآن</span>
+							<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 							<i class="fa fa-arrow-{{$arrowAlign}}"></i>
 						</button>
 					</div>
@@ -388,7 +404,7 @@
 
 				<div class="modal__lad text-center mt-4">
 					<h3 class="font-arabic font-1 text-white">تم ارسال تقريرك الى بريدك الالكتروني</h3>
-					<p class="font-2-sm mb-3">asbarakat@gmail.com</p>
+					<p class="font-2-sm mb-3">{{ auth()->user()->email }}</p>
 				</div>
 
 				<div class="modal-card">
@@ -428,6 +444,7 @@
 </div>
 @endsection
 
+{{-- @dd($value_at_retirement) --}}
 
 @section('scripts')
 <script>
@@ -437,79 +454,167 @@
     })
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script>
-    feather.replace({
-        'width': '1em',
-        'height': '1em'
-    });
-
-
-    $(document).ready(function(){
-
-        $('.nav-tabs-wrapper.desktop .nav-link .step-parent').each(function(i){
-           
-                var start_point = $(this).position().top;
-
-                if((i+1) != $('.nav-tabs-wrapper.desktop .nav-link .step-parent').length){
-                       
-                       if($('.nav-tabs-wrapper.desktop .nav-link .step-parent').eq(i+1)){
-                           var end_point = $('.nav-tabs-wrapper.desktop .nav-link .step-parent').eq(i+1);
-                       $('.nav-tabs-wrapper.desktop .vertical-line').append(`<div class="step-parent-bar step-parent-bar-${i+1}" style="height:${(end_point.position().top - start_point)}px"></div>`);
-                       }
-                }     
-        });
-
-        $('.nav-tabs-wrapper.desktop .nav-item:not(.sub-item) .nav-link').click(function(){
-
-           $('.nav-tabs-wrapper.desktop .step-parent-bar').removeClass('active').removeClass('success');
-           $('.nav-tabs-wrapper.desktop .nav-item .nav-link').removeClass('success');
-          
-           
-            var nav_item = $(this).closest('.nav-item');
-
-            nav_item.prevAll().each(function(){
-
-                var bar = $(this).find('.step-parent').data('bar');
-                $(this).find('.nav-link').addClass('success');
-                $('.nav-tabs-wrapper.desktop .step-parent-bar-'+bar).addClass('success');
-
-            });
-
-        });
-
-        $('.nav-tabs-wrapper.desktop .nav-item.sub-item .nav-link').click(function(){
-
-           $('.nav-tabs-wrapper.desktop .step-parent-bar').removeClass('active').removeClass('success');
-           $('.nav-tabs-wrapper.desktop .nav-item .nav-link').removeClass('success');
-          
-            var nav_item = $(this).closest('.nav-item');
-
-            $('.nav-tabs-wrapper.desktop .nav-item[data-id='+$(this).data('parent-id')+']').find('.step-parent').addClass('size-big');
-
-            nav_item.prevAll().each(function(){
-
-                var bar = $(this).find('.step-parent');
-                // bar.addClass('size-big');
-
-                bar = bar.data('bar');
-                $(this).find('.nav-link').addClass('success');
-                $('.nav-tabs-wrapper.desktop .step-parent-bar-'+bar).addClass('success');
-
-            });
-
-        });
-
-
-	    $('.navbar-toggler').removeAttr('data-toggle');
-
-	    $('.navbar-toggler').click(function(){
-	        $('#modal-nav').modal('show');
-	    });
-
-    });
-
-   
-
-
+var ctx = document.getElementById('myChart').getContext('2d');
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+	    			@foreach ($value_at_retirement as $key => $element)
+	        			{!! $key . ',' !!}
+	        		@endforeach
+        		],
+        datasets: [{
+            label: '',
+            data: [
+            		@foreach ($value_at_retirement as $key => $element)
+	        			{!! $element['value_end_year'] . ',' !!}
+	        		@endforeach
+            	],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0)',
+            ],
+            borderColor: [
+                '#3095fd'
+            ],
+            borderWidth: 5,
+		    pointRadius: 0,
+		    "pointBackgroundColor": "#3095fd",
+			"pointBorderWidth": 1,
+			"pointHoverRadius": 5,
+			"pointHoverBackgroundColor": "#ffffff",
+			"pointHoverBorderColor": "#3095fd",
+			"pointHoverBorderWidth": 6,
+			"pointHitRadius": 10,
+			pointHoverRadius: 10,
+        }]
+    },
+    options: {
+    	responsive: true,
+    	legend: {
+	        display: false
+	    },
+        scales: {
+	        xAxes: [{
+	            gridLines: {
+	                color: "rgba(0, 0, 0, 0)",
+	            },
+	            ticks: {
+                    fontColor: "rgba(0,0,0,0.5)",
+                    fontStyle: "bold",
+                    beginAtZero: true,
+                    maxTicksLimit: 20,
+                    padding: 20,
+                    // userCallback: function(value, index, values) {
+                    //     value = value.toString();
+                    //     if($(window).width() < 760)
+                    //       return value;
+                    //     else
+                    //       return 'SAR ' + value;
+                    // },
+                    userCallback: function(tick, index, array) {
+                      if($(window).width() < 760){
+                        return (index % 3) ? "" : tick;
+                      }
+                      else{
+                        return (index % 2) ? "" : tick;
+                      }
+                    }
+                }
+	        }],
+	        yAxes: [{
+	            
+	        }]
+	    }
+    }
+});
 </script>
+
+
+
+
+<script>
+
+var options = {
+  	percentageInnerCutout: 90,
+  	cutoutPercentage: 90,
+	title: {
+		display: false,
+		text: ""
+	},
+  	animation: {
+		animateScale: true,
+		animateRotate: true
+	},
+  	responsive: true,
+  	maintainAspectRatio: false,
+    
+  	legend: {
+  		display: false,
+		position: 'bottom',
+		labels:{
+			boxWidth: 10,
+			padding: 12
+        }
+	},
+};
+
+var data_set = [];
+@foreach ($asset_class as $key => $element)
+	data_set['{{ $key }}'] = {
+    labels: ["{{ trans('lang.report.cash_and_equivalent') }}", "{{ trans('lang.report.equities') }}", "{!! trans('lang.report.fix_income') !!}", "{{ trans('lang.report.alternative_investment') }}", ],
+    datasets: [{
+        label: "Test",
+        data: [{{ implode(',', $element) }}],
+        backgroundColor: [
+            '#036EED',
+            '#01BAEF',
+            '#0B4F6C',
+            '#2DD782',
+            
+        ],
+        borderColor: [
+            '#036EED',
+            '#01BAEF',
+            '#0B4F6C',
+            '#2DD782',
+            
+        ],
+        borderWidth: 1
+
+    }]
+}
+@endforeach
+
+
+
+
+
+var donut_chart = document.getElementById('donut_chart').getContext('2d');
+var myChart = new Chart(donut_chart, {
+    type: 'doughnut',
+    data: data_set['Natrual_Investor'],
+    options : options
+});
+
+
+
+function indicator(value){
+	
+	myChart.destroy()
+
+	myChart = new Chart(donut_chart, {
+	    type: 'doughnut',
+	    data: data_set[value],
+	    options : options
+	});
+
+}
+</script>
+
+
+
 @endsection
+

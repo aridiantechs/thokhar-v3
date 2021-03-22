@@ -124,9 +124,7 @@ Route::group([
         return view('frontend.pages.contact');
     })->name('contact');
 
-    Route::get('/career',  function () {
-      return view('frontend.pages.career');
-    })->name('career');
+    Route::resource('career' , CarrerController::class);
     
     Route::get('/about',  function () {
         return view('frontend.pages.about');
@@ -276,6 +274,10 @@ Route::group([
           ],
         ], function() {
             Route::get('/steps',  'QuestionnaireController@steps')->name('steps');
+
+            Route::get('/wizard', 'QuestionnaireController@wizard')->name('wizard');
+            Route::post('/wizard', 'QuestionnaireController@wizardStore')->name('wizard');
+
             Route::get('/income', 'QuestionnaireController@income')->name('income');
             Route::get('/net-worth-introduction', 'QuestionnaireController@netWorthIntroduction')->name('net-worth-introduction');
             Route::get('/gosi', 'QuestionnaireController@gosi')->name('gosi');
@@ -296,8 +298,7 @@ Route::group([
       // post
       Route::post('/questionnaire', 'QuestionnaireController@store')->name('questionnaire');
 
-      Route::get('/wizard', 'QuestionnaireController@wizard')->name('wizard');
-      Route::post('/wizard', 'QuestionnaireController@wizardStore')->name('wizard');
+      
 
       Route::get('/current_state', 'QuestionnaireController@evaluateResult')->name('current_state');
 

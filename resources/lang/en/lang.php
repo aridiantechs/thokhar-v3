@@ -40,6 +40,7 @@ return [
     '2fa'=>[
         'Resend verification code during'=>'Resend verification code during',
         'minute'=>'minute',
+        'code' => 'Code',
     ],
 
     'register_form' => [
@@ -1022,7 +1023,7 @@ return [
             'education' => 'Education',
             'current_age' => 'Current age',
             'planned_retirement_age' => 'Planned retirement age',
-        'Are you risk taker'=>'Are you risk taker',
+        'Are you risk taker'=>'Are you risk taker ?',
         'Natural'=>'Natural',
         'Financial Projections'=>'Financial Projections',
         'Recommended asset allocation'=>'Recommended asset allocation',
@@ -1225,7 +1226,7 @@ return [
 
     'wizard_q' => [
         /* 'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other)', */
-        'Annual Income'=>'الدخل السنوي',
+        'Annual Income' => 'Annual Income',
 
         'cash amount' => 'cash amount',
         
@@ -1234,14 +1235,14 @@ return [
         
         'Do you have Deposits in Banks' => 'Do you have Deposits in Banks ? ( if yes , Enter  Value in SAR ) ',
         'Do you have Stocks' => 'Do you have Stocks ? ( if yes , Enter Market Value in SAR ) ',
-        'Do you have Bonds or Sukuk' => 'Do you have Bonds or Sukuk  ( if yes , Enter Market Value in SAR ) ',
-        'Do you have Real Estate' => 'Do you have Real Estate ( lands , properties , REITS )? ( if yes , Enter Market Value in SAR ) ',
-        'Do you have Private business' => 'Do you have Private business? ( if yes , Estimated value in SAR ) ',
-        'Do you have other assets' => 'Do you have other assets ( bitcoin, gold, etc) ( if yes , Market Value in SAR ) ',
+        'Do you have Bonds or Sukuk' => 'Do you have Bonds or Sukuk ? ( if yes , Enter Market Value in SAR ) ',
+        'Do you have Real Estate' => 'Do you have Real Estate ? ( lands , properties , REITS )? ( if yes , Enter Market Value in SAR ) ',
+        'Do you have Private business' => 'Do you have Private business ? ( if yes , Estimated value in SAR ) ',
+        'Do you have other assets' => 'Do you have other assets ? ( bitcoin, gold, etc) ( if yes , Market Value in SAR ) ',
 
         'Expecting salary at retirement' => 'Expecting salary at retirement',
         'Monthly subscription' => 'Monthly subscription',
-        'Starting year registration in GOCI' => 'Starting year registration in GOCI ( first job year )',
+        'Starting year registration in GOCI' => 'Starting year registration in GOCI',
 
         'Monthly investing Payment' => 'Monthly investing Payment',
         'Magic of compounding returns' => 'Magic of compounding returns',
@@ -1249,5 +1250,10 @@ return [
         'Real estate'=>'Real Estate',
         'Other assets'=>' Other assets',
     ],
+
+
+    'free_report' => 'Free report',
+    '3_steps_page' => 'Three steps',
+    'consultation_session' => 'consultation session ',
 
 ];

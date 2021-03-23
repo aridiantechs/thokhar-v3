@@ -154,9 +154,39 @@
 
                               <ul class="nav nav-social-icons nav-modal-icons mt-0 ml-3">
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#" target="_blank">
-                                          EN
-                                      </a>
+
+
+
+                                    @switch($request->segment(1))
+                                      @case('ar')
+                                          @foreach (config('app.available_locales') as $locale)
+                                            <a class="nav-link"
+                                               href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
+                                                @if (locale() == $locale) style="font-weight: bold;" @endif>{{ trans('lang.language') }}
+                                                
+                                            </a>
+                                            @break
+                                          @endforeach
+                                      @break    
+                                      @case('en')
+                                          @foreach (config('app.available_locales') as $key => $locale)
+                                              @if($key == 1)
+                                                <a class="nav-link"
+                                                   href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}"
+                                                    @if (locale() == $locale) style="font-weight: bold;" @endif>
+                                                    {{ trans('lang.language') }}
+                                                </a>
+                                              @endif
+                                          @endforeach
+                                      @break    
+                                      @default
+                                          {{ $request->segment(1) }}
+                                      @break
+                                    @endswitch
+
+
+
+                                      
                                   </li>
                                   
                               </ul>
@@ -175,32 +205,36 @@
          
               <ul class="navbar-nav mt-lg-0 modal-nav ml-auto " style="direction: rtl;">
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('/', locale()) }}" role="button" >الرئيسية      </a>
+                      <a class="nav-link nav-link-modal" href="{{ route('/', locale()) }}" role="button" >{{ trans('lang.home') }}</a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('about', locale()) }}" role="button" >عن ذخر</a>                      
+                      <a class="nav-link nav-link-modal" href="{{ route('about', locale()) }}" role="button" >{{ trans('lang.site_menu.about_us') }}</a>                      
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('legal', locale()) }}" role="button" >الإفصاح القانوني</a>
+                      <a class="nav-link nav-link-modal" href="{{ route('legal', locale()) }}" role="button" >{{ trans('lang.site_menu.legal') }}</a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link nav-link-modal" href="{{ route('contact', locale()) }}" role="button" >اتصل بنا</a>
+                      <a class="nav-link nav-link-modal" href="{{ route('contact', locale()) }}" role="button" >{{ trans('lang.site_menu.contact') }}</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link nav-link-modal" href="{{ route('career.index', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
                   </li>
               </ul>
 
               <div class="text-center mt-0 mt-md-5">
                   <button type="button" class=" btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary text-center mt-3">
-                      <span class="d-inline-block font-arabic">ابدأ الآن بدون مقابل</span>
+                      <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
                   </button>
               </div>
 
 
               <div class="m-auto">
                   <ul class="nav nav-social-icons nav-modal-icons">
-                      <li class="nav-item">
+                      {{-- <li class="nav-item">
                           <a class="nav-link instagram-a" href="#" target="_blank">
                               <i class="fab fa-instagram"></i>
                           </a>
@@ -214,7 +248,7 @@
                           <a class="nav-link snapchat-a" href="#" target="_blank">
                               <i class="fab fa-snapchat"></i>
                           </a>
-                      </li>
+                      </li> --}}
                       <li class="nav-item">
                           <a class="nav-link twitter-a" href="#" target="_blank">
                               <i class="fab fa-twitter"></i>

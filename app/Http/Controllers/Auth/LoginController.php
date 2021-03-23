@@ -145,9 +145,11 @@ class LoginController extends Controller
         // ]);
 
         $this->validate($request, [
-            'phone_number' => 'required|numeric',
+            'phone_number' => 'required|numeric|digits:10',
             // 'email' => 'required|email',
         ]);
+
+        
 
         $user = User::where('phone_number', $request->input('phone_number'))->first();
         // $user = User::where('email', $request->input('email'))->first();

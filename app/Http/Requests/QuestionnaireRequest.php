@@ -48,10 +48,44 @@ class QuestionnaireRequest extends FormRequest
                             ];
                             break;
 
+                        case 'investing':
+                            return [
+                                'saving_plan' => 'required|array',
+                                'saving_plan.current_saving_balance' => 'required|numeric',
+                                'saving_plan.monthly_saving_plan_for_retirement' => 'required|numeric',
+                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:1',
+                            ];
+                            break;
+
                         case 'income':
                             return [
                                 'income' => 'required|array',
                                 'income.income' => 'required|numeric',
+                            ];
+                            break;
+
+                        case 'net-worth':
+                            return [
+                                // net_assets
+                                'net_assets' => 'required|array',
+                                // assets
+                                'net_assets.financial_assets' => 'required|array',
+                                // liquid
+                                'net_assets.financial_assets.cash_and_deposit' => 'required|numeric',
+                                'net_assets.financial_assets.equities' => 'required|numeric',
+                                'net_assets.financial_assets.bonds' => 'required|numeric',
+
+
+                                'net_assets.real_assets' => 'required|array',
+                                // liquid
+                                'net_assets.real_assets.real_estate' => 'required|numeric',
+                                'net_assets.real_assets.pe' => 'required|numeric',
+
+
+                                'net_assets.other_assets' => 'required|array',
+                                // other_assets
+                                'net_assets.other_assets.other' => 'required|numeric',
+
                             ];
                             break;
 

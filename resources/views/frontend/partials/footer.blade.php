@@ -19,8 +19,18 @@
 
 
     <script type="text/javascript">
+        
         if($('.alert').hasClass('alert')){
             $('.slice').removeClass('fix-heigh');
             $('.slice').removeClass('fix-height');
         }
+
+
+        $('.navbar-toggler').removeAttr('data-toggle');
+
+        $('.navbar-toggler').click(function(){
+            $('#modal-nav').modal('show');
+        });
+
+
     </script>

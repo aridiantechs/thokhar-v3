@@ -199,13 +199,13 @@
 								</div>
 							</div>
 						</div>
-						<input type="file" name="profile_image" id="new_profile_button" class="d-none"> 
+						<input type="file" name="profile_image" accept=".png, .jpg, .jpeg" id="new_profile_button" class="d-none"> 
 					</div>
-					<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
+					{{-- <h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
 						<strong class="font-arabic">
 							{{ trans('lang.investing_amount.Retire age( 60 as default and can not changes )') }}
 						</strong>
-					</h3>
+					</h3> --}}
 					<div class="mt-4 text-lg-{{$align}} text-center">
 						<button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
 						{{-- <i class="fa fa-arrow-left"></i> --}}

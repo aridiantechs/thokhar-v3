@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="row row-grid">
 			<div class="col-12 col-lg-9 {{-- order-md-1 --}} pr-md-5">
-				@include('frontend.notifications.warning')
+				@include('frontend.notifications.ajax-warning')
 				<form id="qform" action="{{ route('wizard', locale()) }}">
 				<input type="hidden" name="location" value="net-worth">
 				<div class="tab-content">

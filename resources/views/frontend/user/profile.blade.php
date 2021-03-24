@@ -199,7 +199,7 @@
 								</div>
 							</div>
 						</div>
-						<input type="file" name="profile_image" accept=".png, .jpg, .jpeg" id="new_profile_button" class="d-none"> 
+						<input type="file" name="profile_image" accept="image/x-png,image/jpeg" id="new_profile_button" class="d-none"> 
 					</div>
 					{{-- <h3 class="text-{{$align}} text-lg-{{$align}} mb-3 mt-3">
 						<strong class="font-arabic">

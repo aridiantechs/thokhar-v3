@@ -6,43 +6,66 @@
 
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-2">
-		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
+		<div class="nav-tabs-wrapper mt-5rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-{{$align}} nav-link" href="#">
+					<a class="text-{{$align}} nav-link"  href="#consultations">
 						<span class="step-parent" data-bar="1"></span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-{{$align}} nav-link" href="#">
+					<a class="text-{{$align}} nav-link"  href="#risk">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
-					Data
+					
 					</span>
 					</span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-3">
-					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
+					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#">
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					التأمينات الاجتماعية
+					{{ trans('lang.question_headings.investing_plan') }}
 					</span>
 					</span>
 					</a>
 				</li>
-				
+				<li class="nav-item nav-item-4">
+					<a class="text-left nav-link success" href="#gosi">
+					 <span class="step-parent" data-bar="4"></span>
+					 <span class="step-text">
+			            <span>
+			                 Data 3
+			            </span>
+			        </span>
+					</a>
+				</li>
+
+				<li class="nav-item nav-item-5">
+					<a class="text-left nav-link success" href="#net-worth">
+					 <span class="step-parent" data-bar="5"></span>
+					 <span class="step-text">
+				            <span>
+				                Data 4
+				            </span>
+				        </span>
+					</a>
+				</li>
 			</ul>
 			<div class="horizontal-line">
-				<div class="step-parent-bar step-parent-bar-1" ></div>
-				<div class="step-parent-bar step-parent-bar-2" ></div>
-				<div class="step-parent-bar step-parent-bar-3" ></div>
-				<div class="step-parent-bar step-parent-bar-4" ></div>
-				<div class="step-parent-bar step-parent-bar-5 success" ></div>
-				
-			</div>
+
+                <div class="step-parent-bar step-parent-bar-1" ></div>
+                <div class="step-parent-bar step-parent-bar-2" ></div>
+                <div class="step-parent-bar step-parent-bar-3" ></div>
+                <div class="step-parent-bar step-parent-bar-4 success" ></div>
+               
+                <div class="step-parent-bar step-parent-bar-5 success"></div>
+                <div class="step-parent-bar step-parent-bar-6 success"></div>
+
+            </div>
 		</div>
 	</div>
 	<div class="container">

@@ -226,9 +226,9 @@
               </ul>
 
               <div class="text-center mt-0 mt-md-5">
-                  <button type="button" class=" btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary text-center mt-3">
+                  <a href="{{ route('login', locale()) }}" class=" btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary text-center mt-3">
                       <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
-                  </button>
+                  </a>
               </div>
 
 

@@ -1,20 +1,20 @@
 
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-5">
-		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
+		<div class="nav-tabs-wrapper mt-5rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-{{$align}} nav-link" href="#">
+					<a class="text-{{$align}} nav-link" href="#gosi">
 						<span class="step-parent" data-bar="1"></span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-{{$align}} nav-link" href="#">
+					<a class="text-{{$align}} nav-link" href="#net-worth">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
-					<span>
-					Data 1
-					</span>
+						<span>
+						
+						</span>
 					</span>
 					</a>
 				</li>
@@ -22,9 +22,9 @@
 					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
-					<span>
-					الدخل السنوي
-					</span>
+						<span>
+							{{ trans('lang.question_headings.income') }}	
+						</span>
 					</span>
 					</a>
 				</li>

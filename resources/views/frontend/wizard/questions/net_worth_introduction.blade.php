@@ -1,15 +1,15 @@
 
 <section class="slice py-3 pb-5 " id="net-worth">
 	<div class="mt-5">
-		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
+		<div class="nav-tabs-wrapper mt-5rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-{{$align}} nav-link"  href="#">
+					<a class="text-{{$align}} nav-link"  href="#investing-plan">
 						<span class="step-parent" data-bar="1"></span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-{{$align}} nav-link"  href="#">
+					<a class="text-{{$align}} nav-link"  href="#gosi">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
@@ -19,17 +19,17 @@
 					</a>
 				</li>
 				<li class="nav-item nav-item-3">
-					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#">
+					<a class="text-{{$align}} nav-link active" href="#">
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					صافي الثروة
+					{{ trans('lang.question_headings.net_assets') }}
 					</span>
 					</span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-4">
-					<a class="text-{{$align}} nav-link success" href="{{ route('income', locale()) }}">
+					<a class="text-{{$align}} nav-link success" href="#income">
 					<span class="step-parent" data-bar="4"></span>
 					<span class="step-text">
 					<span>
@@ -45,7 +45,7 @@
 				<div class="step-parent-bar step-parent-bar-3" ></div>
 				<div class="step-parent-bar step-parent-bar-4 success" ></div>
 				
-		</div>
+			</div>
 	</div>
 	<div class="container">
 		<div class="row row-grid">
@@ -82,7 +82,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -122,7 +122,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -161,7 +161,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -200,7 +200,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -239,7 +239,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [
@@ -278,7 +278,7 @@
 							])
 						
 						<div class="mt-3 ">
-							<div class="row flex-column-reverse flex-md-row w-form-inputs">
+							<div class="row w-form-inputs">
 								<div class="col-md-9">
 									<div class="form-group form-group-new mb-0">
 										@include('frontend.inputs.input_group', [

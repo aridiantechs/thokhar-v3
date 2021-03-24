@@ -5,41 +5,64 @@
 </style>
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-5">
-		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
+		<div class="nav-tabs-wrapper mt-9rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-{{$align}} nav-link" href="#">
-						<span class="step-parent" data-bar="1"></span>
-					</a>
+					
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-{{$align}} nav-link" href="#">
+					<a class="text-{{$align}} nav-link"  href="#report">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
-					Data 1
+					
 					</span>
 					</span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-3">
-					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#menu1">
+					<a class="text-{{$align}} nav-link active" data-toggle="tab" href="#">
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					الدخل السنوي
+						{{ trans('lang.question_headings.Counseling session') }}
 					</span>
 					</span>
 					</a>
 				</li>
-				
+				<li class="nav-item nav-item-4">
+					<a class="text-left nav-link success" href="#risk">
+					 <span class="step-parent" data-bar="4"></span>
+					 <span class="step-text">
+			            <span>
+			                 Data 3
+			            </span>
+			        </span>
+					</a>
+				</li>
+
+				<li class="nav-item nav-item-5">
+					<a class="text-left nav-link success" href="#investing-plan">
+					 <span class="step-parent" data-bar="5"></span>
+					 <span class="step-text">
+				            <span>
+				                Data 4
+				            </span>
+				        </span>
+					</a>
+				</li>
 			</ul>
 			<div class="horizontal-line">
-				<div class="step-parent-bar step-parent-bar-1"></div>
-				<div class="step-parent-bar step-parent-bar-2"></div>
-				<div class="step-parent-bar step-parent-bar-3"></div>
-				
-			</div>
+
+                <div class="step-parent-bar step-parent-bar-1" ></div>
+                <div class="step-parent-bar step-parent-bar-2" ></div>
+                <div class="step-parent-bar step-parent-bar-3" ></div>
+                <div class="step-parent-bar step-parent-bar-4 success" ></div>
+               
+                <div class="step-parent-bar step-parent-bar-5 success"></div>
+                <div class="step-parent-bar step-parent-bar-6 success"></div>
+
+            </div>
 		</div>
 	</div>
 	<div class="container">
@@ -66,20 +89,18 @@
                                   	<div class="font-1 text-{{$align}} mb-3" >الرجاء اختيار توقيت الجلسة الاستشارية</div>
                                  	<div class="row flex-column-reverse flex-md-row w-form-inputs">
 										<div class="col-md-5">
-											<div class="form-group form-group-new mb-0">
-												<div class="input-group">
-													@include('frontend.inputs.input_group', [
-		                                                'type' => 'text', 
-		                                                'name' => 'consultation_date', 
-		                                                'value' => '',
-		                                                'old_val' => 'consultation_date',
-													 	'placeholder' => 'الراتب المتوقع عند التقاعد',
-		                                                'icon' => 'calendar',
-		                                                'id' => 'consultationdatepicker',
-		                                                'class' => 'text-input'
+											<div class="form-group form-group-new mb-0">												
+												@include('frontend.inputs.input_group', [
+	                                                'type' => 'text', 
+	                                                'name' => 'consultation_date', 
+	                                                'value' => '',
+	                                                'old_val' => 'consultation_date',
+												 	'placeholder' => 'الراتب المتوقع عند التقاعد',
+	                                                'icon' => 'calendar',
+	                                                'id' => 'consultationdatepicker',
+	                                                'class' => 'text-input'
 
-		                                        	])
-												</div>
+	                                        	])												
 											</div>
 										</div>
 

@@ -5,7 +5,7 @@
 <style type="text/css">
    @media screen and (max-width: 992px){
    .form-group.card-group-input .input-group {
-   padding-right: 72px;
+   padding-right: 72px !important;
    }
    span.icon-2 img{
    max-width: 45px;

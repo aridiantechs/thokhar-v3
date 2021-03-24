@@ -26,7 +26,7 @@
         <div class="row row-grid">
             <div class="col-12 col-lg-5">
                <div style="position: relative; height: 100%">
-                    <h3 class="txt-blue-light font-arabic text-{{$align}}" style="position: absolute;bottom: 0">
+                    <h3 class="txt-blue-light font-arabic text-{{$align}} stick_to_bottom">
                         {{ trans('lang.frontend_legal.legal_head_text') }}
                     </h3>
                </div>

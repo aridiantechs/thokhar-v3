@@ -456,7 +456,6 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myLineChart = new Chart(ctx, {
@@ -559,6 +558,16 @@ var options = {
 			boxWidth: 10,
 			padding: 12
         }
+	},
+	tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataset = data['datasets'][0];
+		  /* console.log(dataset['data'][tooltipItem['index']]); */
+          /* var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]['total']) * 100) */
+          return data['labels'][tooltipItem['index']] + ': ' +dataset['data'][tooltipItem['index']] + '%';
+        }
+      },
 	},
 };
 

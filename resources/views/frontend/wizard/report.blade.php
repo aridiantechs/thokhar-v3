@@ -58,78 +58,78 @@
         <!-- Desktop -->
         <div class="nav-tabs-wrapper desktop d-none d-lg-block">
           <ul class="nav nav-tabs d-block d-ltr">
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link success" href="#income">
-              <span class="step-parent step-parent-1" data-bar="1"></span>
-              <span class="step-text">
-                <span>
-                الدخل السنوي
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item" data-id="1">
-              <a class="text-{{ $alignreverse }} nav-link success redirect" href="#net-worth">
-              <span class="step-parent" data-bar="2"></span>
-              <span class="step-text">
-                <span>
-                صافي الثروة
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link success redirect" href="#gosi">
-              <span class="step-parent" data-bar="6"></span>
-              <span class="step-text">
-                <span>
-                التأمينات الاجتماعية
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link success redirect" href="#">
-              <span class="step-parent" data-bar="7"></span>
-              <span class="step-text">
-                <span>
-                خطة الاستثمار
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link success redirect" href="#risk">
-              <span class="step-parent" data-bar="8"></span>
-              <span class="step-text">
-                <span>
-                المخاطر
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link success" href="#consultations">
-              <span class="step-parent" data-bar="9"></span>
-              <span class="step-text">
-                <span>
-                جلسة الاستشارة
-                </span>
-              </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="text-{{ $alignreverse }} nav-link active" href="#report">
-              <span class="step-parent" data-bar="10"></span>
-              <span class="step-text">
-                <span>
-                التقرير
-                </span>
-              </span>
-              </a>
-            </li>
-            
-          </ul>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link success" href="#income">
+							<span class="step-parent step-parent-1" data-bar="1"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.income') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item" data-id="1">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#net-worth">
+							<span class="step-parent" data-bar="2"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.net_assets') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#gosi">
+							<span class="step-parent" data-bar="6"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.gosi') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#investing-plan">
+							<span class="step-parent" data-bar="7"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.investing_plan') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#risk">
+							<span class="step-parent" data-bar="8"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.risk') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link success redirect" href="#consultations">
+							<span class="step-parent" data-bar="9"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.Counseling session') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-{{ $alignreverse }} nav-link active" href="#report">
+							<span class="step-parent" data-bar="10"></span>
+							<span class="step-text">
+								<span>
+									{{ trans('lang.question_headings.report') }}
+								</span>
+							</span>
+							</a>
+						</li>
+						
+					</ul>
           
           <div class="vertical-line"></div>
         </div>

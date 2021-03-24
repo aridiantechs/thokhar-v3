@@ -25,10 +25,12 @@
 
         <div class="row row-grid">
             <div class="col-12 col-lg-5">
-               
-                <h3 class="txt-blue-light font-arabic text-{{$align}}">
-                    {{ trans('lang.frontend_legal.legal_head_text') }}
-                </h3>
+               <div style="position: relative; height: 100%">
+                    <h3 class="txt-blue-light font-arabic text-{{$align}}" style="position: absolute;bottom: 0">
+                        {{ trans('lang.frontend_legal.legal_head_text') }}
+                    </h3>
+               </div>
+                
             </div>
             <div class="col-12  col-lg-7 text-center">                
                 <figure class="w-100">

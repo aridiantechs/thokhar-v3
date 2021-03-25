@@ -7,7 +7,21 @@
     /* .input-group-prepend svg{
         color: #ffffff;
     } */
-    
+    @media screen and (max-width : 400px)
+    {
+        .form-group h4
+        {
+            font-size: 18px;
+        }
+    }
+
+    @media only screen and (max-width: 1430px) and (min-width: 1000px)
+    {
+        .form-group h4
+        {
+            font-size: 16px;
+        }
+    }
 </style>
 @endsection
 

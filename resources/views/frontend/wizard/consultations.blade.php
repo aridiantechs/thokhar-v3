@@ -1,7 +1,15 @@
 <style type="text/css">
 	svg.feather.feather-calendar {
     color: #000000;
+	
 }
+
+@media screen and (max-width : 1200px)
+    {
+        input::-webkit-input-placeholder, textarea, textarea::-webkit-input-placeholder {
+			font-size: 12px !important;
+		}
+    }
 </style>
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-5">

@@ -88,6 +88,17 @@
 		margin-top: 4rem !important;
 	}
 
+	.report .nav-tabs-wrapper > .horizontal-line{
+        background: #B7CDCF;
+        left: 5px;
+        width: 99%;
+        background: transparent linear-gradient(270deg, var(---2dd782) 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+        @if ($request->segment(1) == 'ar')
+			background: transparent linear-gradient(270deg, #FF5656 0%,#2dd782 100%) 0% 0% no-repeat padding-box;
+        @else
+            background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+		@endif
+    }
 </style>
 
 @endsection

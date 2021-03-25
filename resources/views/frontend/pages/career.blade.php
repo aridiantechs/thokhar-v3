@@ -17,6 +17,10 @@
     .card{
         border: unset !important;
     }
+
+    .p-inherit{
+        padding: inherit;
+    }
 </style>
 @endsection
 
@@ -52,15 +56,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-12 p{{ $alignShortRev }}-0">
+                                <div class="col-md-12 {{-- p{{ $alignShortRev }}-0 --}}">
                                     <div class="form-group form-group-new">
                                         <div class="input-group">
                                             <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name') }}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 p-0">
-                                    <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row flex-column-reverse flex-lg-row">
                                         <div class="col-lg-6 order-1 order-lg-2 mb-3">
                                             {{-- <small class="file__type">i.e .pdf .docx</small> --}}
                                             <div class="card image-card mb-0" id="file_back">
@@ -71,7 +75,7 @@
                                                 <input type="file" accept="application/pdf" name="file" id="file_button" class="d-none"> 
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 mb-3">
+                                        <div class="col-lg-6 order-1 order-lg-2 mb-3 p-inherit">
                                             <div class="col-md-12">
                                                 <div class="form-group form-group-new">
                                                     <div class="input-group">
@@ -142,6 +146,16 @@ function changeLogoImage(input) {
 
 $(document).ready(function(){
     $('[name="phone_number"]').inputmask({"mask": "+(999) 99-999-9999"}); //specifying options
+
+    $('[name="phone_number"]').hover(function(){
+            $(this).css("direction", "ltr");
+        }, function(){
+            if ( !$(this).hasClass( "focus-visible" ) && $(this).val() == '') {
+                $(this).css("direction", "rtl");
+            }
+            
+        }
+    );
 })
 </script>
 @endsection

@@ -23,7 +23,7 @@
 			<div class="col-12 col-md-7 col-lg-6 pr-md-5">
 				<!-- Heading -->
 				<p class="text-muted mb-4 text-{{$align}} font-arabic">
-					<span>{{ trans('lang.Home') }}    </span><span> / </span><span>{{ trans('lang.plan.Gold Plan') }}</span>
+					<span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }} </a></span><span> / </span><span><a class="bc__color" href="{{route('plan',app()->getLocale() ?? 'ar')}}">{{ trans('lang.plan.Gold Plan') }}</a></span>
 				</p>
 				<h1 class="display-4 mb-3 text-{{$align}}">
 					<strong class="text-primary font-arabic ">{{ trans('lang.plan.Gold Plan') }}</strong>

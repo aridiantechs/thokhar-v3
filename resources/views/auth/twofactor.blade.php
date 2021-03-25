@@ -7,6 +7,11 @@
   .input-group .form-control:last-child, .input-group .form-control:first-child{
     border-radius: 10px !important
   }
+
+  .focused .input-group .form-control{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 30px #0000001f !important;
+  }
 </style>
 @endsection
 
@@ -18,7 +23,7 @@
             <div class="col-12 col-lg-6">
                 <!-- Heading -->
                 <p class="text-{{$align}} mb-0">
-                  <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.login') }} </span>
+                  <span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('login',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.login') }} </a></span>
                 </p>
                 <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">{{ trans('lang.2fa.code') }}</strong> 

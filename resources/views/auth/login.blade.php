@@ -74,8 +74,8 @@
                 id="phone" 
                 type="tel" 
                 class="form-control input-big @error('phone_number') is-invalid @enderror"
-                {{-- placeholder="{{ trans('lang.register_form.phone_number') }}"
-                placeholder="رقم الهاتف" --}}
+                placeholder="{{ trans('lang.register_form.phone_number') }}"
+                placeholder="رقم الهاتف"
                 value=" {{ old('phone_number') }}" 
                 >
               <div class="input-group-append">

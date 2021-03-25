@@ -44,7 +44,7 @@
 			<div class="col-12 col-md-12 col-lg-12 order-lg-1 pr-md-5">
 				<!-- Heading -->
 				<p class="text-{{$align}} mb-0">
-					<span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.user.profile') }} </span>
+					<span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('profile',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.user.profile') }}</a> </span>
 				</p>
 				<h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
 					<strong class="text-primary font-arabic"> {{ trans('lang.user.profile') }}</strong> 

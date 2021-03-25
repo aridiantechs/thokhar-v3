@@ -1266,6 +1266,6 @@ return [
 
     'free_report' => 'التقرير المجاني',
     '3_steps_page' => 'ثلاث خطوات',
-    'consultation_session' => 'الجلسة الاستشارية',
+    'consultation_session' => 'وقت الاستشارة',
 ];
 

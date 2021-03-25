@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-12 col-md-12 col-lg-12 order-md-1 pr-md-5">
-                <p class="text-{{$align}} mb-0"><span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.frontend.steps') }} </span>
+                <p class="text-{{$align}} mb-0"><span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('steps',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.frontend.steps') }} </a></span>
                 </p>
                 
                 <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">

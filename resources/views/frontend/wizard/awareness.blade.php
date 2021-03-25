@@ -12,7 +12,7 @@
 
         <p class="text-{{$align}} mb-0">
 
-            <span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ \Str::ucFirst(trans('lang.awareness.title')) }} </span>
+            <span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span><a class="bc__color" href="{{route('awareness',app()->getLocale() ?? 'ar')}}">  {{ \Str::ucFirst(trans('lang.awareness.title')) }} </a></span>
 
         </p>
         

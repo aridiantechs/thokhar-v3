@@ -49,7 +49,7 @@
             </div> -->
          <div class="col-12 col-md-12 col-lg-12  pr-md-5">
             <!-- Heading -->
-            <p class="text-muted text-{{$align}} mb-0"><span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.checkout.title') }} </span></p>
+            <p class="text-muted text-{{$align}} mb-0"><span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('checkout',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.checkout.title') }} </a></span></p>
             <h1 class="display-4 text-{{$align}} mb-3">
                <strong class="text-primary font-arabic">{{ trans('lang.plan.Gold Plan') }}</strong>
             </h1>
@@ -214,5 +214,15 @@
        }
      }
    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js" integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q==" crossorigin="anonymous"></script>
+<script>
+   $(document).ready(function(){
+      $('[data-paylib="number"]').inputmask({"mask": "9999 9999 9999 9999"}); //specifying options
+      $('[data-paylib="expmonth"]').inputmask({"mask": "99"});
+      $('[data-paylib="expyear"]').inputmask({"mask": "9999"});
+      $('[data-paylib="cvv"]').inputmask({"mask": "999"});
+   })
 </script>
 @endsection

@@ -172,6 +172,18 @@
 		margin: auto;
 		width: fit-content
 	}
+
+	.report .nav-tabs-wrapper > .horizontal-line{
+        background: #B7CDCF;
+        left: 5px;
+        width: 99%;
+        background: transparent linear-gradient(270deg, var(---2dd782) 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+        @if ($request->segment(1) == 'ar')
+			background: transparent linear-gradient(270deg, #FF5656 0%,#2dd782 100%) 0% 0% no-repeat padding-box;
+        @else
+            background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+		@endif
+    }
 </style>
 @endsection
 
@@ -179,7 +191,7 @@
 <section class="slice py-7 risk-test">
 	<div class="container">
 		<p class="text-{{$align}} mb-0">
-			<span>{{ trans('lang.Home') }}</span> <span> / </span><span>  {{ trans('lang.question_headings.Risk Test') }} </span>
+			<span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('risk-test',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.question_headings.Risk Test') }} </a></span>
 		</p>
 		<div class="row">
 			<div class="col-lg-5 {{-- order-1 order-lg-2 --}}">

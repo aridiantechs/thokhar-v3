@@ -37,6 +37,10 @@
             }
         @endif
 
+        .bc__color{
+            color: #718096;
+        }
+
         
     </style>
 </head>

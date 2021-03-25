@@ -54,19 +54,19 @@
 </style>
 <section class="slice py-3 pb-5 " id="net-worth">
 	<div class="mt-5">
-		<div class="nav-tabs-wrapper mt-5 mobile d-block d-lg-none">
+		<div class="nav-tabs-wrapper mt-5rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
 				<li class="nav-item nav-item-1">
-					<a class="text-{{$align}} nav-link"  href="#">
+					<a class="text-{{$align}} nav-link"  href="#report">
 						<span class="step-parent" data-bar="1"></span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-2">
-					<a class="text-{{$align}} nav-link"  href="#">
+					<a class="text-{{$align}} nav-link"  href="#consultations">
 					<span class="step-parent" data-bar="2"></span>
 					<span class="step-text">
 					<span>
-					Data 1
+					
 					</span>
 					</span>
 					</a>
@@ -76,29 +76,44 @@
 					<span class="step-parent" data-bar="3"></span>
 					<span class="step-text">
 					<span>
-					صافي الثروة
+					{{ trans('lang.question_headings.risk') }}
 					</span>
 					</span>
 					</a>
 				</li>
 				<li class="nav-item nav-item-4">
-					<a class="text-{{$align}} nav-link success" href="{{ route('income', locale()) }}">
-					<span class="step-parent" data-bar="4"></span>
-					<span class="step-text">
-					<span>
-					 {{ trans('lang.wizard_q.Annual Income') }}
-					</span>
-					</span>
+					<a class="text-left nav-link success" href="#investing-plan">
+					 <span class="step-parent" data-bar="4"></span>
+					 <span class="step-text">
+			            <span>
+			                 Data 3
+			            </span>
+			        </span>
+					</a>
+				</li>
+
+				<li class="nav-item nav-item-5">
+					<a class="text-left nav-link success" href="#gosi">
+					 <span class="step-parent" data-bar="5"></span>
+					 <span class="step-text">
+				            <span>
+				                Data 4
+				            </span>
+				        </span>
 					</a>
 				</li>
 			</ul>
 			<div class="horizontal-line">
-				<div class="step-parent-bar step-parent-bar-1" ></div>
-				<div class="step-parent-bar step-parent-bar-2" ></div>
-				<div class="step-parent-bar step-parent-bar-3" ></div>
-				<div class="step-parent-bar step-parent-bar-4 success" ></div>
-				
-		</div>
+
+                <div class="step-parent-bar step-parent-bar-1" ></div>
+                <div class="step-parent-bar step-parent-bar-2" ></div>
+                <div class="step-parent-bar step-parent-bar-3" ></div>
+                <div class="step-parent-bar step-parent-bar-4 success" ></div>
+               
+                <div class="step-parent-bar step-parent-bar-5 success"></div>
+                <div class="step-parent-bar step-parent-bar-6 success"></div>
+
+            </div>
 	</div>
 	<div class="container">
 		<div class="row row-grid">

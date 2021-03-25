@@ -980,13 +980,14 @@ form input:-internal-autofill-selected{
             width: 150px;
         }
         
-        .nav-tabs-wrapper.mobile .text-left.nav-link.active .step-text{
+        .nav-tabs-wrapper.mobile .nav-link.active .step-text{
                 display: block !important;
                 position: absolute;
                 bottom: 100%;
                 width: 150px;
                 bottom: calc(100% + 20px);
                 display: block;
+                text-align: center;
                 left: 50%;
                 transform: translateX(-50%);
         }
@@ -1108,4 +1109,18 @@ div#profile_image_back {
 .stick_to_bottom{
     position: absolute;
     bottom: 0
+}
+
+@media screen and (max-width: 992px){
+    .stick_to_bottom {
+        position: unset;
+    }
+}
+
+
+.mt-5rem{
+    margin-top: 5rem;
+}
+.mt-9rem{
+    margin-top: 9rem;
 }

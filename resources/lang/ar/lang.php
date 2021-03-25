@@ -16,7 +16,7 @@ return [
     'control_panel' => '   لوحة التحكم   ',
 
     'select_gender' => 'حدد نوع الجنس',
-    'male' => 'الذكر',
+    'male' => 'ذكر',
     'female' => 'أنثى',
     'other' => 'آخر',
     'search' => '   بحث   ',

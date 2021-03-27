@@ -196,8 +196,14 @@ h1.h-big{
 }
 .btn-gradient{
     border: 0;
-    background: transparent linear-gradient(90deg, var(---2dd782) 0%, var(---01baef) 100%) 0% 0% no-repeat padding-box;
-    background: linear-gradient(90deg, #2DD782 0%, #01BAEF 100%);
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#2DD782), to(#01BAEF));
+    background-image: -webkit-linear-gradient(90deg, #2DD782, #01BAEF);
+    background-image:    -moz-linear-gradient(90deg, #2DD782, #01BAEF);
+    background-image:      -o-linear-gradient(90deg, #2DD782, #01BAEF);
+    background-image:         linear-gradient(90deg, #2DD782, #01BAEF);
+
+
 }
 .btn-rtl.btn-with-icon{
     padding-left:18px;   

@@ -1267,5 +1267,8 @@ return [
     'free_report' => 'التقرير المجاني',
     '3_steps_page' => 'ثلاث خطوات',
     'consultation_session' => 'وقت الاستشارة',
+    'phone_number_required' => 'ال  رقم الهاتف          التنسيق مطلوب',
+    'phone_number_limit' => 'ال      رقم الهاتف     يجب أن تكون  10 الأرقام.',
+
 ];
 

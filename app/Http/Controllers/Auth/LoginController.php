@@ -88,8 +88,6 @@ class LoginController extends Controller
         $user->generateTwoFactorCode();
     }
 
-    
-
 
 
     /**
@@ -139,15 +137,23 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        $rules = [
+            'phone_number' => 'required|numeric|digits:10',
+            // 'email' => 'required|email',
+        ];
+
+        $customMessages = [
+            'required' => trans('lang.phone_number_required'),
+            'digits'   => trans('lang.phone_number_limit'),
+        ];
+
+
+        $this->validate($request, $rules, $customMessages);
+
 
         // $request->merge([
         //     'phone_number' => str_replace('+', '', $request->phone_number),
         // ]);
-
-        $this->validate($request, [
-            'phone_number' => 'required|numeric|digits:10',
-            // 'email' => 'required|email',
-        ]);
 
         
 

@@ -72,17 +72,16 @@ class RegisterController extends Controller
         //     return false;
         // dd(strlen($data['phone_number']), $data['phone_number']);
         
-        // dd(strlen($data["phone_number"]));
         if(strlen($data["phone_number"]) !== 9)
             return Validator::make($data, ['phone_number' => ['digits:9']]);
 
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'gender' => ['required', 'string', 'in:Male,Female,Others'],
+            'name'     => ['required', 'string', 'max:255'],
+            'gender'   => ['required', 'string', 'in:Male,Female,Others'],
             'phone_number' => ['required', 'numeric'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'terms' => ['required', 'in:on'],
+            'terms'    => ['required', 'in:on'],
             
         ]);
     }
@@ -96,10 +95,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            'name' => $data['name'],
-            'gender' => $data['gender'],
+            'name'     => $data['name'],
+            'gender'   => $data['gender'],
             'phone_number' => $data['phone_number'],
-            'email' => $data['email'],
+            'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 

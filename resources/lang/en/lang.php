@@ -1261,5 +1261,8 @@ return [
     'free_report' => 'Free report',
     '3_steps_page' => 'Three steps',
     'consultation_session' => 'consultation session ',
+    'phone_number_required' => 'The phone number field is required.',
+    'phone_number_limit' => 'The phone number must be 10 digits.',
+    
 
 ];

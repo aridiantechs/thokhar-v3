@@ -157,6 +157,19 @@ h1.h-big{
         /* text-align: right; */
 }
 
+
+@media screen and (max-width: 768px){
+    .input-group-text {
+        padding: .5rem 0.5rem;
+    }
+
+    .form-group.form-group-new .form-control.input-big {
+        padding: 1rem 0.5rem;
+        font-size: 20px;
+    }
+}
+
+
 .form-group.form-group-new{
         margin-bottom: 1.3rem;
 }

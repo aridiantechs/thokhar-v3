@@ -133,11 +133,18 @@
 		.nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span {
 		    font-size: 13px;
 		}
-		.risk-test .nav-tabs-wrapper.mobile .text-right.nav-link.active .step-text {
+		.risk-test .nav-tabs-wrapper.mobile .nav-link.active .step-text {
 		    width: 110px !important;
 		}
 		.report .nav-tabs-wrapper > .horizontal-line {
 		    width: 98% !important;
+		}
+
+		.no-m-3{
+			margin-top: 0 !important;
+		}
+		.no-p-3{
+			padding-top:0  !important; 
 		}
 	}
 	.modal-card {
@@ -146,6 +153,14 @@
 	}
 	.top_info__3_sub{
 		font-size: 18px;
+	}
+
+	.no-m-3{
+		margin-top: 3rem;
+	}
+
+	.no-p-3{
+		padding-top: 3rem;
 	}
 
 	.risk-test .nav-tabs-wrapper.mobile .text-right.nav-link.active .step-text {
@@ -187,7 +202,7 @@
         left: 5px;
         width: 99%;
         background: transparent linear-gradient(270deg, var(---2dd782) 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
-        @if ($request->segment(1) == 'ar')
+        @if ($request->segment(1) == 'en')
 			background: transparent linear-gradient(270deg, #FF5656 0%,#2dd782 100%) 0% 0% no-repeat padding-box;
         @else
             background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
@@ -256,7 +271,7 @@
 					<div class="report m-top-p5">
 						<div class="nav-tabs-wrapper mt-5 mobile ">
 							<ul class="nav nav-tabs d-flex align-items-center">
-								<li class="nav-item nav-item-risk-1">
+								<li class="nav-item nav-item-risk-5">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Very_Conservative_Investor')" data-toggle="tab" href="#very_conservative">
 										<span class="step-parent" data-bar="1"></span>
 										<span class="step-text">
@@ -267,8 +282,7 @@
 										
 									</a>
 								</li>
-								
-								<li class="nav-item nav-item-risk-2">
+								<li class="nav-item nav-item-risk-4">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Conservative_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="2"></span>
 										<span class="step-text">
@@ -279,6 +293,7 @@
 										
 									</a>
 								</li>
+								
 								<li class="nav-item nav-item-risk-3">
 									<a class="text-{{$align}} nav-link active" onclick="indicator('Natrual_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="3"></span>
@@ -290,7 +305,7 @@
 										
 									</a>
 								</li>
-								<li class="nav-item nav-item-risk-4">
+								<li class="nav-item nav-item-risk-2">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Aggressive_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="4"></span>
 										<span class="step-text">
@@ -301,8 +316,7 @@
 										
 									</a>
 								</li>
-								
-								<li class="nav-item nav-item-risk-5">
+								<li class="nav-item nav-item-risk-1">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Very_Aggressive_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="5"></span>
 										<span class="step-text">
@@ -326,7 +340,7 @@
 		<div class="tab-content">
 
 			<div id="very_conservative" class="container tab-pane active">
-				<div class="card card-shadow mt-5">
+				<div class="card card-shadow no-m-3">
 					<div class="card-body">
 						<div class="row border-bottom-light">
 							<div class="col-12 col-lg-6">
@@ -337,7 +351,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-6 text-center pt-5">
+							<div class="col-lg-6 text-center no-p-3">
 								<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">{{ trans('lang.report.Financial Projections') }}</h2>
 								<h1>
 									{{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }}

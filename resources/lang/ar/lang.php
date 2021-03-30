@@ -224,6 +224,9 @@ return [
         'assets' => '  الاستثمارات   ',
             'real_estate' => 'العقارات والأراضي',
             'pe' => 'المشاريع التجارية (الملكيات الخاصة)',
+            'other_assets'=>'أصول اخرى ( ذهب ، بتكوين ، أخرى)',
+
+        'subscription_months'=>'subscription_months',
 
         'financial_assets' => 'الاصول المالية',
             'cash_and_deposit' => 'النقد وما يعادله (الودائع والمرابحات)',
@@ -287,6 +290,8 @@ return [
         // step 6
 
         // q1
+        'initial_amount'=>'مبلغ الاستثمار الأولي ( دفعة واحدة)',
+        'monthly_amount'=>'مبلغ الاستثمار الشهري ( متكرر )',
         'risk_age' => '      اﻟﻌﻤﺮ              ',
         'Monthly investing Payment'=>'المبلغ الشهري',
 

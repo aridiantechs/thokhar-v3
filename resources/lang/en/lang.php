@@ -221,7 +221,9 @@ return [
         'assets' => 'Real Assets',
             'real_estate' => 'Real Estate',
             'pe' => ' Privare Equity',
+            'other_assets'=>'Other assets (gold, bitcoin, others)',
 
+        'subscription_months'=>'subscription_months',
         'financial_assets' => 'Financial Assets',
 
             'cash_and_deposit' => 'Cash and equivalents (deposits and Murabaha)',
@@ -286,6 +288,8 @@ return [
         // step 6
 
         // q1
+        'initial_amount'=>'Initial amount',
+        'monthly_amount'=>'Monthly Amount',
         'risk_age' => 'Age',
         'Monthly investing Payment'=>'Monthly investing Payment',
 

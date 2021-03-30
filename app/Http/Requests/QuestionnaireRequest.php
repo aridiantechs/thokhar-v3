@@ -241,8 +241,8 @@ class QuestionnaireRequest extends FormRequest
 
             //--------------------------------------
             // investing-amount
-            'investing_amount.initial_amount' => 'Initial Amount',
-            'investing_amount.monthly_amount' => 'Monthly Amount',
+            'investing_amount.initial_amount' => trans('lang.question.initial_amount'),
+            'investing_amount.monthly_amount' => trans('lang.question.monthly_amount'),
             'investing_amount.years_old' => 'Age',
             
 
@@ -332,6 +332,7 @@ class QuestionnaireRequest extends FormRequest
 
             'net_assets.real_assets.real_estate' => trans('lang.question.real_estate'),
             'net_assets.real_assets.pe' => trans('lang.question.pe'),
+            'net_assets.other_assets.other' => trans('lang.question.other_assets'),
             
             'net_assets.liabilities.real_estate_loan' => trans('lang.question.real_estate_loan'),
             
@@ -373,7 +374,7 @@ class QuestionnaireRequest extends FormRequest
             'gosi.expecting_salary_at_retirement' => trans('lang.question.expecting_salary_at_retirement'),
             'gosi.mothly_life_expenses_after_retirement' => trans('lang.question.mothly_life_expenses_after_retirement'),
             // 'gosi.average_of_last_24_months_salary' => trans('lang.question.gosi_average_of_last_24_months_salary'),
-            // 'gosi.subscription_months' => trans('lang.question.gosi_subscriptions_months'),
+            'gosi.subscription_months' => trans('lang.question.subscriptions_months'),
 
             // -----------------------------------------
             // risks

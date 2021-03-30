@@ -34,6 +34,7 @@ return [
         'login_with_google' => "Login with Google",
         'or' => "OR",
         'login_with_another_account' => "login with another account",
+        'Kindly log in to start our services' => 'Kindly log in to start our services ',
     ],
 
     
@@ -1263,6 +1264,9 @@ return [
     'consultation_session' => 'consultation session ',
     'phone_number_required' => 'The phone number field is required.',
     'phone_number_limit' => 'The phone number must be 10 digits.',
+
+    'Your financial advisor and preparing your personal investing plan , based on your input' => 'Your financial advisor and preparing your personal investing plan , based on your input ',
+    'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )' => 'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )',
     
 
 ];

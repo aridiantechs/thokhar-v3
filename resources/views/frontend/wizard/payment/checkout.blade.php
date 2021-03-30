@@ -5,7 +5,7 @@
 <style type="text/css">
    @media screen and (max-width: 992px){
    .form-group.card-group-input .input-group {
-   padding-right: 72px !important;
+   padding-{{ $align }}: 72px !important;
    }
    span.icon-2 img{
    max-width: 45px;
@@ -71,7 +71,7 @@
                                <img src="{{ asset('frontend_assets/assets/img/new/checkout/check.svg') }}" class="" alt="">
                                </span>
                             </div>
-                            <input type="text" data-paylib="number" size="20" class="form-control input-big card-input text-{{$arrowAlign}}" style="direction: ltr" placeholder="3233    2000    2333    0000">
+                            <input type="text" data-paylib="number" size="20" class="form-control input-big card-input text-{{$arrowAlign}}" style="direction: ltr" placeholder="3233  2000  2333  0000">
                          </div>
                       </div>
                       <div class="row">

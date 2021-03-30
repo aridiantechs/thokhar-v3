@@ -130,6 +130,15 @@
 		.bottom-line:after{
 			bottom: -18px;
 		}
+		.nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span {
+		    font-size: 13px;
+		}
+		.risk-test .nav-tabs-wrapper.mobile .text-right.nav-link.active .step-text {
+		    width: 110px !important;
+		}
+		.report .nav-tabs-wrapper > .horizontal-line {
+		    width: 98% !important;
+		}
 	}
 	.modal-card {
 	    background: #01baef;
@@ -241,7 +250,8 @@
 		</h2>
 		<div style="margin-top:100px !important">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-1"></div>
+				<div class="col-10">
 
 					<div class="report m-top-p5">
 						<div class="nav-tabs-wrapper mt-5 mobile ">
@@ -257,6 +267,7 @@
 										
 									</a>
 								</li>
+								
 								<li class="nav-item nav-item-risk-2">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Conservative_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="2"></span>
@@ -290,6 +301,7 @@
 										
 									</a>
 								</li>
+								
 								<li class="nav-item nav-item-risk-5">
 									<a class="text-{{$align}} nav-link " onclick="indicator('Very_Aggressive_Investor')" data-toggle="tab" href="#">
 										<span class="step-parent" data-bar="5"></span>

@@ -47,8 +47,7 @@
           <strong class="text-primary font-arabic">{{ trans('lang.login') }}</strong> 
         </h1>
 
-        <h5 class="{{$textAlign}} mt-4 mb-4">تحكم باستثمار أموالك بشكل كامل باحترافية
-تحكم باستثمار أموالك بشكل كامل باحترافية</h5>
+        <h5 class="{{$textAlign}} mt-4 mb-4">{{ trans('lang.login_form.Kindly log in to start our services') }}</h5>
         <span class="clearfix"></span>
 
         {{-- @if (session('error'))

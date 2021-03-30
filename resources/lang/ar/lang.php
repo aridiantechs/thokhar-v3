@@ -34,6 +34,7 @@ return [
         'login_with_google' => 'تسجيل الدخول عبر جوجل ',
         'or' => 'أو ', 
     	'login_with_another_account' => '  تسجيل الدخول بحساب آخر  ', 
+        'Kindly log in to start our services' => 'من فضلك قم بتسجيل الدخول لتتمكن من تجربة الخدمة',
     ],
 
     '2fa'=>[
@@ -1269,6 +1270,10 @@ return [
     'consultation_session' => 'وقت الاستشارة',
     'phone_number_required' => 'ال  رقم الهاتف          التنسيق مطلوب',
     'phone_number_limit' => 'ال      رقم الهاتف     يجب أن تكون  10 الأرقام.',
+
+    'Your financial advisor and preparing your personal investing plan , based on your input' => 'يقوم مستشارك المالي حاليا بإعداد خطتك الاستثمارية الشخصية ، بناء على معلوماتك المقدمة ',
+    
+    'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )' => 'تم ارسال خطتك الى بريدك الالكتروني (الرقم السري : اخر اربعة ارقام من جوالك ) ',
 
 ];
 

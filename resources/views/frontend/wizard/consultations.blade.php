@@ -84,7 +84,7 @@
 						
                         <div class="py-5 pl-lg-0">
 							<h3 class="txt-blue-light text-{{$align}} font-arabic">
-							هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.
+								{{ trans('lang.Your financial advisor and preparing your personal investing plan , based on your input') }}
 							</h3>
 						</div>
 

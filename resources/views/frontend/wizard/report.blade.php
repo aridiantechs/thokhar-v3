@@ -177,7 +177,7 @@
       </div>
 
       <div class="modal__lad text-center mt-4">
-        <h3 class="font-arabic font-1 text-white">تم ارسال تقريرك الى بريدك الالكتروني</h3>
+        <h3 class="font-arabic font-1 text-white">{{ trans('lang.your personal  plan been sent to your email ( password : last 4 numbers of your mobile )') }}</h3>
 
         <p class="font-2-sm">{{auth()->user()->email ?? ''}}</p>
       </div>

@@ -39,7 +39,7 @@ class QuestionnaireRequest extends FormRequest
 
                         case 'investing-amount':
                             return [
-                                'investing_amount' => 'required|array',
+                                // 'investing_amount' => 'required|array',
                                 'investing_amount.initial_amount' => 'required|numeric',
                                 'investing_amount.monthly_amount' => 'required|numeric',
                                 // 'investing_amount.years_old' => 'required|numeric|max:120|min:5',
@@ -241,9 +241,10 @@ class QuestionnaireRequest extends FormRequest
 
             //--------------------------------------
             // investing-amount
-            'investing_amount.initial_amount' => trans('lang.question.initial_amount'),
             'investing_amount.monthly_amount' => trans('lang.question.monthly_amount'),
-            'investing_amount.years_old' => 'Age',
+            'investing_amount.initial_amount' => trans('lang.question.initial_amount'),
+            'investing_amount.annual_increase_in_saving_plan' => trans('lang.question.annual_increase_in_saving_plan'),
+            'investing_amount.years_old'      => trans('lang.question.years_old'),
             
 
             //--------------------------------------

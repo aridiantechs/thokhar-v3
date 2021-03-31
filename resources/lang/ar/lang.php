@@ -56,7 +56,7 @@ return [
         'agree_to' => '   قبلت أن            ',
         'term_and_conditions' => '   الأحكام والشروط          ',
         'role' => 'الرتبه',
-        'profile_image' => 'Profile image',
+        'profile_image' => 'الصورة الشخصية',
     ],
 
     'reset_password_form' => [

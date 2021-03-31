@@ -26,6 +26,7 @@ return [
     'required_field' => 'هذه الخانة مطلوبه',
     'valid_email' => 'رجاء قم بإدخال بريد الكتروني صحيح',
 
+    'warning'=>'تنبيه',
     'login_form' => [
         'phone_number'=>'رقم جوالك',
         'forgot_your_passowrd' => 'نسيت رقمك السري ؟',

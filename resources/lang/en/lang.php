@@ -26,6 +26,7 @@ return [
     'required_field' => 'This field is required',
     'valid_email' => 'Please enter a valid email address',
 
+    'warning'=>'warning',
     'login_form' => [
         'phone_number'=>'Mobile number',
         'forgot_your_passowrd' => 'Forgot Your Password',

@@ -1,7 +1,7 @@
 @inject('request', 'Illuminate\Http\Request')
 
 @if($request->segment(1) == 'ar')
-<div class="alert alert-warning alert-dismissible fade show text-right font-arabic" style="display: none" role="alert">
+<div class="alert alert-warning alert-dismissible fade show text-{{$align}} font-arabic" style="display: none" role="alert">
   <div class="alert-icon">
     <i class="fas fa-question"></i>
   </div>
@@ -17,7 +17,7 @@
 </div>
 
 @else
-<div class="alert alert-warning alert-dismissible fade show text-right font-arabic" style="display: none" role="alert">
+<div class="alert alert-warning alert-dismissible fade show text-{{$align}} font-arabic" style="display: none" role="alert">
   <div class="alert-icon">
     <i class="fas fa-question"></i>
   </div>

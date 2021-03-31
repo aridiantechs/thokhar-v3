@@ -59,7 +59,7 @@ class QuestionnaireRequest extends FormRequest
 
                         case 'income':
                             return [
-                                'income' => 'required|array',
+                                // 'income' => 'required|array',
                                 'income.income' => 'required|numeric',
                             ];
                             break;
@@ -249,7 +249,7 @@ class QuestionnaireRequest extends FormRequest
 
             //--------------------------------------
             // income
-            'income.income' => 'Income',
+            'income.income' => trans('lang.question_headings.income'),
             
 
             // --------------------------------------

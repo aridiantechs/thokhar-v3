@@ -193,6 +193,8 @@
 
 				var errors_list = '';
 
+				console.log(errors.errors);
+
 				jQuery.each(errors.errors, function(index, item) {
 
 				    errors_list += `<li><p class="text-dark" >` +item+ `</p></li>`

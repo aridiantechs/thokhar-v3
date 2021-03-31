@@ -46,6 +46,7 @@ return [
     'register_form' => [
     	'name' => 'اسم',
         'gender' => '  جنس      ',
+        'dob' => 'تاريخ الميلاد',
         'phone_number' => '  رقم الهاتف         ',
     	'confirm_password' => 'تأكيد كلمة المرور',  
         'type_your_password_here' => 'اكتب كلمة مرورك هنا ',
@@ -54,7 +55,8 @@ return [
 
         'agree_to' => '   قبلت أن            ',
         'term_and_conditions' => '   الأحكام والشروط          ',
-        'role' => 'الرتبه'
+        'role' => 'الرتبه',
+        'profile_image' => 'Profile image',
     ],
 
     'reset_password_form' => [

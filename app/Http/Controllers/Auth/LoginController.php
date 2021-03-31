@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
-use Socialite;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Auth\Events\Registered;
-use Auth;
+use Illuminate\Http\Request;
 use App\Questionnaire;
- 
+use Socialite;
+use App\User;
+use Auth;
+
+
 class LoginController extends Controller
 {
     /*
@@ -135,27 +137,11 @@ class LoginController extends Controller
         return redirect('/en/home');
     }
 
-    public function authenticate(Request $request)
+    public function authenticate(LoginRequest $request)
     {
-        $rules = [
-            'phone_number' => 'required|numeric|digits:10',
-            // 'email' => 'required|email',
-        ];
-
-        $customMessages = [
-            'required' => trans('lang.phone_number_required'),
-            'digits'   => trans('lang.phone_number_limit'),
-        ];
-
-
-        $this->validate($request, $rules, $customMessages);
-
-
         // $request->merge([
         //     'phone_number' => str_replace('+', '', $request->phone_number),
         // ]);
-
-        
 
         $user = User::where('phone_number', $request->input('phone_number'))->first();
         // $user = User::where('email', $request->input('email'))->first();

@@ -308,23 +308,15 @@ class UserController extends Controller
         }
     }
 
-    public function storeProfile(Request $request)
+    public function storeProfile(ProfileRequest $request)
     {
         $user = $this->loggedInUser;
         
-        $request->validate([
-            'name'  => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users,email,'.$user->id,
-            'dob'   => 'required|date|max:255',
-            'education_level' => 'required|string|max:255',
-            'gender'          => 'required|string|max:255',
-            'profile_image'   => 'nullable|image|max:1000|mimes:jpeg,png,jpg',
-            'expected_retirement_age' => 'required|numeric|max:255',
-        ]);
 
         $destinationFilePath = 'user_assets/user_uploads/'; 
         $file_profile_name = null; 
         $path_profile_filename = 'user_assets/user_uploads/default.png';
+        
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');
             $destinationFilePath = 'user_assets/user_uploads/';

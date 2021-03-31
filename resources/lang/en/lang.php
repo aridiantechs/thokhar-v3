@@ -39,23 +39,24 @@ return [
 
     
     '2fa'=>[
-        'Resend verification code during'=>'Resend verification code during',
-        'minute'=>'minute',
+        'Resend verification code during' => 'Resend verification code during',
+        'minute' => 'minute',
         'code' => 'Code',
     ],
 
     'register_form' => [
         'name' => 'Name',
         'gender' => 'Gender',
+        'dob' => 'Date of Birth',
         'phone_number' => 'Phone Number',
         'confirm_password' => 'Confirm Password',
         'type_your_password_here' => 'Type your password here',
         'type_your_email_here' => 'Type your email here',
         'register_with_google' => 'Register with Google',
-
         'agree_to' => 'Agree to',
         'term_and_conditions' => 'Terms & Conditions',
         'role' => 'Role',
+        'profile_image' => 'Profile image',
     ],
 
     'reset_password_form' => [

@@ -6,7 +6,7 @@
     <i class="fas fa-question"></i>
   </div>
   <h5>
-    رسالة الخطأ
+    {{ trans('lang.warning') }}
   </h5>
   <ul>
     
@@ -22,7 +22,7 @@
     <i class="fas fa-question"></i>
   </div>
   <h5>
-   Warning
+   {{ trans('lang.warning') }}
   </h5>
   <ul>
     

@@ -79,7 +79,7 @@ return [
         'array' => '     :attribute     يجب ألا يكون أكثر من   :value العناصر.',
     ],
     'max' => [
-        'numeric' => '     :attribute     قد لا يكون أكبر من   :max.',
+        'numeric' => '     :attribute       اصغر او يساوي   :max.',
         'file' => '     :attribute     قد لا يكون أكبر من   :max كيلو بايت.',
         'string' => '     :attribute     قد لا يكون أكبر من   :max الشخصيات.',
         'array' => '     :attribute     قد لا يكون أكثر من   :max العناصر.',

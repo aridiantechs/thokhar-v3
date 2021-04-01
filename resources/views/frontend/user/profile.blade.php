@@ -26,6 +26,15 @@
 	#dob{
 	    text-align: {{ $align }};
 	}
+
+	@media only screen and (max-width: 600px) {
+		.h-100px
+		{
+			height: 100px;
+		}
+	
+	}
+	
 	
 </style>
 @endsection
@@ -192,7 +201,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 order-1 order-lg-2 mb-3">
+						<div class="col-lg-3 order-1 order-lg-2 mb-3 h-100px">
 							<div class="card image-card mb-0 h-100" id="profile_image_back" style="background-image: url('@if($user->profile_image){{ asset($user->profile_image) }}@endif')">
 								<div class="card-body h-100 d-flex justify-content-center align-items-center">
 									<span class="material-icons txt-gray-light md-48" id="new_profile">add_a_photo</span>

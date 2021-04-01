@@ -154,7 +154,7 @@ return [
         'current_saving_balance' => '  المبلغ الاولي المخصص لخطة التقاعد (دفعة واحدة)  ',
         'gosi_or_ppa_monthly_subscription' => 'الاستقطاع الشهري ( التأمينات الاجتماعية / التقاعد ) ',
         'monthly_saving_plan_for_retirement' => 'الادخار الشهري لخطة التقاعد',
-        'annual_increase_in_saving_plan' => 'معدل الزيادة في الادخار بشكل سنوي (%)',
+        'annual_increase_in_saving_plan' => 'الزيادة السنوية في خطة الادخار',
         'annual_increase_saving_plan_validation' => 'الزيادة السنوية في خطة الادخار ',
 
         'continue_to_worth' => 'الاستمرار الى صافي الاصول',

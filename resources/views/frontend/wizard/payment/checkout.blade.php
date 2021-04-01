@@ -219,10 +219,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js" integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q==" crossorigin="anonymous"></script>
 <script>
    $(document).ready(function(){
-      $('[data-paylib="number"]').inputmask({"mask": "9999 9999 9999 9999"}); //specifying options
+      /* $('[data-paylib="number"]').inputmask({"mask": "9999 9999 9999 9999"}); //specifying options
       $('[data-paylib="expmonth"]').inputmask({"mask": "99"});
       $('[data-paylib="expyear"]').inputmask({"mask": "9999"});
-      $('[data-paylib="cvv"]').inputmask({"mask": "999"});
+      $('[data-paylib="cvv"]').inputmask({"mask": "999"}); */
    })
 </script>
 @endsection

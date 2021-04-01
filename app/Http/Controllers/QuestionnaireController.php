@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Questionnaire;
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\QuestionnaireRequest;
 use App\Http\Requests\AdditionalInformationRequest;
-use Session;
-use App\Constant;
-use App\Consultations;
-use App\Report;
 use Illuminate\Support\Facades\Mail;
+use App\Consultations;
 use App\Mail\SendMail;
+use App\Constant;
+use App\Report;
+use App\User;
+use Session;
 
 
 class QuestionnaireController extends Controller

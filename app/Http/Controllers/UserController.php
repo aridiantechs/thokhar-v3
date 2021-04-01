@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
-use Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\ProfileRequest;
 use App\Questionnaire;
+use Session;
 
 class UserController extends Controller
 {
@@ -316,7 +317,7 @@ class UserController extends Controller
         $destinationFilePath = 'user_assets/user_uploads/'; 
         $file_profile_name = null; 
         $path_profile_filename = 'user_assets/user_uploads/default.png';
-        
+
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');
             $destinationFilePath = 'user_assets/user_uploads/';

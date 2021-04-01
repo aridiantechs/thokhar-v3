@@ -153,6 +153,7 @@ return [
         'gosi_or_ppa_monthly_subscription' => 'GOSI or PPA monthly subscription',
         'monthly_saving_plan_for_retirement' => 'Monthly saving plan for retirement',
         'annual_increase_in_saving_plan' => 'Annual increase in saving plan (%)',
+        'annual_increase_saving_plan_validation' => 'annual increase in saving plan',
 
         'continue_to_worth' => 'Continue to net worth',
         
@@ -437,7 +438,7 @@ return [
         'Counseling session' => 'Counseling session',
         'gosi' => 'GOSI',
         'risk' => 'Risk',
-        'Risk Test'=>'Risk Test',
+        'Risk Test'=>'Free report',
         'objectives' => 'Objectives',
         'report' => 'Report',
         
@@ -597,9 +598,9 @@ return [
 
         'contact_send_us_a_message' => 'Send Us a Message',
         'contact_email' => 'Email',
-        'contact_email_placeholder' => 'Please type your Email here.',
+        'contact_email_placeholder' => 'Enter Email',
         'contact_name' => 'Name',
-        'contact_name_placeholder' => 'Please type your Name here',
+        'contact_name_placeholder' => 'Enter Name',
         'contact_message' => 'Message',
         'contact_message_placeholder' => 'Please type your Message here',
         'contact_send' => 'Send',

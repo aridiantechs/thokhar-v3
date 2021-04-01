@@ -12,6 +12,13 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 30px #0000001f !important;
   }
+
+  .d-ltr{
+    direction: ltr;
+  } 
+  .w-fit-content{
+    width: fit-content;
+  }
 </style>
 @endsection
 
@@ -41,7 +48,7 @@
                 <form method="POST" id="login__form" action="{{ route('verify.store', app()->getLocale()) }}">
                     @csrf
                     <div class="form-group form-group-new form-group-phone">
-                      <div class="input-group d-flex {{-- justify-content-center justify-content-lg-end --}}">
+                      <div class="input-group d-flex d-ltr w-fit-content {{-- justify-content-center justify-content-lg-end --}}">
 
                         <input type="tel" name="two_factor_code[]" maxlength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}"/>
                             

@@ -293,11 +293,11 @@
                                             <i class="fab fa-linkedin"></i>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link snapchat-a" href="#" target="_blank">
                                             <i class="fab fa-snapchat"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link twitter-a" href="#" target="_blank">
                                             <i class="fab fa-twitter"></i>
@@ -314,7 +314,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="team__avatar">
-                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/alialsheri.png') }}" class="w-100" alt="">
+                                    <img src="{{ asset('frontend_assets/assets/img/new/about/team/bakarman.png') }}" class="w-100" alt="">
                                 </div>
                             </div>
                             <div class="col-8 d-block d-flex align-items-end justify-content-end">
@@ -328,11 +328,11 @@
                                             <i class="fab fa-linkedin"></i>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link snapchat-a" href="#" target="_blank">
                                             <i class="fab fa-snapchat"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link twitter-a" href="#" target="_blank">
                                             <i class="fab fa-twitter"></i>
@@ -404,11 +404,11 @@
                     <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link snapchat-a" href="#" target="_blank">
                     <i class="fab fa-snapchat"></i>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link twitter-a" href="#" target="_blank">
                     <i class="fab fa-twitter"></i>

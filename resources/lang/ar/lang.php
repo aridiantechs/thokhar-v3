@@ -155,6 +155,7 @@ return [
         'gosi_or_ppa_monthly_subscription' => 'الاستقطاع الشهري ( التأمينات الاجتماعية / التقاعد ) ',
         'monthly_saving_plan_for_retirement' => 'الادخار الشهري لخطة التقاعد',
         'annual_increase_in_saving_plan' => 'معدل الزيادة في الادخار بشكل سنوي (%)',
+        'annual_increase_saving_plan_validation' => 'الزيادة السنوية في خطة الادخار ',
 
         'continue_to_worth' => 'الاستمرار الى صافي الاصول',
 
@@ -616,9 +617,9 @@ return [
 
         'contact_send_us_a_message' => '   أرسل لنا رسالة بالبريد الإلكتروني        ',
         'contact_email' => '   البريد الإلكتروني         ',
-        'contact_email_placeholder' => 'من فضلك قم بكتابة البريد الإلكتروني الخاص بك هنا  ',
+        'contact_email_placeholder' => 'أدخل البريد الإلكتروني',
         'contact_name' => '   الاسم        ',
-        'contact_name_placeholder' => ' من فضلك قم بكتابة الاسم هنا  ',
+        'contact_name_placeholder' => 'أدخل الاسم',
         'contact_message' => '   الرسالة        ',
         'contact_message_placeholder' => ' من فضلك قم بإدخال رسالتك هنا  ',
         'contact_send' => '  إرسال         ',

@@ -14,7 +14,12 @@ class ConsultationsController extends Controller
      */
     public function index()
     {
-        //
+       /* dd(123); */
+       return view('dashboard.control_panel.counseling.list')
+                ->with([
+                    'title' => 'Counseling',
+                    'page_title' => 'Counseling',
+                ]);
     }
 
     /**

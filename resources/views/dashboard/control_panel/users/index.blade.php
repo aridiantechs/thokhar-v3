@@ -70,6 +70,14 @@ button.del-button {
 @section('content')
 {{-- <div class="content__body"> --}}
 <div class="container mt-5" id="reportPage">
+    <h2 class="user__intro">
+        {{ trans('lang.admin.welcome') }}
+        @auth()
+            {{ auth()->user()->name }}	
+        @endauth
+        !
+    </h2>
+    @include('dashboard.components.navbar')
     <h2 class="user__intro {{ ($request->segment(1) == 'ar') ? 'text-right' : 'text-left' }}"">{{ trans('lang.user.list_of_all_users_registered') }}</h2>
     <div class="s-20"></div>
     <form action="{{ route('search_user',app()->getLocale()) }}" method="GET">

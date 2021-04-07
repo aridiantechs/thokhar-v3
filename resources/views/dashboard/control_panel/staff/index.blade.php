@@ -30,6 +30,7 @@
 @section('content')
 {{-- <div class="content__body"> --}}
 <div class="container mt-5">
+	@include('dashboard.components.navbar')
 	<h2 class="user__intro {{ ($request->segment(1) == 'ar') ? 'text-right' : 'text-left' }}">{{ trans('lang.admin.staff') }}</h2>
 	<p class="setting_text {{ ($request->segment(1) == 'ar') ? 'text-right' : 'text-left' }}">
 		{{ trans('lang.admin.site_settings') }}

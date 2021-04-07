@@ -225,6 +225,9 @@ Route::group([
       // --------------------------------- Activity Log Routes ------------------------------------
         Route::get('/logs', 'ActivityLogController@index')->name('logs');
 
+        // --------------------------------- Counseling Routes ------------------------------------
+        Route::get('/counseling', 'ConsultationsController@index')->name('counseling');
+
       /*
       |--------------------------------------------------------------------------
       | Admin & User REPORTS Routes

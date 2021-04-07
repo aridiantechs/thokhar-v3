@@ -54,8 +54,8 @@ th {
 @section('content')
 	<br>
 	<br>
-	<div class="container pl-5 pr-5 pb-5">
-
+	<div class="container {{-- pl-5 pr-5 --}} pb-5">
+        @include('dashboard.components.navbar')
 		<h2 class="user__intro {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">{{ $page_title }}</h2>
 
 		<div class="row">

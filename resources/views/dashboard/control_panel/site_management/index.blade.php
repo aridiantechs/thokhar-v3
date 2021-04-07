@@ -11,6 +11,7 @@
 @section('content')
 	{{-- <div class="content__body"> --}}
 		<div class="container mt-5">
+			@include('dashboard.components.navbar')
 			<div class="row">
 				<div class="nav flex-column nav-pills col-lg-3 col-md-3 col-sm-3 offset-1 {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 					<p class="settings_title">

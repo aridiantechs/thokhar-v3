@@ -20,6 +20,7 @@ del {
 @section('content')
 {{-- <div class="content__body"> --}}
 <div class="container mt-5">
+	@include('dashboard.components.navbar')
 	<h2 class="user__intro {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">{{ trans('lang.log.change_log') }}</h2>
 	
 	<div class="row {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">

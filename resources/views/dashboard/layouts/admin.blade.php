@@ -30,6 +30,45 @@
             line-height: 23px;
             transform: rotate(-37deg);
         }
+
+        .btn-gradient{
+            border: 0;
+            
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#2DD782), to(#01BAEF));
+            background-image: -webkit-linear-gradient(90deg, #2DD782, #01BAEF);
+            background-image:    -moz-linear-gradient(90deg, #2DD782, #01BAEF);
+            background-image:      -o-linear-gradient(90deg, #2DD782, #01BAEF);
+            background-image:         linear-gradient(90deg, #2DD782, #01BAEF);
+
+
+        }
+        .btn-rtl.btn-with-icon{
+            padding-left:18px;   
+        }
+        .btn-rtl.btn-big.text-center span{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .btn-rtl.btn-big:not(.text-center) span{
+            padding-left: 60px;
+        }
+
+        .btn-ltr.btn-with-icon{
+            padding-right:18px;   
+        }
+        .btn-ltr.btn-big span{
+            padding: 0 15px;
+        }
+
+        .btn-big{
+            padding: 10px 0.8rem;
+            font-size: 14px;
+        }
+        .btn-rad35{
+            border-radius: 35px;
+        }
+
     </style>
 </head>
 

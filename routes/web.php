@@ -228,6 +228,9 @@ Route::group([
         // --------------------------------- Counseling Routes ------------------------------------
         Route::get('/counseling', 'ConsultationsController@index')->name('counseling');
 
+       // --------------------------------- Plans & Coupons ------------------------------------
+       Route::get('/plans_coupons', 'PlanCouponController@index')->name('plans_coupons');
+
       /*
       |--------------------------------------------------------------------------
       | Admin & User REPORTS Routes

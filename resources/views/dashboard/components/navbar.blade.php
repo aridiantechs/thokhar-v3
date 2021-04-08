@@ -31,7 +31,7 @@
         </a>
     </div>
     <div class="col-lg-1 col-md-3 col-sm-4 col-6 mw-100">
-        <a class="nav-link setting_icons" href="{{ route('site_management', app()->getLocale()) }}">
+        <a class="nav-link setting_icons" href="{{ route('plans_coupons', app()->getLocale()) }}">
             <img src="{{ asset('backend_assets/admin_dashboard/images/dashboard_icons7.png') }}"><p class="setting_text" >Plans and Coupons</p>
         </a>
     </div>

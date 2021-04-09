@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Consultations;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,22 @@ class ConsultationsController extends Controller
      */
     public function index()
     {
-       /* dd(123); */
+        $startDate = Carbon::today();
+         
+        for ($i=1; $i <=7 ; $i++) {
+            $day=$startDate->addDay();
+            $week[]=[ 
+                "full_date"=>$day->format('Y-m-d l'),
+                "day"=>$day->format('l')
+            ];
+        }
+       /* dd($week); */
+
        return view('dashboard.control_panel.counseling.list')
                 ->with([
                     'title' => 'Counseling',
                     'page_title' => 'Counseling',
+                    'week' => $week,
                 ]);
     }
 
@@ -40,7 +52,7 @@ class ConsultationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

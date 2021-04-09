@@ -3,6 +3,8 @@
 
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" />
 <style>
 .table thead th {
     vertical-align: bottom;
@@ -32,9 +34,9 @@ tbody tr:last-child > td, tbody tr:last-child > th {
     border-top: 1px solid transparent;
 }
 
-tr td:last-child {
+/* tr td:last-child {
     text-align: left !important;
-}
+} */
 
 th {
     font-weight: 400;
@@ -392,6 +394,23 @@ border-radius: .5rem;
     padding: 0px 5px !important;
     font-size: 13px !important;
 }
+
+.pl-0{
+    padding-left: 0 !important;
+}
+
+.sub_head{
+    color: #20cfa4;
+    font-size: 18px !important;
+}
+
+.chosen-container{
+    width: 100% !important;
+}
+
+.w-320px{
+    width: 320px;
+}
 </style>
 @endsection
 @section('content')
@@ -467,126 +486,90 @@ border-radius: .5rem;
         <div class="popup-inner">
            <div class="popup-contact-wrapper">
                 <h4 class="popup-header mx-auto">Change Work Hours</h4>
+                <p class="pl-0 text-left sub_head"><em>Next 7 days</em></p>
                 <hr>
               
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table id="example" class="table" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th><p class="text_black">Day</p></th>
-                                        <th><p class="text_black">Shift</p></th>
-                                        <th><p class="text_black">From:</p></th>
-                                        <th><p class="text_black">To:</p></th>
-                                        <th><p class="text_black">Shift</p></th>
-                                        <th><p class="text_black">From:</p></th>
-                                        <th><p class="text_black">To:</p></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border_bottom">
+                    <form class="col-md-12" action="{{route('work_hours.store', app()->getLocale())}}" method="POST">
+                        @csrf
+                            <div class="table-responsive">
+                                <table id="example" class="table" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="text_black">Day</p></th>
+                                            <th><p class="text_black">Shift</p></th>
+                                            <th><p class="text_black">slot:</p></th>
+                                            {{-- <th><p class="text_black">To:</p></th>
+                                            <th><p class="text_black">Shift</p></th>
+                                            <th><p class="text_black">From:</p></th>
+                                            <th><p class="text_black">To:</p></th> --}}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($week as $key => $day)
+                                            <tr class="border_bottom">
+                                            
+                                                <td class="align-middle day__in__hide_td"><p class="text_black">
+                                                    {{$day['day']}}
+                                                </p><input class="day__in__hide" type="checkbox" name="day[]" value="{{$key}}"></td>
+                                                
+                                                <td class="align-middle">
+                                                    <div class="custom-control custom-switch custom-switch-lg">
+                                                        <input class="custom-control-input" id="customSwitch{{$key}}" name="status[]" value="1" type="checkbox" checked>
+                                                        <label class="custom-control-label font-italic" for="customSwitch{{$key}}"></label>
+                                                    </div>
+                                                </td>
+                                                
+                                                <td class="align-middle w-320px">
+                                                    <select data-placeholder="Choose a slot..." multiple class="chosen-select" name="slots[]">
+                                                        <option value="AL">10:00AM-10:30AM</option>
+                                                        <option value="AL">10:30AM-11:00AM</option>
+                                                        <option value="AL">11:00AM-11:30AM</option>
+                                                        <option value="AL">11:30AM-12:00PM</option>
+                                                        <option value="AL">12:00PM-12:30PM</option>
+                                                        <option value="AL">12:30PM-01:00PM</option>
+                                                        <option value="AL">01:00PM-01:30PM</option>
+                                                        <option value="AL">01:30PM-02:00PM</option>
+
+                                                    </select>
+                                                </td>
+                                                {{-- <td class="align-middle">
+                                                    <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
+                                                        <span class="btn-calender__span1">To</span>
+                                                        <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
+                                                    </button>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <div class="custom-control custom-switch custom-switch-lg">
+                                                        <input class="custom-control-input" id="customSwitch2" type="checkbox" checked>
+                                                        <label class="custom-control-label font-italic" for="customSwitch2"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
+                                                        <span class="btn-calender__span1">From</span>
+                                                        <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
+                                                    </button>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
+                                                        <span class="btn-calender__span1">To</span>
+                                                        <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
+                                                    </button>
+                                                </td> --}}
+                                            </tr>
+                                        @endforeach
                                         
-                                        <td class="align-middle"><p class="text_black">
-                                            Sunday
-                                        </p></td>
-                                        
-                                        <td class="align-middle">
-                                            <div class="custom-control custom-switch custom-switch-lg">
-                                                <input class="custom-control-input" id="customSwitch7" type="checkbox" checked>
-                                                <label class="custom-control-label font-italic" for="customSwitch7"></label>
-                                            </div>
-                                        </td>
-                                        {{-- <td class="align-middle"><p class="text_black">
-                                            ********
-                                        </p></td> --}}
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="custom-control custom-switch custom-switch-lg">
-                                                <input class="custom-control-input" id="customSwitch7" type="checkbox" checked>
-                                                <label class="custom-control-label font-italic" for="customSwitch7"></label>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="border_bottom">
-                                        
-                                        <td class="align-middle"><p class="text_black">
-                                            Sunday
-                                        </p></td>
-                                        
-                                        <td class="align-middle">
-                                            <div class="custom-control custom-switch custom-switch-lg">
-                                                <input class="custom-control-input" id="customSwitch7" type="checkbox" checked>
-                                                <label class="custom-control-label font-italic" for="customSwitch7"></label>
-                                            </div>
-                                        </td>
-                                        {{-- <td class="align-middle"><p class="text_black">
-                                            ********
-                                        </p></td> --}}
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="custom-control custom-switch custom-switch-lg">
-                                                <input class="custom-control-input" id="customSwitch7" type="checkbox" checked>
-                                                <label class="custom-control-label font-italic" for="customSwitch7"></label>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
-                                                <span class="btn-calender__span1">April 2021</span>
-                                                <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr> 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                        <div class="col-md-12 mt-5">
+                            <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
+                                <span class="d-inline-block">Save & Close</span>
+                            </button>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-12 mt-5">
-                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right" pd-popup-open="popupNew">
-                            <span class="d-inline-block">Save & Close</span>
-                        </button>
-                    </div>
+                    </form>
                 </div>
   
                 <a class="popup-close" pd-popup-close="popupNew" href="#"> </a>
@@ -755,5 +738,17 @@ border-radius: .5rem;
 @endsection
 
 @section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
+            $('.day__in__hide').hide();
+
+            $('[name="status[]"]').on('change',function(){
+                console.log($(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide'));
+                $(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide').prop('checked', false);
+            })
+        })
+    </script>
 @endsection

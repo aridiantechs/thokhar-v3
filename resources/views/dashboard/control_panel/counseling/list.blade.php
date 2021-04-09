@@ -387,6 +387,11 @@ border-radius: .5rem;
     font-size: 13px !important;
     text-align: left;
 }
+
+.user__details_p{
+    padding: 0px 5px !important;
+    font-size: 13px !important;
+}
 </style>
 @endsection
 @section('content')
@@ -677,7 +682,7 @@ border-radius: .5rem;
                     
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-3 text-left">
+                            <div class="col-md-3 text-{{$align}}">
                                 <img
                                     class="user__dp img-circle" style="border-radius: 50%;"
                                     srcset="{{ (isset(auth()->user()->profile_image)) ? asset(auth()->user()->profile_image) : asset('backend_assets/user_uploads/default.png') }}"
@@ -686,28 +691,39 @@ border-radius: .5rem;
                             </div>
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="col-md-12 text-left mt-4">
+                                    <div class="col-md-12 text-{{$align}} mt-4">
                                         <h3 class="blue__head">Mohammed Abdulaziz Al Omar</h3>
                                     </div>
                                 </div>
                                 <div class="row font-13">
                                     <div class="col-md-8">
-                                        <i class="fa fa-envelope"> moh.al-omar@gmail.com</i>
+                                        <div class="d-flex">
+                                           <i class="mt-1 fa fa-envelope"></i> <p class="user__details_p">moh.al-omar@gmail.com</p>
+                                        </div>
+                                         
                                     </div>
                                     
                                     <div class="col-md-4">
-                                        <i class="fa fa-phone"> 0556899988</i>
+                                        <div class="d-flex">
+                                            <i class="mt-1 fa fa-phone"> </i><p class="user__details_p">0556899988</p>
+                                        </div>
                                     </div>
                                     
                                     <div class="col-md-8">
-                                        <i class="fa fa-calendar">12 April 2021</i>
+                                        <div class="d-flex">
+                                        <i class="mt-1 fa fa-calendar">  </i><p class="user__details_p">12 April 2021</p>
+                                        </div>
                                     </div>
                                     
                                     <div class="col-md-4">
-                                        <i class="fa fa-clock"> 12:30 AM</i>
+                                        <div class="d-flex">
+                                        <i class="mt-1 fa fa-clock"> </i><p class="user__details_p"> 12:30 AM</p>
+                                        </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <div class="d-flex">
                                         <a href="#" class="text-left"> <h4 class=" mt-4">Download The Report</h4></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -71,6 +71,10 @@ th {
     float: right;
 }
 
+.flt-left{
+    float: left;
+}
+
 .nav-pills .nav-link.active{
     position: relative;
     border: none !important;
@@ -148,6 +152,10 @@ th {
     .flt-right{
         float: unset;
     }
+
+    .flt-left{
+        float: unset;
+    }
 }
 
 </style>
@@ -167,9 +175,9 @@ th {
                         </nav>
                     </div>
                     <div class="col-md-7 col-sm-6 align-center-sm">
-                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
+                        <a href="{{ route('create_plan', app()->getLocale()) }}" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-{{$alignreverse}}">
                             <span class="d-inline-block">Add Plans</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

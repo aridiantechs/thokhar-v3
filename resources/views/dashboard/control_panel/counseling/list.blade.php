@@ -370,6 +370,23 @@ border-radius: .5rem;
 .flt-left{
     float: left;
 }
+
+.user__dp {
+    width: 6.5rem;
+    height: 6.5rem;
+}
+
+.font-montserrat{
+    font-family: 'Montserrat' !important;
+    font-size: 24px !important;
+}
+
+.font-13 >.col-md-4,.font-13 >.col-md-8{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px !important;
+    text-align: left;
+}
 </style>
 @endsection
 @section('content')
@@ -403,7 +420,7 @@ border-radius: .5rem;
             </div>
             <div class="col-md-3 bg__grey p-5">
                 <div class="mb-3">
-                    <h4 class="blue__head">TUESDAY</h4>
+                    <h4 class="blue__head" pd-popup-open="counselling_session">TUESDAY</h4>
                     <span class="sub_text">10 April 2021</span>
                 </div>
             
@@ -411,7 +428,7 @@ border-radius: .5rem;
                 <div class="row">
                     <div class="col-md-9">
                         <div class="bg-white p-2">
-                            <p class="color_blue" pd-popup-open="counselling_session">User Name Here <br><span> 8:00 - 8:29</span> </p>
+                            <p class="color_blue" pd-popup-open="userDetail">User Name Here <br><span> 8:00 - 8:29</span> </p>
 
                         </div>
                     </div>
@@ -632,7 +649,7 @@ border-radius: .5rem;
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <button type="submit" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left" pd-popup-open="popupNew">
-                            <span class="d-inline-block">Save & Close</span>
+                            <span class="d-inline-block">Cancel the Session</span>
                         </button>
                     </div>
 
@@ -645,6 +662,76 @@ border-radius: .5rem;
                 
   
                 <a class="popup-close" pd-popup-close="counselling_session" href="#"> </a>
+           </div>
+           
+        </div>
+    </div>
+
+    <div class="popup" pd-popup="userDetail">
+        <div class="popup-inner counseling-pop-up">
+           <div class="popup-contact-wrapper">
+                <h4 class="popup-header mx-auto">User Details</h4>
+                <hr>
+              
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3 text-left">
+                                <img
+                                    class="user__dp img-circle" style="border-radius: 50%;"
+                                    srcset="{{ (isset(auth()->user()->profile_image)) ? asset(auth()->user()->profile_image) : asset('backend_assets/user_uploads/default.png') }}"
+                                    alt="User Profile"
+                                />
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-12 text-left mt-4">
+                                        <h3 class="blue__head">Mohammed Abdulaziz Al Omar</h3>
+                                    </div>
+                                </div>
+                                <div class="row font-13">
+                                    <div class="col-md-8">
+                                        <i class="fa fa-envelope"> moh.al-omar@gmail.com</i>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <i class="fa fa-phone"> 0556899988</i>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <i class="fa fa-calendar">12 April 2021</i>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <i class="fa fa-clock"> 12:30 AM</i>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <a href="#" class="text-left"> <h4 class=" mt-4">Download The Report</h4></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr>
+                <div class="row mt-5">
+                    <div class="col-md-6 col-sm-6">
+                        <button type="submit" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left" pd-popup-open="popupNew">
+                            <span class="d-inline-block">Cancel the Session</span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right" pd-popup-open="popupNew">
+                            <span class="d-inline-block">Edit Session</span>
+                        </button>
+                    </div>
+                </div>
+                
+  
+                <a class="popup-close" pd-popup-close="userDetail" href="#"> </a>
            </div>
            
         </div>

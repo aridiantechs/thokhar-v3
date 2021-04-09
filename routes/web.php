@@ -230,7 +230,7 @@ Route::group([
 
        // --------------------------------- Plans & Coupons ------------------------------------
        Route::get('/plans_coupons', 'PlanCouponController@index')->name('plans_coupons');
-
+       Route::get('/create_plan', 'PlanCouponController@create_plan')->name('create_plan');
       /*
       |--------------------------------------------------------------------------
       | Admin & User REPORTS Routes

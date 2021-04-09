@@ -25,6 +25,104 @@
 	.button{
 	    padding: 10px 20px !important;
 	}
+
+	.bg-gray-1{
+		background: #e8f1f2 !important;
+		border: none;
+		border-radius: 2.5rem  !important;
+	}
+
+	.cs__input{
+		height: 35px !important;
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__arrow{
+		top: 4px;
+	}
+
+	/* image overlay */
+
+	.contentt {
+	position: relative;
+	width: 90%;
+	max-width: 400px;
+	margin: auto;
+	overflow: hidden;
+	}
+
+	.contentt .content-overlay {
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	height: 99%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+	}
+
+	.contentt:hover .content-overlay{
+	opacity: 1;
+	}
+
+	.content-image{
+	width: 100%;
+	}
+
+	.content-details {
+	position: absolute;
+	text-align: center;
+	padding-left: 1em;
+	padding-right: 1em;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	opacity: 0;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+	}
+
+	.contentt:hover .content-details{
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+	}
+
+	.content-details h3{
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+	}
+
+	.content-details p{
+	color: #fff;
+	font-size: 0.8em;
+	}
+
+	.fadeIn-bottom{
+	top: 80%;
+	}
+
+	/* end image overlay */
+
+	.p-2-6em{
+		padding: 2rem 6.8rem
+	}
+
+	.bdr{
+		border: 2px solid #d4d4d4;
+    	border-radius: 9px;
+	}
 	</style>
 @endsection
 @section('content')
@@ -34,9 +132,12 @@
 	<h2 class="user__intro {{ ($request->segment(1) == 'ar') ? 'text-right' : 'text-left' }}">{{ trans('lang.admin.staff') }}</h2>
 	<p class="setting_text {{ ($request->segment(1) == 'ar') ? 'text-right' : 'text-left' }}">
 		{{ trans('lang.admin.site_settings') }}
-		<span class="text-right {{ ($request->segment(1) == 'ar') ? 'float-left' : 'float-right' }} button">
-			<a href="{{ route('add_user/moderator', app()->getLocale()) }}" class="text-white">
+		<span class="text-right {{ ($request->segment(1) == 'ar') ? 'float-left' : 'float-right' }} {{-- button --}}">
+			{{-- <a href="{{ route('add_user/moderator', app()->getLocale()) }}" class="text-white">
 				{{ trans('lang.admin.add') }}
+			</a> --}}
+			<a href="{{ route('add_user/moderator', app()->getLocale()) }}" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm float-{{$alignreverse}} mb-4">
+				<span class="d-inline-block">Add</span>
 			</a>
 		</span>
 	</p>
@@ -86,7 +187,42 @@
 		@isset ($users)
 			@forelse ($users as $user)
 				<div class="col-lg-3 col-md-4 col-sm-6 {{ $user->hasRole('admin') ? 'admin_class' : 'moderator_class' }}" id="div_{{ $user->id }}">
-					<div class="user_box">
+					<div class="contentt p-2-6em bdr">
+						<div class="content-overlay bdr"></div>
+						<img class="user_image" src="{{ asset('backend_assets/dashboard/images/users/ali@2x.png') }}">
+						<p class="text_black text-center">{{ $user->name }}</p>
+						@if($user->hasRole('moderator'))
+							<p class="text_red text-center">
+								{{ trans('lang.admin.moderator') }}
+							</p>
+						@endif
+						<div class="content-details fadeIn-bottom">
+							@if($user->hasRole('moderator'))
+								<form method="POST" action="{{ route('switch_role', [app()->getLocale(), $user]) }}">
+									@csrf
+									@method('PATCH')
+									<h3 class="content-title">
+										<button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm mb-3" >
+											<span class="d-inline-block">{{ trans('lang.admin.set_to_admin') }}</span>
+										</button>
+									</h3>
+								</form>
+							@endif
+							<form method="POST" action="{{ route('delete_user', [app()->getLocale(), $user]) }}" style="display: inline-block;">
+								@csrf
+								{{ method_field('DELETE') }}
+								<button type="submit" class="btn btn-sm"></button>
+								<p class="content-text">
+									<button type="submit" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm" pd-popup-open="popupNew">
+										<span class="d-inline-block">{{ trans('lang.admin.remove_from_staff') }}</span>
+									</button>
+								</p>
+							</form>
+						  
+						</div>
+					</div>
+
+					{{-- <div class="user_box">
 						<img class="user_image" src="{{ asset('backend_assets/dashboard/images/users/ali@2x.png') }}">
 						<p class="text_black">{{ $user->name }}</p>
 						<p class="text_black">{{ $user->email }}</p>
@@ -124,7 +260,7 @@
 	                        {{ method_field('DELETE') }}
 	                        <button type="submit" class="btn btn-sm">{{ trans('lang.admin.remove_from_staff') }}</button>
                         </form>
-					</div>
+					</div> --}}
 				</div>
 			@empty
 				<div class="col-sm-4 offset-lg-4">
@@ -139,6 +275,7 @@
 		@endisset
 		
 	</div>
+	
 </div>
 {{-- </div> --}}
 
@@ -181,6 +318,8 @@
                 allowClear: true
             });
         
+
+			$('.select2-selection--single').addClass('bg-gray-1 cs__input');
 
 	        // filter on basis of Role
 	        $('#role_id').on('change', function() {

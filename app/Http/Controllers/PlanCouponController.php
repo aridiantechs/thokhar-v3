@@ -22,6 +22,15 @@ class PlanCouponController extends Controller
                 ]);
     }
 
+    public function create_plan()
+    {
+       /* dd(123); */
+       return view('dashboard.control_panel.plans_coupons.create_plan')
+                ->with([
+                    'title' => 'Plans and Coupons',
+                    'page_title' => 'Add a Plan',
+                ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -511,25 +511,20 @@ border-radius: .5rem;
                                             
                                                 <td class="align-middle day__in__hide_td"><p class="text_black">
                                                     {{$day['day']}}
-                                                </p><input class="day__in__hide" type="checkbox" name="day[]" value="{{$key}}"></td>
+                                                </p><input class="day__in__hide" type="checkbox" name="day[{{$day['id']}}]" checked="checked" value="{{$day['full_date']}}"></td>
                                                 
                                                 <td class="align-middle">
                                                     <div class="custom-control custom-switch custom-switch-lg">
-                                                        <input class="custom-control-input" id="customSwitch{{$key}}" name="status[]" value="1" type="checkbox" checked>
+                                                        <input class="custom-control-input custom__switch__input" id="customSwitch{{$key}}" name="status[{{$day['id']}}]" value="1" type="checkbox" data-checked='true' checked>
                                                         <label class="custom-control-label font-italic" for="customSwitch{{$key}}"></label>
                                                     </div>
                                                 </td>
                                                 
                                                 <td class="align-middle w-320px">
-                                                    <select data-placeholder="Choose a slot..." multiple class="chosen-select" name="slots[]">
-                                                        <option value="AL">10:00AM-10:30AM</option>
-                                                        <option value="AL">10:30AM-11:00AM</option>
-                                                        <option value="AL">11:00AM-11:30AM</option>
-                                                        <option value="AL">11:30AM-12:00PM</option>
-                                                        <option value="AL">12:00PM-12:30PM</option>
-                                                        <option value="AL">12:30PM-01:00PM</option>
-                                                        <option value="AL">01:00PM-01:30PM</option>
-                                                        <option value="AL">01:30PM-02:00PM</option>
+                                                    <select data-placeholder="Choose a slot..." multiple class="chosen-select" name="slots[{{$day['id']}}][]">
+                                                        @foreach ($slots as $key => $slot)
+                                                            <option value="{{$slot->id}}">{{$slot->slot}}</option>
+                                                        @endforeach
 
                                                     </select>
                                                 </td>
@@ -745,9 +740,17 @@ border-radius: .5rem;
             $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
             $('.day__in__hide').hide();
 
-            $('[name="status[]"]').on('change',function(){
-                console.log($(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide'));
-                $(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide').prop('checked', false);
+            $('.custom__switch__input').on('change',function(){
+                console.log($(this).val());
+                if ($(this).attr('data-checked')=="true") {
+                    console.log(123);
+                    $(this).attr('data-checked', "false");
+                    $(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide').prop('checked', false);
+                } else {
+                    $(this).attr('data-checked', "true");
+                    $(this).closest('td').siblings('.day__in__hide_td').children('.day__in__hide').prop('checked', true);
+                }
+                
             })
         })
     </script>

@@ -273,7 +273,8 @@ Route::group([
       Route::post('/payment/callback',  'CheckoutController@index')->name('payment.callback');
       Route::post('/payment/return',  'CheckoutController@index')->name('payment.return');
 
-      
+      Route::get('/get_slots',  'QuestionnaireController@getSlots')->name('get_slots');
+
       //paid version 
       Route::group([
         'middleware' => [

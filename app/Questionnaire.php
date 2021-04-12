@@ -2,6 +2,9 @@
 
 namespace App;
 
+use Carbon\Carbon;
+use App\WorkingHour;
+use App\Consultations;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -248,6 +251,38 @@ class Questionnaire extends Model
                 ->update([
                     'extra_info' => json_encode($data),
                 ]);
+    }
+
+    //save consultation
+    public function addConsultation(array $data)
+    {
+        $date=WorkingHour::whereDate('date',Carbon::parse($data['consultation_date']))->first();
+        if($date){
+
+            $slots=explode(',',$date->slots);
+            if (in_array($data['slot'], $slots)) {
+                $user = auth()->user();
+                $consult=new Consultations;
+                $consult->user_id = $user->id;
+                $consult->working_hour_id = $date->id;
+                $consult->slot_id = $data['slot'];
+                $consult->save();
+               $res=[
+                    "status"=>'success',
+                ];
+            } else {
+                $slots=[
+                    "status"=>'error',
+                ];
+            }
+            
+        }else{
+            $slots=[
+                "status"=>'error',
+            ];
+        }
+        return $res;
+    
     }
 
     /*

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" />
+
 <style type="text/css">
 	svg.feather.feather-calendar {
     color: #000000;
@@ -97,7 +99,7 @@
                                   	<div class="font-1 text-{{$align}} mb-3" >الرجاء اختيار توقيت الجلسة الاستشارية</div>
                                  	<div class="row flex-column-reverse flex-md-row w-form-inputs">
 										<div class="col-md-5">
-											<div class="form-group form-group-new mb-0">												
+											<div class="form-group form-group-new mb-0">		
 												@include('frontend.inputs.input_group', [
 	                                                'type' => 'text', 
 	                                                'name' => 'consultation_date', 
@@ -108,13 +110,13 @@
 	                                                'id' => 'consultationdatepicker',
 	                                                'class' => 'text-input'
 
-	                                        	])												
+	                                        	])											
 											</div>
 										</div>
 
                                         <div class="col-md-7">
 											<div class="form-group form-group-new mb-0">
-												@include('frontend.inputs.input_group', [
+												{{-- @include('frontend.inputs.input_group', [
 		                                                'type' => 'time', 
 		                                                'name' => 'consultation_date', 
 		                                                'value' => '',
@@ -125,8 +127,16 @@
 		                                                'id' => '',
 		                                                'class' => 'text-input'
 
-		                                        	])
-											
+		                                        	]) --}}
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text"><i data-feather="clock"></i></span>
+													</div>
+													<select data-placeholder="Choose a slot..." class="form-control input-big text-input chosen-select" name="slot" id="slot">
+
+													</select>	
+												</div>										
+												
 											</div>                                          
                                         </div>
                                     </div>
@@ -225,16 +235,56 @@
 	</div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
 	window.start_point_bar = 6;
 	window.location.hash = '#consultations';
 
 	// date picker 
 	$("#consultationdatepicker").datepicker({
-	    startDate: '+7d'
+	    startDate: '+1d',
+		endDate: '+7d'
 
 	});
+
 
 </script>
 
 @include('frontend.partials.wizard_script')
+
+<script>
+	$(document).ready(function(){
+		/* $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); */
+		
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		
+		$('[name="consultation_date"]').on('change',function(){
+
+			$.ajax({
+				type: "GET",
+				url: "{{url('/')}}/{{app()->getLocale()}}/get_slots",
+				data:{
+					consultation_date: $(this).val(),
+				},
+				
+				success: function(res){
+					$('#slot').html('');
+					if (res.status=="success") {
+						$.each( res.data, function(k, v) {
+							$('#slot').append(`<option value=${v.id}>${v.slot}</option>`);
+						});
+
+					} else {
+						
+					}
+					
+				}
+			});
+		})
+	})
+</script>

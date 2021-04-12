@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Questionnaire;
-use Illuminate\Http\Request;
-use App\Http\Requests\QuestionnaireRequest;
-use App\Http\Requests\AdditionalInformationRequest;
-use Illuminate\Support\Facades\Mail;
+use Session;
+use App\User;
+use App\Report;
+use App\Constant;
+use Carbon\Carbon;
+use App\WorkingHour;
 use App\Consultations;
 use App\Mail\SendMail;
-use App\Constant;
-use App\Report;
-use App\User;
-use Session;
+use App\Questionnaire;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\QuestionnaireRequest;
+use App\Http\Requests\AdditionalInformationRequest;
 
 
 class QuestionnaireController extends Controller
@@ -121,15 +123,35 @@ class QuestionnaireController extends Controller
         if(($user_questionnaire->risks ?? null) == null)
             return redirect()->route('risk', app()->getLocale());
         
+        $slots=WorkingHour::whereDate('date','>',Carbon::now())->whereDate('date','<',Carbon::now()->addDay(8))->orderBy('id')->get();
+        
         return view('frontend.wizard.consultations')
                 ->with([
                     'title' => __('lang.questionnaire.consultations')
                 ])
-                ->with('user_questionnaire', $user_questionnaire);
+                ->with('user_questionnaire', $user_questionnaire)
+                ->with('slots', $slots);
 
 
     }
 
+    public function getSlots(Request $request)
+    {
+        $date=WorkingHour::whereDate('date',Carbon::parse($request->consultation_date))->first();
+        if($date){
+            $slots=$date->slot_locate();
+            $res=[
+                "status"=>'success',
+                "data"=>$slots
+            ];
+        }else{
+            $slots=[
+                "status"=>'error',
+            ];
+        }
+        return $res;
+        
+    }
 
     public function report($report_id = NULL)
     {
@@ -194,10 +216,15 @@ class QuestionnaireController extends Controller
 
             case 'consultations':
 
-                return $this->getReport();
-                return Consultations::consultations($request->except('_token', 'location'))
-                        ?   $this->consultations()
-                        : redirect()->route('wizard', $locale);
+                /* return $this->getReport(); */
+                 /* Consultations::consultations($request->except('_token', 'location'))
+                        ?   $this->consultations() */
+                    $res=$this->questionnaire->addConsultation($request->except('_token', 'location'));
+                    if($res['status']=='success'){
+                        return $this->getReport();
+                    }else{
+                        return redirect()->route('wizard', $locale);
+                    }
                 break;
 
             case '/payment':

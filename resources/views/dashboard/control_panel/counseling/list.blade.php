@@ -451,7 +451,7 @@ border-radius: .5rem;
                 @foreach ($consultations as $consult)
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="bg-white p-2">
+                            <div class="bg-white p-2 user_detail_div" data-user={{json_encode($consult->user)}}>
                                 <p class="color_blue" pd-popup-open="userDetail">{{$consult->user->name ?? ''}}<br><span>{{$consult->slot->slot}}</span> </p>
 
                             </div>
@@ -672,32 +672,32 @@ border-radius: .5rem;
                             <div class="col-md-9">
                                 <div class="row">
                                     <div class="col-md-12 text-{{$align}} mt-4">
-                                        <h3 class="blue__head">Mohammed Abdulaziz Al Omar</h3>
+                                        <h3 class="blue__head user_name">Mohammed Abdulaziz Al Omar</h3>
                                     </div>
                                 </div>
                                 <div class="row font-13">
                                     <div class="col-md-8">
                                         <div class="d-flex">
-                                           <i class="mt-1 fa fa-envelope"></i> <p class="user__details_p">moh.al-omar@gmail.com</p>
+                                           <i class="mt-1 fa fa-envelope"></i> <p class="user__details_p user_email">moh.al-omar@gmail.com</p>
                                         </div>
                                          
                                     </div>
                                     
                                     <div class="col-md-4">
                                         <div class="d-flex">
-                                            <i class="mt-1 fa fa-phone"> </i><p class="user__details_p">0556899988</p>
+                                            <i class="mt-1 fa fa-phone"> </i><p class="user__details_p user_phone">0556899988</p>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-8">
                                         <div class="d-flex">
-                                        <i class="mt-1 fa fa-calendar">  </i><p class="user__details_p">12 April 2021</p>
+                                        <i class="mt-1 fa fa-calendar">  </i><p class="user__details_p consult_date">12 April 2021</p>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-4">
                                         <div class="d-flex">
-                                        <i class="mt-1 fa fa-clock"> </i><p class="user__details_p"> 12:30 AM</p>
+                                        <i class="mt-1 fa fa-clock"> </i><p class="user__details_p consult_time"> 12:30 AM</p>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -754,6 +754,10 @@ border-radius: .5rem;
                 }
                 
             })
+        })
+
+        $(document).on('click','.user_detail_div',function(){
+            
         })
     </script>
 @endsection

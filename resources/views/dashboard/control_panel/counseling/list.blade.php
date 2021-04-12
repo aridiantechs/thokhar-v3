@@ -444,15 +444,27 @@ border-radius: .5rem;
             </div>
             <div class="col-md-3 bg__grey p-5">
                 <div class="mb-3">
-                    <h4 class="blue__head" pd-popup-open="counselling_session">TUESDAY</h4>
-                    <span class="sub_text">10 April 2021</span>
+                    <h4 class="blue__head" pd-popup-open="counselling_session">{{\Carbon\Carbon::tomorrow()->format('l')}}</h4>
+                    <span class="sub_text">{{\Carbon\Carbon::tomorrow()->format('Y-m-d')}}</span>
                 </div>
             
+                @foreach ($consultations as $consult)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="bg-white p-2">
+                                <p class="color_blue" pd-popup-open="userDetail">{{$consult->user->name ?? ''}}<br><span>{{$consult->slot->slot}}</span> </p>
 
-                <div class="row">
+                            </div>
+                        </div>
+                        {{-- <div class="col-md-3"><p>08:00</p> </div> --}}
+                    </div>
+                    <br>
+                @endforeach
+                
+                {{-- <div class="row">
                     <div class="col-md-9">
                         <div class="bg-white p-2">
-                            <p class="color_blue" pd-popup-open="userDetail">User Name Here <br><span> 8:00 - 8:29</span> </p>
+                            <p class="color_blue">User Name Here <br><span>8:00 - 8:29</span></p>
 
                         </div>
                     </div>
@@ -467,17 +479,7 @@ border-radius: .5rem;
                         </div>
                     </div>
                     <div class="col-md-3"><p>08:00</p> </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="bg-white p-2">
-                            <p class="color_blue">User Name Here <br><span>8:00 - 8:29</span></p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3"><p>08:00</p> </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 		

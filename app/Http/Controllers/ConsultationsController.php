@@ -18,9 +18,12 @@ class ConsultationsController extends Controller
      */
     public function index()
     {
+        $slots=Slot::all();
+        $consultations=Consultations::whereHas('working_hour',function($q){
+            $q->whereDate('date','=',Carbon::tomorrow()->format('Y-m-d'));
+        })->with('slot')->get();
         $startDate = Carbon::today();
          
-        $slots=Slot::all();
         for ($i=1; $i <=7 ; $i++) {
             $day=$startDate->addDay();
             $week[]=[
@@ -29,14 +32,15 @@ class ConsultationsController extends Controller
                 "day"=>$day->format('l')
             ];
         }
-       /* dd($week); */
+       /* dd($consultations); */
 
        return view('dashboard.control_panel.counseling.list')
                 ->with([
                     'title' => 'Counseling',
                     'page_title' => 'Counseling',
                     'week' => $week,
-                    'slots'=>$slots
+                    'slots'=>$slots,
+                    'consultations'=>$consultations
                 ]);
     }
 

@@ -265,8 +265,11 @@ Route::group([
       Route::get('/investing-amount',  'QuestionnaireController@investingAmount')->name('investing-amount');
       Route::get('/initial-report',  'QuestionnaireController@initialReport')->name('initial-report');
       
-      //For payment version payment process
+      // Free report
       Route::get('/risk-test',  'QuestionnaireController@riskTest')->name('risk-test');
+      Route::post('/get-value-at-retirement',  'QuestionnaireController@riskTestNewValueAtRetirement')->name('get-value-at-retirement');
+
+      //For payment version payment process
       Route::get('/plan',  'QuestionnaireController@plan')->name('plan');
       Route::get('/checkout',  'CheckoutController@create')->name('checkout');
       Route::post('/payment',  'CheckoutController@payment')->name('payment');

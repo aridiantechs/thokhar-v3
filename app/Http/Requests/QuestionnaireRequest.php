@@ -43,7 +43,7 @@ class QuestionnaireRequest extends FormRequest
                                 'investing_amount.initial_amount' => 'required|numeric',
                                 'investing_amount.monthly_amount' => 'required|numeric',
                                 // 'investing_amount.years_old' => 'required|numeric|max:120|min:5',
-                                'investing_amount.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:0',
+                                'investing_amount.annual_increase_in_saving_plan' => 'required|numeric|max:6|min:3',
                                 // 'investing_amount.retirement_age' => 'required|numeric|gte:investing_amount.years_old|max:120',
                             ];
                             break;
@@ -117,7 +117,7 @@ class QuestionnaireRequest extends FormRequest
                                 'saving_plan.current_saving_balance' => 'required|numeric',
                                 'saving_plan.gosi_or_ppa_monthly_subscription' => 'required|numeric',
                                 'saving_plan.monthly_saving_plan_for_retirement' => 'required|numeric',
-                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:0',
+                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:6|min:3',
                                 
                             ];
                             break;
@@ -128,7 +128,7 @@ class QuestionnaireRequest extends FormRequest
                                 'saving_plan.current_saving_balance' => 'required|numeric',
                                 // 'saving_plan.gosi_or_ppa_monthly_subscription' => 'required|numeric',
                                 'saving_plan.monthly_saving_plan_for_retirement' => 'required|numeric',
-                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:0',
+                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:6|min:3',
                                 
                             ];
                             break;

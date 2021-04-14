@@ -1121,7 +1121,7 @@
 
 		<div class="row">
 			<div class="col-1 rem-col"></div>
-			<div class="col-lg-6 col-md-10 col-sm-10 col-10" >
+			<div class="col-lg-8 col-md-10 col-sm-10 col-10" >
 				
 				<canvas id="myChart" ></canvas>
 				
@@ -1715,24 +1715,24 @@ var myChart = new Chart(ctx, {
                "fill": false,
                "lineTension": 0.1,
                "backgroundColor": [
-                "#ad1b16"
+                "#ff0e0e"
                 
                ],
                "borderColor": [
-                "#ad1b16"
+                "#ff0e0e"
                ],
                "borderCapStyle": "butt",
                "borderDash": [],
                "borderDashOffset": 0,
                "borderJoinStyle": "miter",
                "pointBorderColor": [
-                "#ad1b16"
+                "#ff0e0e"
                ],
                "pointBackgroundColor": "#ffffff00",
                "pointBorderWidth": 1,
                "pointHoverRadius": 5,
-               "pointHoverBackgroundColor": "#ad1b16",
-               "pointHoverBorderColor": "#ad1b16",
+               "pointHoverBackgroundColor": "#ff0e0e",
+               "pointHoverBorderColor": "#ff0e0e",
                "pointHoverBorderWidth": 2,
                "pointRadius": 1,
                "pointHitRadius": 10,

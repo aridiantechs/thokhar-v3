@@ -19,26 +19,34 @@ class ConsultationsController extends Controller
      */
     public function index()
     {
-        $slots=Slot::all();
-        $consultations=Consultations::whereHas('working_hour',function($q){
-            $q->whereDate('date','=',Carbon::tomorrow()->format('Y-m-d'));
-        })->with('slot')->get();
-        $startDate = Carbon::today();
-         
-        $moderators= User::whereHas(
-            'roles', function($q){
-                $q->where('name','moderator');
-            }
-        )->get();
+        if (auth()->user()->hasRole('admin')) {
+            $slots=Slot::all();
+            $consultations=Consultations::whereHas('working_hour',function($q){
+                $q->whereDate('date','=',Carbon::tomorrow()->format('Y-m-d'));
+            })->with('slot')->get();
+            $startDate = Carbon::today();
+            
+            $moderators= User::whereHas(
+                'roles', function($q){
+                    $q->where('name','moderator');
+                }
+            )->get();
 
-        for ($i=1; $i <=7 ; $i++) {
-            $day=$startDate->addDay();
-            $week[]=[
-                "id"=>$day->format('Y-m-d'),
-                "full_date"=>$day->format('Y-m-d l'),
-                "day"=>$day->format('l')
-            ];
+            for ($i=1; $i <=7 ; $i++) {
+                $day=$startDate->addDay();
+                $week[]=[
+                    "id"=>$day->format('Y-m-d'),
+                    "full_date"=>$day->format('Y-m-d l'),
+                    "day"=>$day->format('l')
+                ];
+            }
+        } elseif(auth()->user()->hasRole('moderator')) {
+            $consult=Consultations::where('assign_to',auth()->user()->id)->get();
+            
+            return view('dashboard.control_panel.moderator.list',compact('consult'));
         }
+        
+        
        /* dd($moderators); */
 
        return view('dashboard.control_panel.counseling.list')

@@ -20,4 +20,9 @@ class Consultations extends Model
     {
         return $this->belongsTo('App\Slot','slot_id');
     }
+
+    public function assigned_to()
+    {
+        return $this->belongsTo('App\User','assign_id');
+    }
 }

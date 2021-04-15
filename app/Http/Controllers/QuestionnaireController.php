@@ -408,7 +408,7 @@ class QuestionnaireController extends Controller
     }
 
 
-    public function getValueAtRetirement()
+    public function getValueAtRetirement($porfolioExpectedReturn)
     {
         $user = auth()->user();
 
@@ -420,7 +420,7 @@ class QuestionnaireController extends Controller
         $annualSavingToday          = $this->questionnaire->getAnnualSavingToday($user);
         $annualIncreaseInSavingPlan = $this->questionnaire->getAnnualIncreaseInInitialInvestment($user);
         $netReturnAfterRetirement   = $this->questionnaire->getNetReturnAfterRetirement($user);
-        $porfolioExpectedReturn     = 7.85;
+        // $porfolioExpectedReturn     = 7.85;
 
         // dd($accomulativeSavingtoday);
 
@@ -433,7 +433,9 @@ class QuestionnaireController extends Controller
 
 
         $graph_limit = ($retirement_age < 65) ? 65 : $retirement_age;
+
         if($current_age < $retirement_age){
+
             for ($i = (int) $current_age; $i <= $graph_limit; $i++) {
             
                 if ($i == $current_age) 
@@ -481,10 +483,9 @@ class QuestionnaireController extends Controller
 
     public function riskTest()
     {
-
         $asset_class         = $this->getRecomendedAssetClass();  
 
-        $value_at_retirement = $this->getValueAtRetirement();        
+        $value_at_retirement = $this->getValueAtRetirement(8.85);
 
         $user_questionnaire  = $this->loggedInUser->user_latest_questionnaire();
 
@@ -499,6 +500,34 @@ class QuestionnaireController extends Controller
             ->with('current_age', $current_age)
             ->with('value_at_retirement', $value_at_retirement)
             ->with(['investing_amount' => $user_questionnaire->investing_amount]);
+    }
+
+
+    public function riskTestNewValueAtRetirement(Request $request)
+    {
+
+        if($request->val == 'Very_Conservative_Investor')
+            $net_return_per_year = 7.6;
+        else if($request->val == 'Conservative_Investor')
+            $net_return_per_year = 7.95;
+        else if($request->val == 'Natrual_Investor')
+            $net_return_per_year = 8.85;
+        else if($request->val == 'Aggressive_Investor')
+            $net_return_per_year = 9.9;
+        else if($request->val == 'Very_Aggressive_Investor')
+            $net_return_per_year = 10.4;
+        else
+            $net_return_per_year = 1;
+
+
+        $value_at_retirement_graph = $this->getValueAtRetirement($net_return_per_year);
+
+        return [
+                'value_at_retirement_graph' => $value_at_retirement_graph,
+                'value_at_retirement' => currency(end($value_at_retirement_graph)['value_end_year'])
+                ];
+        
+
     }
 
 

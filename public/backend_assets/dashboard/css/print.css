@@ -808,3 +808,7 @@ table {
 .factor-s .pointer:last-child .step-text .span{
   left: -14px !important;
 }
+
+span.step-text {
+    font-family: math;
+}

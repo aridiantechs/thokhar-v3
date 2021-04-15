@@ -353,11 +353,11 @@
 						<div class="row">
 							<div class="col-lg-6 text-center no-p-3">
 								<h2 class="text-{{$align}}  bottom-line mb-5 d-block d-lg-none text-blue">{{ trans('lang.report.Financial Projections') }}</h2>
-								<h1>
+								<h1 id="value_at_retirement_b">
 									{{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }}
 								</h1>
 								<span>
-									{{ trans('lang.current_state.at_age') }} 60 {{ trans('lang.current_state.you_will_have_savings_balance_of') }}  {{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }} 
+									{{ trans('lang.current_state.at_age') }} <span id="age">60</span> {{ trans('lang.current_state.you_will_have_savings_balance_of') }}  <span id="value_at_retirement">{{ currency(end($value_at_retirement)['value_end_year'] ?? 0) }}</span> 
 								<div class="text-center">
 									<canvas id="myChart" width="400" height="250"></canvas>
 								</div>
@@ -496,9 +496,49 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
-var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
+
+
+var value_at_retirement_options = {
+    	responsive: true,
+    	legend: {
+	        display: false
+	    },
+        scales: {
+	        xAxes: [{
+	            gridLines: {
+	                color: "rgba(0, 0, 0, 0)",
+	            },
+	            ticks: {
+                    fontColor: "rgba(0,0,0,0.5)",
+                    fontStyle: "bold",
+                    beginAtZero: true,
+                    maxTicksLimit: 20,
+                    padding: 20,
+                    userCallback: function(value, index, values) {
+                        value = value.toString();
+                        if($(window).width() < 760)
+                          return value;
+                        else
+                          return 'SAR ' + value;
+                    },
+                    userCallback: function(tick, index, array) {
+                      if($(window).width() < 760){
+                        return (index % 3) ? "" : tick;
+                      }
+                      else{
+                        return (index % 2) ? "" : tick;
+                      }
+                    }
+                }
+	        }],
+	        yAxes: [{
+	            
+	        }]
+	    }
+    };
+
+
+var value_at_retirement_data = {
         labels: [
 	    			@foreach ($value_at_retirement as $key => $element)
 	        			{!! $key . ',' !!}
@@ -517,56 +557,24 @@ var myLineChart = new Chart(ctx, {
             borderColor: [
                 '#3095fd'
             ],
-            borderWidth: 5,
-		    pointRadius: 0,
-		    "pointBackgroundColor": "#3095fd",
+            "borderWidth": 5,
+		    "pointRadius": 0,
+		    "pointBackgroundColor" : "#3095fd",
 			"pointBorderWidth": 1,
 			"pointHoverRadius": 5,
 			"pointHoverBackgroundColor": "#ffffff",
 			"pointHoverBorderColor": "#3095fd",
 			"pointHoverBorderWidth": 6,
 			"pointHitRadius": 10,
-			pointHoverRadius: 10,
+			"pointHoverRadius": 10,
         }]
-    },
-    options: {
-    	responsive: true,
-    	legend: {
-	        display: false
-	    },
-        scales: {
-	        xAxes: [{
-	            gridLines: {
-	                color: "rgba(0, 0, 0, 0)",
-	            },
-	            ticks: {
-                    fontColor: "rgba(0,0,0,0.5)",
-                    fontStyle: "bold",
-                    beginAtZero: true,
-                    maxTicksLimit: 20,
-                    padding: 20,
-                    // userCallback: function(value, index, values) {
-                    //     value = value.toString();
-                    //     if($(window).width() < 760)
-                    //       return value;
-                    //     else
-                    //       return 'SAR ' + value;
-                    // },
-                    userCallback: function(tick, index, array) {
-                      if($(window).width() < 760){
-                        return (index % 3) ? "" : tick;
-                      }
-                      else{
-                        return (index % 2) ? "" : tick;
-                      }
-                    }
-                }
-	        }],
-	        yAxes: [{
-	            
-	        }]
-	    }
     }
+
+
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: value_at_retirement_data,
+    options: value_at_retirement_options
 });
 </script>
 
@@ -652,12 +660,45 @@ var myChart = new Chart(donut_chart, {
 function indicator(value){
 	
 	myChart.destroy()
+	// myLineChart.destroy()
+
+	var value_at_retirement = 0
 
 	myChart = new Chart(donut_chart, {
 	    type: 'doughnut',
 	    data: data_set[value],
 	    options : options
 	});
+
+
+	$.ajax({
+        url: "{{ route('get-value-at-retirement', locale()) }}",
+        type: "post",
+        headers: {
+	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    },
+        data: {
+        	val: value
+        },
+
+        success: function (response) {
+
+        	var dataset = [];
+
+        	$.each(response.value_at_retirement_graph, function( index, value ) {
+				dataset.push(value['value_end_year']);
+			});
+           	
+		    myLineChart.data.datasets[0].data = dataset
+
+		    myLineChart.update();
+
+			$('#value_at_retirement').text(response.value_at_retirement)
+			$('#value_at_retirement_b').text(response.value_at_retirement)
+
+        },
+        
+    });
 
 }
 </script>

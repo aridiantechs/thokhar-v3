@@ -1263,7 +1263,7 @@ return [
         'Do you have other assets' => 'هل لديك أصول اخرى ( ذهب ، بتكوين ، اخرى )؟ (في حالة نعم ،  ادخل القيمة السوقية بالريال السعودي )',
 
         'Expecting salary at retirement' => 'الراتب المتوقع عند التقاعد',
-        'Monthly subscription' => 'المبلغ المستقطع من الراتب للتأمينات الإجتماعية ',
+        'Monthly subscription' => 'المبلغ المستقطع حاليا من الراتب للتأمينات الاجتماعية',
         'Starting year registration in GOCI' => 'بدء التسجيل بالتأمينات ',
 
         'Monthly investing Payment' => 'مبلغ الاستثمار الشهري ( متكرر )',

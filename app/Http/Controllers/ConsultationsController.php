@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Slot;
+use App\User;
 use Carbon\Carbon;
 use App\WorkingHour;
 use App\Consultations;
 use Illuminate\Http\Request;
-use Session;
 
 class ConsultationsController extends Controller
 {
@@ -24,6 +25,12 @@ class ConsultationsController extends Controller
         })->with('slot')->get();
         $startDate = Carbon::today();
          
+        $moderators= User::whereHas(
+            'roles', function($q){
+                $q->where('name','moderator');
+            }
+        )->get();
+
         for ($i=1; $i <=7 ; $i++) {
             $day=$startDate->addDay();
             $week[]=[
@@ -32,7 +39,7 @@ class ConsultationsController extends Controller
                 "day"=>$day->format('l')
             ];
         }
-       /* dd($consultations); */
+       /* dd($moderators); */
 
        return view('dashboard.control_panel.counseling.list')
                 ->with([
@@ -40,7 +47,8 @@ class ConsultationsController extends Controller
                     'page_title' => 'Counseling',
                     'week' => $week,
                     'slots'=>$slots,
-                    'consultations'=>$consultations
+                    'consultations'=>$consultations,
+                    'moderators'=>$moderators
                 ]);
     }
 
@@ -78,6 +86,26 @@ class ConsultationsController extends Controller
         if ($working) {
             $status = array('msg' => "Data saved", 'toastr' => "successToastr");
         }else{
+            $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
+        }
+        
+        Session::flash($status['toastr'], $status['msg']);
+        return redirect()->back();
+    }
+
+    public function assign_consultation(Request $request)
+    {
+        /* dd($request->all()); */
+        if ($request->assign_to && $request->consult_id) {
+            $consult=Consultations::findOrFail($request->consult_id);
+            $consult->assign_to=$request->assign_to;
+            $consult->save();
+            if ($consult) {
+                $status = array('msg' => "Data saved", 'toastr' => "successToastr");
+            }
+        }
+
+        else{
             $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
         }
         

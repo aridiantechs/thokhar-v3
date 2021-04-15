@@ -411,6 +411,15 @@ border-radius: .5rem;
 .w-320px{
     width: 320px;
 }
+
+.ft-14{
+    font-size: 14px;
+}
+
+.consult__time{
+    font-size: 12px;
+    color: #a7a7a7;
+}
 </style>
 @endsection
 @section('content')
@@ -444,16 +453,16 @@ border-radius: .5rem;
             </div>
             <div class="col-md-3 bg__grey p-5">
                 <div class="mb-3">
-                    <h4 class="blue__head" pd-popup-open="counselling_session">{{\Carbon\Carbon::tomorrow()->format('l')}}</h4>
+                    <h4 class="blue__head">{{\Carbon\Carbon::tomorrow()->format('l')}}</h4>
                     <span class="sub_text">{{\Carbon\Carbon::tomorrow()->format('Y-m-d')}}</span>
                 </div>
             
                 @foreach ($consultations as $consult)
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="bg-white p-2 user_detail_div" data-user={{json_encode($consult->user)}}>
-                                <p class="color_blue" pd-popup-open="userDetail">{{$consult->user->name ?? ''}}<br><span>{{$consult->slot->slot}}</span> </p>
-
+                            <div class="bg-white p-2 ">
+                                <p class="color_blue user_detail" pd-popup-open="userDetail" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}">{{$consult->user->name ?? ''}}<br><span class="consult__time">{{$consult->slot->slot ?? ''}}</span> </p>
+                                <button class="btn btn-info assign_btn" pd-popup-open="counselling_session" data-consultid="{{$consult->id}}" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}">Assign</button>
                             </div>
                         </div>
                         {{-- <div class="col-md-3"><p>08:00</p> </div> --}}
@@ -580,71 +589,77 @@ border-radius: .5rem;
            <div class="popup-contact-wrapper">
                 <h4 class="popup-header mx-auto">Counseling Session</h4>
                 <hr>
-              
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="input-group mb-3 cs__input">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control bg-gray-1 cs__input" aria-label="Amount (to the nearest dollar)">
-                            <div class="input-group-append">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group mb-3 cs__input">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-calendar fa__color_blue" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control bg-gray-1 cs__input" aria-label="Amount (to the nearest dollar)">
-                            <div class="input-group-append">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                <form action="{{route('assign_consultation', locale())}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="consult_id">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-3 cs__input">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                                <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input consult_user_name" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group mb-3 cs__input">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-clock fa__color_blue" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control bg-gray-1 cs__input" aria-label="Amount (to the nearest dollar)">
-                            <div class="input-group-append">
-                              <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                        <div class="col-md-6">
+                            <div class="input-group mb-3 cs__input">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-calendar fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                                <input disabled type="text" class="form-control bg-gray-1 cs__input" placeholder="{{\Carbon\Carbon::tomorrow()->format('d M Y')}}" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label f-size-14">Delegate  To :</label>
-                            <div class="col-sm-9">
-                                <div class="input-group mb-3 cs__input">
-                                    <input type="text" class="form-control bg-gray-1 cs__input" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                      <span class="input-group-text bg-gray-1" id="basic-addon2"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
+                        <div class="col-md-6">
+                            <div class="input-group mb-3 cs__input">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-clock fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                                <input disabled type="text" class="form-control bg-gray-1 cs__input consult_session_time" placeholder="" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label f-size-14">Delegate  To :</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group mb-3 cs__input">
+                                        <select class="form-control bg-gray-1 cs__input ft-14" name="assign_to" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            @foreach ($moderators as $mod)
+                                                <option value="{{$mod->id}}">{{$mod->name ?? ''}}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="input-group-append">
+                                        <span class="input-group-text bg-gray-1" id="basic-addon2"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                </div>
-
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left" pd-popup-open="popupNew">
-                            <span class="d-inline-block">Cancel the Session</span>
-                        </button>
+                        
                     </div>
 
-                    <div class="col-md-6">
-                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right" pd-popup-open="popupNew">
-                            <span class="d-inline-block">Save & Close</span>
-                        </button>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left">
+                                <span class="d-inline-block">Cancel the Session</span>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
+                                <span class="d-inline-block">Save & Close</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                
+                </form>
   
                 <a class="popup-close" pd-popup-close="counselling_session" href="#"> </a>
            </div>
@@ -672,32 +687,32 @@ border-radius: .5rem;
                             <div class="col-md-9">
                                 <div class="row">
                                     <div class="col-md-12 text-{{$align}} mt-4">
-                                        <h3 class="blue__head user_name">Mohammed Abdulaziz Al Omar</h3>
+                                        <h3 class="blue__head user_name"></h3>
                                     </div>
                                 </div>
                                 <div class="row font-13">
                                     <div class="col-md-8">
                                         <div class="d-flex">
-                                           <i class="mt-1 fa fa-envelope"></i> <p class="user__details_p user_email">moh.al-omar@gmail.com</p>
+                                           <i class="mt-1 fa fa-envelope"></i> <p class="user__details_p user_email"></p>
                                         </div>
                                          
                                     </div>
                                     
                                     <div class="col-md-4">
                                         <div class="d-flex">
-                                            <i class="mt-1 fa fa-phone"> </i><p class="user__details_p user_phone">0556899988</p>
+                                            <i class="mt-1 fa fa-phone"> </i><p class="user__details_p user_phone"></p>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-8">
                                         <div class="d-flex">
-                                        <i class="mt-1 fa fa-calendar">  </i><p class="user__details_p consult_date">12 April 2021</p>
+                                        <i class="mt-1 fa fa-calendar">  </i><p class="user__details_p consult_date">{{\Carbon\Carbon::tomorrow()->format('d M Y')}}</p>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-4">
                                         <div class="d-flex">
-                                        <i class="mt-1 fa fa-clock"> </i><p class="user__details_p consult_time"> 12:30 AM</p>
+                                        <i class="mt-1 fa fa-clock"> </i><p class="user__details_p consult_time"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -714,13 +729,13 @@ border-radius: .5rem;
                 <hr>
                 <div class="row mt-5">
                     <div class="col-md-6 col-sm-6">
-                        <button type="submit" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left" pd-popup-open="popupNew">
+                        <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left">
                             <span class="d-inline-block">Cancel the Session</span>
                         </button>
                     </div>
 
                     <div class="col-md-6 col-sm-6">
-                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right" pd-popup-open="popupNew">
+                        <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
                             <span class="d-inline-block">Edit Session</span>
                         </button>
                     </div>
@@ -756,8 +771,24 @@ border-radius: .5rem;
             })
         })
 
-        $(document).on('click','.user_detail_div',function(){
+        $(document).on('click','.user_detail',function(e){
+            e.preventDefault();
+            var user=$(this).data('user');
+            var slot=$(this).data('slot');
+            $('.user_name').text('').text(user.name);
+            $('.user_email').text('').text(user.email);
+            $('.user_phone').text('').text(user.phone_number);
+            $('.consult_time').text('').text(slot);
             
+        })
+
+        $(document).on('click','.assign_btn',function(e){
+            e.preventDefault();
+            var user=$(this).data('user');
+            var slot=$(this).data('slot');
+            $('.consult_user_name').attr('placeholder','').attr('placeholder',user.name);
+            $('.consult_session_time').attr('placeholder','').attr('placeholder',slot);
+            $('[name="consult_id"]').val($(this).data('consultid'));
         })
     </script>
 @endsection

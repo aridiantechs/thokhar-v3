@@ -548,7 +548,7 @@
 					<div class="nav-tabs-wrapper mt-5 mobile ">
 						<ul class="nav nav-tabs d-flex align-items-center">
 							<li class="nav-item nav-item-risk-1">
-								<a class="text-{{$align}} nav-link   {!! $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="1"></span>
 									<span class="step-text">
 										<span>
@@ -561,7 +561,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-2">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="2"></span>
 									<span class="step-text">
 										<span>
@@ -574,7 +574,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-3">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="3"></span>
 									<span class="step-text">
 										<span>
@@ -587,7 +587,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-4">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="4"></span>
 									<span class="step-text">
 										<span>
@@ -712,7 +712,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-2">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link" href="#">
 									<span class="step-parent" data-bar="2"></span>
 									<span class="step-text">
 										<span>
@@ -725,7 +725,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-3">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="3"></span>
 									<span class="step-text">
 										<span>
@@ -751,7 +751,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-5">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link" href="#">
 									<span class="step-parent" data-bar="5"></span>
 									<span class="step-text">
 										<span>
@@ -786,7 +786,7 @@
 					<div class="nav-tabs-wrapper mt-5 mobile ">
 						<ul class="nav nav-tabs d-flex align-items-center">
 							<li class="nav-item nav-item-risk-1">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="1"></span>
 									<span class="step-text">
 										<span>
@@ -812,7 +812,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-3">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="3"></span>
 									<span class="step-text">
 										<span>
@@ -825,7 +825,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-4">
-								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="4"></span>
 									<span class="step-text">
 										<span>

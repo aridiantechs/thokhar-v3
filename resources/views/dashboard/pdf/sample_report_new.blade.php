@@ -340,19 +340,19 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.monthly_income_today') }}</td>
-						<td>  0</td>
+						<td>4,167 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.question.gosi_or_ppa_monthly_subscription') }}</td>
-						<td> 0</td>
+						<td> 20,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.question.monthly_saving_plan_for_retirement') }}</td>
-						<td> 0</td>
+						<td> 800,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.monthly_saving_percentage_today') }}</td>
-						<td>0</td>
+						<td>19680 %</td>
 					</tr>
 					
 				</table>
@@ -361,7 +361,7 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.total_assets_today') }}</td>
-						<td>0</td>
+						<td>240,045 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.total_liabilities_today') }}</td>
@@ -369,11 +369,11 @@
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.net_worth') }}</td>
-						<td>0</td>
+						<td>0 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.accomulative_saving_today') }}</td>
-						<td> 0</td>
+						<td>5,000 SAR</td>
 					</tr>
 					
 				</table>
@@ -392,7 +392,7 @@
 						    <!--graph inner-->
 						    <br>
 						    <p class="text-center inner_price donut_inner">
-						    	30000
+						    	30000 SAR
 						    </p>
 						    <p class="text-center donut_inner">
 						    	{{-- {{ percentage(100) }} --}}
@@ -417,12 +417,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												4
+												4 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												10000 SAR
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
 										</td>
@@ -436,12 +436,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												2
+												2 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												10000 SAR
 												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
 											</p>
 										</td>
@@ -455,12 +455,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												52
+												52 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												10000 SAR
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
 										</td>
@@ -474,12 +474,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												100
+												100 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												10000 SAR
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>
 										</td>
@@ -493,12 +493,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ percentage($data['totalCurrentAssetAllocationPercentage'] ?? 0) }}
+												100 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+												240,045 SAR
 											</p>
 										</td>
 									</tr>
@@ -976,7 +976,7 @@
 						    <!--graph inner-->
 						    <br>
 						    <p class="text-center inner_price donut_inner">
-						    	30000
+						    	5,000 SAR 
 						    </p>
 						    <p class="text-center donut_inner">
 						    	{{-- {{ percentage(100) }} --}}
@@ -1001,12 +1001,14 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												4
+												10 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												
+												500 SAR
+											
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
 										</td>
@@ -1020,7 +1022,9 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												2
+												
+												55 %
+											
 											</p>
 										</td>
 										<td>
@@ -1039,12 +1043,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												52
+												15 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												750 SAR
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
 										</td>
@@ -1058,12 +1062,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												100
+												20 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												10000
+												1000 SAR
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>
 										</td>
@@ -1077,12 +1081,12 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ percentage($data['totalCurrentAssetAllocationPercentage'] ?? 0) }}
+												100 %
 											</p>
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+												5000 SAR
 											</p>
 										</td>
 									</tr>
@@ -1117,7 +1121,7 @@
 	            </h2>
 	            <p class="heading-secondary mt-5">{{ trans('lang.report.financil_forcast') }}</p>
 	            <p class="alertBox__p">
-	              <span>{{ trans('lang.financial_plan.congratulations') }}</span>&nbsp;{{ trans('lang.current_state.at_age') }} 0 {{ trans('lang.current_state.you_will_have_savings_balance_of') }} <span>0</span>
+	              <span>{{ trans('lang.financial_plan.congratulations') }}</span>&nbsp;{{ trans('lang.current_state.at_age') }} 60 {{ trans('lang.current_state.you_will_have_savings_balance_of') }} <span>4,664,933 SAR</span>
 	            </p>
 			</div>
 		</div>
@@ -1145,15 +1149,15 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.current_age') }}</td>
-						<td>0</td>
+						<td>17</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.planned_retirement_age') }}</td>
-						<td>0</td>
+						<td>60</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.monthly_saving_plan') }}</td>
-						<td>0</td>
+						<td>800000 SAR</td>
 					</tr>
 					<tr>
 						<td>
@@ -1161,13 +1165,13 @@
 							{{-- {{ trans('lang.report.monthly_saving_today') .trans('lang.report.of_monthly_income') }} --}}
 						</td>
 						<td>
-						0
+						19680 %
 						{{-- {!! ($request->segment(1) == 'ar') ? trans('lang.report.of_monthly_income') . percentage($data['monthlySavingPercentageToday']) : percentage($data['monthlySavingPercentageToday']) . trans('lang.report.of_monthly_income') !!} --}}
 					</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.accumulative_saving_today') }}</td>
-						<td>0</td>
+						<td>5000 SAR</td>
 					</tr>
 
 					<tr>
@@ -1186,23 +1190,23 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
-						<td>0</td>
+						<td>2 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
-						<td>0</td>
+						<td>10 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.fix_income') }}</td>
-						<td>0</td>
+						<td>5 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
-						<td>0</td>
+						<td>12 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.net_return_before_reitement') }}</td>
-						<td>0</td>
+						<td>4 %</td>
 					</tr>
 					
 					{{-- <tr>
@@ -1226,19 +1230,20 @@
 					</tr> --}}
 					<tr>
 						<td>{{ trans('lang.report.retirement_plan_value_at') }} 0 {{ trans('lang.report.years_old') }}</td>
-						<td>0</td>
+						<td>4,664,933 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.total_monthly_income') }}</td>
-						<td>0</td>
+						<td>69,300 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.income_from_retirement_plan') }}</td>
-						<td>0</td>
+						<td>15,550 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.income_from_GOSI_or_PPA') }}</td>
-						<td>0</td>
+						<td>53,750 SAR
+						</td>
 					</tr>
 					
 				</table>
@@ -1286,86 +1291,1035 @@
 						  </tr>
 						</thead>
 						<tbody>
-								<tr>
-								<td class="btm_table_td">
-								  1
-								</td>
-								<td class="btm_table_td">
-								  17
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  664 SAR
-								</td>
-								<td class="btm_table_td">
-								  10,664 SAR
-								</td>
-							  </tr>
-							  <tr   >
-								<td class="btm_table_td">
-								  1
-								</td>
-								<td class="btm_table_td">
-								  17
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  664 SAR
-								</td>
-								<td class="btm_table_td">
-								  10,664 SAR
-								</td>
-							  </tr>
-							  <tr   >
-								<td class="btm_table_td">
-								  1
-								</td>
-								<td class="btm_table_td">
-								  17
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  664 SAR
-								</td>
-								<td class="btm_table_td">
-								  10,664 SAR
-								</td>
-							  </tr>
-							  <tr   >
-								<td class="btm_table_td">
-								  1
-								</td>
-								<td class="btm_table_td">
-								  17
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  5,000 SAR
-								</td>
-								<td class="btm_table_td">
-								  664 SAR
-								</td>
-								<td class="btm_table_td">
-								  10,664 SAR
-								</td>
-							  </tr>
+							<tr>
+							<td class="btm_table_td">
+							1
+							</td>
+							<td class="btm_table_td">
+							17
+							</td>
+							<td class="btm_table_td">
+							5,000 SAR
+							</td>
+							<td class="btm_table_td">
+							5,000 SAR
+							</td>
+							<td class="btm_table_td">
+							664 SAR
+							</td>
+							<td class="btm_table_td">
+							10,664 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							2
+							</td>
+							<td class="btm_table_td">
+							18
+							</td>
+							<td class="btm_table_td">
+							10,664 SAR
+							</td>
+							<td class="btm_table_td">
+							5,250 SAR
+							</td>
+							<td class="btm_table_td">
+							1,176 SAR
+							</td>
+							<td class="btm_table_td">
+							17,090 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							3
+							</td>
+							<td class="btm_table_td">
+							19
+							</td>
+							<td class="btm_table_td">
+							17,090 SAR
+							</td>
+							<td class="btm_table_td">
+							5,513 SAR
+							</td>
+							<td class="btm_table_td">
+							1,756 SAR
+							</td>
+							<td class="btm_table_td">
+							24,359 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							4
+							</td>
+							<td class="btm_table_td">
+							20
+							</td>
+							<td class="btm_table_td">
+							24,359 SAR
+							</td>
+							<td class="btm_table_td">
+							5,788 SAR
+							</td>
+							<td class="btm_table_td">
+							2,412 SAR
+							</td>
+							<td class="btm_table_td">
+							32,559 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							5
+							</td>
+							<td class="btm_table_td">
+							21
+							</td>
+							<td class="btm_table_td">
+							32,559 SAR
+							</td>
+							<td class="btm_table_td">
+							6,078 SAR
+							</td>
+							<td class="btm_table_td">
+							3,150 SAR
+							</td>
+							<td class="btm_table_td">
+							41,787 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							6
+							</td>
+							<td class="btm_table_td">
+							22
+							</td>
+							<td class="btm_table_td">
+							41,787 SAR
+							</td>
+							<td class="btm_table_td">
+							6,381 SAR
+							</td>
+							<td class="btm_table_td">
+							3,980 SAR
+							</td>
+							<td class="btm_table_td">
+							52,148 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							7
+							</td>
+							<td class="btm_table_td">
+							23
+							</td>
+							<td class="btm_table_td">
+							52,148 SAR
+							</td>
+							<td class="btm_table_td">
+							6,700 SAR
+							</td>
+							<td class="btm_table_td">
+							4,912 SAR
+							</td>
+							<td class="btm_table_td">
+							63,761 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							8
+							</td>
+							<td class="btm_table_td">
+							24
+							</td>
+							<td class="btm_table_td">
+							63,761 SAR
+							</td>
+							<td class="btm_table_td">
+							7,036 SAR
+							</td>
+							<td class="btm_table_td">
+							5,954 SAR
+							</td>
+							<td class="btm_table_td">
+							76,750 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							9
+							</td>
+							<td class="btm_table_td">
+							25
+							</td>
+							<td class="btm_table_td">
+							76,750 SAR
+							</td>
+							<td class="btm_table_td">
+							7,387 SAR
+							</td>
+							<td class="btm_table_td">
+							7,119 SAR
+							</td>
+							<td class="btm_table_td">
+							91,257 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							10
+							</td>
+							<td class="btm_table_td">
+							26
+							</td>
+							<td class="btm_table_td">
+							91,257 SAR
+							</td>
+							<td class="btm_table_td">
+							7,757 SAR
+							</td>
+							<td class="btm_table_td">
+							8,419 SAR
+							</td>
+							<td class="btm_table_td">
+							107,433 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							11
+							</td>
+							<td class="btm_table_td">
+							27
+							</td>
+							<td class="btm_table_td">
+							107,433 SAR
+							</td>
+							<td class="btm_table_td">
+							8,144 SAR
+							</td>
+							<td class="btm_table_td">
+							9,868 SAR
+							</td>
+							<td class="btm_table_td">
+							125,446 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							12
+							</td>
+							<td class="btm_table_td">
+							28
+							</td>
+							<td class="btm_table_td">
+							125,446 SAR
+							</td>
+							<td class="btm_table_td">
+							8,552 SAR
+							</td>
+							<td class="btm_table_td">
+							11,480 SAR
+							</td>
+							<td class="btm_table_td">
+							145,478 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							13
+							</td>
+							<td class="btm_table_td">
+							29
+							</td>
+							<td class="btm_table_td">
+							145,478 SAR
+							</td>
+							<td class="btm_table_td">
+							8,979 SAR
+							</td>
+							<td class="btm_table_td">
+							13,272 SAR
+							</td>
+							<td class="btm_table_td">
+							167,729 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							14
+							</td>
+							<td class="btm_table_td">
+							30
+							</td>
+							<td class="btm_table_td">
+							167,729 SAR
+							</td>
+							<td class="btm_table_td">
+							9,428 SAR
+							</td>
+							<td class="btm_table_td">
+							15,261 SAR
+							</td>
+							<td class="btm_table_td">
+							192,418 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							15
+							</td>
+							<td class="btm_table_td">
+							31
+							</td>
+							<td class="btm_table_td">
+							192,418 SAR
+							</td>
+							<td class="btm_table_td">
+							9,900 SAR
+							</td>
+							<td class="btm_table_td">
+							17,467 SAR
+							</td>
+							<td class="btm_table_td">
+							219,785 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							16
+							</td>
+							<td class="btm_table_td">
+							32
+							</td>
+							<td class="btm_table_td">
+							219,785 SAR
+							</td>
+							<td class="btm_table_td">
+							10,395 SAR
+							</td>
+							<td class="btm_table_td">
+							19,911 SAR
+							</td>
+							<td class="btm_table_td">
+							250,091 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							17
+							</td>
+							<td class="btm_table_td">
+							33
+							</td>
+							<td class="btm_table_td">
+							250,091 SAR
+							</td>
+							<td class="btm_table_td">
+							10,914 SAR
+							</td>
+							<td class="btm_table_td">
+							22,616 SAR
+							</td>
+							<td class="btm_table_td">
+							283,621 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							18
+							</td>
+							<td class="btm_table_td">
+							34
+							</td>
+							<td class="btm_table_td">
+							283,621 SAR
+							</td>
+							<td class="btm_table_td">
+							11,460 SAR
+							</td>
+							<td class="btm_table_td">
+							25,608 SAR
+							</td>
+							<td class="btm_table_td">
+							320,689 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							19
+							</td>
+							<td class="btm_table_td">
+							35
+							</td>
+							<td class="btm_table_td">
+							320,689 SAR
+							</td>
+							<td class="btm_table_td">
+							12,033 SAR
+							</td>
+							<td class="btm_table_td">
+							28,913 SAR
+							</td>
+							<td class="btm_table_td">
+							361,635 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							20
+							</td>
+							<td class="btm_table_td">
+							36
+							</td>
+							<td class="btm_table_td">
+							361,635 SAR
+							</td>
+							<td class="btm_table_td">
+							12,635 SAR
+							</td>
+							<td class="btm_table_td">
+							32,564 SAR
+							</td>
+							<td class="btm_table_td">
+							406,834 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							21
+							</td>
+							<td class="btm_table_td">
+							37
+							</td>
+							<td class="btm_table_td">
+							406,834 SAR
+							</td>
+							<td class="btm_table_td">
+							13,266 SAR
+							</td>
+							<td class="btm_table_td">
+							36,592 SAR
+							</td>
+							<td class="btm_table_td">
+							456,692 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							22
+							</td>
+							<td class="btm_table_td">
+							38
+							</td>
+							<td class="btm_table_td">
+							456,692 SAR
+							</td>
+							<td class="btm_table_td">
+							13,930 SAR
+							</td>
+							<td class="btm_table_td">
+							41,034 SAR
+							</td>
+							<td class="btm_table_td">
+							511,656 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							23
+							</td>
+							<td class="btm_table_td">
+							39
+							</td>
+							<td class="btm_table_td">
+							511,656 SAR
+							</td>
+							<td class="btm_table_td">
+							14,626 SAR
+							</td>
+							<td class="btm_table_td">
+							45,929 SAR
+							</td>
+							<td class="btm_table_td">
+							572,211 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							24
+							</td>
+							<td class="btm_table_td">
+							40
+							</td>
+							<td class="btm_table_td">
+							572,211 SAR
+							</td>
+							<td class="btm_table_td">
+							15,358 SAR
+							</td>
+							<td class="btm_table_td">
+							51,320 SAR
+							</td>
+							<td class="btm_table_td">
+							638,889 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							25
+							</td>
+							<td class="btm_table_td">
+							41
+							</td>
+							<td class="btm_table_td">
+							638,889 SAR
+							</td>
+							<td class="btm_table_td">
+							16,125 SAR
+							</td>
+							<td class="btm_table_td">
+							57,255 SAR
+							</td>
+							<td class="btm_table_td">
+							712,269 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							26
+							</td>
+							<td class="btm_table_td">
+							42
+							</td>
+							<td class="btm_table_td">
+							712,269 SAR
+							</td>
+							<td class="btm_table_td">
+							16,932 SAR
+							</td>
+							<td class="btm_table_td">
+							63,785 SAR
+							</td>
+							<td class="btm_table_td">
+							792,986 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							27
+							</td>
+							<td class="btm_table_td">
+							43
+							</td>
+							<td class="btm_table_td">
+							792,986 SAR
+							</td>
+							<td class="btm_table_td">
+							17,778 SAR
+							</td>
+							<td class="btm_table_td">
+							70,966 SAR
+							</td>
+							<td class="btm_table_td">
+							881,730 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							28
+							</td>
+							<td class="btm_table_td">
+							44
+							</td>
+							<td class="btm_table_td">
+							881,730 SAR
+							</td>
+							<td class="btm_table_td">
+							18,667 SAR
+							</td>
+							<td class="btm_table_td">
+							78,859 SAR
+							</td>
+							<td class="btm_table_td">
+							979,257 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							29
+							</td>
+							<td class="btm_table_td">
+							45
+							</td>
+							<td class="btm_table_td">
+							979,257 SAR
+							</td>
+							<td class="btm_table_td">
+							19,601 SAR
+							</td>
+							<td class="btm_table_td">
+							87,532 SAR
+							</td>
+							<td class="btm_table_td">
+							1,086,389 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							30
+							</td>
+							<td class="btm_table_td">
+							46
+							</td>
+							<td class="btm_table_td">
+							1,086,389 SAR
+							</td>
+							<td class="btm_table_td">
+							20,581 SAR
+							</td>
+							<td class="btm_table_td">
+							97,056 SAR
+							</td>
+							<td class="btm_table_td">
+							1,204,026 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							31
+							</td>
+							<td class="btm_table_td">
+							47
+							</td>
+							<td class="btm_table_td">
+							1,204,026 SAR
+							</td>
+							<td class="btm_table_td">
+							21,610 SAR
+							</td>
+							<td class="btm_table_td">
+							107,513 SAR
+							</td>
+							<td class="btm_table_td">
+							1,333,148 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							32
+							</td>
+							<td class="btm_table_td">
+							48
+							</td>
+							<td class="btm_table_td">
+							1,333,148 SAR
+							</td>
+							<td class="btm_table_td">
+							22,690 SAR
+							</td>
+							<td class="btm_table_td">
+							118,988 SAR
+							</td>
+							<td class="btm_table_td">
+							1,474,826 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							33
+							</td>
+							<td class="btm_table_td">
+							49
+							</td>
+							<td class="btm_table_td">
+							1,474,826 SAR
+							</td>
+							<td class="btm_table_td">
+							23,825 SAR
+							</td>
+							<td class="btm_table_td">
+							131,576 SAR
+							</td>
+							<td class="btm_table_td">
+							1,630,227 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							34
+							</td>
+							<td class="btm_table_td">
+							50
+							</td>
+							<td class="btm_table_td">
+							1,630,227 SAR
+							</td>
+							<td class="btm_table_td">
+							25,016 SAR
+							</td>
+							<td class="btm_table_td">
+							145,382 SAR
+							</td>
+							<td class="btm_table_td">
+							1,800,625 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							35
+							</td>
+							<td class="btm_table_td">
+							51
+							</td>
+							<td class="btm_table_td">
+							1,800,625 SAR
+							</td>
+							<td class="btm_table_td">
+							26,267 SAR
+							</td>
+							<td class="btm_table_td">
+							160,518 SAR
+							</td>
+							<td class="btm_table_td">
+							1,987,409 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							36
+							</td>
+							<td class="btm_table_td">
+							52
+							</td>
+							<td class="btm_table_td">
+							1,987,409 SAR
+							</td>
+							<td class="btm_table_td">
+							27,580 SAR
+							</td>
+							<td class="btm_table_td">
+							177,106 SAR
+							</td>
+							<td class="btm_table_td">
+							2,192,096 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							37
+							</td>
+							<td class="btm_table_td">
+							53
+							</td>
+							<td class="btm_table_td">
+							2,192,096 SAR
+							</td>
+							<td class="btm_table_td">
+							28,959 SAR
+							</td>
+							<td class="btm_table_td">
+							195,282 SAR
+							</td>
+							<td class="btm_table_td">
+							2,416,337 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							38
+							</td>
+							<td class="btm_table_td">
+							54
+							</td>
+							<td class="btm_table_td">
+							2,416,337 SAR
+							</td>
+							<td class="btm_table_td">
+							30,407 SAR
+							</td>
+							<td class="btm_table_td">
+							215,191 SAR
+							</td>
+							<td class="btm_table_td">
+							2,661,935 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							39
+							</td>
+							<td class="btm_table_td">
+							55
+							</td>
+							<td class="btm_table_td">
+							2,661,935 SAR
+							</td>
+							<td class="btm_table_td">
+							31,927 SAR
+							</td>
+							<td class="btm_table_td">
+							236,994 SAR
+							</td>
+							<td class="btm_table_td">
+							2,930,856 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							40
+							</td>
+							<td class="btm_table_td">
+							56
+							</td>
+							<td class="btm_table_td">
+							2,930,856 SAR
+							</td>
+							<td class="btm_table_td">
+							33,524 SAR
+							</td>
+							<td class="btm_table_td">
+							260,864 SAR
+							</td>
+							<td class="btm_table_td">
+							3,225,244 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							41
+							</td>
+							<td class="btm_table_td">
+							57
+							</td>
+							<td class="btm_table_td">
+							3,225,244 SAR
+							</td>
+							<td class="btm_table_td">
+							35,200 SAR
+							</td>
+							<td class="btm_table_td">
+							286,992 SAR
+							</td>
+							<td class="btm_table_td">
+							3,547,436 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							42
+							</td>
+							<td class="btm_table_td">
+							58
+							</td>
+							<td class="btm_table_td">
+							3,547,436 SAR
+							</td>
+							<td class="btm_table_td">
+							36,960 SAR
+							</td>
+							<td class="btm_table_td">
+							315,584 SAR
+							</td>
+							<td class="btm_table_td">
+							3,899,980 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							43
+							</td>
+							<td class="btm_table_td">
+							59
+							</td>
+							<td class="btm_table_td">
+							3,899,980 SAR
+							</td>
+							<td class="btm_table_td">
+							38,808 SAR
+							</td>
+							<td class="btm_table_td">
+							346,865 SAR
+							</td>
+							<td class="btm_table_td">
+							4,285,653 SAR
+							</td>
+							</tr>
+
+							<tr class="highlight">
+							<td class="btm_table_td">
+							44
+							</td>
+							<td class="btm_table_td">
+							60
+							</td>
+							<td class="btm_table_td">
+							4,285,653 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							379,280 SAR
+							</td>
+							<td class="btm_table_td">
+							4,664,933 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							45
+							</td>
+							<td class="btm_table_td">
+							61
+							</td>
+							<td class="btm_table_td">
+							4,664,933 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							186,597 SAR
+							</td>
+							<td class="btm_table_td">
+							4,851,531 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							46
+							</td>
+							<td class="btm_table_td">
+							62
+							</td>
+							<td class="btm_table_td">
+							4,851,531 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							194,061 SAR
+							</td>
+							<td class="btm_table_td">
+							5,045,592 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							47
+							</td>
+							<td class="btm_table_td">
+							63
+							</td>
+							<td class="btm_table_td">
+							5,045,592 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							201,824 SAR
+							</td>
+							<td class="btm_table_td">
+							5,247,416 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							48
+							</td>
+							<td class="btm_table_td">
+							64
+							</td>
+							<td class="btm_table_td">
+							5,247,416 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							209,897 SAR
+							</td>
+							<td class="btm_table_td">
+							5,457,312 SAR
+							</td>
+							</tr>
+
+							<tr>
+							<td class="btm_table_td">
+							49
+							</td>
+							<td class="btm_table_td">
+							65
+							</td>
+							<td class="btm_table_td">
+							5,457,312 SAR
+							</td>
+							<td class="btm_table_td">
+							0 SAR
+							</td>
+							<td class="btm_table_td">
+							218,292 SAR
+							</td>
+							<td class="btm_table_td">
+							5,675,605 SAR
+							</td>
+							</tr>
+
 						</tbody>
 					</table>
 		      	</div>
@@ -1411,20 +2365,28 @@
 					</thead>
 					<tr>
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
-						0
+						<td>(012013) صندوق الراجحي للمضاربة بالبضائع بالريال</td>
+						<td>(045002) صندوق الأهلي للمتاجرة بالريال السعودي</td>
+						<td>(159002) صندوق ألفا للمرابحة</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
-						0
+						<td>iShares MSCI USA Islamic UCITS ETF</td>
+						<td>(030003) صندوق جدوى للأسهم السعودية - الفئة ب</td>
+						<td>(9400) صندوق فالكم المتداول للأسهم السعودية</td>
 					</tr>
 					<tr>
 						{{-- @dd($constants) --}}
 						<td>{{ trans('lang.report.fix_income') }}</td>
-						0
+						<td>(009045) صندوق سامبا لصكوك الشركات-فئة ب</td>
+						<td>(012036) صندوق الراجحي للصكوك</td>
+						<td>(9404) صندوق الإنماء المتداول للصكوك</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
-						0
+						<td>(4339) صندوق دراية ريت</td>
+						<td>(4348) صندوق الخبير ريت</td>
+						<td>(9405) صندوق البلاد المتداول للمتاجرة بالذهب</td>
 					</tr>
 					{{-- <tr>
 						<td>{{ trans('lang.report.total') }}</td>
@@ -1458,37 +2420,37 @@
 
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
 						<td>{{ trans('lang.report.1_payment') }}</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
+						<td>1</td>
+						<td>10 %</td>
+						<td>500 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
 						<td>{{ trans('lang.report.4_payment_over_one_year') }}</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
+						<td>2</td>
+						<td>55 %</td>
+						<td>2,750 SAR </td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.fix_income') }}</td>
 						<td>{{ trans('lang.report.1_payment') }}</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
+						<td>1</td>
+						<td>15 %</td>
+						<td>750 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
 						<td>{{ trans('lang.report.Manual_process') }}</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
+						<td>2</td>
+						<td>20 %</td>
+						<td>1,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.Total') }}</td>
 						<td></td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
+						<td>6</td>
+						<td>100 %</td>
+						<td>5,000 SAR </td>
 					</tr>
 					
 					

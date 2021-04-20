@@ -636,7 +636,7 @@
 					<div class="nav-tabs-wrapper mt-5 mobile ">
 						<ul class="nav nav-tabs d-flex align-items-center">
 							<li class="nav-item nav-item-risk-1">
-								<a class="text-{{$align}} nav-link   {!!  'Poor' !!}" href="#">
+								<a class="text-{{$align}} nav-link " href="#">
 									<span class="step-parent" data-bar="1"></span>
 									<span class="step-text">
 										<span>
@@ -649,7 +649,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-2">
-								<a class="text-{{$align}} nav-link {!! 'Fair' !!}" href="#">
+								<a class="text-{{$align}} nav-link {!! $pointer !!}" href="#">
 									<span class="step-parent" data-bar="2"></span>
 									<span class="step-text">
 										<span>
@@ -662,7 +662,7 @@
 								</a>
 							</li>
 							<li class="nav-item nav-item-risk-3">
-								<a class="text-{{$align}} nav-link {!! 'Good' !!}" href="#">
+								<a class="text-{{$align}} nav-link" href="#">
 									<span class="step-parent" data-bar="3"></span>
 									<span class="step-text">
 										<span>

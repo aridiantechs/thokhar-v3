@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Report;
-// use Barryvdh\DomPDF\PDF;
-use Illuminate\Http\Request;
-use App\Constant;
 use PDF;
+// use Barryvdh\DomPDF\PDF;
 use Session;
+use App\Report;
+use App\Constant;
+use App\Mail\SampleReport;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ReportController extends Controller
 {
@@ -92,6 +94,30 @@ class ReportController extends Controller
         
         return view('dashboard.pdf.report')->with('data', json_decode($report->report_data, true));
 
+    }
+
+    public function sendSampleReport()
+    {
+        $data = array(
+            'subject' => 'Thokhor | Sample Report',
+            'view' => 'dashboard.email.sample_report', 
+        );
+
+
+        try{
+            Mail::to(auth()->user()->email)->send(new SampleReport($data));
+            $res=[
+                "status"=>'success',
+                "message"=>'report sent'
+            ];
+        }catch ( \Exception $exception) {
+            $res=[
+                "status"=>'error',
+                "message"=>'Unable to send mail'
+            ];
+            
+        }
+        return $res;
     }
 
     /**

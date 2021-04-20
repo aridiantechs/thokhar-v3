@@ -193,6 +193,10 @@ Route::group([
           return view('dashboard.pdf.sample_report');
       })->name('sample-report');
 
+      Route::get('/view-sample-report',  function () {
+        return view('dashboard.pdf.sample_report_new');
+    })->name('view-sample-report');
+
       // Route::get('/sample-report', 'HomeController@emailVerification')->name('email_verification');
 
       // --------------------------------- Site Management Routes ---------------------------
@@ -270,6 +274,7 @@ Route::group([
       Route::get('/risk-test',  'QuestionnaireController@riskTest')->name('risk-test');
       Route::post('/get-value-at-retirement',  'QuestionnaireController@riskTestNewValueAtRetirement')->name('get-value-at-retirement');
 
+      Route::get('/send_sample_report',  'ReportController@sendSampleReport')->name('send_sample_report');
       //For payment version payment process
       Route::get('/plan',  'QuestionnaireController@plan')->name('plan');
       Route::get('/checkout',  'CheckoutController@create')->name('checkout');

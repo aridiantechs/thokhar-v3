@@ -1,0 +1,1993 @@
+@inject('request', 'Illuminate\Http\Request')
+{{-- {{ dd($data['constants']) }} --}}
+@extends('dashboard.layouts.user_layout.user_report')
+
+@section('styles')
+<link rel="stylesheet" href="{{url('/')}}/frontend_assets/assets/css/modern-tabs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.6.6/rickshaw.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('backend_assets/dashboard/css/print.css?v1') }}">
+
+@php 
+	if($request->segment(1) == 'ar'){
+		$direction = 'right';
+		$direction_op = 'left';
+	}
+	else{
+		$direction = 'left';
+		$direction_op = 'right';
+	}
+@endphp
+<style>
+	{!! ($request->segment(1) == 'ar') ? '.progressbar li:after{ right: -50%; }' : '' !!}
+	.financial-position tr td:first-child {
+	    text-align: {{ ($request->segment(1) == 'ar') ? 'right' : 'left' }};
+	}
+
+
+	.factor span:first-child {
+	    border-top-{{ $direction }}-radius: 10px;
+	    border-bottom-{{ $direction }}-radius: 10px;
+	}
+	.factor span:last-child {
+	    border-top-{{ $direction_op }}-radius: 10px;
+	    border-bottom-{{ $direction_op }}-radius: 10px;
+	}
+
+	.factor-s span:first-child {
+	    border-top-{{ $direction }}-radius: 10px;
+	    border-bottom-{{ $direction }}-radius: 10px;
+	}
+	.factor-vs span:first-child {
+	    border-top-{{ $direction }}-radius: 10px;
+	    border-bottom-{{ $direction }}-radius: 10px;
+	}
+	.factor-s span:last-child {
+	    border-top-{{ $direction_op }}-radius: 10px;
+	    border-bottom-{{ $direction_op }}-radius: 10px;
+	}
+	.factor-vs span:last-child {
+	    border-top-{{ $direction_op }}-radius: 10px;
+	    border-bottom-{{ $direction_op }}-radius: 10px;
+	}
+	.financial-position tr td {
+	    text-align: {{ $direction_op }};
+	}
+
+	#disclaimer{
+		page-break-before: always;
+	}
+
+
+	#intro, #table_of_contents, #about_us, #personal_information, #personal_indicators, #asset_allocation, #financial_forecast{
+		page-break-after: always;
+	}
+	.highlight{
+	  	background-color: #000000 !important;
+	    color: #fff !important;
+	    font-family: 'Cairo', sans-serif;
+	}
+
+	.background_effect{
+	    background-size: cover;
+	    background-position: 100% 100%;
+	    background-repeat: no-repeat;
+	}
+
+	.container-fluid{
+		margin-bottom: 5rem !important;
+		margin-top: 0 !important;
+		max-width:100% !important;
+	}
+
+	.b-shadow{
+		box-shadow: 0px 2px 7px 3px #e7e7e7;
+	}
+
+	.mt-4r{
+		margin-top: 4rem !important;
+	}
+
+	.report .nav-tabs-wrapper > .horizontal-line{
+        background: #B7CDCF;
+        left: 5px;
+        width: 99%;
+        background: transparent linear-gradient(270deg, var(---2dd782) 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+        @if ($request->segment(1) == 'ar')
+			background: transparent linear-gradient(270deg, #FF5656 0%,#2dd782 100%) 0% 0% no-repeat padding-box;
+        @else
+            background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
+		@endif
+    }
+</style>
+
+@endsection
+
+@section('content')
+{{-- {{ dd($data) }} --}}
+<div id="HTMLtoPDF" class="container {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }} " >
+	
+	@php 
+	// $pointer = '<img src="' . asset('backend_assets/dashboard/images/pdf_icons/Polygon1.png') . '"><br><p>'.trans('lang.you').'</p>';
+	$pointer = 'active';
+	@endphp
+
+	<div id="intro" class="container-fluid mt-4r b-shadow mb-1 background_effect " style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg.svg') }}')">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<br><br><br><br><br><br>
+				<br><br><br><br><br>
+				<h2 class="mt-5 pt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <br><br><br><br><br>
+	            <h1 class="heading-main">{{ trans('lang.report.PERSONAL_FINANCIAL_PLAN') }}</h1>
+	            <h1 class="user-main mt-3">Khalid Mehmood</h1>
+			</div>
+		</div>
+
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		
+		
+		<div class="row mt-5">
+			<div class="col-3"></div>
+			<div class="col-7">
+				<img
+                  class="img img-responsive image-main"
+                  src="
+                    {{ asset('frontend_assets/assets/img/report/person-with-plant.png') }}"
+                  alt="Banner image"
+                />
+			</div>
+		</div>
+
+		<br><br><br><br><br><br><br><br>
+		
+		{{-- <p class="text-center mr-5 pb-3">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+		
+	</div>
+
+
+
+
+	{{-- Page 2 start --}}
+
+
+	<div id="table_of_contents" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<br><br><br><br><br>
+				
+				<h2 class="mt-5 pt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <br><br><br><br><br>
+	            <h1 class="heading-main">{{ trans('lang.report.TABLE_OF_CONTENTS') }}</h1>
+			</div>
+		</div>
+
+		<br><br><br><br><br>
+		
+		<div class="row mt-5">
+			<div class="col-1"></div>
+			<div class="col-9 tb-content">
+				<P>{{ trans('lang.report.about_thokhor') }}</P>
+				<P>{{ trans('lang.report.financial_health_checkup') }}</P>
+				<P>{{ trans('lang.report.personal_indicators') }}</P>
+				<P>{{ trans('lang.report.asset_allocation') }}</P>
+				<P>{{ trans('lang.report.financil_forcast') }}</P>
+				<P>{{ trans('lang.report.investing_plan') }}</P>
+				<P>{{ trans('lang.disclaimer') }}</P>
+			</div>
+
+			{{-- <div class="col-1 tb-content">
+				<P>01</P>
+				<P>02</P>
+				<P>03</P>
+				<P>04</P>
+				<P>05</P>
+				<P>06</P>
+				
+			</div> --}}
+		</div>
+
+
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		<br><br><br>
+		
+		
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+
+	{{-- Page 3 start --}}
+
+
+	<div id="about_us" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')">
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				<h2 class="mt-5 pt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <br><br>
+	            <h1 class="heading-main">{!! trans('lang.report.thank_you_for') !!}</h1>
+	            <br>
+	            <p class="text-primary">{{ trans('lang.report.we_hope') }}</p>
+			</div>
+		</div>
+
+		<br><br>
+		
+		<div class="row mt-5">
+			<div class="col-1"></div>
+			<div class="col-5">
+				<img class="img img-fluid img-left" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_winners1.png') }}">
+
+				<h1 class="page-heading invst_plan mt-5 pt-3">
+                        {{ trans('lang.frontend_about.mission') }}
+                </h1>
+                <p class="mt-4 mb-5">
+                    {{ trans('lang.frontend_about.mission_text_report') }}
+                </p>
+                <ul>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_1') }}</p></li>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_2') }}</p></li>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_3') }}</p></li>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_4') }}</p></li>
+                    
+                </ul>
+
+			</div>
+			<div class="col-5">
+				<img class="img img-fluid img-right" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_business1.png') }}">
+
+				<h1 class="page-heading invst_plan mt-5 pt-3">
+                        {{ trans('lang.frontend_about.method') }}
+                </h1>
+                <p class="mt-4 mb-5">
+                    {{ trans('lang.frontend_about.method_text') }}
+                </p>
+                <ul>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_1') }}</p></li>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_2') }}</p></li>
+                    <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_3') }}</p></li>
+                    
+                </ul>
+			</div>
+
+			
+			
+		</div>
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		<br><br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+
+	{{-- page 4 start --}}
+
+	<div id="personal_information" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				<h2 class="mt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            
+	            <h1 class="heading-secondary">{{ trans('lang.report.financial_health_checkup') }}</h1>
+
+	            <p class="text-secondary mt-2">{{ trans('lang.report.personal_information') }}</p>
+	            
+			</div>
+		</div>
+
+		
+		
+		<div class="row mt-1 personal-info">
+			<div class="col-1 rem-col"></div>
+			
+			<div class="col-3">
+				<p>{{ trans('lang.report.name') }}</p>
+				<b>Khalid Mehmood</b>
+			</div>
+			
+			<div class="col-3">
+				<p>{{ trans('lang.report.education') }}</p>
+				<b>Bachelors</b>
+			</div>
+			
+			<div class="col-2">
+				<p>{{ trans('lang.report.current_age') }}</p>
+				<b>30</b>
+			</div>
+			
+			<div class="col-3">
+				<p>{{ trans('lang.report.planned_retirement_age') }}</p>
+				<b>60</b>
+			</div>
+			
+			<br><br>
+			
+			
+		</div>
+
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				<p class="text-secondary mt-3">{{ trans('lang.report.financial_position_today') }}</p>
+				
+			</div>
+		</div>
+		<div class="row financial-position">
+			<div class="col-1"></div>
+			<div class="col-5">
+				<table>
+					<tr>
+						<td>{{ trans('lang.report.monthly_income_today') }}</td>
+						<td>  0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.question.gosi_or_ppa_monthly_subscription') }}</td>
+						<td> 0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.question.monthly_saving_plan_for_retirement') }}</td>
+						<td> 0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.monthly_saving_percentage_today') }}</td>
+						<td>0</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div class="col-5">
+				<table>
+					<tr>
+						<td>{{ trans('lang.report.total_assets_today') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.total_liabilities_today') }}</td>
+						<td> 0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.net_worth') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.accomulative_saving_today') }}</td>
+						<td> 0</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10 to-12">
+				<p class="text-secondary mt-5">{{ trans('lang.report.current_asset_allocation') }}</p>
+				<div class="row mb-5">
+					
+						<div class="col-lg-4 col-md-4 col-sm-4 col-12"></div>
+						<div class="col-lg-4 col-md-4 col-4 col-sm-4 col-12 text-center">
+							<canvas id="DonutChartSelectedAsset" width="100" height="100"></canvas>
+						    <!--graph inner-->
+						    <br>
+						    <p class="text-center inner_price donut_inner">
+						    	30000
+						    </p>
+						    <p class="text-center donut_inner">
+						    	{{-- {{ percentage(100) }} --}}
+						    	100%
+						    </p>
+						    
+
+						    {{-- <div class="s-50"></div> --}}
+						</div>
+						
+					
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #3B83FF;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.cash_and_equivalent') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												4
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #2dd782;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.equities') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												2
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #FFE700;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.fix_income') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												52
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #01baef;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.alternative_investment') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												100
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #ffffff;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.total') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												{{ percentage($data['totalCurrentAssetAllocationPercentage'] ?? 0) }}
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+											</p>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br><br><br>
+		<br><br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+	{{-- Page 5 start --}}
+
+
+	<div id="personal_indicators" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				{{-- <br><br><br><br><br> --}}
+				<h2 class="mt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <br><br>
+	            <h1 class="heading-main">{{ trans('lang.report.personal_indicators') }}</h1>
+	            
+			</div>
+		</div>
+ 
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<p class="text-secondary mt-5">
+					{{ trans('lang.report.monthly_saving_rate') }} 
+				</p>
+
+				<div class="report m-top-p5">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link   {!! $pointer !!}" href="#">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.little_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.good_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.great_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-4">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="4"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.rich_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-5">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="5"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.wealthy_saver') }}
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<p class="text-secondary mt-5">
+					{{ trans('lang.report.Current_Networth_amount') }} 
+				</p>
+
+				<div class="report m-top-p5">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link   {!!  'Poor' !!}" href="#">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.poor_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!! 'Fair' !!}" href="#">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.fair_saver') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link {!! 'Good' !!}" href="#">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.ghani_saver') }}
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<p class="text-secondary mt-5">
+					{{ trans('lang.report.early_retirement_possibility') }}
+				</p>
+
+				<div class="report m-top-p5">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link" href="#">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.poor') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.fair') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.healthy') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-4">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="4"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.very_healthy') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-5">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="5"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.early_retire_person') }}
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+		
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<p class="text-secondary mt-5">
+					{{ trans('lang.report.investing_diversity') }}
+				</p>
+
+				<div class="report m-top-p5">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.poor') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.fair') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.good') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-4">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="4"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.great') }}
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+		
+		<br><br><br><br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+
+
+	{{-- Page 6 start --}}
+
+
+	<div id="asset_allocation" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				<h2 class="mt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <h1 class="heading-main mt-2">{{ trans('lang.report.asset_allocation') }}</h1>
+	            
+			</div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<p class="text-secondary mt-5">
+					{{ trans('lang.report.early_retirement_possibility') }}
+				</p>
+
+				<div class="report m-top-p5">
+					<div class="nav-tabs-wrapper mt-5 mobile ">
+						<ul class="nav nav-tabs d-flex align-items-center">
+							<li class="nav-item nav-item-risk-1">
+								<a class="text-{{$align}} nav-link" href="#">
+									<span class="step-parent" data-bar="1"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.very_conservative') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-2">
+								<a class="text-{{$align}} nav-link {!!  $pointer !!}" href="#">
+									<span class="step-parent" data-bar="2"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.conservative') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-3">
+								<a class="text-{{$align}} nav-link " href="#">
+									<span class="step-parent" data-bar="3"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										{{ trans('lang.report.natural') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-4">
+								<a class="text-{{$align}} nav-link " href="#">
+									<span class="step-parent" data-bar="4"></span>
+									<span class="step-text">
+										<span>
+										 {{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.agressive') }}
+									</div>
+								</a>
+							</li>
+							<li class="nav-item nav-item-risk-5">
+								<a class="text-{{$align}} nav-link" href="#">
+									<span class="step-parent" data-bar="5"></span>
+									<span class="step-text">
+										<span>
+										{{trans('lang.you')}}
+										</span>
+									</span>
+									<div class="bottom-text">
+										 {{ trans('lang.report.very_agressive') }}
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+
+
+		<br>
+
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10 to-12">
+				<p class="text-secondary mt-5">{{ trans('lang.report.recommended_assets_allocation') }}</p>
+				<div class="row mb-5">
+					
+						<div class="col-lg-3 col-md-3 col-3"></div>
+						<div class="col-lg-4 col-md-4 col-12 text-center">
+							<canvas id="DonutChartSelectedAssetRecommended" width="400" height="400"></canvas>
+						    <!--graph inner-->
+						    <br>
+						    <p class="text-center inner_price donut_inner">
+						    	30000
+						    </p>
+						    <p class="text-center donut_inner">
+						    	{{-- {{ percentage(100) }} --}}
+						    	100%
+						    </p>
+						    <br>
+
+						    {{-- <div class="s-50"></div> --}}
+						</div>
+						
+					
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #3B83FF;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.cash_and_equivalent') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												4
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #2dd782;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.equities') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												2
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #FFE700;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.fix_income') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												52
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #01baef;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.alternative_investment') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												100
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												10000
+												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="table_color" style="background-color: #ffffff;"></div>
+										</td>
+										<td>
+											<p>{{ trans('lang.report.total') }}</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												{{ percentage($data['totalCurrentAssetAllocationPercentage'] ?? 0) }}
+											</p>
+										</td>
+										<td>
+											<p class="text_black text-left">
+												{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+											</p>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+
+
+	{{-- Page 7 start --}}
+
+
+	<div id="financial_forecast" class="container-fluid b-shadow mb-1 parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				<h2 class="mt-5 mb-2">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <p class="heading-secondary mt-5">{{ trans('lang.report.financil_forcast') }}</p>
+	            <p class="alertBox__p">
+	              <span>{{ trans('lang.financial_plan.congratulations') }}</span>&nbsp;{{ trans('lang.current_state.at_age') }} 0 {{ trans('lang.current_state.you_will_have_savings_balance_of') }} <span>0</span>
+	            </p>
+			</div>
+		</div>
+
+		<br><br>
+
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-lg-8 col-md-10 col-sm-10 col-10" >
+				
+				<canvas id="myChart" ></canvas>
+				
+			</div>
+		</div>
+
+
+		
+
+		{{-- <br><br><br><br><br> --}}
+
+		<div class="row financial-position">
+			<div class="col-1 rem-col"></div>
+			<div class="col-5">
+				<p class="text-secondary mt-5">{{ trans('lang.report.assumptions') }}</p>
+				<table>
+					<tr>
+						<td>{{ trans('lang.report.current_age') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.planned_retirement_age') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.monthly_saving_plan') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>
+							{{ trans('lang.report.monthly_saving_today') }}
+							{{-- {{ trans('lang.report.monthly_saving_today') .trans('lang.report.of_monthly_income') }} --}}
+						</td>
+						<td>
+						0
+						{{-- {!! ($request->segment(1) == 'ar') ? trans('lang.report.of_monthly_income') . percentage($data['monthlySavingPercentageToday']) : percentage($data['monthlySavingPercentageToday']) . trans('lang.report.of_monthly_income') !!} --}}
+					</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.accumulative_saving_today') }}</td>
+						<td>0</td>
+					</tr>
+
+					<tr>
+						<td><b style="color: #000000;"> * {{ trans('lang.report.All_returns_will_be_fully_reinvested') }}</b></td>
+						
+					</tr>
+					<tr>
+						<td><b style="color: #000000;"> * {{ trans('lang.report.No_redemption_amount_before_retirement_year') }}</b></td>
+						
+					</tr>
+					
+				</table>
+			</div>
+			<div class="col-5">
+				<p class="text-secondary mt-5">{{ trans('lang.report.returns_assumptions') }}</p>
+				<table>
+					<tr>
+						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.equities') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.fix_income') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.alternative_investment') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.net_return_before_reitement') }}</td>
+						<td>0</td>
+					</tr>
+					
+					{{-- <tr>
+						<td>{{ trans('lang.report.net_return_after_reitement') }}</td>
+						<td>{{ percentage($data['netReturnAfterRetirement']) }}</td>
+					</tr> --}}
+					
+				</table>
+			</div>
+			
+		</div>
+
+		<div class="row financial-position">
+			<div class="col-1 rem-col"></div>
+			<div class="col-5">
+				<p class="text-secondary mt-5">{{ trans('lang.report.income_and_wealth_at_retirement') }}</p>
+				<table>
+					{{-- <tr>
+						<td>Status at retirement</td>
+						<td>Based on assets allocation</td>
+					</tr> --}}
+					<tr>
+						<td>{{ trans('lang.report.retirement_plan_value_at') }} 0 {{ trans('lang.report.years_old') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.total_monthly_income') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.income_from_retirement_plan') }}</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.income_from_GOSI_or_PPA') }}</td>
+						<td>0</td>
+					</tr>
+					
+				</table>
+			</div>
+			
+		</div>
+		<br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+	{{-- Page 7 with table start --}}
+
+
+	<div id="table-break"  class="container-fluid b-shadow parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				{{-- <br><br><br><br><br> --}}
+				<h2 class="mt-1 mb-2">
+	                {{ 'thokhor' }}
+	            </h2>
+	            <h1 class="text-secondary">{{ trans('lang.report.investing_plan') }}</h1>
+	            
+			</div>
+		</div>
+
+		<div class="row" >
+			<div class="col-md-1"></div>
+		    <div class="col-md-10">
+		    	
+
+		      	<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+						  <tr>
+							<th class="btm_table">{{ trans('lang.financial_plan.year') }} #</th>
+							<th class="btm_table">{{ trans('lang.financial_plan.age') }}</th>
+							<th class="btm_table">{{ trans('lang.financial_plan.value_beginning_year') }}</th>
+							<th class="btm_table">{{ trans('lang.financial_plan.contributions') }}</th>
+							<th class="btm_table">{{ trans('lang.financial_plan.returns') }}</th>
+							<th class="btm_table">{{ trans('lang.financial_plan.value_end_year') }}</th>
+						  </tr>
+						</thead>
+						<tbody>
+								<tr>
+								<td class="btm_table_td">
+								  1
+								</td>
+								<td class="btm_table_td">
+								  17
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  664 SAR
+								</td>
+								<td class="btm_table_td">
+								  10,664 SAR
+								</td>
+							  </tr>
+							  <tr   >
+								<td class="btm_table_td">
+								  1
+								</td>
+								<td class="btm_table_td">
+								  17
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  664 SAR
+								</td>
+								<td class="btm_table_td">
+								  10,664 SAR
+								</td>
+							  </tr>
+							  <tr   >
+								<td class="btm_table_td">
+								  1
+								</td>
+								<td class="btm_table_td">
+								  17
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  664 SAR
+								</td>
+								<td class="btm_table_td">
+								  10,664 SAR
+								</td>
+							  </tr>
+							  <tr   >
+								<td class="btm_table_td">
+								  1
+								</td>
+								<td class="btm_table_td">
+								  17
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  5,000 SAR
+								</td>
+								<td class="btm_table_td">
+								  664 SAR
+								</td>
+								<td class="btm_table_td">
+								  10,664 SAR
+								</td>
+							  </tr>
+						</tbody>
+					</table>
+		      	</div>
+		    </div>
+		</div>
+
+		<br><br><br>
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+
+
+	{{-- Page 8 start --}}
+
+
+	<div id="parent-report" class="container-fluid b-shadow mb-5 background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" {{ $not_found ?? '' }}>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<br><br><br><br><br>
+				<h2 class="mt-5 pt-5 mb-4">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+	            <br><br>
+	            <h1 class="heading-main">{{ trans('lang.report.Investing_Plan') }}</h1>
+	            
+			</div>
+		</div>
+
+		<div class="row investing-plan">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<p class="text-secondary mt-5">{{ trans('lang.report.Investments_Seletion') }}</p>
+				<table class="tbl-assumptions">
+					<thead>
+						<tr>
+							<th>{{ trans('lang.report.ASSET_CLASS') }}</th>
+							<th>{{ trans('lang.report.OOPTION_1') }}</th>
+							<th>{{ trans('lang.report.OOPTION_2') }}</th>
+							<th>{{ trans('lang.report.OOPTION_3') }}</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
+						0
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.equities') }}</td>
+						0
+					</tr>
+					<tr>
+						{{-- @dd($constants) --}}
+						<td>{{ trans('lang.report.fix_income') }}</td>
+						0
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.alternative_investment') }}</td>
+						0
+					</tr>
+					{{-- <tr>
+						<td>{{ trans('lang.report.total') }}</td>
+						@foreach($constants->where('constant_meta_type', 'Asset Class (Total)') as $constant)
+							<td >{{ $constant->constant_value }}</td>
+						@endforeach
+					</tr> --}}
+					
+				</table>
+			</div>
+			
+		</div>
+
+
+		<div class="row investing-plan">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<p class="text-secondary mt-5">{{ trans('lang.report.Capitel_Deployment') }}</p>
+				<table>
+					<thead>
+						<tr>
+							<th>{{ trans('lang.report.ASSET_CLASS') }}</th>
+							<th>{{ trans('lang.report.PAYMENTS') }}</th>
+							<th>{{ trans('lang.report.NO_OF_FUNDS') }}</th>
+							<th>{{ trans('lang.report.ASSET_ALLOCATION') }}</th>
+							<th>{{ trans('lang.report.INVESABLE_AMOUNT') }}</th>
+						</tr>
+					</thead>
+					<tr>
+						{{-- @dd($constants->where('constant_attribute', 'Number Of Funds 1')->first()->constant_value) --}}
+
+						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
+						<td>{{ trans('lang.report.1_payment') }}</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.equities') }}</td>
+						<td>{{ trans('lang.report.4_payment_over_one_year') }}</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.fix_income') }}</td>
+						<td>{{ trans('lang.report.1_payment') }}</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.alternative_investment') }}</td>
+						<td>{{ trans('lang.report.Manual_process') }}</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>{{ trans('lang.report.Total') }}</td>
+						<td></td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					
+					
+					
+				</table>
+
+				<div class="mt-5">
+					<a href="https://www.surveymonkey.com/r/3MX5GTV" target="_blank" class="survey_link" >{{ trans('lang.report.please_could_you_response_to_the_following_survey') }}</a>
+				</div>
+
+			</div>
+			
+		</div>
+		
+
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		<br><br><br><br><br>
+		
+	</div>
+
+
+
+
+	{{-- Page 9 start --}}
+
+
+	<div id="disclaimer" class="container-fluid b-shadow parent-report background_effect" style="background-image: url('{{ asset('frontend_assets/assets/img/report/report-clouds-full-bg-2.svg') }}')" >
+		<div class="row">
+			<div class="col-1 rem-col"></div>
+			<div class="col-10">
+				{{-- <br><br><br><br><br> --}}
+				<h2 class="mt-5 mb-2">
+	                {{ 'thokhor' }}
+	                {{-- {{ althraa_site_title() }} --}}
+	            </h2>
+
+	          
+	            
+	            <h1 class="heading-main text-center">{{ trans('lang.disclaimer') }}</h1>
+
+	             <div class="text-center">
+	           	 <img src="{{ asset('frontend_assets/assets/img/report/disclaimer.svg')}}" style="width: 40%" alt="">
+	           </div>
+	            
+			</div>
+		</div>
+
+
+		{{-- @if($request->segment(1) == 'en')
+			<div class="row mt-2">
+				<div class="col-1 rem-col"></div>
+				<div class="col-10 to-12">
+
+					<h1>{{ trans('lang.frontend_legal.about_our_services') }}</h1>
+	            	<p class="text-justify">{{ trans('lang.frontend_legal.about_our_services_text') }}</p>
+	            	<br>
+
+
+		            <h1>{{ trans('lang.frontend_legal.purpose') }}</h1>
+		            <p class="text-justify">{{ trans('lang.frontend_legal.purpose_text') }}</p>
+		            <br>
+
+		            <h1>{{ trans('lang.frontend_legal.stake_and_responsabilities') }}</h1>
+	                <p class="text-justify">{{ trans('lang.frontend_legal.stake_and_responsabilities_text_1') }}</p>
+	                
+	                <p class="text-justify">{{ trans('lang.frontend_legal.stake_and_responsabilities_text_2') }}</p>
+	                
+
+				</div>
+			</div>
+		@else --}}
+			<div class="row mt-2">
+					<div class="col-1 rem-col"></div>
+					<div class="col-10 to-12">
+						<br><br><br>
+					
+						<p class="text-justify">{{ trans('lang.pdf_disclaimer') }}</p>
+						<p class="text-justify">{{ trans('lang.pdf_disclaimer_para_2') }}</p>
+						<ol class="disclaimer">
+							<li><p class="text-justify" >{{ trans('lang.pdf_disclaimer_li_1') }}</p></li>
+							<li><p class="text-justify" >{{ trans('lang.pdf_disclaimer_li_2') }}</p></li>
+							<li><p class="text-justify" >{{ trans('lang.pdf_disclaimer_li_3') }}</p></li>
+							<li><p class="text-justify" >{{ trans('lang.pdf_disclaimer_li_4') }}</p></li>
+						</ol>
+						<p class="text-justify">{{ trans('lang.pdf_disclaimer_para_3') }}</p>
+						<br><br><br>
+						<br><br><br>
+					</div>
+			</div>
+		{{-- @endif --}}
+
+		{{-- <p class="text-center mr-5">{{ trans('lang.thokhor_dot_com') }}</p> --}}
+	</div>
+
+</div>
+
+
+@endsection
+
+@section('scripts')
+{{-- <script src="html2pdf.bundle.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+{{-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> --}}
+
+
+<script>
+// $(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+// });
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(
+		function() {
+			// window.print();
+			// $("br").remove();
+			// $("body").remove();
+			// window.close();
+			// window.top.close();
+			// $("#parent-report").addClass('container');
+
+			// var element = document.getElementById('printable');
+			// html2pdf(element);
+
+		},
+	2000);
+});
+</script>
+
+<script type="text/javascript">
+/////////////////////////////////////
+/*
+|-------------------------------
+|		Donut Chart Selected Asset
+|-------------------------------
+*/
+var ctx = document.getElementById("DonutChartSelectedAsset");
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: [
+    	'Cash and Equivalent', 
+    	'Equities', 
+    	'Fix income', 
+    	'Alternative investments',
+    ],
+    datasets: [{
+		label: [
+			'Cash and Equivalent', 
+			'Equities', 
+			'Fix income', 
+			'Alternative investments',
+		],
+		data: [20, 40, 51, 90, 20, 0, 10],
+		
+		backgroundColor: [
+			'#3B83FF',
+			'#2dd782',
+			'#FFE700',
+			'#01baef',
+		],
+		borderColor: [
+			'#3B83FF',
+			'#2dd782',
+			'#FFE700',
+			'#01baef',
+		],
+		borderWidth: 1
+		}]
+  },
+  options: {
+  	aspectRatio: 1,
+   	cutoutPercentage: 60,
+    responsive: true,
+    legend: { 
+    	position: 'none',
+    },
+}
+});
+
+
+
+
+
+
+
+/////////////////////////////////////
+/*
+|-------------------------------
+|		Donut Chart Selected Asset Recommended
+|-------------------------------
+*/
+var ctx = document.getElementById("DonutChartSelectedAssetRecommended");
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: [
+    	'Cash and Equivalent', 
+    	'Equities', 
+    	'Fix income', 
+    	'Alternative investments',
+    	
+    ],
+    datasets: [{
+		label: [
+			'Cash and Equivalent', 
+	    	'Equities', 
+	    	'Fix income', 
+	    	'Alternative investments',
+	    	
+		],
+		data: [20, 40, 51, 90, 20, 0, 10],
+		
+		backgroundColor: [
+			'#3B83FF',
+			'#2dd782',
+			'#FFE700',
+			'#01baef',
+			
+		],
+		borderColor: [
+			'#3B83FF',
+			'#2dd782',
+			'#FFE700',
+			'#01baef',
+			
+		],
+		borderWidth: 1
+		}]
+  },
+  options: {
+   	cutoutPercentage: 60,
+    responsive: true,
+    legend: { 
+    	position: 'none',
+    },
+}
+});
+
+
+
+
+
+
+
+/////////////////////////////////////
+/*
+|-------------------------------
+|		Financial Forecast
+|-------------------------------
+*/
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels:[20, 40, 51, 90, 20, 0, 10],
+        datasets: [{
+              type: 'line',
+              label: 'Before Retirement',
+               "fill": false,
+               "lineTension": 0.1,
+               "backgroundColor": [
+                "#ff0e0e"
+                
+               ],
+               "borderColor": [
+                "#ff0e0e"
+               ],
+               "borderCapStyle": "butt",
+               "borderDash": [],
+               "borderDashOffset": 0,
+               "borderJoinStyle": "miter",
+               "pointBorderColor": [
+                "#ff0e0e"
+               ],
+               "pointBackgroundColor": "#ffffff00",
+               "pointBorderWidth": 1,
+               "pointHoverRadius": 5,
+               "pointHoverBackgroundColor": "#ff0e0e",
+               "pointHoverBorderColor": "#ff0e0e",
+               "pointHoverBorderWidth": 2,
+               "pointRadius": 1,
+               "pointHitRadius": 10,
+			   data: [20, 40, 51, 90, 20, 0, 10],
+            },{
+            label: 'Contribution',
+            data: [20, 40, 51, 90, 20, 0, 10],
+            backgroundColor: '#2dd782',
+            borderColor: '#2dd782',
+            borderWidth: 1
+        	},{
+          	type: 'line',
+            backgroundColor: '#ff87a0',
+            borderColor: '#ff87a0',
+            data: [20, 40, 51, 90, 20, 0, 10],
+
+            "lineTension": 0.1,
+             "backgroundColor": [
+              "#f0f0f0fa"
+              
+             ],
+             "borderColor": [
+              "#f0f0f0fa"
+             ],
+             "borderCapStyle": "butt",
+             "borderDash": [],
+             "borderDashOffset": 0,
+             "borderJoinStyle": "miter",
+             "pointBorderColor": [
+              "#f0f0f0fa"
+             ],
+             "pointBackgroundColor": "#ffffff00",
+             "pointBorderWidth": 1,
+             "pointHoverRadius": 5,
+             "pointHoverBackgroundColor": "#f0f0f0fa",
+             "pointHoverBorderColor": "#f0f0f0fa",
+             "pointHoverBorderWidth": 2,
+             "pointRadius": 1,
+             "pointHitRadius": 10,
+            label: 'Maximum Uncertainty',
+            fill: '+1'
+          }, {
+            type: 'line',
+            backgroundColor: '#9966ff',
+            borderColor: '#9966ff',
+			data: [20, 40, 51, 90, 20, 0, 10],
+            "fill": false,
+             "lineTension": 0.1,
+             "backgroundColor": [
+              "#f0f0f0fa"
+              
+             ],
+             "borderColor": [
+              "#f0f0f0fa"
+             ],
+             "borderCapStyle": "butt",
+             "borderDash": [],
+             "borderDashOffset": 0,
+             "borderJoinStyle": "miter",
+             "pointBorderColor": [
+              "#f0f0f0fa"
+             ],
+             "pointBackgroundColor": "#ffffff00",
+             "pointBorderWidth": 1,
+             "pointHoverRadius": 5,
+             "pointHoverBackgroundColor": "#f0f0f0fa",
+             "pointHoverBorderColor": "#f0f0f0fa",
+             "pointHoverBorderWidth": 2,
+             "pointRadius": 1,
+             "pointHitRadius": 10,
+            label: 'Minimum Uncertainty',
+            fill: false
+          }
+        ]
+    },
+    options: {
+        maintainAspectRatio: true,
+        legend: {
+            position: "bottom"
+        },
+        legend: {
+	        display: false
+	    },
+	    tooltips: {
+	        callbacks: {
+	           label: function(tooltipItem) {
+	           		if($(window).width() < 760){
+                        return tooltipItem.yLabel;
+                    }
+                    else{
+                    }
+                      
+	           }
+	        }
+	    },
+
+        scales: {
+            yAxes: [{
+                  display: true,
+                  position: 'right',
+                ticks: {
+                    fontColor: "rgba(0,0,0,0.5)",
+                    fontStyle: "bold",
+                    beginAtZero: true,
+                    maxTicksLimit: 20,
+                    padding: 20,
+                    // userCallback: function(value, index, values) {
+                    //     value = value.toString();
+                    //     if($(window).width() < 760)
+                    //       return value;
+                    //     else
+                    //       return 'SAR ' + value;
+                    // },
+                    userCallback: function(tick, index, array) {
+                      if($(window).width() < 760){
+                        return (index % 3) ? "" : tick;
+                      }
+                      else{
+                        return (index % 2) ? "" : 'SAR ' + (Math.round(tick * 100) / 100).toLocaleString();
+                      }
+                    }
+                },
+                gridLines: {
+                    drawTicks: false,
+                    display: false
+                }
+
+            }],
+            xAxes: [{
+                gridLines: {
+                    zeroLineColor: "transparent"
+                },
+                ticks: {
+                    padding: 20,
+                    fontColor: "rgba(0,0,0,0.5)",
+                    fontStyle: "bold",
+                    callback: function(tick, index, array) {
+                      if($(window).width() < 760){
+                        return (index % 3) ? "" : tick;
+                      }
+                      else{
+                        return (index % 1) ? "" : tick;
+                      }
+                    }
+                    
+                }
+            }]
+        },
+        responsive: true,
+        plugins: {
+          filler: {
+            propagate: false
+          },
+          'samples-filler-analyser': {
+            target: 'chart-analyser'
+          }
+        }
+    }
+    // options: {
+    //     scales: {
+    //         yAxes: [{
+    //             ticks: {
+    //                 beginAtZero: true
+    //             }
+    //         }]
+    //     }
+    // }
+});
+</script>
+
+<script type="text/javascript">
+// function addScript(url) {
+    // var script = document.createElement('script');
+    // script.type = 'application/javascript';
+    // script.src = url;
+    // document.head.appendChild(script);
+// }
+// addScript('{{ asset('backend_assets/dashboard/js/print.js') }}');
+
+$(document).ready(function(){
+	setTimeout(
+		function() {			
+			// html2pdf(document.body, {
+			//   pagebreak: { mode: 'avoid-all' , before: '#table-break', }
+			// });
+		},
+	500);
+});
+
+$(document).ready(function(){
+	setTimeout(
+		function() {
+			function myFunction(x) {
+
+				if (x.matches) { // If media query matches
+				    // $('.col-1').removeClass('col-1');
+				    $('.col-5').toggleClass('col-12');
+				    $('.rem-col').remove();
+				    // $('.col-5').toggleClass('col-10');
+				    $('.col-9.factor').removeClass('col-9').addClass('col-12');
+				    $('.col-10.to-12').removeClass('col-10').addClass('col-12');
+				    $('.col-8.to-10').removeClass('col-8').addClass('col-10');
+				    $('#HTMLtoPDF:not(.background_effect) > div').addClass('container');
+				 } 
+				}
+
+				var x = window.matchMedia("(max-width: 700px)")
+				myFunction(x) // Call listener function at run time
+				x.addListener(myFunction) // Attach listener function on state changes
+		},
+	1000);
+});
+
+</script>
+
+@endsection

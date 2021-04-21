@@ -104,19 +104,20 @@ class ReportController extends Controller
         );
 
 
-        /* try{ */
+        try{
             Mail::to(auth()->user()->email)->send(new SampleReport($data));
             $res=[
                 "status"=>'success',
                 "message"=>'report sent'
             ];
-        /* }catch ( \Exception $exception) {
+        }catch ( \Exception $exception) {
+            dd($exception);
             $res=[
                 "status"=>'error',
                 "message"=>'Unable to send mail'
             ];
             
-        } */
+        }
         return $res;
     }
 

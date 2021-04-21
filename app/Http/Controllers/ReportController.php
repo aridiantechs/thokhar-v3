@@ -111,7 +111,6 @@ class ReportController extends Controller
                 "message"=>'report sent'
             ];
         }catch ( \Exception $exception) {
-            dd($exception);
             $res=[
                 "status"=>'error',
                 "message"=>'Unable to send mail'

@@ -138,4 +138,22 @@ class User extends Authenticatable
                 ->orderBy('questionnaire_id', 'DESC')
                 ->first();
     }
+
+    public function profile()
+    {
+        $questionnaire=$this->user_latest_questionnaire();
+        if ($questionnaire) {
+            $profile=$questionnaire->personal_info ?? false;
+            if ($profile) {
+                $res= $profile;
+            } else {
+                $res= false;
+            }
+            
+        }else{
+            $res=false;
+        }
+
+        return $res;
+    }
 }

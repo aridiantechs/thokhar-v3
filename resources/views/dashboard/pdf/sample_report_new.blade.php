@@ -99,6 +99,18 @@
             background: transparent linear-gradient(270deg, #2DD782 0%, #FF5656 100%) 0% 0% no-repeat padding-box;
 		@endif
     }
+
+	.blur{
+		color: transparent;
+   		text-shadow: 0 0 3px rgba(0,0,0,0.5);
+		-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			-khtml-user-select: none; /* Konqueror HTML */
+			-moz-user-select: none; /* Old versions of Firefox */
+				-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none; /* Non-prefixed version, currently
+										supported by Chrome, Edge, Opera and Firefox */
+	}
 </style>
 
 @endsection
@@ -124,7 +136,7 @@
 	            </h2>
 	            <br><br><br><br><br>
 	            <h1 class="heading-main">{{ trans('lang.report.PERSONAL_FINANCIAL_PLAN') }}</h1>
-	            <h1 class="user-main mt-3">Khalid Mehmood</h1>
+	            <h1 class="user-main mt-3">{{auth()->user()->name ?? ''}}</h1>
 			</div>
 		</div>
 
@@ -301,25 +313,27 @@
 		
 		<div class="row mt-1 personal-info">
 			<div class="col-1 rem-col"></div>
-			
+			@php
+				$profile=auth()->user()->profile();
+			@endphp
 			<div class="col-3">
 				<p>{{ trans('lang.report.name') }}</p>
-				<b>Khalid Mehmood</b>
+				<b>{{auth()->user()->name ?? ''}}</b>
 			</div>
 			
 			<div class="col-3">
 				<p>{{ trans('lang.report.education') }}</p>
-				<b>Bachelors</b>
+				<b>{{$profile['personal_info']['education_level'] ?? ''}}</b>
 			</div>
 			
 			<div class="col-2">
 				<p>{{ trans('lang.report.current_age') }}</p>
-				<b>30</b>
+				<b>{{$profile['personal_info']['years_old'] ?? ''}}</b>
 			</div>
 			
 			<div class="col-3">
 				<p>{{ trans('lang.report.planned_retirement_age') }}</p>
-				<b>60</b>
+				<b>{{$profile['personal_info']['retirement_age'] ?? ''}}</b>
 			</div>
 			
 			<br><br>
@@ -340,19 +354,19 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.monthly_income_today') }}</td>
-						<td>4,167 SAR</td>
+						<td class="blur">4,167 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.question.gosi_or_ppa_monthly_subscription') }}</td>
-						<td> 20,000 SAR</td>
+						<td class="blur"> 20,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.question.monthly_saving_plan_for_retirement') }}</td>
-						<td> 800,000 SAR</td>
+						<td class="blur"> 800,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.monthly_saving_percentage_today') }}</td>
-						<td>19680 %</td>
+						<td class="blur">19680 %</td>
 					</tr>
 					
 				</table>
@@ -361,19 +375,19 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.total_assets_today') }}</td>
-						<td>240,045 SAR</td>
+						<td class="blur">240,045 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.total_liabilities_today') }}</td>
-						<td> 0</td>
+						<td class="blur"> 0</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.net_worth') }}</td>
-						<td>0 SAR</td>
+						<td class="blur">0 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.accomulative_saving_today') }}</td>
-						<td>5,000 SAR</td>
+						<td class="blur">5,000 SAR</td>
 					</tr>
 					
 				</table>
@@ -391,10 +405,10 @@
 							<canvas id="DonutChartSelectedAsset" width="100" height="100"></canvas>
 						    <!--graph inner-->
 						    <br>
-						    <p class="text-center inner_price donut_inner">
+						    <p class="text-center inner_price donut_inner blur">
 						    	30000 SAR
 						    </p>
-						    <p class="text-center donut_inner">
+						    <p class="text-center donut_inner blur">
 						    	{{-- {{ percentage(100) }} --}}
 						    	100%
 						    </p>
@@ -416,12 +430,12 @@
 											<p>{{ trans('lang.report.cash_and_equivalent') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												4 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10000 SAR
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
@@ -435,12 +449,12 @@
 											<p>{{ trans('lang.report.equities') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												2 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10000 SAR
 												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
 											</p>
@@ -454,12 +468,12 @@
 											<p>{{ trans('lang.report.fix_income') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												52 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10000 SAR
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
@@ -473,12 +487,12 @@
 											<p>{{ trans('lang.report.alternative_investment') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												100 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10000 SAR
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>
@@ -492,12 +506,12 @@
 											<p>{{ trans('lang.report.total') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												100 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												240,045 SAR
 											</p>
 										</td>
@@ -975,10 +989,10 @@
 							<canvas id="DonutChartSelectedAssetRecommended" width="400" height="400"></canvas>
 						    <!--graph inner-->
 						    <br>
-						    <p class="text-center inner_price donut_inner">
+						    <p class="text-center inner_price donut_inner blur">
 						    	5,000 SAR 
 						    </p>
-						    <p class="text-center donut_inner">
+						    <p class="text-center donut_inner blur">
 						    	{{-- {{ percentage(100) }} --}}
 						    	100%
 						    </p>
@@ -1000,12 +1014,12 @@
 											<p>{{ trans('lang.report.cash_and_equivalent') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												
 												500 SAR
 											
@@ -1021,14 +1035,14 @@
 											<p>{{ trans('lang.report.equities') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												
 												55 %
 											
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												10000
 												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
 											</p>
@@ -1042,12 +1056,12 @@
 											<p>{{ trans('lang.report.fix_income') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												15 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												750 SAR
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
@@ -1061,12 +1075,12 @@
 											<p>{{ trans('lang.report.alternative_investment') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												20 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												1000 SAR
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>
@@ -1080,12 +1094,12 @@
 											<p>{{ trans('lang.report.total') }}</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												100 %
 											</p>
 										</td>
 										<td>
-											<p class="text_black text-left">
+											<p class="text_black text-left blur">
 												5000 SAR
 											</p>
 										</td>
@@ -1149,29 +1163,29 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.current_age') }}</td>
-						<td>17</td>
+						<td class="blur">17</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.planned_retirement_age') }}</td>
-						<td>60</td>
+						<td class="blur">60</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.monthly_saving_plan') }}</td>
-						<td>800000 SAR</td>
+						<td class="blur">800000 SAR</td>
 					</tr>
 					<tr>
 						<td>
 							{{ trans('lang.report.monthly_saving_today') }}
 							{{-- {{ trans('lang.report.monthly_saving_today') .trans('lang.report.of_monthly_income') }} --}}
 						</td>
-						<td>
+						<td class="blur">
 						19680 %
-						{{-- {!! ($request->segment(1) == 'ar') ? trans('lang.report.of_monthly_income') . percentage($data['monthlySavingPercentageToday']) : percentage($data['monthlySavingPercentageToday']) . trans('lang.report.of_monthly_income') !!} --}}
-					</td>
+							{{-- {!! ($request->segment(1) == 'ar') ? trans('lang.report.of_monthly_income') . percentage($data['monthlySavingPercentageToday']) : percentage($data['monthlySavingPercentageToday']) . trans('lang.report.of_monthly_income') !!} --}}
+						</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.accumulative_saving_today') }}</td>
-						<td>5000 SAR</td>
+						<td class="blur">5000 SAR</td>
 					</tr>
 
 					<tr>
@@ -1190,23 +1204,23 @@
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
-						<td>2 %</td>
+						<td class="blur">2 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
-						<td>10 %</td>
+						<td class="blur">10 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.fix_income') }}</td>
-						<td>5 %</td>
+						<td class="blur">5 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
-						<td>12 %</td>
+						<td class="blur">12 %</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.net_return_before_reitement') }}</td>
-						<td>4 %</td>
+						<td class="blur">4 %</td>
 					</tr>
 					
 					{{-- <tr>
@@ -1230,20 +1244,19 @@
 					</tr> --}}
 					<tr>
 						<td>{{ trans('lang.report.retirement_plan_value_at') }} 0 {{ trans('lang.report.years_old') }}</td>
-						<td>4,664,933 SAR</td>
+						<td class="blur">4,664,933 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.total_monthly_income') }}</td>
-						<td>69,300 SAR</td>
+						<td class="blur">69,300 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.income_from_retirement_plan') }}</td>
-						<td>15,550 SAR</td>
+						<td class="blur">15,550 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.income_from_GOSI_or_PPA') }}</td>
-						<td>53,750 SAR
-						</td>
+						<td class="blur">53,750 SAR</td>
 					</tr>
 					
 				</table>
@@ -2365,28 +2378,28 @@
 					</thead>
 					<tr>
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
-						<td>(012013) صندوق الراجحي للمضاربة بالبضائع بالريال</td>
-						<td>(045002) صندوق الأهلي للمتاجرة بالريال السعودي</td>
-						<td>(159002) صندوق ألفا للمرابحة</td>
+						<td class="blur">(012013) صندوق الراجحي للمضاربة بالبضائع بالريال</td>
+						<td class="blur">(045002) صندوق الأهلي للمتاجرة بالريال السعودي</td>
+						<td class="blur">(159002) صندوق ألفا للمرابحة</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
-						<td>iShares MSCI USA Islamic UCITS ETF</td>
-						<td>(030003) صندوق جدوى للأسهم السعودية - الفئة ب</td>
-						<td>(9400) صندوق فالكم المتداول للأسهم السعودية</td>
+						<td class="blur">iShares MSCI USA Islamic UCITS ETF</td>
+						<td class="blur">(030003) صندوق جدوى للأسهم السعودية - الفئة ب</td>
+						<td class="blur">(9400) صندوق فالكم المتداول للأسهم السعودية</td>
 					</tr>
 					<tr>
 						{{-- @dd($constants) --}}
 						<td>{{ trans('lang.report.fix_income') }}</td>
-						<td>(009045) صندوق سامبا لصكوك الشركات-فئة ب</td>
-						<td>(012036) صندوق الراجحي للصكوك</td>
-						<td>(9404) صندوق الإنماء المتداول للصكوك</td>
+						<td class="blur">(009045) صندوق سامبا لصكوك الشركات-فئة ب</td>
+						<td class="blur">(012036) صندوق الراجحي للصكوك</td>
+						<td class="blur">(9404) صندوق الإنماء المتداول للصكوك</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
-						<td>(4339) صندوق دراية ريت</td>
-						<td>(4348) صندوق الخبير ريت</td>
-						<td>(9405) صندوق البلاد المتداول للمتاجرة بالذهب</td>
+						<td class="blur">(4339) صندوق دراية ريت</td>
+						<td class="blur">(4348) صندوق الخبير ريت</td>
+						<td class="blur">(9405) صندوق البلاد المتداول للمتاجرة بالذهب</td>
 					</tr>
 					{{-- <tr>
 						<td>{{ trans('lang.report.total') }}</td>
@@ -2419,38 +2432,38 @@
 						{{-- @dd($constants->where('constant_attribute', 'Number Of Funds 1')->first()->constant_value) --}}
 
 						<td>{{ trans('lang.report.cash_and_equivalent') }}</td>
-						<td>{{ trans('lang.report.1_payment') }}</td>
-						<td>1</td>
-						<td>10 %</td>
-						<td>500 SAR</td>
+						<td class="blur">{{ trans('lang.report.1_payment') }}</td>
+						<td class="blur">1</td>
+						<td class="blur">10 %</td>
+						<td class="blur">500 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.equities') }}</td>
-						<td>{{ trans('lang.report.4_payment_over_one_year') }}</td>
-						<td>2</td>
-						<td>55 %</td>
-						<td>2,750 SAR </td>
+						<td class="blur">{{ trans('lang.report.4_payment_over_one_year') }}</td>
+						<td class="blur">2</td>
+						<td class="blur">55 %</td>
+						<td class="blur">2,750 SAR </td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.fix_income') }}</td>
-						<td>{{ trans('lang.report.1_payment') }}</td>
-						<td>1</td>
-						<td>15 %</td>
-						<td>750 SAR</td>
+						<td class="blur">{{ trans('lang.report.1_payment') }}</td>
+						<td class="blur">1</td>
+						<td class="blur">15 %</td>
+						<td class="blur">750 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.alternative_investment') }}</td>
-						<td>{{ trans('lang.report.Manual_process') }}</td>
-						<td>2</td>
-						<td>20 %</td>
-						<td>1,000 SAR</td>
+						<td class="blur">{{ trans('lang.report.Manual_process') }}</td>
+						<td class="blur">2</td>
+						<td class="blur">20 %</td>
+						<td class="blur">1,000 SAR</td>
 					</tr>
 					<tr>
 						<td>{{ trans('lang.report.Total') }}</td>
-						<td></td>
-						<td>6</td>
-						<td>100 %</td>
-						<td>5,000 SAR </td>
+						<td class="blur"></td>
+						<td class="blur">6</td>
+						<td class="blur">100 %</td>
+						<td class="blur">5,000 SAR </td>
 					</tr>
 					
 					

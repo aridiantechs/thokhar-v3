@@ -101,8 +101,8 @@
     }
 
 	.blur{
-		color: transparent;
-   		text-shadow: 0 0 3px rgba(0,0,0,0.5);
+		color: transparent !important;
+   		text-shadow: 0 0 4px rgba(0,0,0,0.5);
 		-webkit-touch-callout: none; /* iOS Safari */
 			-webkit-user-select: none; /* Safari */
 			-khtml-user-select: none; /* Konqueror HTML */

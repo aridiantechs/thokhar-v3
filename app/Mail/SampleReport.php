@@ -30,7 +30,7 @@ class SampleReport extends Mailable
     public function build()
     {
         // dd($this->data['certificate_id']);
-        return $this->from('no-reply@thokhor.com','Thokhor')
+        return $this->from('noreply@thokhor-v3.aridiantechnologies.com','Thokhor')
                     ->subject($this->data['subject'])
                     ->view($this->data['view']);
     }

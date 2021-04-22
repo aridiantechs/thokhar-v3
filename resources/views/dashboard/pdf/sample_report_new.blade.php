@@ -323,7 +323,7 @@
 			
 			<div class="col-3">
 				<p>{{ trans('lang.report.education') }}</p>
-				<b>{{$profile['personal_info']['education_level'] ?? ''}}</b>
+				<b>{{trans($profile['personal_info']['education_level'] ?? '')}}</b>
 			</div>
 			
 			<div class="col-2">

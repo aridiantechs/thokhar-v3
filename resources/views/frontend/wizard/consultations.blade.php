@@ -280,7 +280,7 @@
 						});
 
 					} else {
-						
+						$('#slot').append(`<option value=>No slots available</option>`);
 					}
 					
 				}

@@ -145,7 +145,7 @@ class QuestionnaireController extends Controller
                 "data"=>$slots
             ];
         }else{
-            $slots=[
+            $res=[
                 "status"=>'error',
             ];
         }

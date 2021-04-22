@@ -233,7 +233,7 @@ Route::group([
         Route::get('/counseling', 'ConsultationsController@index')->name('counseling');
         Route::post('/work_hours', 'ConsultationsController@store')->name('work_hours.store');
         Route::post('/assign_consultation', 'ConsultationsController@assign_consultation')->name('assign_consultation');
-
+        Route::get('/get_appointments', 'ConsultationsController@getAppointments')->name('getAppointments');
        // --------------------------------- Plans & Coupons ------------------------------------
        Route::get('/plans_coupons', 'PlanCouponController@index')->name('plans_coupons');
        Route::get('/create_plan', 'PlanCouponController@create_plan')->name('create_plan');

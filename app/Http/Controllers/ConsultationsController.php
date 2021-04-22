@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Slot;
 use App\User;
+use DateTime;
 use Carbon\Carbon;
 use App\WorkingHour;
 use App\Consultations;
@@ -22,7 +23,7 @@ class ConsultationsController extends Controller
         if (auth()->user()->hasRole('admin')) {
             $slots=Slot::all();
             $consultations=Consultations::whereHas('working_hour',function($q){
-                $q->whereDate('date','=',Carbon::tomorrow()->format('Y-m-d'));
+                $q->whereDate('date','=',Carbon::now()->format('Y-m-d'));
             })->with('slot')->get();
             $startDate = Carbon::today();
             
@@ -60,6 +61,39 @@ class ConsultationsController extends Controller
                 ]);
     }
 
+
+    public function getAppointments(Request $request)
+    {
+        if ($request->date) {
+            try {
+                
+                $date= Carbon::createFromFormat('D M d Y', $request->date)->format('Y-m-d');
+                $consultations=Consultations::whereHas('working_hour',function($q) use ($date){
+                    $q->whereDate('date','=',$date);
+                })->with('slot')->get();
+
+                $data=[
+                    'status'=>true,
+                    'data'=>view('dashboard.components.appointments',compact('date','consultations'))->render()
+                ];
+
+            } catch (\Exception $e) {
+                $data=[
+                    'status'=>false,
+                    'message'=>"invalid date"
+                ];
+            }  
+        } else {
+            $data=[
+                'status'=>false,
+                'message'=>"date is required"
+            ];
+            
+        }
+        
+        return $data;
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

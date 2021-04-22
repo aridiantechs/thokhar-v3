@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/theme.css">
 <style>
 .table thead th {
     vertical-align: bottom;
@@ -420,6 +423,10 @@ border-radius: .5rem;
     font-size: 12px;
     color: #a7a7a7;
 }
+
+.ft-20p{
+    font-size: 20px !important;
+}
 </style>
 @endsection
 @section('content')
@@ -436,10 +443,10 @@ border-radius: .5rem;
                     <div class="col-md-8 shift_col">
                         <div class="row">
                             <div class="col-md-6 mb-3 col-sm-6">
-                                <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
+                                {{-- <button type="button" class="btn-calender bg-talent w-100-sm" style="height: unset !important">
                                     <span class="btn-calender__span1">April 2021</span>
                                     <span class="btn-calender__span2"><i class="fas fa-angle-down"></i></span>
-                                </button>
+                                </button> --}}
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm" pd-popup-open="popupNew">
@@ -450,45 +457,18 @@ border-radius: .5rem;
                         
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 bg__grey p-5">
-                <div class="mb-3">
-                    <h4 class="blue__head">{{\Carbon\Carbon::tomorrow()->format('l')}}</h4>
-                    <span class="sub_text">{{\Carbon\Carbon::tomorrow()->format('Y-m-d')}}</span>
-                </div>
-            
-                @foreach ($consultations as $consult)
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="bg-white p-2 ">
-                                <p class="color_blue user_detail" pd-popup-open="userDetail" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}">{{$consult->user->name ?? ''}}<br><span class="consult__time">{{$consult->slot->slot ?? ''}}</span> </p>
-                                <button class="btn btn-info assign_btn" pd-popup-open="counselling_session" data-consultid="{{$consult->id}}" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}">Assign</button>
-                            </div>
-                        </div>
-                        {{-- <div class="col-md-3"><p>08:00</p> </div> --}}
-                    </div>
-                    <br>
-                @endforeach
-                
-                {{-- <div class="row">
-                    <div class="col-md-9">
-                        <div class="bg-white p-2">
-                            <p class="color_blue">User Name Here <br><span>8:00 - 8:29</span></p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3"><p>08:00</p> </div>
-                </div>
-                <br>
                 <div class="row">
-                    <div class="col-md-9">
-                        <div class="bg-white p-2">
-                            <p class="color_blue">User Name Here <br><span>8:00 - 8:29</span></p>
+                    <div class="col-md-12">
+                        <div class="calendar-container ft-20p">
 
                         </div>
                     </div>
-                    <div class="col-md-3"><p>08:00</p> </div>
-                </div> --}}
+                </div>
+            </div>
+            <div class="col-md-3 bg__grey p-5" id="appointments">
+                @include('dashboard.components.appointments',["consultations"=>$consultations])
+                
+                
             </div>
         </div>
 		
@@ -598,7 +578,7 @@ border-radius: .5rem;
                                 <div class="input-group-prepend">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
-                                <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input consult_user_name" aria-label="Amount (to the nearest dollar)">
+                                <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_name" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
@@ -609,7 +589,7 @@ border-radius: .5rem;
                                 <div class="input-group-prepend">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-calendar fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
-                                <input disabled type="text" class="form-control bg-gray-1 cs__input" placeholder="{{\Carbon\Carbon::tomorrow()->format('d M Y')}}" aria-label="Amount (to the nearest dollar)">
+                                <input disabled type="text" class="form-control bg-gray-1 cs__input ft-14 consult_session_date" placeholder="" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
@@ -620,7 +600,7 @@ border-radius: .5rem;
                                 <div class="input-group-prepend">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-clock fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
-                                <input disabled type="text" class="form-control bg-gray-1 cs__input consult_session_time" placeholder="" aria-label="Amount (to the nearest dollar)">
+                                <input disabled type="text" class="form-control bg-gray-1 cs__input ft-14 consult_session_time" placeholder="" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
@@ -752,6 +732,7 @@ border-radius: .5rem;
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/calendar.min.js"></script>
     <script>
         $(document).ready(function(){
             $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
@@ -786,9 +767,59 @@ border-radius: .5rem;
             e.preventDefault();
             var user=$(this).data('user');
             var slot=$(this).data('slot');
-            $('.consult_user_name').attr('placeholder','').attr('placeholder',user.name);
-            $('.consult_session_time').attr('placeholder','').attr('placeholder',slot);
+            var working_date=$(this).data('workingdate');
+            $('.consult_user_name').val('').val(user.name);
+            $('.consult_session_time').val('').val(slot);
+            $('.consult_session_date').val('').val(working_date);
             $('[name="consult_id"]').val($(this).data('consultid'));
+            $('[pd-popup="' + jQuery(this).attr('pd-popup-open') + '"]').fadeIn(100);
         })
+    </script>
+
+    <script>
+        $(function(){
+            function selectDate(date) {
+                $('.calendar-container').updateCalendarOptions({
+                    date: date
+                });
+
+                getAppointments(new Date(date).toDateString());
+            }
+            
+            var defaultConfig = {
+                weekDayLength: 1,
+                date: new Date(),
+                onClickDate: selectDate,
+                showYearDropdown: true,
+                startOnMonday: true,
+                /* disable: function (date) { 
+                    return date < new Date();
+
+                }, */
+            };
+
+            $('.calendar-container').calendar(defaultConfig);
+
+            function getAppointments(date)
+            {
+                console.log(date);
+                if (date !='') {
+                    $.get( "{{route('getAppointments',app()->getLocale())}}", {
+                        date: date,
+                    },
+                    function(res){
+                        if (res.status) {
+                            $('#appointments').html(res.data);
+                        }else{
+                            toastr.error(res.message);
+                        }
+                        
+                    });
+                } else {
+                    toastr.error("invalid date format");
+                }
+            }
+        
+        });
     </script>
 @endsection

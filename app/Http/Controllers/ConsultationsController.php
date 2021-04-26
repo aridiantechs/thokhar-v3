@@ -41,14 +41,14 @@ class ConsultationsController extends Controller
                     "day"=>$day->format('l')
                 ];
             }
+
+            $working_hours=WorkingHour::whereIn('date',collect($week)->pluck('id'))->get();
         } elseif(auth()->user()->hasRole('moderator')) {
             $consult=Consultations::where('assign_to',auth()->user()->id)->get();
             
             return view('dashboard.control_panel.moderator.list',compact('consult'));
         }
         
-        
-       /* dd($moderators); */
 
        return view('dashboard.control_panel.counseling.list')
                 ->with([
@@ -56,6 +56,7 @@ class ConsultationsController extends Controller
                     'page_title' => 'Counseling',
                     'week' => $week,
                     'slots'=>$slots,
+                    'working_hours'=>$working_hours,
                     'consultations'=>$consultations,
                     'moderators'=>$moderators
                 ]);
@@ -116,6 +117,10 @@ class ConsultationsController extends Controller
         foreach ($request->day as $key => $date) {
             if ($request->status && $request->slots) {
                 if (array_key_exists($key,$request->status) && array_key_exists($key,$request->slots) ) {
+                    $check=WorkingHour::where('date',$key)->get();
+                    if (count($check) > 0) {
+                        $check->delete();
+                    }
                     $working=new WorkingHour;
                     $working->date=$key;
                     $working->slots=implode(",",$request->slots[$key]);

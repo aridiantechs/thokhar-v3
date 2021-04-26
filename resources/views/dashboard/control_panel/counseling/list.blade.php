@@ -236,7 +236,7 @@ th {
             transform: translate(50%, -50%);
             border-radius: 100%;
             background: transparent;
-            border: solid 4px #808080;
+            border: solid 3px white !important;
         }
 
         .popup-close:after,
@@ -247,8 +247,8 @@ th {
             left: 6px;
             height: 4px;
             width: 16px;
+            background: #007bff;
             border-radius: 30px;
-            background: #ef1d1d;
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
         }
@@ -258,22 +258,18 @@ th {
             transform: rotate(-45deg);
         }
 
-        .popup-close:hover {
+        /* .popup-close:hover {
             -webkit-transform: translate(50%, -50%) rotate(180deg);
             transform: translate(50%, -50%) rotate(180deg);
             text-decoration: none;
             background: red !important;
             border-color: #ffffff !important;
-        }
+        } */
 
-        .popup-close:hover:after,
+        /* .popup-close:hover:after,
         .popup-close:hover:before {
             background: #fff;
-        }
-
-        .popup-close {
-            border: solid 3px red !important;
-        }
+        } */
 
         .counseling-pop-up{
             max-width: 500px !important;
@@ -427,6 +423,19 @@ border-radius: .5rem;
 .ft-20p{
     font-size: 20px !important;
 }
+
+.chosen-container-multi .chosen-choices {
+    border: 1px solid #d6d6d6;
+    background-color: #fff;
+    background-image: unset; 
+    background-image: unset;
+    cursor: text;
+    padding: 6px;
+}
+
+.sub_head em{
+	font-style: inherit;
+}
 </style>
 @endsection
 @section('content')
@@ -511,10 +520,14 @@ border-radius: .5rem;
                                                     </div>
                                                 </td>
                                                 
+                                                @php
+                                                    $working=$working_hours->where('date',$day['id'])->first();
+                                                @endphp
+
                                                 <td class="align-middle w-320px">
                                                     <select data-placeholder="Choose a slot..." multiple class="chosen-select" name="slots[{{$day['id']}}][]">
                                                         @foreach ($slots as $key => $slot)
-                                                            <option value="{{$slot->id}}">{{$slot->slot}}</option>
+                                                            <option value="{{$slot->id}}" {{$working ? ( $working->slot_locate()->contains('id',$slot->id) ? 'selected' : '' ) : ''}}>{{$slot->slot}}</option>
                                                         @endforeach
 
                                                     </select>

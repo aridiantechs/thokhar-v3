@@ -706,6 +706,7 @@ function indicator(value){
 <script>
 	$('#send_sample_report').on('click',function(e){
 		e.preventDefault();
+		$('body').removeClass('loaded');
 		$.ajax({
 			url: "{{ route('send_sample_report', locale()) }}",
 			type: "get",
@@ -714,6 +715,7 @@ function indicator(value){
 			},
 
 			success: function (res) {
+				$('body').addClass('loaded');
 				console.log(res);
 				if (res.status=="success") {
 					$('#modal__1').modal('toggle');

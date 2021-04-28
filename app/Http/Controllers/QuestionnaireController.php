@@ -226,6 +226,10 @@ class QuestionnaireController extends Controller
                         return redirect()->route('wizard', $locale);
                     }
                 break;
+            
+            case 'get_report':
+                return $this->getReport();
+                break;
 
             case '/payment':
                 return auth()->user()->fill($request->all())->update()

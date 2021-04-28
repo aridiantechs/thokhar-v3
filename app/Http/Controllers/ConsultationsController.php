@@ -117,8 +117,8 @@ class ConsultationsController extends Controller
         foreach ($request->day as $key => $date) {
             if ($request->status && $request->slots) {
                 if (array_key_exists($key,$request->status) && array_key_exists($key,$request->slots) ) {
-                    $check=WorkingHour::where('date',$key)->get();
-                    if (count($check) > 0) {
+                    $check=WorkingHour::where('date',$key);
+                    if (count($check->get()) > 0) {
                         $check->delete();
                     }
                     $working=new WorkingHour;

@@ -139,6 +139,10 @@ class User extends Authenticatable
                 ->first();
     }
 
+    public function consultation() {
+        return $this->hasOne('App\Consultations', 'user_id', 'id');
+    }
+
     public function profile()
     {
         $questionnaire=$this->user_latest_questionnaire();

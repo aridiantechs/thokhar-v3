@@ -43,6 +43,9 @@
 		padding: 20px 1.25rem !important;
 		font-size: 22px;
 	}
+	.fade-loading .preloader {
+	    background: #ffffff5e;
+	}
 
 
 	@if (app()->getLocale() == 'en') 

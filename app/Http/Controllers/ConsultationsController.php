@@ -9,7 +9,9 @@ use DateTime;
 use Carbon\Carbon;
 use App\WorkingHour;
 use App\Consultations;
+use App\Mail\SessionCancel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ConsultationsController extends Controller
 {
@@ -44,9 +46,17 @@ class ConsultationsController extends Controller
 
             $working_hours=WorkingHour::whereIn('date',collect($week)->pluck('id'))->get();
         } elseif(auth()->user()->hasRole('moderator')) {
-            $consult=Consultations::where('assign_to',auth()->user()->id)->get();
             
-            return view('dashboard.control_panel.moderator.list',compact('consult'));
+            $consultations=Consultations::whereHas('working_hour',function($q){
+                $q->whereDate('date','=',Carbon::now()->format('Y-m-d'));
+            })->where('assign_to',auth()->user()->id)->with('slot')->get();
+            
+            return view('dashboard.control_panel.moderator.list')
+                    ->with([
+                        'title' => 'Counseling',
+                        'page_title' => 'Counseling',
+                        'consultations'=>$consultations,
+                    ]);
         }
         
 
@@ -150,6 +160,45 @@ class ConsultationsController extends Controller
                 $consult->save();
                 if ($consult) {
                     $status = array('msg' => "Data saved", 'toastr' => "successToastr");
+                }
+            }else{
+                $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
+            }
+            
+        }
+
+        else{
+            $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
+        }
+        
+        Session::flash($status['toastr'], $status['msg']);
+        return redirect()->back();
+    }
+
+    public function cancelSession(Request $request)
+    {
+        // dd(123);
+        if ($request->consult_id) {
+            $consult=Consultations::where('id',$request->consult_id)->first();
+            if ($consult) {
+                $consult->assign_to=null;
+                $consult->save();
+                if ($consult) {
+                    $status = array('msg' => "Session Cancelled", 'toastr' => "successToastr");
+                }
+
+                try{
+                    Mail::to($consult->user->email)->send(new SessionCancel());
+                    $res=[
+                        "status"=>'success',
+                        "message"=>'Session Cancelled'
+                    ];
+                }catch ( \Exception $exception) {
+                    $res=[
+                        "status"=>'error',
+                        "message"=>'Unable to send mail'
+                    ];
+                    
                 }
             }else{
                 $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");

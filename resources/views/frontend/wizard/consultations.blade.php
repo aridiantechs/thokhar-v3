@@ -94,10 +94,10 @@
 							</h3>
 						</div>
 						@if (auth()->user()->consultation)
-						<div class="alert alert-warning fade show">
-							<h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i>Warning!</h4>
-							<p>You have already made an appointment.</p>
-						</div>
+							<div class="alert alert-warning fade show">
+								<h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i>Warning!</h4>
+								<p>You have already made an appointment.</p>
+							</div>
 							<form id="qform" action="{{ route('wizard', locale()) }}" class="mt-3" method="POST">
 								@csrf
 								<input type="hidden" name="location" value="get_report">

@@ -202,9 +202,18 @@
               <tbody>
                 <tr>
                   <td>
-                    <h4 style="padding: 1rem">Hello User,</h4>
-                    <br>
-                    <p style="padding: 1rem">Your counseling session was cancelled, please head back to the website and choose your session again. </p>
+                    <a href="{{ route('view-sample-report', 'en') }}" style="text-decoration: none;" > 
+                      <div class="white-btn" style="background: #01630a;text-decoration: none;color: white;padding: 10px 0;font-size: 14px;width: 190px;text-align: center;height: 20px;line-height: 22px;">
+                        Download report in English
+                      </div> 
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{{ route('view-sample-report', 'ar') }}" style="color: #ffffff;text-decoration: none;" >
+                      <div class="white-btn download-btn" style="background: #01630a;text-decoration: none;color: white;padding: 10px 0;font-size: 14px;width: 190px;text-align: center;height: 20px;line-height: 22px;" style="">
+                         حمل التقرير بالعربي
+                      </div>
+                    </a>
                   </td>
                 </tr>
               </tbody>

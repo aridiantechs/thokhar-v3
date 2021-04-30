@@ -142,14 +142,19 @@ class ConsultationsController extends Controller
 
     public function assign_consultation(Request $request)
     {
-        /* dd($request->all()); */
+        // dd($request->all());
         if ($request->assign_to && $request->consult_id) {
-            $consult=Consultations::findOrFail($request->consult_id);
-            $consult->assign_to=$request->assign_to;
-            $consult->save();
+            $consult=Consultations::where('id',$request->consult_id)->first();
             if ($consult) {
-                $status = array('msg' => "Data saved", 'toastr' => "successToastr");
+                $consult->assign_to=$request->assign_to;
+                $consult->save();
+                if ($consult) {
+                    $status = array('msg' => "Data saved", 'toastr' => "successToastr");
+                }
+            }else{
+                $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
             }
+            
         }
 
         else{

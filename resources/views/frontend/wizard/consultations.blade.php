@@ -282,7 +282,6 @@
 
 <script>
 	$(document).ready(function(){
-		/* $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); */
 		
 		$.ajaxSetup({
 			headers: {
@@ -292,23 +291,27 @@
 		
 		$('[name="consultation_date"]').on('change',function(){
 
-			$('body').removeClass('loaded');
+			$('body').removeClass('loaded').addClass('fade-loading');
+			
 			$.ajax({
 				type: "GET",
-				url: "{{url('/')}}/{{app()->getLocale()}}/get_slots",
+				url: "{{url('/')}}/{{locale()}}/get_slots",
 				data:{
 					consultation_date: $(this).val(),
 				},
 				
 				success: function(res){
+
 					$('#slot').html('');
-					$('body').addClass('loaded');
+					$('body').addClass('loaded').removeClass('fade-loading');
+
 					if (res.status=="success") {
+
 						$.each( res.data, function(k, v) {
 							$('#slot').append(`<option value=${v.id}>${v.slot}</option>`);
 						});
 
-					} else {
+					}else {
 						$('#slot').append(`<option value=>No slots available</option>`);
 					}
 					

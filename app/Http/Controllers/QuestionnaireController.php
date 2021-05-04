@@ -141,10 +141,18 @@ class QuestionnaireController extends Controller
         $date=WorkingHour::whereDate('date',Carbon::parse($request->consultation_date))->first();
         if($date){
             $slots=$date->available_slots_new();
-            $res=[
-                "status"=>'success',
-                "data"=>$slots
-            ];
+            if($slots && count($slots) > 0)
+            {
+                $res=[
+                    "status"=>'success',
+                    "data"=>$slots
+                ];
+            }else{
+                $res=[
+                    "status"=>'error'
+                ];
+            }
+            
         }else{
             $res=[
                 "status"=>'error',

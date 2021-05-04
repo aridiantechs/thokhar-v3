@@ -261,6 +261,9 @@ class Questionnaire extends Model
 
             $slots=explode(',',$date->slots);
             if (in_array($data['slot'], $slots)) {
+                if (auth()->user()->consultation) {
+                    auth()->user()->consultation()->delete();
+                }
                 $user = auth()->user();
                 $consult=new Consultations;
                 $consult->user_id = $user->id;

@@ -82,6 +82,13 @@ class WorkingHour extends Model
                 $data->push($slot);
             }
         }
+
+        if (auth()->user()->consultation && auth()->user()->consultation->status =='CANCELLED') {
+            $slot=Slot::where('id',auth()->user()->consultation->slot_id)->first();
+            if ($slot) {
+                $data->push($slot);
+            }
+        }
         // dd($data);
         return $data;
     }

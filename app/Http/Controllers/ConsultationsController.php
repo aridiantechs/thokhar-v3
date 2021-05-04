@@ -175,32 +175,39 @@ class ConsultationsController extends Controller
         return redirect()->back();
     }
 
-    public function cancelSession(Request $request)
+    public function updateSession(Request $request)
     {
-        // dd(123);
+        // dd($request->all());
         if ($request->consult_id) {
             $consult=Consultations::where('id',$request->consult_id)->first();
             if ($consult) {
-                $consult->assign_to=null;
-                $consult->status="CANCELLED";
+                if ($request->consult_status=='CANCELLED') {
+                    $consult->assign_to=null;
+                }
+                
+                $consult->status=$request->consult_status;
                 $consult->save();
+                
                 if ($consult) {
-                    $status = array('msg' => "Session Cancelled", 'toastr' => "successToastr");
+                    $status = array('msg' => "Session ".$request->consult_status, 'toastr' => "successToastr");
                 }
 
-                try{
-                    Mail::to($consult->user->email)->send(new SessionCancel());
-                    $res=[
-                        "status"=>'success',
-                        "message"=>'Session Cancelled'
-                    ];
-                }catch ( \Exception $exception) {
-                    $res=[
-                        "status"=>'error',
-                        "message"=>'Unable to send mail'
-                    ];
-                    
+                if ($request->consult_status=='CANCELLED') {
+                   try{
+                        Mail::to($consult->user->email)->send(new SessionCancel());
+                        $res=[
+                            "status"=>'success',
+                            "message"=>'Session Cancelled'
+                        ];
+                    }catch ( \Exception $exception) {
+                        $res=[
+                            "status"=>'error',
+                            "message"=>'Unable to send mail'
+                        ];
+                        
+                    } 
                 }
+                
             }else{
                 $status = array('msg' => "Something went wrong", 'toastr' => "errorToastr");
             }

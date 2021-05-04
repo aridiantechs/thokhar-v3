@@ -93,7 +93,7 @@
 								{{ trans('lang.Your financial advisor and preparing your personal investing plan , based on your input') }}
 							</h3>
 						</div>
-						@if (auth()->user()->consultation)
+						@if (auth()->user()->consultation && auth()->user()->consultation->status !='CANCELLED')
 							<div class="alert alert-warning fade show">
 								<h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i>Warning!</h4>
 								<p>You have already made an appointment.</p>

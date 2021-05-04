@@ -487,6 +487,7 @@ border-radius: .5rem;
                 <form action="#" method="GET" id="counsel_session_form">
                     @csrf
                     <input type="hidden" name="consult_id">
+                    <input type="hidden" name="consult_status">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="input-group mb-3 cs__input">
@@ -494,6 +495,28 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_name" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group mb-3 cs__input">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-at fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                                <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_email" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group mb-3 cs__input">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text bg-gray-1"><i class="fa fa-mars fa__color_blue" aria-hidden="true"></i></span>
+                                </div>
+                                <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_gender" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
@@ -525,13 +548,13 @@ border-radius: .5rem;
                     </div>
 
                     <div class="row mt-5">
-                        <div class="col-md-6">
+                        <div class="col-md-6 inv__on__cancel">
                             <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left cancel_session">
                                 <span class="d-inline-block">Cancel the Session</span>
                             </button>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="toggle_full_col">
                             <button type="button" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right update_session">
                                 <span class="d-inline-block">Save & Close</span>
                             </button>
@@ -650,7 +673,14 @@ border-radius: .5rem;
             })
 
             $('.cancel_session').on('click',function(){
-                $('#counsel_session_form').attr('action',"{{route('cancel_session',app()->getLocale())}}");
+                $('#counsel_session_form').attr('action',"{{route('update_session',app()->getLocale())}}");
+                $('[name="consult_status"]').val('CANCELLED');
+                $('#counsel_session_form').submit();
+            })
+
+            $('.update_session').on('click',function(){
+                $('#counsel_session_form').attr('action',"{{route('update_session',app()->getLocale())}}");
+                $('[name="consult_status"]').val('PROCESSED');
                 $('#counsel_session_form').submit();
             })
         })
@@ -671,11 +701,23 @@ border-radius: .5rem;
             e.preventDefault();
             var user=$(this).data('user');
             var slot=$(this).data('slot');
+            var cancelled=$(this).data('cancelled');
+            console.log(cancelled);
             var working_date=$(this).data('workingdate');
             $('.consult_user_name').val('').val(user.name);
+            $('.consult_user_email').val('').val(user.email);
+            $('.consult_user_gender').val('').val(user.gender);
             $('.consult_session_time').val('').val(slot);
             $('.consult_session_date').val('').val(working_date);
             $('[name="consult_id"]').val($(this).data('consultid'));
+            /* if (cancelled ==true) {
+                $('.inv__on__cancel').hide();
+                $('#toggle_full_col').removeClass('col-md-6').addClass('col-md-12');
+            } else {
+                $('.inv__on__cancel').show();
+                $('#toggle_full_col').addClass('col-md-6').removeClass('col-md-12');
+                
+            } */
             $('[pd-popup="' + jQuery(this).attr('pd-popup-open') + '"]').fadeIn(100);
         })
     </script>

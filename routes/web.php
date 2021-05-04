@@ -281,7 +281,9 @@ Route::group([
       //For payment version payment process
       Route::get('/plan',  'QuestionnaireController@plan')->name('plan');
       Route::get('/checkout',  'CheckoutController@create')->name('checkout');
-      Route::post('/payment',  'CheckoutController@payment')->name('payment');
+
+      // Route::post('/payment',  'CheckoutController@payment')->name('payment');
+      Route::post('/payment',  'CheckoutController@test_payment')->name('payment');
       Route::post('/payment/callback',  'CheckoutController@index')->name('payment.callback');
       Route::post('/payment/return',  'CheckoutController@index')->name('payment.return');
 
@@ -290,7 +292,7 @@ Route::group([
       //paid version 
       Route::group([
         'middleware' => [
-          // 'subscribed_customer'
+          'subscribed_customer'
           ],
         ], function() {
             Route::get('/steps',  'QuestionnaireController@steps')->name('steps');

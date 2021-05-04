@@ -29,6 +29,15 @@ class CheckoutController extends Controller
         return view('frontend.wizard.payment.checkout');
     }
 
+    /* public function test_payment(Request $request)
+    {
+        $order = new Order;
+        $order->fill($request->all());
+        $order->user_id = auth()->user()->id;
+        $order->transac_id = uniqid();
+        $order->save();
+        return redirect()->route('steps', locale());
+    } */
     public function payment(Request $request)
     {
         $call_back = route('payment.callback',locale());

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\User;
+use App\Order;
 use App\Report;
 use App\Constant;
 use Carbon\Carbon;
@@ -543,6 +544,12 @@ class QuestionnaireController extends Controller
 
     public function steps()
     {
+        $order = new Order;
+        $order->title = auth()->user()->name;
+        $order->user_id = auth()->user()->id;
+        $order->transac_id = uniqid();
+        $order->save();
+        
         return view('frontend.wizard.steps');
     }
 

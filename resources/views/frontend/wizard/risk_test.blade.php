@@ -449,7 +449,7 @@
 					<div class="p-3">
 						<div class="row">
 							<div class="col-lg-3 d-flex align-items-center justify-content-center justify-content-lg-start order-2 order-lg-1">
-								<a href="{{ route('plan', locale()) }}" class="{{$btnAlign}} btn  btn-big btn-light btn-rad35 btn-primary plan__btn">
+								<a href="{{ route('steps', locale()) }}" class="{{$btnAlign}} btn  btn-big btn-light btn-rad35 btn-primary plan__btn">
 									{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
 									<span class="d-inline-block">إبدأ الآن</span>
 									<i class="fa fa-arrow-{{$arrowAlign}}"></i>

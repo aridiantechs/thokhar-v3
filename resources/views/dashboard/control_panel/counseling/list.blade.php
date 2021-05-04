@@ -743,12 +743,13 @@ border-radius: .5rem;
 @endsection
 
 @section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous"></script> --}}
+    <script src="{{asset('js/chosen.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/calendar.min.js"></script>
     <script>
         $(document).ready(function(){
-            $(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
+            $(".chosen-select").chosen({no_results_text: "Oops, nothing found!",allow_duplicates: true}); 
             $('.day__in__hide').hide();
 
             $('.custom__switch__input').on('change',function(){
@@ -763,6 +764,47 @@ border-radius: .5rem;
                 }
                 
             })
+
+            @php
+                function generateRandomString($length = 10) {
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $charactersLength = strlen($characters);
+                    $randomString = '';
+                    for ($i = 0; $i < $length; $i++) {
+                        $randomString .= $characters[rand(0, $charactersLength - 1)];
+                    }
+                    return $randomString;
+                }
+            @endphp
+
+            @foreach ($week as $key => $day)
+                @php
+                    $working=$working_hours->where("date",$day["id"])->first();
+
+                    $rand_string=generateRandomString();
+                    $inputs = "";
+                    $listItems = "";
+                    if($working){
+                        $relation = $working->duplicate_slot_locate();
+                        foreach($relation as $slot){
+                            $listItems .='<li id="manual_slot_li_'.$rand_string.'" class="search-choice"><span>'.$slot->slot.'</span><a class="search-choice-close close_slot_manual" data-rand-id="'.$rand_string.'" data-option-array-index="0"></a></li>';
+                            $inputs .='<input id="manual_slot_input_'.$rand_string.'" type="hidden" name="slots['.$day["id"].'][]" value="'.$slot->id.'">';
+                        }
+                    }
+
+                @endphp
+ 
+                $('[name="slots[{{$day["id"]}}][]"]').siblings('.chosen-container').children('ul').children('li.search-choice').last().after(`{!!$listItems!!}`);
+                $('[name="slots[{{$day["id"]}}][]"]').parent().append(`{!!$inputs!!}`);
+               
+            @endforeach
+        })
+
+        $(document).on('click','.close_slot_manual',function(e){
+            var id=$(this).data('rand-id');
+            console.log($("#manual_slot_li_"+id));
+            $("#manual_slot_li_"+id).remove();
+            $("#manual_slot_input_"+id).remove();
         })
 
         $(document).on('click','.user_detail',function(e){

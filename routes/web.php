@@ -290,7 +290,7 @@ Route::group([
       //paid version 
       Route::group([
         'middleware' => [
-          'subscribed_customer'
+          // 'subscribed_customer'
           ],
         ], function() {
             Route::get('/steps',  'QuestionnaireController@steps')->name('steps');

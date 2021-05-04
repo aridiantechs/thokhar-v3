@@ -59,7 +59,7 @@ class ConsultationsController extends Controller
                     ]);
         }
         
-
+        // dd($working_hours->where("date","2021-05-05")->first()->duplicate_slot_locate());
        return view('dashboard.control_panel.counseling.list')
                 ->with([
                     'title' => 'Counseling',
@@ -123,7 +123,7 @@ class ConsultationsController extends Controller
      */
     public function store(Request $request)
     {
-        /* dd($request->all()); */
+        // dd($request->all());
         foreach ($request->day as $key => $date) {
             if ($request->status && $request->slots) {
                 if (array_key_exists($key,$request->status) && array_key_exists($key,$request->slots) ) {
@@ -139,7 +139,7 @@ class ConsultationsController extends Controller
             }
             
         }
-
+        // dd($request->all());
         if ($working) {
             $status = array('msg' => "Data saved", 'toastr' => "successToastr");
         }else{

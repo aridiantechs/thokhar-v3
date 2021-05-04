@@ -72,7 +72,7 @@ class WorkingHour extends Model
              $dup_cons[$val] = $c;
         }
 
-        $result=array_diff($dup_slot,$dup_cons);
+        $result=array_diff_assoc($dup_slot,$dup_cons);
         // dd($dup_slot,$dup_cons);
 
         $data = collect();

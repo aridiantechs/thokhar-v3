@@ -182,6 +182,7 @@ class ConsultationsController extends Controller
             $consult=Consultations::where('id',$request->consult_id)->first();
             if ($consult) {
                 $consult->assign_to=null;
+                $consult->status="CANCELLED";
                 $consult->save();
                 if ($consult) {
                     $status = array('msg' => "Session Cancelled", 'toastr' => "successToastr");

@@ -90,6 +90,6 @@ class WorkingHour extends Model
             }
         }
         // dd($data);
-        return $data;
+        return $data->unique('id');
     }
 }

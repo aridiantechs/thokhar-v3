@@ -717,7 +717,12 @@ border-radius: .5rem;
             $('.consult_user_gender').val('').val(user.gender);
             $('.consult_session_time').val('').val(slot);
             $('.consult_session_date').val('').val(working_date);
-            $('#report__btn').attr('href',"{{ url('/')}}/en/download-report?q="+report );
+            if (report == false) {
+                $('#report__btn').attr('href','#' );
+            } else {
+                $('#report__btn').attr('href',"{{ url('/')}}/en/download-report?q="+report );
+            }
+            
             $('[name="consult_id"]').val($(this).data('consultid'));
             /* if (cancelled ==true) {
                 $('.inv__on__cancel').hide();

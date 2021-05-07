@@ -191,7 +191,7 @@ button.del-button {
                                     </p></td>
                                     <td>
                                         <div class="mt-4">
-                                            <a class="button" target="_blank" href="{{ route('report', [app()->getLocale(), 'user' => $user]) }}">Report</a>
+                                            <a class="button" target="_blank" href="{{isset($user->report) ? route('download', ['q'=> $user->report->public_id, 'en']) :'#' }}{{-- {{ route('report', [app()->getLocale(), 'user' => $user]) }} --}}">Report</a>
                                             <form method="POST" action="{{ route('remove-user', [app()->getLocale(), $user]) }}" style="display: inline-block;">
                                                 @csrf
                                                 {{ method_field('DELETE') }}

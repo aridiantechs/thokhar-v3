@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use PDF;
 // use Barryvdh\DomPDF\PDF;
 use Session;
+use App\Order;
 use App\Report;
 use App\Constant;
 use App\Mail\SampleReport;
@@ -103,6 +104,12 @@ class ReportController extends Controller
             'view' => 'dashboard.email.sample_report', 
         );
 
+        
+        $order = new Order;
+        $order->title = auth()->user()->name;
+        $order->user_id = auth()->user()->id;
+        $order->transac_id = uniqid();
+        $order->save();
 
         try{
             Mail::to(auth()->user()->email)->send(new SampleReport($data));

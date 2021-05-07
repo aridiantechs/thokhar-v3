@@ -81,8 +81,13 @@ class ConsultationsController extends Controller
                 $date= Carbon::createFromFormat('D M d Y', $request->date)->format('Y-m-d');
                 $consultations=Consultations::whereHas('working_hour',function($q) use ($date){
                     $q->whereDate('date','=',$date);
-                })->with('slot')->get();
+                });
 
+                if (auth()->user()->hasRole('moderator')) {
+                    $consultations=$consultations->where('assign_to',auth()->user()->id);
+                }
+                
+                $consultations=$consultations->with('slot')->get();
                 $data=[
                     'status'=>true,
                     'data'=>view('dashboard.components.appointments',compact('date','consultations'))->render()

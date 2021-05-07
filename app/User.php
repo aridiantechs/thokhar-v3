@@ -143,6 +143,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Consultations', 'user_id', 'id');
     }
 
+    public function report() {
+        return $this->hasOne('App\Report', 'user_id', 'id');
+    }
+
     public function profile()
     {
         $questionnaire=$this->user_latest_questionnaire();

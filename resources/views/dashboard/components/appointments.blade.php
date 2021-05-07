@@ -9,7 +9,7 @@
             <div class="bg-white p-2 ">
                 <p class="color_blue user_detail" pd-popup-open="userDetail" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}" >{{$consult->user->name ?? ''}}<br><span class="consult__time">{{$consult->slot->slot ?? ''}}</span> </p>
                 @if ($consult->status !='CANCELLED' && $consult->status !='PROCESSED')
-                    <button class="btn btn-info assign_btn" pd-popup-open="counselling_session" data-consultid="{{$consult->id}}" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}" data-workingdate="{{$consult->working_hour->date ?? ''}}" data-cancelled="{{$consult->status=='CANCELLED' ? 'true' : 'false'}}">{{ auth()->user()->hasRole('moderator') ? 'update' : 'Assign' }}</button>
+                    <button class="btn btn-info assign_btn" pd-popup-open="counselling_session" data-consultid="{{$consult->id}}" data-user="{{json_encode($consult->user)}}" data-slot="{{$consult->slot->slot ?? ''}}" data-workingdate="{{$consult->working_hour->date ?? ''}}" data-cancelled="{{$consult->status=='CANCELLED' ? 'true' : 'false'}}" data-report="{{$consult->user->report->public_id ?? '#'}}">{{ auth()->user()->hasRole('moderator') ? 'update' : 'Assign' }}</button>
                 @endif
                 
             </div>

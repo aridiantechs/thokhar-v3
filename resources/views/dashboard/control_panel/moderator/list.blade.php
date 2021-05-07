@@ -436,6 +436,9 @@ border-radius: .5rem;
 .sub_head em{
 	font-style: inherit;
 }
+.ft-17 {
+    font-size: 17px;
+}
 </style>
 @endsection
 @section('content')
@@ -544,7 +547,11 @@ border-radius: .5rem;
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-md-12">
+                            <div class="input-group ft-17">
+                                <a href="#" id="report__btn" target="_blank">view report</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row mt-5">
@@ -702,13 +709,15 @@ border-radius: .5rem;
             var user=$(this).data('user');
             var slot=$(this).data('slot');
             var cancelled=$(this).data('cancelled');
-            console.log(cancelled);
+            
+            var report=$(this).data('report');
             var working_date=$(this).data('workingdate');
             $('.consult_user_name').val('').val(user.name);
             $('.consult_user_email').val('').val(user.email);
             $('.consult_user_gender').val('').val(user.gender);
             $('.consult_session_time').val('').val(slot);
             $('.consult_session_date').val('').val(working_date);
+            $('#report__btn').attr('href',"{{ url('/')}}/en/download-report?q="+report );
             $('[name="consult_id"]').val($(this).data('consultid'));
             /* if (cancelled ==true) {
                 $('.inv__on__cancel').hide();

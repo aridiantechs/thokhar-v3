@@ -436,6 +436,10 @@ border-radius: .5rem;
 .sub_head em{
 	font-style: inherit;
 }
+
+.ft-17 {
+    font-size: 17px;
+}
 </style>
 @endsection
 @section('content')
@@ -582,9 +586,10 @@ border-radius: .5rem;
            <div class="popup-contact-wrapper">
                 <h4 class="popup-header mx-auto">Counseling Session</h4>
                 <hr>
-                <form action="{{route('assign_consultation', locale())}}" method="POST">
+                <form action="{{route('assign_consultation', locale())}}" method="POST" id="counsel_session_form">
                     @csrf
                     <input type="hidden" name="consult_id">
+                    <input type="hidden" name="consult_status">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="input-group mb-3 cs__input">
@@ -658,12 +663,18 @@ border-radius: .5rem;
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-12">
+                            <div class="input-group ft-17">
+                                <a href="#" id="report__btn" target="_blank">view report</a>
+                            </div>
+                        </div>
                         
                     </div>
 
                     <div class="row mt-5">
                         <div class="col-md-6">
-                            <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left">
+                            <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left cancel_session">
                                 <span class="d-inline-block">Cancel the Session</span>
                             </button>
                         </div>
@@ -822,6 +833,13 @@ border-radius: .5rem;
             @endforeach
         })
 
+        $('.cancel_session').on('click',function(){
+            $('#counsel_session_form').attr('action',"{{route('update_session',app()->getLocale())}}");
+            $('#counsel_session_form').attr('method',"GET");
+            $('[name="consult_status"]').val('CANCELLED');
+            $('#counsel_session_form').submit();
+        })
+
         $(document).on('click','.close_slot_manual',function(e){
             var id=$(this).data('rand-id');
             console.log($("#manual_slot_li_"+id));
@@ -842,14 +860,19 @@ border-radius: .5rem;
 
         $(document).on('click','.assign_btn',function(e){
             e.preventDefault();
+            $('#counsel_session_form').attr('action',"{{route('assign_consultation', locale())}}");
+            $('#counsel_session_form').attr('method',"POST");
             var user=$(this).data('user');
             var slot=$(this).data('slot');
+            var report=$(this).data('report');
+            console.log(report);
             var working_date=$(this).data('workingdate');
             $('.consult_user_name').val('').val(user.name);
             $('.consult_user_email').val('').val(user.email);
             $('.consult_user_gender').val('').val(user.gender);
             $('.consult_session_time').val('').val(slot);
             $('.consult_session_date').val('').val(working_date);
+            $('#report__btn').attr('href',"{{ url('/')}}/en/download-report?q="+report );
             $('[name="consult_id"]').val($(this).data('consultid'));
             $('[pd-popup="' + jQuery(this).attr('pd-popup-open') + '"]').fadeIn(100);
         })

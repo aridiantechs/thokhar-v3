@@ -14,15 +14,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \app\Http\Middleware\TrustProxies::class,
-        \app\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \app\Http\Middleware\TrimStrings::class,
+        \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         // maintenance mode (allow admin)
-        // \app\Http\Middleware\AllowAdminInMaintenanceMode::class,
+        // \App\Http\Middleware\AllowAdminInMaintenanceMode::class,
         // prevent back after logout
-        \app\Http\Middleware\PreventBackAfterLogout::class,
+        \App\Http\Middleware\PreventBackAfterLogout::class,
     ];
 
     /**
@@ -32,19 +32,19 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \app\Http\Middleware\EncryptCookies::class,
+            \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \app\Http\Middleware\SetLocale::class,
-            \app\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\SetLocale::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             // maintenance mode (allow admin)
-            // \app\Http\Middleware\AllowAdminInMaintenanceMode::class,
+            // \App\Http\Middleware\AllowAdminInMaintenanceMode::class,
             // prevent back after logout
-            \app\Http\Middleware\PreventBackAfterLogout::class,
-            \app\Http\Middleware\MobileVerification::class,
+            \App\Http\Middleware\PreventBackAfterLogout::class,
+            \App\Http\Middleware\MobileVerification::class,
         ],
 
         'api' => [
@@ -61,31 +61,31 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \app\Http\Middleware\Authenticate::class,
+        'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \app\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // localization
-        'setlocale' => \app\Http\Middleware\SetLocale::class,
+        'setlocale' => \App\Http\Middleware\SetLocale::class,
         //spatie
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
         // maintenance mode (allow admin)
-        'allow_admin_in_maintenance_mode' => \app\Http\Middleware\AllowAdminInMaintenanceMode::class,
+        'allow_admin_in_maintenance_mode' => \App\Http\Middleware\AllowAdminInMaintenanceMode::class,
         // two factor auth
-        'twofactor' => \app\Http\Middleware\TwoFactor::class,
+        'twofactor' => \App\Http\Middleware\TwoFactor::class,
         // prevent back after logout
-        'prevent_back_after_logout' => \app\Http\Middleware\PreventBackAfterLogout::class,
+        'prevent_back_after_logout' => \App\Http\Middleware\PreventBackAfterLogout::class,
         // prevent back after logout
-        'mobile_verification' => \app\Http\Middleware\MobileVerification::class,
+        'mobile_verification' => \App\Http\Middleware\MobileVerification::class,
 
-        'subscribed_customer' => \app\Http\Middleware\SubscribedCustomer::class,
+        'subscribed_customer' => \App\Http\Middleware\SubscribedCustomer::class,
     ];
 
     /**
@@ -98,7 +98,7 @@ class Kernel extends HttpKernel
     protected $middlewarePriority = [
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \app\Http\Middleware\Authenticate::class,
+        \App\Http\Middleware\Authenticate::class,
         \Illuminate\Routing\Middleware\ThrottleRequests::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,

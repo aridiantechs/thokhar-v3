@@ -123,7 +123,7 @@
 										    <div class="input-group-prepend">
 										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
 										    </div>
-										    <select class="form-control input-big" name="education_level"  placeholder="{{ trans('lang.user.Position'), }}" id="education_level">
+										    <select class="form-control input-big" name="education_level"  placeholder="{{ trans('lang.user.Position') }}" id="education_level">
 
                                         
 	                                        	<option value="">

@@ -1,7 +1,7 @@
 @inject('request', 'Illuminate\Http\Request')
 
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="ar">
 
 <head>
     @include('frontend.partials.header')

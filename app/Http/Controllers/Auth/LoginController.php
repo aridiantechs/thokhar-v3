@@ -139,17 +139,12 @@ class LoginController extends Controller
 
     public function authenticate(LoginRequest $request)
     {
-        // $request->merge([
-        //     'phone_number' => str_replace('+', '', $request->phone_number),
-        // ]);
-
         $user = User::where('phone_number', $request->input('phone_number'))->first();
-        // $user = User::where('email', $request->input('email'))->first();
-
+        
         if($user){
             Auth::login($user);
             $user->generateTwoFactorCode();
-            // $user->twoFactorAndSendText($user);
+        
             return redirect()->route('home', app()->getLocale())->with([
                 'message' => 'user_authenticated'
             ]);
@@ -161,11 +156,6 @@ class LoginController extends Controller
                 'phone_number' => 'required|numeric|unique:users',
             ]);
 
-            // $this->validate($request, [
-            //     'email' => 'required|email|unique:users',
-            // ]);
-
-            
             event(new Registered($user = $this->create($request->all())));
 
             Auth::login($user);

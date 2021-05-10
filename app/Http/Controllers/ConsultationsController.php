@@ -128,23 +128,27 @@ class ConsultationsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         foreach ($request->day as $key => $date) {
+
             if ($request->status && $request->slots) {
-                if (array_key_exists($key,$request->status) && array_key_exists($key,$request->slots) ) {
-                    $check=WorkingHour::where('date',$key);
-                    if (count($check->get()) > 0) {
-                        $check->delete();
+
+                if (array_key_exists($key,$request->status) && array_key_exists($key,$request->slots)){
+
+                    $working = WorkingHour::where('date',$key)->first();
+
+                    if (!$working) {
+                        $working = new WorkingHour;
+                        $working->date = $key;
                     }
-                    $working=new WorkingHour;
-                    $working->date=$key;
-                    $working->slots=implode(",",$request->slots[$key]);
+
+                    $working->slots = implode(",",$request->slots[$key]);
                     $working->save();
                 }
+
             }
-            
+
         }
-        // dd($request->all());
+        
         if ($working) {
             $status = array('msg' => "Data saved", 'toastr' => "successToastr");
         }else{
@@ -152,6 +156,7 @@ class ConsultationsController extends Controller
         }
         
         Session::flash($status['toastr'], $status['msg']);
+        
         return redirect()->back();
     }
 

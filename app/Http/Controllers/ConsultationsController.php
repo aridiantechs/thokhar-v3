@@ -156,13 +156,13 @@ class ConsultationsController extends Controller
         }
         
         Session::flash($status['toastr'], $status['msg']);
-        
+
         return redirect()->back();
     }
 
     public function assign_consultation(Request $request)
     {
-        // dd($request->all());
+        
         if ($request->assign_to && $request->consult_id) {
             $consult=Consultations::where('id',$request->consult_id)->first();
             if ($consult) {
@@ -187,7 +187,7 @@ class ConsultationsController extends Controller
 
     public function updateSession(Request $request)
     {
-        // dd($request->all());
+        
         if ($request->consult_id) {
             $consult=Consultations::where('id',$request->consult_id)->first();
             if ($consult) {

@@ -597,9 +597,7 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_name" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -608,9 +606,7 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_email" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -619,9 +615,7 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-user fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" placeholder="adddw" class="form-control bg-gray-1 cs__input ft-14 consult_user_gender" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -630,9 +624,7 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-calendar fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" class="form-control bg-gray-1 cs__input ft-14 consult_session_date" placeholder="" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -641,9 +633,7 @@ border-radius: .5rem;
                                 <span class="input-group-text bg-gray-1"><i class="fa fa-clock fa__color_blue" aria-hidden="true"></i></span>
                                 </div>
                                 <input disabled type="text" class="form-control bg-gray-1 cs__input ft-14 consult_session_time" placeholder="" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                <span class="input-group-text bg-gray-1"><i class="fa fa-edit fa__color_blue" aria-hidden="true"></i></span>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-md-12">

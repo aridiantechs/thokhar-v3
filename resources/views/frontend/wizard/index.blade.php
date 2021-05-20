@@ -120,8 +120,8 @@
 		else if (document.location.hash == "#risk")
 	        var target_route = "{{ route('risk', locale()) }}"
 		
-		else if (document.location.hash == "#consultations")
-	        var target_route = "{{ route('consultations', locale()) }}"
+		/* else if (document.location.hash == "#consultations")
+	        var target_route = "{{ route('consultations', locale()) }}" */
 		
 		else if (document.location.hash == "#report")
 	        var target_route = "{{ route('report', locale()) }}"

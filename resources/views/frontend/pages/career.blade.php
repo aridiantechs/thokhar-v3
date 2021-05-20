@@ -65,8 +65,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row flex-column-reverse flex-lg-row">
-                                        <div class="col-lg-6 order-1 order-lg-2 mb-3">
-                                            {{-- <small class="file__type">i.e .pdf .docx</small> --}}
+                                        {{-- <div class="col-lg-6 order-1 order-lg-2 mb-3">
                                             <div class="card image-card mb-0" id="file_back">
                                                 <div class="card-body h-100 justify-content-center align-items-center" style="display: grid;">
                                                     <img class="img img-fluid img-upload" id="file" src="{{ asset('frontend_assets/assets/img/new/contact-us/upload.svg') }}">
@@ -74,8 +73,8 @@
                                                 </div>
                                                 <input type="file" accept="application/pdf" name="file" id="file_button" class="d-none"> 
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 mb-3 p-inherit">
+                                        </div> --}}
+                                        {{-- <div class="col-lg-6 order-1 order-lg-2 mb-3 p-inherit"> --}}
                                             <div class="col-md-12">
                                                 <div class="form-group form-group-new">
                                                     <div class="input-group">
@@ -90,7 +89,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {{-- </div> --}}
                                         
                                     </div>
                                 </div>

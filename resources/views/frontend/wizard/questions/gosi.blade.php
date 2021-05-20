@@ -217,7 +217,7 @@
 							</span>
 							</a>
 						</li>
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#consultations">
 							<span class="step-parent" data-bar="9"></span>
 							<span class="step-text">
@@ -226,7 +226,7 @@
 								</span>
 							</span>
 							</a>
-						</li>
+						</li> --}}
 						<li class="nav-item">
 							<a class="text-{{ $alignreverse }} nav-link" data-toggle="tab" href="#report">
 							<span class="step-parent" data-bar="10"></span>

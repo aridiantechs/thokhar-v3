@@ -419,7 +419,7 @@
 						</div>
 					</div> --}}
 					<div class="col-lg-3 d-flex justify-content-center justify-content-lg-start">
-						<button type="button" id="send_sample_report" data-toggle="modal" data-target="#modal__1" class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary ">
+						<button type="button" id="send_sample_report"{{--  data-toggle="modal" data-target="#modal__1" --}} class="btn-{{$align3letter}} btn  btn-big btn-gradient btn-rad35 btn-primary ">
 							{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
 							<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 							<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -706,7 +706,7 @@ function indicator(value){
 <script>
 	$('#send_sample_report').on('click',function(e){
 		e.preventDefault();
-		$('#modal__1').modal('show');
+		// $('#modal__1').modal('show');
 		// $('body').removeClass('loaded');
 		$.ajax({
 			url: "{{ route('send_sample_report', locale()) }}",
@@ -726,6 +726,7 @@ function indicator(value){
 			},
 			
 		});
+		window.location.href="{{ route('steps', locale()) }}";
 		return false;
 	})
 </script>

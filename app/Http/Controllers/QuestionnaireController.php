@@ -117,7 +117,7 @@ class QuestionnaireController extends Controller
     }
 
 
-    public function consultations()
+    /* public function consultations()
     {
         $user_questionnaire = $this->loggedInUser->user_latest_questionnaire();
 
@@ -134,7 +134,7 @@ class QuestionnaireController extends Controller
                 ->with('slots', $slots);
 
 
-    }
+    } */
 
     public function getSlots(Request $request)
     {
@@ -219,22 +219,22 @@ class QuestionnaireController extends Controller
             case 'risk':
 
                 return $this->questionnaire->update_risks($request->except('_token', 'location'))
-                        ?   $this->consultations()
+                        ?   /* $this->consultations() */$this->getReport()
                         : redirect()->route('wizard', $locale);
                 break;
 
-            case 'consultations':
+            // case 'consultations':
 
-                /* return $this->getReport(); */
-                 /* Consultations::consultations($request->except('_token', 'location'))
-                        ?   $this->consultations() */
-                    $res=$this->questionnaire->addConsultation($request->except('_token', 'location'));
-                    if($res['status']=='success'){
-                        return $this->getReport();
-                    }else{
-                        return redirect()->route('wizard', $locale);
-                    }
-                break;
+            //     /* return $this->getReport(); */
+            //      /* Consultations::consultations($request->except('_token', 'location'))
+            //             ?   $this->consultations() */
+            //         $res=$this->questionnaire->addConsultation($request->except('_token', 'location'));
+            //         if($res['status']=='success'){
+            //             return $this->getReport();
+            //         }else{
+            //             return redirect()->route('wizard', $locale);
+            //         }
+            //     break;
             
             case 'get_report':
                 return $this->getReport();

@@ -53,7 +53,7 @@ class QuestionnaireRequest extends FormRequest
                                 'saving_plan' => 'required|array',
                                 'saving_plan.current_saving_balance' => 'required|numeric',
                                 'saving_plan.monthly_saving_plan_for_retirement' => 'required|numeric',
-                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:10|min:1',
+                                'saving_plan.annual_increase_in_saving_plan' => 'required|numeric|max:4|min:0',
                             ];
                             break;
 

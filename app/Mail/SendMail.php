@@ -29,8 +29,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        // dd($this->data['certificate_id']);
-        return $this->from(config('app.mail_from'),'Thokhor')
+        return $this->from(config('app.mail_from', 'no-reply@thokhor.com'),'Thokhor')
                     ->subject($this->data['subject'])
                     ->view($this->data['view'])
                     ->with('data',$this->data);

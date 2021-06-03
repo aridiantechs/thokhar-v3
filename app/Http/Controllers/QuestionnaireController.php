@@ -430,13 +430,11 @@ class QuestionnaireController extends Controller
         $current_age    = $this->questionnaire->getCurrentAge($user);
 
         $accomulativeSavingtoday    = $this->questionnaire->getInitialAccomulativeSavingtoday($user);
-        $annualSavingToday          = $this->questionnaire->getAnnualSavingToday($user);
+        $annualSavingToday          = $this->questionnaire->getInitialAccomulativeSavingtoday($user);
         $annualIncreaseInSavingPlan = $this->questionnaire->getAnnualIncreaseInInitialInvestment($user);
         $netReturnAfterRetirement   = $this->questionnaire->getNetReturnAfterRetirement($user);
         // $porfolioExpectedReturn     = 7.85;
-
-        // dd($accomulativeSavingtoday);
-
+        
         $valueBegYear = [];
         $plan         = [];
         $graphContribution = [];
@@ -445,7 +443,7 @@ class QuestionnaireController extends Controller
         $uncertainty  = $constants["( In Returns , Saving )"]["constant_value"] ?? null;
 
 
-        $graph_limit = ($retirement_age < 65) ? 65 : $retirement_age;
+        $graph_limit = ($retirement_age < 60) ? 60 : $retirement_age;
 
         if($current_age < $retirement_age){
 
@@ -499,7 +497,7 @@ class QuestionnaireController extends Controller
         $asset_class         = $this->getRecomendedAssetClass();  
 
         $value_at_retirement = $this->getValueAtRetirement(8.85);
-
+        
         $user_questionnaire  = $this->loggedInUser->user_latest_questionnaire();
 
         $current_age         = $this->questionnaire->getCurrentAge(auth()->user());
@@ -3285,6 +3283,7 @@ class QuestionnaireController extends Controller
         $report->save();
 
 
+        // Preparing Email
         $data = array(
                 'subject' => 'Thokhor | Financial Report', 
                 'body' => 'Report', 
@@ -3294,22 +3293,14 @@ class QuestionnaireController extends Controller
 
 
         try{
-            // Mail::to($user->email)->send(new SendMail($data));
+            Mail::to($user->email)->send(new SendMail($data));
         }catch ( \Exception $exception) {
-            dd($exception->getMessage());
+            // dd($exception->getMessage());
         }
 
         // return $report->public_id;
-        
 
         return $this->report($report->public_id);
-
-        return view('dashboard.thanks')->with('message', 'Thankyou for submitting. Please check you email to print/download the report');
-
-        // $constants = Constant::whereIn('constant_attribute', ['Option_1','Option_2','Option_3',])->get();
-        // return view('dashboard.pdf.report')
-        //         ->with('data', json_decode($report->report_data, true))
-        //         ->with('constants', $constants);
 
         
     }

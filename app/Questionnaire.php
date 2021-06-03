@@ -2229,10 +2229,10 @@ class Questionnaire extends Model
 
     public function getReturnAssumptions(User $user = null)
     {
-        $cash_and_equivlent = Constant::where('constant_attribute' , 'cash_and_equivlent')->first();
-        $equities = Constant::where('constant_attribute' , 'equities')->first();
-        $fix_income = Constant::where('constant_attribute' , 'fix_income')->first();
+        $cash_and_equivlent      = Constant::where('constant_attribute' , 'cash_and_equivlent')->first();
         $alternative_investments = Constant::where('constant_attribute' , 'alternative_investments')->first();
+        $equities   = Constant::where('constant_attribute' , 'equities')->first();
+        $fix_income = Constant::where('constant_attribute' , 'fix_income')->first();
 
         return [
                 'cash_and_equivlent' => (integer)$cash_and_equivlent->constant_value ?? 0,
@@ -2262,7 +2262,7 @@ class Questionnaire extends Model
     public function getPorfolioExpectedReturn($value='')
     {
         // dd($this->getReturnAssumptions(), $this->getRecomendedAssetAllocation());
-        $asset_allocation = $this->getRecomendedAssetAllocation();
+        $asset_allocation   = $this->getRecomendedAssetAllocation();
         $return_assumptions = $this->getReturnAssumptions();
 
         return  (((integer)$asset_allocation['cash_and_equivlent'] * (integer)$return_assumptions['cash_and_equivlent'])/100) + 

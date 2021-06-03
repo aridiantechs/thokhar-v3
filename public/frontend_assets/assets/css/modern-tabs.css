@@ -423,6 +423,10 @@
             border:11px solid;
     }
 
+    .nav-tabs .nav-link.active{
+        background-color: transparent !important;
+    }
+
     .LIST_UI li.BLUE{
         background-color: #01BAEF;
     }

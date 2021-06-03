@@ -150,7 +150,7 @@
 					$('body').addClass('loaded')
 				},
 				error: function(error){
-					window.location.href('{{ route('plan',locale()) }}')
+					window.location.href('{{ route('login',locale()) }}')
 				}
 			});
 		}

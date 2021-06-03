@@ -605,7 +605,7 @@
 							</a>
 						</li> --}}
 						<li class="nav-item">
-							<a class="text-{{$alignreverse}} nav-link" data-toggle="tab" href="#report">
+							<a class="text-{{$alignreverse}} nav-link" href="#report">
 							<span class="step-parent" ></span>
 							<span class="step-text">
 							<span>

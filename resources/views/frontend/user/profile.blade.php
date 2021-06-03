@@ -5,16 +5,17 @@
 @section('styles')
 <style type="text/css">
 	select {
-	    -webkit-appearance: none;
+	    /*-webkit-appearance: none;
 	    -moz-appearance: none;
-	    appearance: none;
+	    appearance: none;*/
 	    padding: 2px 30px 2px 2px;
 	    border: none;
 	}
 	select {
 	    overflow:hidden;
 	    width: 120%;
-	    direction: {{ $align3letter }}
+	    direction: {{ $align3letter }};
+	    padding: 22px !important;
 	}
 	
 	input[type="date"]::-webkit-inner-spin-button,
@@ -120,10 +121,10 @@
 									<div class="form-group form-group-new mb-3 mb-lg-3">
 										
                                         <div class="input-group">
-										    <div class="input-group-prepend">
+										    {{-- <div class="input-group-prepend">
 										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
-										    </div>
-										    <select class="form-control input-big" name="education_level"  placeholder="{{ trans('lang.user.Position') }}" id="education_level">
+										    </div> --}}
+										    <select class="form-control input-big m{{ $alignShort }}-3" name="education_level"  placeholder="{{ trans('lang.user.Position') }}" id="education_level">
 
                                         
 	                                        	<option value="">
@@ -189,10 +190,10 @@
 									<div class="form-group form-group-new mb-3 mb-lg-3">
 				
                                         <div class="input-group">
-										    <div class="input-group-prepend">
+										    {{-- <div class="input-group-prepend">
 										        <span class="input-group-text"><i data-feather="chevron-down"></i></span>
-										    </div>
-										    <select class="form-control input-big" name="gender"  placeholder="{{ trans('lang.user.gender') }}"  id="gender">
+										    </div> --}}
+										    <select class="form-control input-big m{{ $alignShort }}-3" name="gender"  placeholder="{{ trans('lang.user.gender') }}"  id="gender">
 										    	<option {{ (auth()->user()->gender == 'male') ? 'selected' : '' }} value="Male">{{ trans('lang.male') }}</option>
 					                            <option {{ (auth()->user()->gender == 'female') ? 'selected' : '' }} value="Female">{{ trans('lang.female') }}</option>
 										    </select>

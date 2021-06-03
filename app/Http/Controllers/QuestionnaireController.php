@@ -3295,7 +3295,7 @@ class QuestionnaireController extends Controller
         try{
             Mail::to($user->email)->send(new SendMail($data));
         }catch ( \Exception $exception) {
-            dd($exception->getMessage());
+            // dd($exception->getMessage());
         }
 
         // return $report->public_id;

@@ -15,8 +15,6 @@ return [
 
     'name' => env('APP_NAME', 'Thokor'),
 
-    
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment

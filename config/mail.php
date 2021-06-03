@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'mail_from' => env('MAIL_FROM_NAME', 'no-reply@thokhor.com'),
+    'mail_from_address' => env('MAIL_FROM_NAME', 'no-reply@thokhor.com'),
     
     /*
     |--------------------------------------------------------------------------

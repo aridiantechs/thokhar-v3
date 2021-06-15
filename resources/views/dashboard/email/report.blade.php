@@ -190,7 +190,7 @@
     <table width="600" height="150" border="0" cellpadding="0" cellspacing="0" align="center" class="border-lr deviceWidth" bgcolor="#ffffff">
       <tr>
         <td align="center">
-			   <img src="{{ asset('frontend_assets/img/dokhor.png') }}" style="margin: auto">
+			   <img src="{{ asset('backend_assets/site_assets/images/logo/20210604_113542am_20200320_101631am_dokhor.png') }}" style="margin: auto">
 			   <h3 id="banner-txt" style="margin: 20px;color: #000000">{{ trans('lang.frontend.slider_heading') }}</h3>
 			   
         </td>

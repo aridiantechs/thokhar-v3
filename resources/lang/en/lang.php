@@ -598,6 +598,8 @@ return [
 
         'contact_send_us_a_message' => 'Send Us a Message',
         'contact_email' => 'Email',
+        'contact_subject' => 'Subject',
+        'contact_body' => 'Body',
         'contact_email_placeholder' => 'Enter Email',
         'contact_name' => 'Name',
         'contact_name_placeholder' => 'Enter Name',

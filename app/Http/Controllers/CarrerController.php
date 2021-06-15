@@ -15,7 +15,7 @@ class CarrerController extends Controller
     public function index()
     { 
         $status=Unifonic::send(923365063942, 'hello jawad', 'test_thokhor');
-        dd($status);
+        // dd($status);
         return view('frontend.pages.career');
     }
 

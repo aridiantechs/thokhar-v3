@@ -57,6 +57,11 @@ return [
         'client_secret' => env('INSTAGRAM_CLIENT_SECRET'),
         'redirect' => env('CALLBACK_URL_INSTAGRAM'),
     ],
-
+    'unifonic' => [
+        'app_id' => env('UNIFONIC_APP_ID'),
+        'sender_id' => env('UNIFONIC_SENDER_ID'), // String, Optional
+        'account_email' => env('UNIFONIC_ACCOUNT_EMAIL'),
+        'account_password' => env('UNIFONIC_ACCOUNT_PASSWORD')
+    ],
 
 ];

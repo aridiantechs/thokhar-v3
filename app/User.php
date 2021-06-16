@@ -10,6 +10,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Session;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use Unifonic;
 
 class User extends Authenticatable
 {
@@ -79,34 +80,44 @@ class User extends Authenticatable
 
     public function twoFactorAndSendText(User $user)
     {
-        // try 
-        // {
-        //     $this->generateTwoFactorCode();
-        //     // $result = \Nexmo::message()->send([
-        //     //     'to'   => $user->phone_number,
-        //     //     'from' => '923055644665',
-        //     //     'text' => 'Thokhor verification Key is: '.$user->two_factor_code,
-        //     //     'brand' => 'Thokhor'
-        //     // ]);
-        // } catch (\Exception $e) 
-        // {
-        //     \Auth::logout();
+        $code= $this->generateTwoFactorCode();
+        try 
+        {
+            $status=Unifonic::send(923365063942, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
+            $status=collect($status);
+            if ($status['success']) {
+                Session::put('message', 'notification sent.');
+            } else {
+                Session::put('error', 'something went wrong !');
+            }
+            
+            // $data = array(
+            //     'subject' => 'Thokhor | Two Factor Authentication', 
+            //     'body' => 'Authenticate', 
+            //     'view' => 'frontend.email_templates.2fa-email', 
+            //     'code' => $user->two_factor_code
+            // );
+            
+            // Mail::to($user->email)->send(new SendMail($data));
+            // $result = \Nexmo::message()->send([
+            //     'to'   => $user->phone_number,
+            //     'from' => '923055644665',
+            //     'text' => 'Thokhor verification Key is: '.$user->two_factor_code,
+            //     'brand' => 'Thokhor'
+            // ]);
+            
+        } catch (\Exception $e) 
+        {
+            \Auth::logout();
 
-        //     $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
-        //     Session::put('error', $e->getMessage());
-        //     return redirect('/en/login');
-        // }
+            $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
+            Session::put('error', $e->getMessage());
+            return redirect('/en/login');
+        }
 
         
 
-        $data = array(
-                'subject' => 'Thokhor | Two Factor Authentication', 
-                'body' => 'Authenticate', 
-                'view' => 'frontend.email_templates.2fa-email', 
-                'code' => $this->generateTwoFactorCode()
-            );
-
-        try{
+        /* try{
             Mail::to($user->email)->send(new SendMail($data));
         }
         catch (\Exception $e) 
@@ -117,7 +128,7 @@ class User extends Authenticatable
             Session::put('error', $e->getMessage());
             
             return redirect('/en/login');
-        }
+        } */
     }
 
 

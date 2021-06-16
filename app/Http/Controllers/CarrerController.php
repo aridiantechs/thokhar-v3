@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Carrer;
 use Illuminate\Http\Request;
-use Unifonic;
+
 class CarrerController extends Controller
 {
     /**
@@ -13,9 +13,7 @@ class CarrerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $status=Unifonic::send(923365063942, 'hello jawad', 'test_thokhor');
-        // dd($status);
+    {
         return view('frontend.pages.career');
     }
 

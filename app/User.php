@@ -83,7 +83,7 @@ class User extends Authenticatable
         $code= $this->generateTwoFactorCode();
         try 
         {
-            $status=Unifonic::send(923365063942, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
+            $status=Unifonic::send($user->phone_number, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
             $status=collect($status);
             if ($status['success']) {
                 Session::put('message', 'notification sent.');

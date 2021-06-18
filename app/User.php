@@ -80,13 +80,13 @@ class User extends Authenticatable
 
     public function twoFactorAndSendText(User $user)
     {
-        $code= $this->generateTwoFactorCode();
+        $code = $this->generateTwoFactorCode();
         try 
         {
             $status=Unifonic::send($user->phone_number, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
             $status=collect($status);
             if ($status['success']) {
-                Session::put('message', 'notification sent.');
+                Session::put('message', trans('lang.frontend.two_factor_message'));
             } else {
                 Session::put('error', 'something went wrong !');
             }
@@ -111,8 +111,11 @@ class User extends Authenticatable
             \Auth::logout();
 
             $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
-            Session::put('error', $e->getMessage());
+
+            Session::put('message', $e->getMessage());
+
             return redirect('/en/login');
+
         }
 
         

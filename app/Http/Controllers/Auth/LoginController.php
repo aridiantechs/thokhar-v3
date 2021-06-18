@@ -143,7 +143,9 @@ class LoginController extends Controller
         
         if($user){
             Auth::login($user);
+            
             // $user->generateTwoFactorCode();
+            
             $user->twoFactorAndSendText($user);
         
             return redirect()->route('home', app()->getLocale())->with([

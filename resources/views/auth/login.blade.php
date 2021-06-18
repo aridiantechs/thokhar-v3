@@ -50,19 +50,8 @@
         <h5 class="{{$textAlign}} mt-4 mb-4">{{ trans('lang.login_form.Kindly log in to start our services') }}</h5>
         <span class="clearfix"></span>
 
-        {{-- @if (session('error'))
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <div class="card-body">
-                    <div class="alert alert-warning" role="alert">
-                        {{ session('error')}} {{ \Session::put('error', '') }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-        @endif --}}
-
         @include('frontend.notifications.warning')
+
         <form method="POST" action="{{ route('authenticate', app()->getLocale()) }}">
           @csrf
           <div class="form-group form-group-new">

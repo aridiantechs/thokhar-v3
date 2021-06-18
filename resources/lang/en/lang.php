@@ -961,7 +961,7 @@ return [
         'free_of_charge' => 'Free of charges',
 
         'two_factor_verification' => 'Two Factor Verification',
-        'two_factor_message' => 'We have sent you Two Factor Authentication Code. If you have not received it, click ',
+        'two_factor_message' => 'We have sent you Two Factor Authentication Code. If you have not received it, try resend ',
         'two_factor_here' => 'here',
         'two_factor_verification_code' => 'two factor verification code',
         'enter_two_factor_authentication_code_here' => 'enter two factor authentication code here',

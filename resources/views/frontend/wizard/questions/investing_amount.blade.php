@@ -57,7 +57,7 @@
                             <div class="col-md-12">
                                 <div class="row flex-column-reverse flex-lg-row">
 
-                                    <div class="col-md-4">
+                                    <div class=" col-lg-4 col-md-12 col-sm-12">
 
                                         <div class="form-group form-group-new mb-0 mb-lg-0 mb-5">
                                             
@@ -74,7 +74,7 @@
                                         
                                     </div>
                                     
-                                    <div class="col-md-4">
+                                    <div class=" col-lg-4 col-md-12 col-sm-12">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
                                             
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-md-4">
+                                    <div class=" col-lg-4 col-md-12 col-sm-12">
 
                                         <div class="form-group form-group-new mb-5 mb-lg-0">
                                             @include('frontend.inputs.input_group', [

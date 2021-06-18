@@ -717,6 +717,7 @@ function indicator(value){
 
 			success: function (res) {
 				$('body').addClass('loaded');
+				window.location.href="{{ route('steps', locale()) }}";
 				if (res.status=="success") {
 					// $('#modal__1').modal('toggle');
 				} else {
@@ -726,7 +727,7 @@ function indicator(value){
 			},
 			
 		});
-		window.location.href="{{ route('steps', locale()) }}";
+		
 		return false;
 	})
 </script>

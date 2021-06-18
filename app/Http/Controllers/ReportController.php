@@ -112,7 +112,7 @@ class ReportController extends Controller
         $order->save();
 
         try{
-            Mail::to(auth()->user()->email)->send(new SampleReport($data));
+            // Mail::to(auth()->user()->email)->send(new SampleReport($data));
             $res=[
                 "status"=>'success',
                 "message"=>'report sent'

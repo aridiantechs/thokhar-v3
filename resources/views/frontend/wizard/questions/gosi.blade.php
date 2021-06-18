@@ -168,7 +168,7 @@
 				<div class="nav-tabs-wrapper desktop d-none d-lg-block">
 					<ul class="nav nav-tabs d-block d-ltr">
 						<li class="nav-item">
-							<a class="text-{{ $alignreverse }} nav-link success" data-toggle="tab" href="#income">
+							<a class="text-{{ $alignreverse }} nav-link success" href="#income">
 							<span class="step-parent step-parent-1" data-bar="1"></span>
 							<span class="step-text">
 								<span>

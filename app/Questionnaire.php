@@ -2053,9 +2053,30 @@ class Questionnaire extends Model
         return ((integer)$this->getPlannedRetirementAge()-$this->getPersonalInfo($user)['personal_info']['years_old'])*12;
     }
 
+    // public function AverageMonthlySalaryLastTwoYears(User $user = null)
+    // {
+    //     if($month <= 2001){
+
+    //         return 24;
+        
+    //     }elseif($month > 2001){
+            
+    //         return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
+
+    //     }
+    // }
+
     public function getRetirementGOCIMonthlyIncome(User $user = null)
     {
-        return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
+        // if($month <= 2001){
+
+            return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
+        
+        // }elseif($month > 2001){
+            
+        //     return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
+
+        // }
     }
 
     public function getCashAndEquivlent(User $user = null)

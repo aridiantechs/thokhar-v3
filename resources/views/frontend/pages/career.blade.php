@@ -21,6 +21,13 @@
     .p-inherit{
         padding: inherit;
     }
+
+    .error_clr{
+        color: red !important;
+    }
+    .error{
+       border: 1px solid red !important;
+    }
 </style>
 @endsection
 
@@ -51,18 +58,18 @@
 
                 @include('frontend.notifications.success')
                 @include('frontend.notifications.warning')
-                <form method="POST" action="{{ route('career.store', locale()) }}" class="mt-3" enctype="multipart/form-data">
+                <form method="GET" action="mailto:info@thokhor.com{{-- {{ route('career.store', locale()) }} --}}" id="mailForm" class="mt-3" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-12 {{-- p{{ $alignShortRev }}-0 --}}">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group form-group-new">
                                         <div class="input-group">
                                             <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="name" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_name') }}">
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-12">
                                     <div class="row flex-column-reverse flex-lg-row">
                                         {{-- <div class="col-lg-6 order-1 order-lg-2 mb-3">
@@ -82,13 +89,30 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-md-12">
+                                                <div class="form-group form-group-new">
+                                                    <div class="input-group">
+                                                        <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="subject" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_subject') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12">
+                                                <div class="form-group form-group-new">
+                                                    <div class="input-group">
+                                                        {{-- <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="body" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_body') }}"> --}}
+                                                        <textarea class="form-control input-big text-{{$align}}" name="body" value="" required autocomplete="email" placeholder="{{ trans('lang.frontend_contact.contact_body') }}" cols="30" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="col-md-12">
                                                 <div class="form-group form-group-new">
                                                     <div class="input-group">
                                                         <input id="inputName" type="text" class="form-control input-big text-{{$align}}" name="phone_number" value="" required autocomplete="email" placeholder="{{ trans('lang.login_form.phone_number') }}">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         {{-- </div> --}}
                                         
                                     </div>
@@ -96,7 +120,7 @@
                             </div>
                            
                             <div class=" text-{{$align}} ">
-                                <button type="submit" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary mt-4">
+                                <button type="button" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary mt-4 mailBtn">
                                     {{-- <i class="fa fa-arrow-left"></i> --}}
                                     <span class="d-inline-block">{{ trans('lang.frontend_contact.contact_send') }}</span>
                                     <i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -155,6 +179,31 @@ $(document).ready(function(){
             
         }
     );
+
+    $('.mailBtn').on('click',function(){
+        var emptyFields = $('#mailForm input[required]').filter(function() {
+                            return $(this).val() === "";
+                        }).length;
+        if (emptyFields>0) {
+            
+            $('#mailForm *').filter(':input').each(function () {
+                
+                if ( $(this).attr('required') && $(this).val()=='') {
+                    $(this).addClass( "error" );
+                    
+                }
+                else{
+                    $(this).removeClass( "error" );
+                    $(this).css( "border-color", "#dddddd" );
+                }
+            });
+        } else {
+            $('#mailForm').attr('action','mailto:info@thokhor.com');
+            $('#mailForm').submit();
+        }
+        
+        
+    })
 })
 </script>
 @endsection

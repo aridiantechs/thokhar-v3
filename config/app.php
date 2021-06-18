@@ -27,7 +27,12 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    
 
+        'AppSid' => env('UNIFONIC_APP_ID'),
+        
+        'ApiURL' => 'http://api.unifonic.com/rest/',
+        
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -177,7 +182,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Multicaret\Unifonic\UnifonicServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -263,7 +268,7 @@ return [
 
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
-
+        'Unifonic' => Multicaret\Unifonic\UnifonicFacade::class,
     ],
 
 ];

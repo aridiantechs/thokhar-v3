@@ -143,7 +143,8 @@ class LoginController extends Controller
         
         if($user){
             Auth::login($user);
-            $user->generateTwoFactorCode();
+            // $user->generateTwoFactorCode();
+            $user->twoFactorAndSendText($user);
         
             return redirect()->route('home', app()->getLocale())->with([
                 'message' => 'user_authenticated'
@@ -160,10 +161,10 @@ class LoginController extends Controller
 
             Auth::login($user);
 
-            $user->generateTwoFactorCode();
+            // $user->generateTwoFactorCode();
 
             // For sms
-            // $user->twoFactorAndSendText($user);
+            $user->twoFactorAndSendText($user);
 
             // Create user questionnaire
             Questionnaire::create_questionnaire($user, null);

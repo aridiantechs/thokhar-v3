@@ -617,6 +617,8 @@ return [
 
         'contact_send_us_a_message' => '   أرسل لنا رسالة بالبريد الإلكتروني        ',
         'contact_email' => '   البريد الإلكتروني         ',
+        'contact_subject' => 'موضوعات',
+        'contact_body' => 'المحتوى',
         'contact_email_placeholder' => 'أدخل البريد الإلكتروني',
         'contact_name' => '   الاسم        ',
         'contact_name_placeholder' => 'أدخل الاسم',

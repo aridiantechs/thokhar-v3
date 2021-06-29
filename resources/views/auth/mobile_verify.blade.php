@@ -1,153 +1,97 @@
 @inject('request', 'Illuminate\Http\Request')
 
-@extends('dashboard.layouts.login', ['title' => $title1 ?? 'Mobile Verification'])
+@extends('frontend.layouts.app', ['title' => $title1 ?? '2FA Auth'])
 
 @section('styles')
-<style type="text/css">   
-.button, .button:link {
-    border: 0px solid #01630a;
-}
-    
-.logo {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-  -moz-appearance:textfield;
-}
+<style type="text/css">
+  .input-group .form-control:last-child, .input-group .form-control:first-child{
+    border-radius: 10px !important
+  }
 
-#wrapper #dialog #form input {
-    margin: 0 0.6rem;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    border: solid 1px #ccc;
-    /*box-shadow: 0 0 5px #ccc inset;*/
-    outline: none;
-    width: 22%;
-    transition: all 0.2s ease-in-out;
-    border-radius: 3px;
-}
+  .focused .input-group .form-control{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 30px #0000001f !important;
+  }
 
-#wrapper #dialog #form input:focus {
-    border-color: #016216;
-    box-shadow: 0 0 5px #016216 inset;
-}
-
-#wrapper #dialog #form input::selection {
-    background: transparent;
-}
-
-@media only screen and (max-width: 1024px) {
-    /*#wrapper #dialog #form input {
-        margin: 0 0.5rem;
-    }*/
-}
-.login__form {
+  .d-ltr{
     direction: ltr;
-}
-
-
-.login {
-    height: 90vh;
-    /*padding: 2rem 0;*/
-}
-
-.digit_inputs {
-    display: flex !important;
-}
-
+  } 
+  .w-fit-content{
+    width: fit-content;
+  }
 </style>
 @endsection
 
 @section('content')
-<section class="login container">
-    
-    {{-- <div class="row">
-        @if (session('message'))
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <div class="card-body">
-                    <div class="alert alert-info" role="alert">
-                        {{ session('message') }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-        @endif
-    </div> --}}
-
-
-    <div class="row">
-
-        <div class="col-md-4 login__container">
-            <div class="s-100"></div>
+<section class="slice py-0 py-lg-5 fix-heigh">
+    <div class="container">
+        <div class="row row-grid flex-column-reverse flex-lg-row">
             
-            @if (session('message'))
-                <div class="card-body">
-                        <div class="alert alert-warning text-center" role="alert">
-                            {{ session('message') }}
-                        </div>
-                    
-                </div>
+            <div class="col-12 col-lg-6">
+                <!-- Heading -->
+                <p class="text-{{$align}} mb-0">
+                  <span><a class="bc__color" href="{{route('/',app()->getLocale() ?? 'ar')}}">{{ trans('lang.Home') }}</a></span> <span> / </span><span> <a class="bc__color" href="{{route('login',app()->getLocale() ?? 'ar')}}"> {{ trans('lang.login') }} </a></span>
+                </p>
+                <h1 class="display-4 text-{{$align}} text-md-{{$align}} mb-3">
+                    <strong class="text-primary font-arabic">{{ trans('lang.2fa.code') }}</strong> 
+                </h1>
+                <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
+                    <strong class="font-arabic">
+                    نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
+                    اللغاية بالنسبة لنا
+                    </strong>
+                </h3>
+                <span class="clearfix"></span>
+
+                @include('frontend.notifications.warning')
                 
-            @endif
+                <form method="POST" class="login__form" action="{{ route('validate_phone', app()->getLocale()) }}">
+                    @csrf
+                    <div class="form-group form-group-new form-group-phone">
+                      <div class="input-group d-flex d-ltr w-fit-content {{-- justify-content-center justify-content-lg-end --}}">
 
-            {{-- <h2 class="login__heading {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
-                {{ trans('lang.Mobile_Verification') }}
-            </h2> --}}
-
-            <p class="{{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
-                {{ trans('lang.Please_enter_last_4_digits_of_your_mobile_number') }}
-            </p>
-            
-
-            
-            <div id="wrapper">
-                <div id="dialog">
-                    <div id="form">
-                        <form method="POST" class="login__form" action="{{ route('validate_phone', app()->getLocale()) }}">
-                            @csrf
+                        <input type="tel" name="mobile[]" maxlength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}"/>
                             
-                            <div class="digit_inputs">
-                                <input type="tel" name="mobile[]" maxlength="1" size="1" min="0" max="9" class="two-fa" pattern="[0-9]{1}"/>
-                                
-                                <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="two-fa" pattern="[0-9]{1}"/>
+                        <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}"/>
 
-                                <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="two-fa" pattern="[0-9]{1}"/>
+                        <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}"/>
 
-                                <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="two-fa" pattern="[0-9]{1}" />
-                            </div>
+                        <input type="tel" name="mobile[]" maxLength="1" size="1" min="0" max="9" class="form-control v-code" pattern="[0-9]{1}" />
 
-                            <button type="submit" class="button button__block">{!! ($request->segment(1) == 'ar') ? '&larr;&nbsp; ' . trans('lang.frontend.verify') : trans('lang.frontend.verify') . '&nbsp; &rarr;' !!}
-                            </button>
-                        </form>
+                      </div>
                     </div>
-                </div>
-            </div>
+                   
+                    <div class="mt-4 text-center text-lg-{{$align}}">
+                        
+                        <button type="submit" class="{{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                        {{-- <i class="fa fa-arrow-left"></i> --}}
+                        <span class="d-inline-block">{!! trans('lang.frontend.verify') !!}</span>
+                        <i class="fa fa-arrow-{{$arrowAlign}}"></i>
+                        </button>
+                    </div>
+                </form>
 
-            <div class="login__or">
-                &mdash; {{ trans('lang.login_form.or') }} &mdash;
-            </div>
-            <div class="regsiter__google">
-                <a href="{{ route('login_with_another_account') }}">
-                    <button class="button__google">
-                        {{ trans('lang.login_form.login_with_another_account') }}
-                    </button>
-                </a>
-            </div>
+                {{-- <div class="login__or text-right ">
+                  &mdash; {{ trans('lang.login_form.or') }} &mdash;
+                </div> --}}
+                {{-- <div class="regsiter__google text-right mt-4">
+                    <a href="{{ route('login_with_another_account') }}">
+                        <button class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
+                            {{ trans('lang.login_form.login_with_another_account') }}
+                        </button>
+                    </a>
+                </div> --}}
 
+            </div>
+            <div class="col-12  col-lg-6 text-center">
+              <!-- Image -->
+              <figure class="w-100">
+                  <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/login-bg.svg') }}" class="img-fluid">
+              </figure>
+          </div>
         </div>
     </div>
 </section>
-
 
 
 @endsection
@@ -204,7 +148,7 @@ input[type=number] {
                 count--;
 
             if(count == 4){
-                $('.login__form').submit();
+              $('#login__form').submit();
             }
         });
       }
@@ -237,5 +181,23 @@ input[type=number] {
     function callNumber(){
       // alert('Calling')
     }
+</script>
+
+
+
+
+<script type="text/javascript">
+
+{{-- {!! date("M d, Y h:m:s", strtotime('May 14, 2020 16:00:00')) !!} --}}
+{{-- {!! auth()->user()->two_factor_expires_at !!} --}}
+
+function convertDateForIos(date) {
+    var arr = date.split(/[- :]/);
+    date = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
+    return date;
+}
+
+
+
 </script>
 @endsection

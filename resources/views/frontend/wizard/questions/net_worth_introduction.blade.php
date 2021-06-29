@@ -76,7 +76,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' =>trans('lang.wizard_q.Do you have Deposits in Banks') /* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=> trans('lang.wizard_q.cash amount')
 							])
@@ -91,12 +91,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["cash_and_deposit"] ?? '', 0),
                                             'old_val' => "_net_assets.financial_assets.cash_and_deposit",
                                             'placeholder' => 'المبلغ بالريال',
-                                            'label' => trans('lang.wizard_q.Do you have Deposits in Banks')
+                                            // 'label' => trans('lang.wizard_q.Do you have Deposits in Banks')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
@@ -116,7 +116,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' => trans('lang.wizard_q.Do you have Stocks')/* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=>  trans('lang.question.equities') 
 							])
@@ -131,12 +131,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["equities"] ?? '', 0),
                                             'old_val' => "net_assets.financial_assets.equities",
                                             'placeholder' => 'المبلغ بالريال', 
-                                            'label' => trans('lang.wizard_q.Do you have Stocks')
+                                            // 'label' => trans('lang.wizard_q.Do you have Stocks')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
@@ -155,7 +155,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' => trans('lang.wizard_q.Do you have Bonds or Sukuk')/* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=>  trans('lang.question.bonds') 
 							])
@@ -170,12 +170,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["bonds"] ?? '', 0),
                                             'old_val' => "net_assets.financial_assets.bonds",
                                             'placeholder' => 'المبلغ بالريال', 
-                                            'label' => trans('lang.wizard_q.Do you have Bonds or Sukuk')
+                                            // 'label' => trans('lang.wizard_q.Do you have Bonds or Sukuk')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
@@ -194,7 +194,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' =>trans('lang.wizard_q.Do you have Real Estate') /* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=> trans('lang.wizard_q.Real estate')
 							])
@@ -209,12 +209,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["real_assets"]["real_estate"] ?? '', 0),
                                             'old_val' => "net_assets.real_assets.real_estate",
                                             'placeholder' => 'المبلغ بالريال', 
-                                            'label' => trans('lang.wizard_q.Do you have Real Estate')
+                                            // 'label' => trans('lang.wizard_q.Do you have Real Estate')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
@@ -233,7 +233,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' => trans('lang.wizard_q.Do you have Private business')/* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=> trans('lang.question.unliquid_priavte_business')
 							])
@@ -248,12 +248,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["real_assets"]["pe"] ?? '', 0),
                                             'old_val' => "net_assets.real_assets.pe",
                                             'placeholder' => 'المبلغ بالريال', 
-                                            'label' => trans('lang.wizard_q.Do you have Private business')
+                                            // 'label' => trans('lang.wizard_q.Do you have Private business')
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
@@ -272,7 +272,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة',
+								'text' => trans('lang.wizard_q.Do you have other assets')/* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
 								'btn_class' => 'd-none',
 								'heading'=> trans('lang.wizard_q.Other assets')
 							])
@@ -287,12 +287,12 @@
                                             'value' => currency($user_questionnaire->net_assets["net_assets"]["other_assets"]["other"] ?? '', 0),
                                             'old_val' => "net_assets.other_assets.other",
                                             'placeholder' => 'المبلغ بالريال',
-                                            'label' => trans('lang.wizard_q.Do you have other assets') 
+                                            // 'label' => trans('lang.wizard_q.Do you have other assets') 
 
                                         ])
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3 mt-auto">
 									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>

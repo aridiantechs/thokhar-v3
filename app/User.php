@@ -61,8 +61,8 @@ class User extends Authenticatable
     public function generateTwoFactorCode()
     {
         $this->timestamps = false;
-        // $this->two_factor_code = rand(1000, 9999);
-        $this->two_factor_code = 9999;
+        $this->two_factor_code = rand(1000, 9999);
+        // $this->two_factor_code = 9999;
         $this->two_factor_expires_at = now()->addMinutes(125);
         // $this->two_factor_expires_at = null;
         $this->save();
@@ -83,7 +83,8 @@ class User extends Authenticatable
         $code = $this->generateTwoFactorCode();
         try 
         {
-            $status=Unifonic::send($user->phone_number, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
+            $phone=preg_replace('/^0/', '966', $user->phone_number);
+            $status=Unifonic::send($phone, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
             $status=collect($status);
             if ($status['success']) {
                 Session::put('message', trans('lang.frontend.two_factor_message'));

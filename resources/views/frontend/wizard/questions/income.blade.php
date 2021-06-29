@@ -5,6 +5,13 @@
 		}
 	}
 	
+	
+	@media screen and (max-width : 614px)
+	{
+		.mbop-1{
+			margin-bottom:1rem !important;
+		}
+	}
 </style>
 <section class="slice py-3 pb-5 fix-height" id="income">
 	<div class="mt-5">
@@ -95,7 +102,7 @@
 	                                        ])
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-3 mt-auto">
 										<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 											<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>
 											<i class="fa fa-arrow-{{$arrowAlign}}"></i>

@@ -157,7 +157,7 @@
 									</div>
 								</div>
 								
-								<div class="col-md-6">
+								<div class="col-md-6 mt-auto">
 									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
 										<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>

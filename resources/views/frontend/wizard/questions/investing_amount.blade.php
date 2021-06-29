@@ -22,6 +22,14 @@
             font-size: 16px;
         }
     }
+    
+    
+    @media screen and (max-width : 614px)
+        {
+            .mbop-1{
+                margin-bottom:1rem !important;
+            }
+        }
 </style>
 @endsection
 

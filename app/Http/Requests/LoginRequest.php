@@ -24,7 +24,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'phone_number' => 'required|numeric|digits:12',
+            'phone_number' => 'required|numeric|digits:10',
             // 'email' => 'required|email',
         ];
     }

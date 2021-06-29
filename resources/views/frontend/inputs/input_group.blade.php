@@ -2,7 +2,7 @@
 @if(isset($label))
 	<h4 class="text-{{$align}} font-arabic">{{-- <span class="color-red">*</span> --}}{{ $label ?? '' }}</h4>
 @endif
-<div class="input-group">
+<div class="input-group mb-auto mbop-1">
 	@if(!isset($no_icon))
 	    <div class="input-group-prepend">
 	        <span class="input-group-text"><i data-feather="{{ $icon ?? 'check-circle' }}"></i></span>

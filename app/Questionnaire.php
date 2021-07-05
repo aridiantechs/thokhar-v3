@@ -2014,6 +2014,11 @@ class Questionnaire extends Model
         return (int)(($this->getSavingPlan($user)['saving_plan']['current_saving_balance']) ?? 0);
     }
 
+    public function getContribution(User $user = null)
+    {
+        return (int)(($this->getSavingPlan($user)['saving_plan']['monthly_saving_plan_for_retirement']) ?? 0) * 12;
+    }
+
     public function getNetReturnBeforeRetirement(User $user = null)
     {
         // $before_retirement = Constant::where('constant_meta_type' , 'Net_Return/Year_(Before_Retirement)')->where('constant_attribute' , $this->getRiskAbilityAndRiskTolerance($user)['result'])->first();
@@ -2101,6 +2106,36 @@ class Questionnaire extends Model
 
     public function getGOSIorPPAmonthlySubscription(User $user = null)
     {
+
+        $year = (integer)$this->getGosi($user)['gosi']['strating_year_in_plan'] ?? 0;
+
+        if($year < 2001)
+            $diviser = 600;
+        else
+            $diviser = 480;
+
+        $current_year = (integer)Carbon::now()->format('Y');
+
+        $gosi_value_with_year = (((($current_year - $year)) * 12) * (integer)$this->getGosi($user)['gosi']['expecting_salary_at_retirement'])/$diviser;
+
+        
+        // Apply dependents
+        $dependents = (integer)$this->getGosi($user)['gosi']['no_of_dependents'] ?? 0;
+
+        if($dependents == 1)
+            $dependent_percentage_value = 0.10 * $gosi_value_with_year;
+
+        else if($dependents == 2)
+            $dependent_percentage_value = 0.15 * $gosi_value_with_year;
+
+        else if($dependents >= 3)
+            $dependent_percentage_value = 0.20 * $gosi_value_with_year;
+
+        else
+            $dependent_percentage_value = 0;
+
+        return $gosi_value_with_dependents = $gosi_value_with_year + $dependent_percentage_value;
+
         return (integer)$this->getGosi($user)['gosi']['monthly_subscription'] ?? 0;
     }
 

@@ -1,5 +1,5 @@
 
-<section class="slice py-3 pb-5 " id="net-worth">
+<section class="slice py-3 pb-5 fix-height" id="net-worth">
 	<div class="mt-5">
 		<div class="nav-tabs-wrapper mt-5rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;" style="{{$align}}: 15px;">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -137,7 +137,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -176,7 +176,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -215,7 +215,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -254,7 +254,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
@@ -293,7 +293,7 @@
 									</div>
 								</div>
 								<div class="col-md-3 mt-auto">
-									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;">
+									<button type="submit" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;">
 										{{-- <i class="fa fa-arrow-left"></i> --}}
 										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>

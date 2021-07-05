@@ -1,5 +1,5 @@
 
-<section class="slice py-3 pb-5 fix-height" id="income">
+<section class="slice py-3 pb-5 {{-- fix-height --}}" id="income">
 	<div class="mt-2">
 		<div class="nav-tabs-wrapper mt-9rem mobile d-block d-lg-none">
 			<ul class="nav nav-tabs d-flex align-items-center">
@@ -150,8 +150,22 @@
                                         ])
 									</div>
 								</div>
+								<div class="col-md-6">
+									<div class="form-group form-group-new mb-0">
+										@include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'gosi[no_of_dependents]', 
+                                                'value' => $user_questionnaire->gosi["gosi"]["no_of_dependents"] ?? 0,
+                                                'old_val' => "gosi.no_of_dependents",
+                                                'placeholder' => '', 
+                                                'no_icon' => true,
+                                                'label' => trans('lang.question.no_of_dependents')
+
+                                        ])
+									</div>
+								</div>
 								<div class="col-md-6 mt-auto">
-									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="{{$align}}: 15px;" >
+									<button type="submit" class="btn-{{$align}} btn f-{{$align}} btn-big btn-gradient btn-rad35 btn-primary with-arrow {{-- stick_to_bottom --}} mt-4 " >
 										{{-- <i class="fa fa-arrow-{{$align}}"></i> --}}
 										<span class="d-inline-block p-0-1">{{ trans('lang.question.next') }}</span>
 										<i class="fa fa-arrow-{{$arrowAlign}}"></i>

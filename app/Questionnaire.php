@@ -2044,8 +2044,9 @@ class Questionnaire extends Model
 
     public function getExpectedSalaryAtRetirement(User $user = null)
     {
-        return (integer)$this->getGosi($user)['gosi']['expecting_salary_at_retirement'];
-        // return $this->getGosi($user)['gosi']['mothly_life_expenses_after_retirement'];
+        $salary_at_retirement = (integer)$this->getGosi($user)['gosi']['expecting_salary_at_retirement'];
+        
+        return ($salary_at_retirement > 45000) ? 45000 : $salary_at_retirement;
     }
 
     public function getPlannedRetirementAge(User $user = null)
@@ -2116,7 +2117,7 @@ class Questionnaire extends Model
 
         $current_year = (integer)Carbon::now()->format('Y');
 
-        $gosi_value_with_year = (((($current_year - $year)) * 12) * (integer)$this->getGosi($user)['gosi']['expecting_salary_at_retirement'])/$diviser;
+        $gosi_value_with_year = (((($current_year - $year)) * 12) * $this->getExpectedSalaryAtRetirement($user))/$diviser;
 
         
         // Apply dependents

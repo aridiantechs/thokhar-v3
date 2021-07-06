@@ -1134,6 +1134,14 @@ div#profile_image_back {
     .stick_to_bottom {
         position: unset;
     }
+    .nav-tabs-wrapper.mobile .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span {
+        width: 70%;
+    }
+    .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span {
+        display: block;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
 }
 
 
@@ -1142,4 +1150,10 @@ div#profile_image_back {
 }
 .mt-9rem{
     margin-top: 9rem;
+}
+h4.font-arabic {
+    font-size: 1.1rem;
+}
+h3.txt-blue-light.font-arabic {
+    font-size: 1.2rem;
 }

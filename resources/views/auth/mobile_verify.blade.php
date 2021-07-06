@@ -61,7 +61,7 @@
                       </div>
                     </div>
                    
-                    <div class="mt-4 text-center text-lg-{{$align}}">
+                    <div class="mt-4 text-center text-lg-{{$align}} mb-5">
                         
                         <button type="submit" class="{{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                         {{-- <i class="fa fa-arrow-left"></i> --}}

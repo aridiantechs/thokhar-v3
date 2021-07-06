@@ -132,9 +132,8 @@
 		<br><br><br><br><br>
 		
 		
-		<div class="row mt-5">
-			<div class="col-3"></div>
-			<div class="col-7">
+		<div class="row mt-5 justify-content-center">
+			<div class="col-md-7 col-12">
 				<img
                   class="img img-responsive image-main"
                   src="
@@ -302,22 +301,22 @@
 		<div class="row mt-1 personal-info">
 			<div class="col-1 rem-col"></div>
 			
-			<div class="col-3">
+			<div class="col-md-3 col-6">
 				<p>{{ trans('lang.report.name') }}</p>
 				<b>{{ $data['personalInfo']['name'] }}</b>
 			</div>
 			
-			<div class="col-3">
+			<div class="col-md-3 col-6">
 				<p>{{ trans('lang.report.education') }}</p>
 				<b>{{ trans($data['personalInfo']['education_level']) }}</b>
 			</div>
 			
-			<div class="col-2">
+			<div class="col-md-2 col-6">
 				<p>{{ trans('lang.report.current_age') }}</p>
 				<b>{{ $data['personalInfo']['years_old'] }}</b>
 			</div>
 			
-			<div class="col-3">
+			<div class="col-md-3 col-6">
 				<p>{{ trans('lang.report.planned_retirement_age') }}</p>
 				<b>{{ $data['personalInfo']['retirement_age'] }}</b>
 			</div>
@@ -334,9 +333,9 @@
 				
 			</div>
 		</div>
-		<div class="row financial-position">
-			<div class="col-1"></div>
-			<div class="col-5">
+		<div class="row financial-position justify-content-center">
+			
+			<div class="col-md-5 col-12">
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.monthly_income_today') }}</td>
@@ -357,7 +356,7 @@
 					
 				</table>
 			</div>
-			<div class="col-5">
+			<div class="col-md-5 col-12">
 				<table>
 					<tr>
 						<td>{{ trans('lang.report.total_assets_today') }}</td>
@@ -378,7 +377,7 @@
 					
 				</table>
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 		<div class="row">
 			<div class="col-1 rem-col"></div>
@@ -536,8 +535,8 @@
 		</div>
  
 
-		<div class="row">
-			<div class="col-1"></div>
+		<div class="row justify-content-center">
+			
 			<div class="col-10">
 
 				<p class="text-secondary mt-5">
@@ -619,13 +618,13 @@
 				</div>
 				
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 
 
 
-		<div class="row">
-			<div class="col-1"></div>
+		<div class="row justify-content-center">
+			
 			<div class="col-10">
 
 				<p class="text-secondary mt-5">
@@ -682,13 +681,13 @@
 				</div>
 				
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 
 		
 
-		<div class="row">
-			<div class="col-1"></div>
+		<div class="row justify-content-center">
+			
 			<div class="col-10">
 
 				<p class="text-secondary mt-5">
@@ -770,12 +769,12 @@
 				</div>
 				
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 
 		
-		<div class="row">
-			<div class="col-1"></div>
+		<div class="row justify-content-center">
+			
 			<div class="col-10">
 
 				<p class="text-secondary mt-5">
@@ -844,7 +843,7 @@
 				</div>
 				
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 
 		
@@ -874,15 +873,14 @@
 
 		
 
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-10">
+		<div class="row justify-content-center">
+			<div class="col-11">
 
 				<p class="text-secondary mt-5">
 					{{ trans('lang.report.early_retirement_possibility') }}
 				</p>
 
-				<div class="report m-top-p5">
+				<div class="report m-top-p5 early_retirement">
 					<div class="nav-tabs-wrapper mt-5 mobile ">
 						<ul class="nav nav-tabs d-flex align-items-center">
 							<li class="nav-item nav-item-risk-1">
@@ -957,7 +955,7 @@
 				</div>
 				
 			</div>
-			<div class="col-1"></div>
+			
 		</div>
 
 

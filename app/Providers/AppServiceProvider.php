@@ -47,6 +47,8 @@ class AppServiceProvider extends ServiceProvider
 
         $alignreverse =  $request->segment(1) == 'ar' ? 'left' : 'right';
 
+        $language     =  $request->segment(1) == 'ar' ? 'ar' : 'en';
+
 
         View::share([
                 'align'  => $align,
@@ -59,7 +61,8 @@ class AppServiceProvider extends ServiceProvider
                 'textAlignMd'   => $textAlignMd,
                 'btnAlign'      => $btnAlign,
                 'alignreverse'  => $alignreverse,
-                'oppositedirection'  => $oppositedirection
+                'language'      => $language,
+                'oppositedirection'  => $oppositedirection,
             ]);
     }
 }

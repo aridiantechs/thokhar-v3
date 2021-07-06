@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="493" height="356" viewBox="0 0 493 356">
+  <g id="Group_363" data-name="Group 363" transform="translate(-375.928 -3492.665)">
+    <line id="Line_7" data-name="Line 7" x2="466.128" transform="translate(381.32 3745.888)" fill="none" stroke="#b7cdcf" stroke-width="1"/>
+    <line id="Line_9" data-name="Line 9" x2="466.128" transform="translate(381.32 3665.119)" fill="none" stroke="#b7cdcf" stroke-width="1"/>
+    <line id="Line_12" data-name="Line 12" x2="466.128" transform="translate(381.32 3503.58)" fill="none" stroke="#b7cdcf" stroke-width="1"/>
+    <line id="Line_13" data-name="Line 13" x2="466.128" transform="translate(381.32 3584.349)" fill="none" stroke="#b7cdcf" stroke-width="1"/>
+    <g id="Path_561" data-name="Path 561" transform="translate(376 3784)" fill="#01baef">
+      <path d="M 473.019775390625 41.66204833984375 L 1.500020623207092 41.66204833984375 L 1.500020623207092 -285.7318420410156 L 141.5746612548828 -176.1191253662109 L 141.638671875 -176.0690612792969 L 141.7076721191406 -176.0261840820312 L 389.4630126953125 -22.1547737121582 L 389.6259155273438 -22.05359840393066 L 389.8089599609375 -21.99665641784668 L 473.019775390625 3.881798028945923 L 473.019775390625 41.66204833984375 Z" stroke="none"/>
+      <path d="M 2.999969482421875 -282.6533508300781 L 2.999969482421875 40.16204833984375 L 471.519775390625 40.16204833984375 L 471.519775390625 4.986129760742188 L 388.9973449707031 -20.67819213867188 L 388.6716613769531 -20.88050842285156 L 140.7782287597656 -174.8376159667969 L 140.6502075195312 -174.937744140625 L 2.999969482421875 -282.6533508300781 M -3.0517578125e-05 -288.810302734375 L 142.4990234375 -177.3003845214844 L 390.25439453125 -23.42900085449219 L 474.519775390625 2.777374267578125 L 474.519775390625 43.16204833984375 L -3.0517578125e-05 43.16204833984375 L -3.0517578125e-05 -288.810302734375 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="Path_562" data-name="Path 562" transform="translate(376 3785.921)" fill="#036eed">
+      <path d="M 473.019775390625 39.740966796875 L 1.500020623207092 39.740966796875 L 1.500020623207092 -87.28818511962891 L 381.3079833984375 -26.97566223144531 L 473.019775390625 1.956021308898926 L 473.019775390625 39.740966796875 Z" stroke="none"/>
+      <path d="M 2.999969482421875 -85.53117370605469 L 2.999969482421875 38.24096298217773 L 471.519775390625 38.24096298217773 L 471.519775390625 3.055675506591797 L 380.9632263183594 -25.5116138458252 L 2.999969482421875 -85.53117370605469 M -3.0517578125e-05 -89.04515838623047 L 381.6534729003906 -28.43959617614746 L 474.519775390625 0.8563423156738281 L 474.519775390625 41.24096298217773 L -3.0517578125e-05 41.24096298217773 L -3.0517578125e-05 -89.04515838623047 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="Rectangle_901" data-name="Rectangle 901" transform="translate(375.928 3786.665)" fill="#062e40" stroke="#fff" stroke-width="3">
+      <rect width="475" height="41" stroke="none"/>
+      <rect x="1.5" y="1.5" width="472" height="38" fill="none"/>
+    </g>
+    <text id="_20" data-name="20" transform="translate(857.928 3748.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">20</tspan></text>
+    <text id="Year" transform="translate(847.928 3845.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-22.131" y="0">Year</tspan></text>
+    <text id="_10_years" data-name="10 years" transform="translate(730.928 3845.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-43.676" y="0">10 years</tspan></text>
+    <text id="_20_years" data-name="20 years" transform="translate(571.928 3845.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-43.676" y="0">20 years</tspan></text>
+    <text id="_30_years" data-name="30 years" transform="translate(375.928 3845.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">30 years</tspan></text>
+    <text id="Capital_only_without_investment" data-name="Capital only without investment" transform="translate(647.928 3813.665)" fill="#fafdfd" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-251.464" y="0">Capital only without investment</tspan></text>
+    <text id="_Profits_without_reinvesting_" data-name=" Profits without reinvesting " transform="translate(608.928 3764.665)" fill="#fafdfd" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-217.96" y="0" xml:space="preserve"> Profits without reinvesting </tspan></text>
+    <text id="Profits_with_reinvestment" data-name="Profits with reinvestment" transform="translate(593.212 3684.118)" fill="#fafdfd" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-197.323" y="0">Profits with reinvestment</tspan></text>
+    <text id="_60" data-name="60" transform="translate(857.928 3586.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">60</tspan></text>
+    <text id="_40" data-name="40" transform="translate(857.928 3667.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">40</tspan></text>
+    <text id="_80" data-name="80" transform="translate(861.928 3505.665)" fill="#b7cdcf" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">80</tspan></text>
+  </g>
+</svg>

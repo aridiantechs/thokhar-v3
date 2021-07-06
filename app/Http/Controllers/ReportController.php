@@ -68,13 +68,18 @@ class ReportController extends Controller
             return redirect()->route('/', 'en');
         }
 
-        // if(Session::get('verified') && Session::get('public_id') == $report->public_id){
-            // Session::put('verified', 0);
+        if(app('router')->getRoutes()->match(app('request')->create(\URL::previous()))->getName() == 'wizard'){
+            Session::put('verified', 1);
+            Session::put('public_id', $report->public_id);
+        }
+
+        if(Session::get('verified') && Session::get('public_id') == $report->public_id){
+            Session::put('verified', 0);
             $constants = Constant::whereIn('constant_attribute', ['Option_1','Option_2','Option_3',])->orWhere('constant_meta_type', 'Capitel_Deployment')->get();
             return view('dashboard.pdf.report')
                         ->with('data', json_decode($report->report_data, true))
                          ->with('constants', $constants);
-        // }
+        }
 
         Session::put('public_id', $request->q);
         Session::put('user_id', $report->user_id);

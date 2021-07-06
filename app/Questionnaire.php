@@ -2115,7 +2115,7 @@ class Questionnaire extends Model
         else
             $diviser = 480;
 
-        $current_year = (integer)Carbon::now()->format('Y');
+        $current_year = (integer)Carbon::now()->format('Y'); 
 
         $gosi_value_with_year = (((($current_year - $year)) * 12) * $this->getExpectedSalaryAtRetirement($user))/$diviser;
 

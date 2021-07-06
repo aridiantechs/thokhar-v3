@@ -188,7 +188,7 @@
                 </h3>
                 <div class="py-5 d-block d-lg-none">
                     <figure class="w-100">
-                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
+                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2-'.$language.'.png') }}" class="img-fluid w-100">
                     </figure>
                 </div>
                 {{-- <h3 class="txt-gray-light font-arabic text-{{$align}} mt-3">
@@ -198,7 +198,7 @@
             <div class="col-12 col-lg-4{{--  order-2 order-lg-1 --}} d-none d-lg-block">
                 <div class="py-5">
                     <figure class="w-100">
-                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2.png') }}" class="img-fluid w-100">
+                        <img alt="Image placeholder" src="{{ asset('frontend_assets/assets/img/new/about/about-2-'.$language.'.png') }}" class="img-fluid w-100">
                     </figure>
                 </div>
             </div>
@@ -231,11 +231,9 @@
                 </h3>
                 <ul class="LIST__UL text-{{$align}}">
                     <li>{{ trans('lang.frontend_about.mission_li_1') }}</li>
-                    <li> {{ trans('lang.frontend_about.mission_li_2') }}</li>
-                    <li> {{ trans('lang.frontend_about.mission_li_3') }}</li>
-                    <li>
-                        {{ trans('lang.frontend_about.mission_li_4') }}
-                    </li>
+                    <li>{{ trans('lang.frontend_about.mission_li_2') }}</li>
+                    <li>{{ trans('lang.frontend_about.mission_li_3') }}</li>
+                    <li>{{ trans('lang.frontend_about.mission_li_4') }}</li>
                 </ul>
             </div>
             <div class="col-12 col-md-6 col-lg-6 text-center d-none d-lg-block">

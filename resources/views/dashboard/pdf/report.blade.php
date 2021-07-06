@@ -231,7 +231,7 @@
 		
 		<div class="row mt-5">
 			<div class="col-1"></div>
-			<div class="col-5">
+			<div class="col-md-5 col-12">
 				<img class="img img-fluid img-left" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_winners1.png') }}">
 
 				<h1 class="page-heading invst_plan mt-5 pt-3">
@@ -249,7 +249,7 @@
                 </ul>
 
 			</div>
-			<div class="col-5">
+			<div class="col-md-5 col-12">
 				<img class="img img-fluid img-right" style="max-height: 250px" src="{{ asset('frontend_assets/img/banner/undraw_business1.png') }}">
 
 				<h1 class="page-heading invst_plan mt-5 pt-3">
@@ -1133,7 +1133,7 @@
 
 		<div class="row financial-position">
 			<div class="col-1 rem-col"></div>
-			<div class="col-5">
+			<div class="col-12 col-md-5">
 				<p class="text-secondary mt-5">{{ trans('lang.report.assumptions') }}</p>
 				<table>
 					<tr>
@@ -1174,7 +1174,7 @@
 					
 				</table>
 			</div>
-			<div class="col-5">
+			<div class="col-12 col-md-5">
 				<p class="text-secondary mt-5">{{ trans('lang.report.returns_assumptions') }}</p>
 				<table>
 					<tr>
@@ -1210,7 +1210,7 @@
 
 		<div class="row financial-position">
 			<div class="col-1 rem-col"></div>
-			<div class="col-5">
+			<div class="col-12 col-md-5">
 				<p class="text-secondary mt-5">{{ trans('lang.report.income_and_wealth_at_retirement') }}</p>
 				<table>
 					{{-- <tr>
@@ -1348,7 +1348,7 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.Investments_Seletion') }}</p>
-				<table class="tbl-assumptions">
+				<table class="tbl-assumptions table-bordered">
 					<thead>
 						<tr>
 							<th>{{ trans('lang.report.ASSET_CLASS') }}</th>
@@ -1399,7 +1399,7 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10">
 				<p class="text-secondary mt-5">{{ trans('lang.report.Capitel_Deployment') }}</p>
-				<table>
+				<table class="table-bordered">
 					<thead>
 						<tr>
 							<th>{{ trans('lang.report.ASSET_CLASS') }}</th>

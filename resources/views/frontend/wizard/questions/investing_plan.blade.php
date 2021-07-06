@@ -98,7 +98,7 @@
 
 									<div class="col-12 col-md-5 col-lg-6 text-left d-flex align-items-end">
 										<figure class="w-100 div-wrapper">
-											<img alt="" src="{{ asset('frontend_assets/assets/img/new/investment-plan/img-1.svg') }}" class="img-fluid">
+											<img alt="" src="{{ asset('frontend_assets/assets/img/new/investment-plan/img-1-'.$language.'.svg') }}" class="img-fluid">
 										</figure>
 									</div>
 									

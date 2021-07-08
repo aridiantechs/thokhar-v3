@@ -1142,6 +1142,9 @@ div#profile_image_back {
         margin-right: auto !important;
         margin-left: auto !important;
     }
+    .nav-tabs .nav-item:not(.sub-item) .nav-link.active .step-text span {
+        font-size: 16px;
+    }
 }
 
 

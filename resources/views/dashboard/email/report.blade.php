@@ -201,12 +201,12 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="{{ route('download', ['q'=> $data['public_id'], 'en']) }}" class="btn-left btn f-left btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="left: 15px;">
+                    <a href="{{ route('download', ['q'=> $data['public_id'], 'en']) }}" class="btn-left btn f-left btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="left: 15px;text-decoration: none;">
 											<span class="d-inline-block p-0-1 download-btn" style="padding: 15px;background: #0ac0d8;color: #fff;text-decoration: none;width: 170px;">Download report in English</span>
 										</a>
                   </td>
                   <td>
-                    <a href="{{ route('download', ['q'=> $data['public_id'], 'ar']) }}" class="btn-right btn f-right btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="right: 15px;">
+                    <a href="{{ route('download', ['q'=> $data['public_id'], 'ar']) }}" class="btn-right btn f-right btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="right: 15px;text-decoration: none;">
 											<span class="d-inline-block p-0-1 download-btn" style="padding: 15px;background: #0ac0d8;color: #fff;text-decoration: none;width: 170px;">حمل التقرير بالعربي</span>
 										</a>
                   </td>

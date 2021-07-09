@@ -628,8 +628,17 @@
 <script type="text/javascript">
 	window.start_point_bar = 6;
 	window.location.hash = '#risk';
+
+	var nextAailable = true;
+
 	function next(){
-		$('a.nav-link.active').parent().next().children().click();
+		if(nextAailable){
+			nextAailable = false;
+			$('a.nav-link.active').parent().next().children().click();
+			setTimeout(function(){
+				nextAailable = true;
+			},1000);
+		}
 	}
 
 </script>

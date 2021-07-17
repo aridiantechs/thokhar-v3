@@ -394,11 +394,11 @@
         </div>
         <div class="footer-last-section mt-5 pt-5">
             <div class="text-center mb-4">
-                <img src="{{ asset('frontend_assets/assets/img/new/logo-footer.svg') }}" alt="">
+                <img src="{{ althraa_logo() }}" alt="">
             </div>
             <ul class="nav mt-lg-0 ml-auto nav-social-icons text-center d-flex justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link linkedin-a" href="#" target="_blank">
+                    <a class="nav-link linkedin-a" href="https://www.linkedin.com/in/thokhor-%D8%B0%D8%AE%D8%B1-0362651b7" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
@@ -408,7 +408,7 @@
                     </a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link twitter-a" href="#" target="_blank">
+                    <a class="nav-link twitter-a" href="https://twitter.com/thokhor1" target="_blank">
                     <i class="fab fa-twitter"></i>
                     </a>
                 </li>

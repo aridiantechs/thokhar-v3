@@ -83,13 +83,13 @@ class User extends Authenticatable
         $code = $this->generateTwoFactorCode();
         try 
         {
-            $phone=preg_replace('/^0/', '966', $user->phone_number);
-            $status=Unifonic::send($phone, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
-            $status=collect($status);
+            $phone  = preg_replace('/^0/', '966', $user->phone_number);
+            $status = Unifonic::send($phone, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
+            $status = collect($status);
             if ($status['success']) {
                 Session::flash('message', trans('lang.frontend.two_factor_message'));
             } else {
-                Session::flash('error', 'something went wrong !');
+                Session::flash('message', 'something went wrong !');
             }
             
             // $data = array(

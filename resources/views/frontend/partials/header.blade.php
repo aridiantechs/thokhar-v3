@@ -19,8 +19,8 @@
             }, 300);
         });
     </script>
-    <!-- Favicon -->
-    <link rel="icon" href="{{ asset('frontend_assets/assets/img/brand/favicon.png') }}" type="image/png"><!-- Font Awesome -->
+    {{-- favicon --}}
+    <link rel="shortcut icon" type="image/png" href="{{ althraa_favicon() }}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg==" crossorigin="anonymous" />
     
     

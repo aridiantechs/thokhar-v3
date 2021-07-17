@@ -396,7 +396,7 @@
             <div class="text-center mb-4">
                 <img src="{{ althraa_logo() }}" alt="">
             </div>
-            <ul class="nav mt-lg-0 ml-auto nav-social-icons text-center d-flex justify-content-center">
+            <ul class="nav mt-lg-0 ml-auto nav-social-icons text-center pr-0 d-flex justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link linkedin-a" href="https://www.linkedin.com/in/thokhor-%D8%B0%D8%AE%D8%B1-0362651b7" target="_blank">
                     <i class="fab fa-linkedin"></i>

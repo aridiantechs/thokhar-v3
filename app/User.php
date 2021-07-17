@@ -87,9 +87,9 @@ class User extends Authenticatable
             $status = Unifonic::send($phone, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
             $status = collect($status);
             if ($status['success']) {
-                Session::flash('message', trans('lang.frontend.two_factor_message'));
+                // Session::flash('message', trans('lang.frontend.two_factor_message'));
             } else {
-                Session::flash('message', 'something went wrong !');
+                // Session::flash('message', 'something went wrong !');
             }
             
             // $data = array(

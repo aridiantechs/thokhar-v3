@@ -27,13 +27,13 @@
             
 
             <ul class="navbar-nav mt-lg-0 {!! ($request->segment(1) == 'ar') ? 'ml' : 'mr' !!}-auto " style="direction: {{ $align3letter }};">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >{{ trans('lang.home') }}</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >{{ trans('lang.site_menu.about_us') }}</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                      <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >{{ trans('lang.site_menu.legal') }}</a>
                 </li>
                 <li class="nav-item">
@@ -42,7 +42,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('career.index', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
-                </li>
+                </li> --}}
                 @auth
                     @if (auth()->user()->two_factor_code)
                     

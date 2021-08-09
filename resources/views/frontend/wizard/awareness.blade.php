@@ -23,13 +23,18 @@
                 <h1 class="display-4 text-{{$align}} text-lg-{{$align}} mb-3">
                     <strong class="text-primary font-arabic">{{ trans('lang.awareness.Reach To The Financial Freedom')  }}</strong> 
                 </h1>
-                <h3 class="text-{{$align}} text-lg-{{$align}} mb-3 my-5">
-                  <strong class="font-arabic">
-                    {{ trans('lang.awareness.awareness_details') }}
-                  </strong>
-              </h3>
+                <h3 class="text-{{$align}} text-lg-{{$align}} mb-0">
+                    <strong class="font-arabic">
+                        {{ trans('lang.awareness.awareness_title') }}
+                    </strong>                  
+                </h3>
+                <h3 class="text-{{$align}} text-lg-{{$align}} mb-5 mt-1">
+                    <strong class="font-arabic">
+                        {{ trans('lang.awareness.awareness_details') }}
+                    </strong>                  
+                </h3>
 
-                <div class="mt-4 text-lg-{{$align}} text-center">
+                <div class="text-lg-{{$align}} text-center">
                     <a href="{{ route('investing-amount', app()->getLocale()) }}" class="{{$btnAlign}} btn btn-big btn-gradient btn-rad35 btn-primary with-arrow">
                         {{--  <i class="fa fa-arrow-left"></i> --}}
                         <span class="d-inline-block">{{ trans('lang.question.next') }}</span>

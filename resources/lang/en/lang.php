@@ -604,7 +604,7 @@ return [
         'contact_body' => 'Body',
         'contact_email_placeholder' => 'Enter Email',
         'contact_name' => 'Name',
-        'contact_name_placeholder' => 'Enter Name',
+        'contact_name_placeholder' => 'Name',
         'contact_message' => 'Message',
         'contact_message_placeholder' => 'Please type your Message here',
         'contact_send' => 'Send',

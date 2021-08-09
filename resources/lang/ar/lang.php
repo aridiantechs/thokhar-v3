@@ -614,7 +614,7 @@ return [
 
     'frontend_contact' => [
         'contact' => '   التواصل     ',
-        'contact_heading_text' => ' تواصل مع المؤسسين مباشرة ',
+        'contact_heading_text' => 'العلاقة بيننا وبين كل عميل شخصية و مهمة للغاية بالنسبة لنا ',
 
         'contact_send_us_a_message' => '   أرسل لنا رسالة بالبريد الإلكتروني        ',
         'contact_email' => '   البريد الإلكتروني         ',
@@ -623,7 +623,7 @@ return [
         'contact_email_placeholder' => 'أدخل البريد الإلكتروني',
         'contact_name' => '   الاسم        ',
         'contact_name_placeholder' => 'أدخل الاسم',
-        'contact_message' => '   الرسالة        ',
+        'contact_message' => ' نص الرسالة   ',
         'contact_message_placeholder' => ' من فضلك قم بإدخال رسالتك هنا  ',
         'contact_send' => '  إرسال         ',
 

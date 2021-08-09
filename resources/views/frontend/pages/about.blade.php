@@ -12,140 +12,6 @@
 
 @section('content')
 
-   {{--  <div class="background_effect text-{{ $direction }}">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div class="s-35"></div>
-                    <p class="login_link text-center primary-link">
-                        {{ trans('lang.frontend_about.about_us') }}
-                    </p>
-                    <h1 class="text-center page-heading text-dark">
-                        {{ trans('lang.frontend_about.about_our_story') }}
-                    </h1>
-
-                    <div class="s-20"></div>
-                </div>
-            </div>
-        </div>
-        <div class="s-20"></div>
-    </div>
-        
-        <div class="s-50"></div>
-
-        <div class="container">
-            <div class="row flex-column-reverse flex-md-row">
-                <div class="col-md-4 col-sm-12 offset-lg-1 {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
-                    <h1 class="page-heading invst_plan">
-                        {{ trans('lang.frontend_about.about_coffee_started_it_all') }}
-                    </h1>
-                    <p>
-                        {{ trans('lang.frontend_about.about_coffee_text') }}
-                    </p>
-                    
-                </div>
-                <div class="col-md-6 col-sm-12 ">
-                    <div class="" style="padding: 30px 10px;">
-                        <img class="img img-responsive" src="{{ asset('frontend_assets/img/banner/coffee-illustrations.png') }}">
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="s-100"></div>
-
-
-        <div class="container space-bottom">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <img class="img img-responsive" src="{{ asset('frontend_assets/img/banner/undraw_winners.png') }}">
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 col-sm-12 {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
-                    <h1 class="page-heading invst_plan">
-                        {{ trans('lang.frontend_about.mission') }}
-                    </h1>
-                    <p>
-                        {{ trans('lang.frontend_about.mission_text_report') }}
-                    </p>
-                    <ul>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_1') }}</p></li>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_2') }}</p></li>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_3') }}</p></li>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.mission_li_4') }}</p></li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="s-100"></div>
-
-        <div class="container">
-            <div class="row flex-column-reverse flex-md-row">
-                <div class="col-md-4 col-sm-12 offset-lg-1 {{ ($request->segment(1) == 'ar') ? 'text-right' : '' }}">
-                    <h1 class="page-heading invst_plan">
-                        {{ trans('lang.frontend_about.method') }}
-                    </h1>
-                    <p>
-                        {{ trans('lang.frontend_about.method_text') }}
-                    </p>
-                    <ul>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_1') }}</p></li>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_2') }}</p></li>
-                        <li><p><i class="fa fa-check-circle"></i>&nbsp{{ trans('lang.frontend_about.method_li_3') }}</p></li>
-                        
-                    </ul>
-                </div>
-                <div class="col-md-6 col-sm-12 ">
-                    <div class="" style="padding: 30px 10px;">
-                        <img class="img img-responsive" src="{{ asset('frontend_assets/img/banner/undraw_business.png') }}">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="background_effect_inverse">
-            <div class="container">
-
-                <div class="s-100"></div>
-
-                <p class="login_link text-center primary-link">
-                    {{ trans('lang.frontend_about.team') }}
-                </p>
-                <div class="s-35"></div>
-
-                <div class="row text-{{ $direction }}">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-3">
-                        <img src="{{ asset('frontend_assets/img/team/bakarman.png') }}" class="img img-fluid">
-                        <p class="icon-p text_black m-3">
-                            {{ trans('lang.frontend_about.bakarman') }}
-                        </p>
-                        <a href="https://www.linkedin.com/in/wbakarman" target="_blank"><i class="fa fa-linkedin fa-2x ml-3 mr-3 mb-5"></i></a>
-                        <a href="https://twitter.com/wbakarman" target="_blank"><i class="fa fa-twitter fa-2x mr-3 mb-5"></i></a>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <img src="{{ asset('frontend_assets/img/team/alialsheri.png') }}" class="img img-fluid" style="border-radius: 5px;">
-                        <p class="icon-p text_black m-3">
-                            {{ trans('lang.frontend_about.ali') }}
-                        </p>
-                        <a href="https://www.linkedin.com/in/alialshehri" target="_blank"><i class="fa fa-linkedin fa-2x ml-3 mr-3 mb-5"></i></a>
-                        <a href="https://twitter.com/CryptoAlshehri" target="_blank"><i class="fa fa-twitter fa-2x mr-3 mb-5"></i></a>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            <div class="s-100"></div>
-        </div> --}}
-
-
-
-
 <div class="footer-bg">
     <img src="{{ asset('frontend_assets/assets/img/new/footer-bg.svg') }}" class="w-100" alt="">
 </div>
@@ -158,7 +24,7 @@
                 <h1 class="display-4 text-lg-{{$align}} mb-3">
                     <a type="button" href="{{ route('login', locale()) }}" class="float-lg-{{$arrowAlign}} {{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary">  
                     {{-- <i class="fa fa-arrow-left"></i> --}}
-                        <span class="d-inline-block font-arabic">{{ trans('lang.Start Now') }}</span>
+                        <span class="d-inline-block font-arabic">{{ trans('lang.Subscribe Now') }}</span>
                         <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                     </a>
                     <strong class="text-primary float-{{$align}} font-arabic">{{ trans('lang.about_thokhor') }}</strong> 

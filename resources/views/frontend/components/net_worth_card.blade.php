@@ -7,7 +7,7 @@
 						<strong class="text-primary-1 font-arabic">{{ $heading }}</strong>
 					</h1>
 					<h3 class="txt-blue-light text-{{$align}} font-arabic">
-					{{ $text ?? '' }}
+					{!! $text ?? '' !!}
 					</h3>
 					<div class="text-{{$align}}">
 						<button type="button" onclick="next()" id="" class="btn-{{$align}} btn p-0-1 btn-big btn-gradient btn-rad35 btn-primary with-arrow {{ $btn_class ?? '' }}">

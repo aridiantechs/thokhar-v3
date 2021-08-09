@@ -48,7 +48,7 @@ return [
     	'name' => 'اسم',
         'gender' => '  جنس      ',
         'dob' => 'تاريخ الميلاد',
-        'phone_number' => '  رقم الهاتف         ',
+        'phone_number' => '  رقم الجوال   ',
     	'confirm_password' => 'تأكيد كلمة المرور',  
         'type_your_password_here' => 'اكتب كلمة مرورك هنا ',
         'type_your_email_here' => 'اكتب بريدك الالكتروني هنا ',
@@ -88,14 +88,15 @@ return [
     'seconds' => 'ثواني',
     'code_expired' => 'تم ارسال رمز تحقق جديد',
 
-    'Take control of your money'=>'تحكم باستثمار أموالك بشكل كامل باحترافية',
-    'Start Now'=>'ابدأ الآن بدون مقابل',
+    'Take control of your money' => 'تحكم باستثمار أموالك بشكل كامل باحترافية',
+    'Start Now' => 'إبداء الان ',
     'about_thokhor' =>  'عن ذخر',
     'Build your wealth'=>'ذخر عالمك للثراء',
     'Home'=>'الرئيسية',
     'Subscribe Now'=>'اشترك الان',
     'Contact Us'=>'اتصل بنا',
     'Career'=>'حياة مهنية',
+
 
     'question' => [
         'no_1'=>'1 سؤال رقم',
@@ -493,7 +494,7 @@ return [
         'membership' => 'عضوية',
         'data_reg' => 'تاريخ مسجل',
         'renewal_date' => 'تاريخ التجديد',
-        'email_address' => 'عنوان البريد الإلكتروني',
+        'email_address' => 'البريد الالكتروني',
         'password' => 'كلمه السر',
         'gender' => 'جنس',
         'phone' => 'رقم الهاتف',
@@ -656,9 +657,9 @@ return [
         'mission_text_report' => 'مهمتنا ان نكون المخطط المالي الآلي الموثوق للافراد مع تحقيق التوزان في الأركان التالية',
 
         'mission_li_1' => 'سهل ممتنع .',
-        'mission_li_2' => 'عملي ويتيح التطبيق الفوري  .',
-        'mission_li_3' => 'حصيف وبعيد عن العشوائية . ',
-        'mission_li_4' => 'مناسب للاحتياجات الشخصية ',
+        'mission_li_2' => 'عملي ويتيح التطبيق الفوري',
+        'mission_li_3' => 'حصيف وبعيد عن العشوائية',
+        'mission_li_4' => 'مناسب للاحتياجات الشخصية',
 
         'investment' => 'منهجيتنا الاستثمارية',
         'investment_text' => 'الاستثمار على الاجل الطويل والاعتماد على ثلاث اركان',
@@ -1245,7 +1246,8 @@ return [
     'net_worth' => [
         'Introduction' => 'مقدمة',
         'thinks his net worth is' => ' أن صافي ثروته هو النقد المتوفر في حسابها البنكي فقط ، لكن صافي
- ثروتها يشمل أكثر من ذلك.',
+ ثروتها يشمل أكثر من ذلك.     <br>   هيا نكتشف ذلك.',
+
     ],
 
     'wizard_q' => [
@@ -1266,7 +1268,7 @@ return [
         'Do you have other assets' => 'هل لديك أصول اخرى ( ذهب ، بتكوين ، اخرى )؟ (في حالة نعم ،  ادخل القيمة السوقية بالريال السعودي )',
 
         'Expecting salary at retirement' => 'الراتب المتوقع عند التقاعد',
-        'Monthly subscription' => 'المبلغ المستقطع حاليا من الراتب للتأمينات الاجتماعية',
+        'Monthly subscription' => 'مبلغ الاستثمار الشهري ( متكرر )',
         'Starting year registration in GOCI' => 'بدء التسجيل بالتأمينات ',
 
         'Monthly investing Payment' => 'مبلغ الاستثمار الشهري ( متكرر )',

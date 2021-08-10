@@ -37,8 +37,7 @@
                 </h1>
                 <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">
-                    نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
-                    اللغاية بالنسبة لنا
+                      {{ trans('lang.2fa.heading') }}
                     </strong>
                 </h3>
                 <span class="clearfix"></span>

@@ -1252,6 +1252,11 @@ return [
 
     ],
 
+    '2fa' => [
+        'heading' => 'We are always ready to provide you with the highest level of support.',
+
+    ],
+
     'wizard_q' => [
         
         'title'=>'wizard',

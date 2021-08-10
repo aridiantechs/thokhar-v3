@@ -487,6 +487,7 @@ return [
 
     'user' => [
         'profile' => 'Profile',
+        'heading_text' => 'We are always ready to provide you with the highest level of support, the relationship between us and each client is very important to us. ',
         'name' => 'Name',
         'membership' => 'Membership',
         'data_reg' => 'Date Registered',

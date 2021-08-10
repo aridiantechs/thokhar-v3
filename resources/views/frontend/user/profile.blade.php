@@ -63,8 +63,7 @@
 					<div class=" col-lg-offset-6 col-lg-6">
 						<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 ">
 							<strong class="font-arabic">
-							نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
-							العلاقة بيننا  وبين كل عميل مهمة .للغاية بالنسبة لنا
+								{{ trans('lang.user.heading_text') }}
 							</strong>
 						</h3>
 					</div>

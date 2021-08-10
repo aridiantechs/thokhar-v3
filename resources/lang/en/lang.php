@@ -1232,6 +1232,7 @@ return [
     ],
 
     'income' => [
+        'income_heading' => 'It is an estimate of the amount of money an individual or business generates over the course of a year',
         'Annual Income' => 'Annual Income (including salary, bonus, properties rentals and any other )',
 
     ],

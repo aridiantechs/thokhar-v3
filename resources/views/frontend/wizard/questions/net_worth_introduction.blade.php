@@ -61,7 +61,7 @@
 
 						@include('frontend.components.net_worth_card', [
 							'image' => 'assets/img/new/net-worth-introduction/bg-1.svg',
-							'text' => auth()->user()->name . ' ' . trans('lang.net_worth.thinks his net worth is'),
+							'text' => trans('lang.net_worth.thinks his net worth is'),
 							'btn_class' => '',
 							'heading'=>trans('lang.net_worth.Introduction')
 						])

@@ -1237,6 +1237,15 @@ return [
 
     ],
 
+
+    'gosi' => [
+        'gosi_heading' => 'The social insurance system is a form of social cooperation and solidarity that society provides to its citizens and is based on the care of workers in the private and public sectors.',
+    ],
+
+    'investing_plan' => [
+        'investing_plan_heading' => 'investment planning is the process of identifying financial goals and converting them through building a plan.',
+    ],
+
     'net_worth' => [
         'Introduction' => 'Introduction',
         'thinks his net worth is' => "thinks his net worth is the only cash in  bank account but the net worth is much bigger than that.  <br>   Let's explore your networth now.",

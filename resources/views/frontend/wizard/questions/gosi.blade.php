@@ -84,7 +84,7 @@
 												<strong class="text-primary-1 font-arabic">{{trans('lang.net_worth.Introduction')}} </strong>
 											</h1>
 											<h4 class="txt-blue-light text-{{$align}} font-arabic">
-											هذا النـص يمكـن أن يتـــم تركيبه على أي تصمـــــيم دون مشكــــــلة فلن يبدو وكأنه نص منسوخ، غــــــير منظم، غير منسق، أو حتى مفهوم. لأنه مــــــازال نصاً بديلاً ومؤقتاً
+												{{ trans('lang.gosi.gosi_heading') }}
 											</h4>
 										</div>
 

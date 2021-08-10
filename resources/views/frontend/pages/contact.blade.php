@@ -26,8 +26,7 @@
                 <!--  <p class="text-muted text-center text-md-{{$align}} mb-0"><span>Home</span><span> / </span><span>Login</span></p> -->
                 <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">
-                    نحن دائما على استعداد لتزويدك بأعلى مستوى من الدعم
-                    العلاقة بيننا  وبين كل عميل مهمة .للغاية بالنسبة لنا
+                            {{ trans('lang.frontend_contact.contact_heading_text') }}
                     </strong>
                 </h3>
 

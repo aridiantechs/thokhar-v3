@@ -1292,6 +1292,8 @@ return [
 
     'Your financial advisor and preparing your personal investing plan , based on your input' => 'Your financial advisor and preparing your personal investing plan , based on your input ',
     'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )' => 'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )',
+
+    'code_after_2_minutes' => 'You can resend the code after 2 minutes',
     
 
 ];

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Questionnaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class TwoFactorController extends Controller
 {
@@ -53,8 +54,14 @@ class TwoFactorController extends Controller
     public function resend()
     {
     	$user = auth()->user();
-    	$user->twoFactorAndSendText($user);
 
-    	return redirect()->route('verify.index', app()->getLocale())->withMessage(trans('lang.New_Code_has_been_sent_to_you'));
+        $message = trans('lang.New_Code_has_been_sent_to_you');
+
+        if(now()->lt(Carbon::parse($user->two_factor_expires_at)->subMinutes(3)))
+           $message = trans('lang.code_after_2_minutes');
+        else
+            $user->twoFactorAndSendText($user);
+
+    	return redirect()->route('verify.index', app()->getLocale())->withMessage($message);
     }
 }

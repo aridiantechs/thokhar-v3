@@ -1307,5 +1307,7 @@ return [
     
     'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )' => 'تم ارسال خطتك الى بريدك الالكتروني (الرقم السري : اخر اربعة ارقام من جوالك ) ',
 
+    'code_after_2_minutes' => 'إعادة إرسال رمز التحقق خلال 2 دقيقة',
+
 ];
 

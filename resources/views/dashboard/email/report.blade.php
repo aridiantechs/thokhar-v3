@@ -201,14 +201,20 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="{{ route('download', ['q'=> $data['public_id'], 'en']) }}" class="btn-left btn f-left btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="left: 15px;text-decoration: none;">
-											<span class="d-inline-block p-0-1 download-btn" style="padding: 15px;background: #0ac0d8;color: #fff;text-decoration: none;width: 170px;">Download report in English</span>
-										</a>
+                    <a href="{{ route('download', ['q'=> $data['public_id'], 'en']) }}" style="text-decoration: none;" > 
+                      <div class="white-btn" style="background: #0ac0d8;text-decoration: none;color: white;padding: 10px 0;font-size: 14px;width: 190px;text-align: center;height: 20px;line-height: 22px;">
+                        Download report in English
+                      </div> 
+                    </a>
+
                   </td>
                   <td>
-                    <a href="{{ route('download', ['q'=> $data['public_id'], 'ar']) }}" class="btn-right btn f-right btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom" style="right: 15px;text-decoration: none;">
-											<span class="d-inline-block p-0-1 download-btn" style="padding: 15px;background: #0ac0d8;color: #fff;text-decoration: none;width: 170px;">حمل التقرير بالعربي</span>
-										</a>
+                    
+                    <a href="{{ route('download', ['q'=> $data['public_id'], 'ar']) }}" style="color: #ffffff;text-decoration: none;" >
+                      <div class="white-btn download-btn" style="background: #0ac0d8;text-decoration: none;color: white;padding: 10px 0;font-size: 14px;width: 190px;text-align: center;height: 20px;line-height: 22px;" style="">
+                         حمل التقرير بالعربي
+                      </div>
+                    </a>
                   </td>
                 </tr>
               </tbody>

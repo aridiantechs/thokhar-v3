@@ -18,6 +18,7 @@
     
   }
 </style>
+
 @if($request->segment(1) == 'ar')
 
  @if(count($errors)>0)
@@ -48,7 +49,7 @@
        <h5>
         {{ trans('lang.warning') }}
       </h5>
-      <p class="text-dark">{{ session('message') }}</p>
+      <p class="text-dark">{{ session('message') }} @php session()->forget('message'); @endphp</p>
       {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button> --}}
@@ -84,7 +85,7 @@
        <h5>
         {{ trans('lang.warning') }}
       </h5>
-      <p class="text-dark">{{ session('message') }}</p>
+      <p class="text-dark">{{ session('message') }} @php session()->forget('message'); @endphp</p>
       {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button> --}}

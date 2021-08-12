@@ -51,6 +51,7 @@
         <span class="clearfix"></span>
 
         @include('frontend.notifications.warning')
+        @include('frontend.notifications.success')
 
         <form method="POST" action="{{ route('authenticate', app()->getLocale()) }}">
           @csrf

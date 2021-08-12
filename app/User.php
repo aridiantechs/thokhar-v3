@@ -114,7 +114,7 @@ class User extends Authenticatable
 
             $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
 
-            session()->flash('message', trans('lang.invalid_number_message'));
+            session()->put('message', trans('lang.invalid_number_message'));
 
             // return redirect('/en/login');
 

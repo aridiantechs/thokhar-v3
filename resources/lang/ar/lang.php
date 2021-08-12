@@ -1081,11 +1081,11 @@ return [
         'personal_indicators' => 'المؤشرات المالية الشخصية',
         'monthly_saving_rate' => 'معدل الادخار الشهري',
 
-            'little_saver' => 'مدخر ضعيف',
-            'good_saver' => 'مدخر جيد',
-            'great_saver' => 'مدخر ممتاز',
-            'rich_saver' => 'مدخر غني ',
-            'wealthy_saver' => 'مدخر ثري ',
+            'little_saver' => 'ضعيف',
+            'good_saver' => 'جيد ',
+            'great_saver' => 'ممتاز ',
+            'rich_saver' => 'غني ',
+            'wealthy_saver' => 'ثري',
             
         'current_saving_amount' => 'إجمالي المدخرات حتى اليوم ',
             'poor_saver' => 'مدخر ضعيف',

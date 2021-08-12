@@ -1065,10 +1065,10 @@ return [
         'personal_indicators' => 'Personal Indicators',
         'monthly_saving_rate' => 'Monthly Saving Rate',
 
-            'little_saver' => 'Little saver',
-            'good_saver' => 'Good saver',
-            'great_saver' => 'Excellent saver',
-            'rich_saver' => 'Rich-saver',
+            'little_saver' => 'Poor',
+            'good_saver' => 'Good',
+            'great_saver' => 'Excellent',
+            'rich_saver' => 'Rich',
             'wealthy_saver' => 'Wealthy',
             
         'current_saving_amount' => 'Current Saving Amount',

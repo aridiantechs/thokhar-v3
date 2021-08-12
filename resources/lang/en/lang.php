@@ -1294,6 +1294,8 @@ return [
     'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )' => 'your personal  plan been sent to your email ( password : last 4 numbers of your mobile )',
 
     'code_after_2_minutes' => 'You can resend the code after 2 minutes',
+
+    'invalid_number_message' => 'There is some thing wrong. Please try again.',
     
 
 ];

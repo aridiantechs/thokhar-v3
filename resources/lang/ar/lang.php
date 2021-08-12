@@ -1309,5 +1309,7 @@ return [
 
     'code_after_2_minutes' => 'إعادة إرسال رمز التحقق خلال 2 دقيقة',
 
+    'invalid_number_message' => 'هناك شيء خاطئ. حاول مرة اخرى.',
+
 ];
 

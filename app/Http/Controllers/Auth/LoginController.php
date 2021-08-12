@@ -186,7 +186,7 @@ class LoginController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            'name' => 'User',
+            'name' => '',
             'gender' => 'gender',
             'email' => $data['email'] ?? null,
             'phone_number' => $data['phone_number'] ?? NULL,

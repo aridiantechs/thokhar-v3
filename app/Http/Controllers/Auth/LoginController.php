@@ -148,7 +148,7 @@ class LoginController extends Controller
             
             $user->twoFactorAndSendText($user);
         
-            return redirect()->route('verify.index', app()->getLocale());
+            return redirect()->route('home', app()->getLocale());
             
         }
         else {

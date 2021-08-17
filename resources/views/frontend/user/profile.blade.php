@@ -63,7 +63,7 @@
 					<div class=" col-lg-offset-6 col-lg-6">
 						<h3 class="text-{{$align}} text-lg-{{$align}} mb-3 ">
 							<strong class="font-arabic">
-								{{ trans('lang.user.heading_text') }}
+								{{-- {{ trans('lang.user.heading_text') }} --}}
 							</strong>
 						</h3>
 					</div>

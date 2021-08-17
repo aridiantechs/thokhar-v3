@@ -372,7 +372,7 @@
 
 								<div class="w-custom text-center">
 									<h5>{{ trans('lang.financial_plan.Invested amount') }}</h5>
-									<span style="font-size: 2rem;">{{ $investing_amount['investing_amount']['initial_amount'] ?? 0 }}</span>
+									<span style="font-size: 2rem;">{{ number_format($investing_amount['investing_amount']['initial_amount'] ?? 0, 0) }}</span>
 									<h5>{{ trans('lang.report.SAR') }}</h5>
 								</div>
 

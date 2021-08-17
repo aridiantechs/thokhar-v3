@@ -30,9 +30,9 @@
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('/', locale()) }}" role="button" >{{ trans('lang.home') }}</a>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('about', locale()) }}" role="button" >{{ trans('lang.site_menu.about_us') }}</a>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item">
                      <a class="nav-link" href="{{ route('legal', locale()) }}" role="button" >{{ trans('lang.site_menu.legal') }}</a>
                 </li>
@@ -220,9 +220,9 @@
                       <a class="nav-link nav-link-modal" href="{{ route('contact', locale()) }}" role="button" >{{ trans('lang.site_menu.contact') }}</a>
                   </li>
 
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                       <a class="nav-link nav-link-modal" href="{{ route('career.index', locale()) }}" role="button" >{{ trans('lang.site_menu.careers') }}</a>
-                  </li>
+                  </li> --}}
               </ul>
 
               <div class="text-center mt-0 mt-md-5">

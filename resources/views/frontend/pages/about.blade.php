@@ -153,7 +153,7 @@
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
-                                            <a class="nav-link linkedin-a" href="#" target="_blank">
+                                            <a class="nav-link linkedin-a" href="https://www.linkedin.com/in/alialshehri" target="_blank">
                                             <i class="fab fa-linkedin"></i>
                                             </a>
                                         </li>
@@ -188,7 +188,7 @@
                                     </h3>
                                     <ul class="nav mt-lg-0 ml-auto nav-social-icons text-{{$align}} d-flex justify-content-start pr-0">
                                         <li class="nav-item">
-                                            <a class="nav-link linkedin-a" href="#" target="_blank">
+                                            <a class="nav-link linkedin-a" href="https://www.linkedin.com/in/wbakarman" target="_blank">
                                             <i class="fab fa-linkedin"></i>
                                             </a>
                                         </li>

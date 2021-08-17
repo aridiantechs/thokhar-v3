@@ -1249,7 +1249,7 @@ return [
 
     'net_worth' => [
         'Introduction' => 'Introduction',
-        'thinks his net worth is' => "She thinks her net worth is only the cash in her bank account, but her net worth includes more than that.  <br>   Let's explore your networth now.",
+        'thinks his net worth is' => "Do you think your net worth is only cash in your bank account? It includes more than this. Let's find out.",
 
     ],
 

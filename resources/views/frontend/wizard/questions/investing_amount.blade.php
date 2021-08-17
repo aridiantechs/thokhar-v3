@@ -65,6 +65,36 @@
                             <div class="col-md-12">
                                 <div class="row flex-column-reverse flex-lg-row">
 
+                                     <div class=" col-lg-4 col-md-12 col-sm-12">
+
+                                        <div class="form-group form-group-new mb-5 mb-lg-0">
+                                            @include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'investing_amount[monthly_amount]', 
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["monthly_amount"] ?? '', 0),
+                                                'old_val' => "investing_amount.monthly_amount",
+                                                'label' => trans('lang.investing_amount.Monthly investing Payment')
+                                                ])
+
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class=" col-lg-4 col-md-12 col-sm-12">
+
+                                        <div class="form-group form-group-new mb-5 mb-lg-0">
+                                            
+                                            @include('frontend.inputs.input_group', [
+                                                'type' => 'text', 
+                                                'name' => 'investing_amount[initial_amount]',
+                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["initial_amount"] ?? '', 0),
+                                                'old_val' => "investing_amount.initial_amount",
+                                                'label' => trans('lang.investing_amount.Initial amount ( one time )'),
+                                                ])
+
+                                        </div>
+                                    </div>
+
                                     <div class=" col-lg-4 col-md-12 col-sm-12">
 
                                         <div class="form-group form-group-new mb-0 mb-lg-0 mb-5">
@@ -81,38 +111,6 @@
                                         </div>
                                         
                                     </div>
-                                    
-                                    <div class=" col-lg-4 col-md-12 col-sm-12">
-
-                                        <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            
-                                            @include('frontend.inputs.input_group', [
-                                                'type' => 'text', 
-                                                'name' => 'investing_amount[initial_amount]',
-                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["initial_amount"] ?? '', 0),
-                                                'old_val' => "investing_amount.initial_amount",
-                                                'label' => trans('lang.investing_amount.Initial amount ( one time )'),
-                                                ])
-
-                                        </div>
-                                    </div>
-                                    
-                                    <div class=" col-lg-4 col-md-12 col-sm-12">
-
-                                        <div class="form-group form-group-new mb-5 mb-lg-0">
-                                            @include('frontend.inputs.input_group', [
-                                                'type' => 'text', 
-                                                'name' => 'investing_amount[monthly_amount]', 
-                                                'value' => currency($user_questionnaire->investing_amount["investing_amount"]["monthly_amount"] ?? '', 0),
-                                                'old_val' => "investing_amount.monthly_amount",
-                                                'label' => trans('lang.investing_amount.Monthly investing Payment')
-                                                ])
-
-                                        </div>
-                                        
-                                    </div>
-
-                                    
 
                                 </div>
                                 

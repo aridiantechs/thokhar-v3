@@ -18,9 +18,9 @@
                     <strong class="text-primary font-arabic">{{ trans('lang.3_steps_page') }}</strong> 
                 </h1>
 
-                <h3 class="mt-2 mb-5 text-{{$align}}">
+                {{-- <h3 class="mt-2 mb-5 text-{{$align}}">
                       {{ trans('lang.steps.help you with more value to your savings') }}
-                </h3>
+                </h3> --}}
 
                 <span class="clearfix"></span>
                 <form>

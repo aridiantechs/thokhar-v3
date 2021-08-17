@@ -210,13 +210,13 @@
                 </div>
             </div>
         </div>
-        <div class="subscription-section mt-5 pt-5">
+        {{-- <div class="subscription-section mt-5 pt-5">
             <div class="subscription-bar">
                 
-                {{-- For desktop --}}
+                <!-- For desktop -->
                 <div class="d-none d-md-block">
                     <div class="row">
-                        <div class="col-md-6 d-flex align-items-center {{-- order-1 order-lg-1 justify-content-end --}} "> 
+                        <div class="col-md-6 d-flex align-items-center "> 
                             <h3 class="txt-blue-light font-arabic text-{{$align}} mb-3 mb-lg-0">
                                 {{ trans('lang.frontend_legal.legal_form_heading') }}
                             </h3>
@@ -237,9 +237,9 @@
                     </div>
                 </div>
 
-                {{-- For mobile --}}
+                <!-- For mobile -->
                 <div class="row d-block d-md-none">
-                    <div class="col-md-6 d-flex align-items-center {{-- order-1 order-lg-1 justify-content-end  --}}"> 
+                    <div class="col-md-6 d-flex align-items-center"> 
                         <h2 class="txt-blue-light font-arabic text-{{$align}} mb-3 mb-lg-0">
                             النشرة البريدية
                         </h2>
@@ -257,7 +257,7 @@
                 </div>
                 
             </div>
-        </div>
+        </div> --}}
         <div class="footer-last-section mt-5 pt-5">
             <div class="text-center mb-4">
                 <img src="{{ althraa_logo() }}" alt="">

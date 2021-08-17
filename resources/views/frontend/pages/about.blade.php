@@ -163,7 +163,7 @@
                                             </a>
                                         </li> --}}
                                         <li class="nav-item">
-                                            <a class="nav-link twitter-a" href="#" target="_blank">
+                                            <a class="nav-link twitter-a" href="https://twitter.com/CryptoAlshehri?t=gxwjrty35G-chYEMk-vskA&s=08" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                             </a>
                                         </li>
@@ -198,7 +198,7 @@
                                             </a>
                                         </li> --}}
                                         <li class="nav-item">
-                                            <a class="nav-link twitter-a" href="#" target="_blank">
+                                            <a class="nav-link twitter-a" href="https://twitter.com/wbakarman?t=NLN1snTrBqb0VekML6EVBQ&s=08" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                             </a>
                                         </li>

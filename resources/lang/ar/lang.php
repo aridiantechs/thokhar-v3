@@ -438,7 +438,7 @@ return [
 
     'question_headings' => [
         'personal_info' => ' المعلومات الشخصية ',
-        'income' => '   الدخل الشهري     ',
+        'income' => ' الدخل السنوي ',
         // 'expenses' => '   المصاريف     ', old value
         'expenses' => '  خطة التقاعد ',
         'net_assets' => '   صافي الاصول      ',

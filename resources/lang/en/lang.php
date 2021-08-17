@@ -433,7 +433,7 @@ return [
 
     'question_headings' => [
         'personal_info' => 'Personal Info',
-        'income' => 'Monthly Income',
+        'income' => 'Yearly Income',
         // 'expenses' => 'Expenses', (old value)
         'expenses' => 'Retirement plan',
         'net_assets' => 'Net worth',

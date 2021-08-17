@@ -416,7 +416,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ ($data['cashAndEquivlentPercentage']) }}
+												{{ ($data['cashAndEquivlentPercentage']) }} %
 											</p>
 										</td>
 										<td>

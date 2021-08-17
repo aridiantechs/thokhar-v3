@@ -116,7 +116,7 @@
 
 						@include('frontend.components.net_worth_card', [
 								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' => trans('lang.wizard_q.Do you have Stocks')/* 'هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غـير منظم، منسق، أو حتى مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً  هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة' */,
+								'text' => trans('lang.wizard_q.Do you have Stocks'),
 								'btn_class' => 'd-none',
 								'heading'=>  trans('lang.question.equities') 
 							])

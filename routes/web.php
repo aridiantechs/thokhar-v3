@@ -95,6 +95,7 @@ Route::group([
 */
   // Two Factor
   Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.resend');
+  Route::get('verify/resend-report', 'Auth\TwoFactorController@resend')->name('verify.resend_report');
   Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 
 /*

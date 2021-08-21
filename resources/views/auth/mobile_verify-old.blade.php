@@ -4,21 +4,21 @@
 
 @section('styles')
 <style type="text/css">
-  .input-group .form-control:last-child, .input-group .form-control:first-child{
+.input-group .form-control:last-child, .input-group .form-control:first-child{
     border-radius: 10px !important
-  }
+}
 
-  .focused .input-group .form-control{
+.focused .input-group .form-control{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 30px #0000001f !important;
-  }
+}
 
-  .d-ltr{
+.d-ltr{
     direction: ltr;
-  } 
-  .w-fit-content{
+} 
+.w-fit-content{
     width: fit-content;
-  }
+}
 </style>
 @endsection
 
@@ -37,14 +37,14 @@
                 </h1>
                 <h3 class="text-{{$align}} text-md-{{$align}} mb-3 ">
                     <strong class="font-arabic">
-                      {{-- {{ trans('lang.2fa.heading') }} --}}
+                        {{ trans('lang.2fa.code') }}
                     </strong>
                 </h3>
                 <span class="clearfix"></span>
 
                 @include('frontend.notifications.warning')
                 
-                <form method="POST" id="login__form" action="{{ route('validate_phone', app()->getLocale()) }}">
+                <form method="POST" class="login__form" action="{{ route('validate_phone', app()->getLocale()) }}">
                     @csrf
                     <div class="form-group form-group-new form-group-phone">
                       <div class="input-group d-flex d-ltr w-fit-content {{-- justify-content-center justify-content-lg-end --}}">
@@ -59,26 +59,16 @@
 
                       </div>
                     </div>
-                    {{-- <h3 class="text-center text-lg-{{$align}} mb-3 ">
-                        <strong class="font-arabic" id="countdown">
-                        {{ trans('lang.2fa.Resend verification code during') }}  <span id="minutes">{{ trans('lang.minutes') }}</span>:<span id="seconds">{{ trans('lang.seconds') }}</span>  {{ trans('lang.2fa.minute') }} *
-                        </strong>
-                    </h3> --}}
-                    <div class="mt-4 text-center text-lg-{{$align}}">
+                   
+                    <div class="mt-4 text-center text-lg-{{$align}} mb-5">
                         
                         <button type="submit" class="{{$btnAlign}} btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow">
-                          {{-- <i class="fa fa-arrow-left"></i> --}}
-                          <span class="d-inline-block">{!! trans('lang.frontend.verify') !!}</span>
-                          <i class="fa fa-arrow-{{$arrowAlign}}"></i>
+                        {{-- <i class="fa fa-arrow-left"></i> --}}
+                        <span class="d-inline-block">{!! trans('lang.frontend.verify') !!}</span>
+                        <i class="fa fa-arrow-{{$arrowAlign}}"></i>
                         </button>
                     </div>
                 </form>
-
-
-                {{-- <h5 class="mt-5 text-{{$align}} }}">
-                  {{ trans('lang.frontend.two_factor_message') }}
-                  <a href="{{ route('verify.resend_report', app()->getLocale()) }}">{{ trans('lang.frontend.two_factor_here') }}</a>.
-                </h5> --}}
 
                 {{-- <div class="login__or text-right ">
                   &mdash; {{ trans('lang.login_form.or') }} &mdash;
@@ -206,35 +196,6 @@ function convertDateForIos(date) {
     return date;
 }
 
-
-$(document).ready(function() {
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
-
-// let countDown = new Date('Sep 30, 2020 00:00:00').getTime(),
-let countDown = new Date(convertDateForIos('{!! $user->two_factor_expires_at !!}')).getTime(),
-    x = setInterval(function() {    
-
-      let now = new Date().getTime(),
-          distance = countDown - now;
-
-      // document.getElementById('days').innerText = Math.floor(distance / (day)),
-        // document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-        $('#minutes').text(Math.floor((distance % (hour)) / (minute))),
-        // document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-        $('#seconds').text(Math.floor((distance % (minute)) / second));
-        // document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-
-      //do something later when date is reached
-      if (distance < 0) {
-        clearInterval(x);
-        $('#countdown').html('<h2 class="text-danger">{{ trans('lang.code_expired') }}</h2>')
-      }
-
-    }, second)
-});
 
 
 </script>

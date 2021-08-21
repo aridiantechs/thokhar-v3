@@ -382,25 +382,46 @@ class QuestionnaireRequest extends FormRequest
             // risks
             'risks' => 'Risks',
 
-            'risks.age' => trans('lang.question.risk_age'),
+            // 'risks.age' => trans('lang.question.risk_age'),
 
-            'risks.total_saving_and_investment_amount' => trans('lang.question.my_total_saving_and_investment_amount'),
+            // 'risks.total_saving_and_investment_amount' => trans('lang.question.my_total_saving_and_investment_amount'),
 
-            'risks.during_the_next_few_years,_the_likelihood_of_annual_income_change_would_be' => trans('lang.question.during_the_next_few_years_,_the_likelihood_of_my_annual_income_change_would_be'),
+            // 'risks.during_the_next_few_years,_the_likelihood_of_annual_income_change_would_be' => trans('lang.question.during_the_next_few_years_,_the_likelihood_of_my_annual_income_change_would_be'),
 
-            'risks.regarding_major_expenses_before_retirement_(including_family_expenses_such_as_education,_buying_a_house_etc)' => trans('lang.question.regarding_my_major_expenses_before_retirement_(including_family_expenses_such_as_education_,_buying_a_house_etc)'),
+            // 'risks.regarding_major_expenses_before_retirement_(including_family_expenses_such_as_education,_buying_a_house_etc)' => trans('lang.question.regarding_my_major_expenses_before_retirement_(including_family_expenses_such_as_education_,_buying_a_house_etc)'),
 
-            'risks.based_on_current_lifestyle_and_health_state,_the_likelihood_of_having_health_issue_during_the_next_10_years' => trans('lang.question.based_on_my_current_lifestyle_and_health_state_,_the_likelihood_of_having_health_issue_during_the_next_10_years'),
+            // 'risks.based_on_current_lifestyle_and_health_state,_the_likelihood_of_having_health_issue_during_the_next_10_years' => trans('lang.question.based_on_my_current_lifestyle_and_health_state_,_the_likelihood_of_having_health_issue_during_the_next_10_years'),
 
-            'risks.about_investment_experience' => trans('lang.question.i_can_say_about_my_investment_experience'),
+            // 'risks.about_investment_experience' => trans('lang.question.i_can_say_about_my_investment_experience'),
 
-            'risks.expect_to_start_withdrawing_saving' => trans('lang.question.i_expect_to_start_withdrawing_my_saving'),
+            // 'risks.expect_to_start_withdrawing_saving' => trans('lang.question.i_expect_to_start_withdrawing_my_saving'),
 
-            'risks.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)' => trans('lang.question.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)'),
+            // 'risks.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)' => trans('lang.question.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)'),
 
-            'risks.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years' => trans('lang.question.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years'),
+            // 'risks.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years' => trans('lang.question.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years'),
 
-            'risks.when_i_buy_a_car_insurance_i_prefer' => trans('lang.question.when_i_buy_a_car_insurance_i_prefer'),
+            // 'risks.when_i_buy_a_car_insurance_i_prefer' => trans('lang.question.when_i_buy_a_car_insurance_i_prefer'),
+
+
+            'risks.age' => trans('lang.question.no_1'),
+
+            'risks.total_saving_and_investment_amount' => trans('lang.question.no_2'),
+
+            'risks.during_the_next_few_years,_the_likelihood_of_annual_income_change_would_be' => trans('lang.question.no_3'),
+
+            'risks.regarding_major_expenses_before_retirement_(including_family_expenses_such_as_education,_buying_a_house_etc)' => trans('lang.question.no_4'),
+
+            'risks.based_on_current_lifestyle_and_health_state,_the_likelihood_of_having_health_issue_during_the_next_10_years' => trans('lang.question.no_5'),
+
+            'risks.about_investment_experience' => trans('lang.question.no_6'),
+
+            'risks.expect_to_start_withdrawing_saving' => trans('lang.question.no_7'),
+
+            'risks.in_case_of_a_15%_declined_in_my_investments_market_value_in_a_short_time_(less_than_a_year)' => trans('lang.question.no_8'),
+
+            'risks.in_which_investment_opportunity_would_you_invest_a_100,000_for_10_years' => trans('lang.question.no_9'),
+
+            'risks.when_i_buy_a_car_insurance_i_prefer' => trans('lang.question.no_10'),
 
             // -----------------------------------------------
             // objective

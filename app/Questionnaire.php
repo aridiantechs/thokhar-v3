@@ -1998,7 +1998,7 @@ class Questionnaire extends Model
     {
         $netWorthAssetToday = $this->getNetAssets($user);  
 
-        return array_sum($netWorthAssetToday['net_assets']['financial_assets']) + array_sum($netWorthAssetToday['net_assets']['real_assets']) + array_sum($netWorthAssetToday['net_assets']['other_assets'] + array_sum($netWorthAssetToday['net_assets']['bonds']) ?? 0;
+        return array_sum($netWorthAssetToday['net_assets']['financial_assets']) + array_sum($netWorthAssetToday['net_assets']['real_assets']) + array_sum($netWorthAssetToday['net_assets']['other_assets']) + array_sum($netWorthAssetToday['net_assets']['bonds']) ?? 0;
     }
 
     public function getNetWorthLiabilitiesToday(User $user = null)

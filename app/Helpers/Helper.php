@@ -167,7 +167,7 @@ function currencyR($value, $currency = 1)
 
 function percentage($value, $no_sign = 0)
 {
-    return $value;
+    // return $value;
     if($no_sign)   
         return round($value, 0);
     return round((is_numeric($value)) ? $value : 0, 0) . ' %';

@@ -501,7 +501,8 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+												{{ currencyR($data['totalCurrentAssetAllocation'] ?? 0) }} 
+												{{-- {{ currencyR($data['totalAssetsToday'] ?? 0) }}  --}}
 											</p>
 										</td>
 									</tr>

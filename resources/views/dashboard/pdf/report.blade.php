@@ -421,7 +421,8 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['totalAssetsToday']) }}
+												{{ currencyR($data['assetAllocationDonutChartValues']['cashAndEquivlent']) }}
+												{{-- {{ currencyR((($data['cashAndEquivlentPercentage']) * $data['totalAssetsToday']) / 100 ) }} --}}
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
 										</td>
@@ -440,7 +441,8 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR((($data['equitiesPercentage']) * $data['totalAssetsToday'])/100) }} 
+												{{ currencyR($data['assetAllocationDonutChartValues']['equities']) }}
+												{{-- {{ currencyR((($data['equitiesPercentage']) * $data['totalAssetsToday'])/100) }}  --}}
 												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
 											</p>
 										</td>
@@ -459,7 +461,8 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR((($data['fixIncomePercentage']) * $data['totalAssetsToday']) / 100) }} 
+												{{ currencyR($data['assetAllocationDonutChartValues']['fixIncome']) }}
+												{{-- {{ currencyR((($data['fixIncomePercentage']) * $data['totalAssetsToday']) / 100) }}  --}}
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
 										</td>
@@ -478,7 +481,8 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR((($data['alternativeInvestmentsPercentage']) * $data['totalAssetsToday']) / 100) }} 
+												{{ currencyR($data['assetAllocationDonutChartValues']['alternativeInvestments']) }}
+												{{-- {{ currencyR((($data['alternativeInvestmentsPercentage']) * $data['totalAssetsToday']) / 100) }}  --}}
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>
 										</td>

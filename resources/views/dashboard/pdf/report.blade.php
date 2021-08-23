@@ -421,7 +421,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR((($data['cashAndEquivlentPercentage']) * $data['totalAssetsToday']) / 100 ) }}
+												{{ currencyR($data['totalAssetsToday']) }}
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
 										</td>

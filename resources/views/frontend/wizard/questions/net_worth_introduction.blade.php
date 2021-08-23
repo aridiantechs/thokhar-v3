@@ -107,45 +107,6 @@
 						</div>
 					</div>
 
-					{{-- Tab 2.1 --}}
-                    <div id="deposits" class="container tab-pane">
-						<br>						
-						
-						@include('frontend.components.breadcrumb' , ['heading' => trans('lang.wizard_q.deposits')])
-
-						@include('frontend.components.net_worth_card', [
-								'image' => 'assets/img/new/net-worth-cash/bg-2.svg',
-								'text' =>trans('lang.wizard_q.Do you have Deposits in Banks') ,
-								'btn_class' => 'd-none',
-								'heading'=> trans('lang.wizard_q.deposits')
-							])
-						
-						<div class="mt-3 ">
-							<div class="row w-form-inputs">
-								<div class="col-md-9">
-									<div class="form-group form-group-new mb-0">
-										@include('frontend.inputs.input_group', [
-                                            'type' => 'text', 
-                                            'name' => 'net_assets[financial_assets][deposits]', 
-                                            'value' => currency($user_questionnaire->net_assets["net_assets"]["financial_assets"]["deposits"] ?? '', 0),
-                                            'old_val' => "_net_assets.financial_assets.deposits",
-                                            'placeholder' => 'المبلغ بالريال',
-                                            // 'label' => trans('lang.wizard_q.Do you have Deposits in Banks')
-
-                                        ])
-									</div>
-								</div>
-								<div class="col-md-3 mt-auto">
-									<button type="button" onclick="next()" class="btn-rtl btn  btn-big btn-gradient btn-rad35 btn-primary with-arrow stick_to_bottom mt-4 mt-lg-0 mt-md-0" style="{{$align}}: 15px;" style="{{$align}}: 15px;">
-										{{-- <i class="fa fa-arrow-left"></i> --}}
-										<span class="d-inline-block">{{ trans('lang.question.next') }}</span>
-										<i class="fa fa-arrow-{{$arrowAlign}}"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-
 					{{-- Tab 3 --}}
 					<div id="equities" class="container tab-pane fade">
 
@@ -391,18 +352,6 @@
                                      <span class="step-text">
                                          <span>
                                              {{ trans('lang.wizard_q.cash amount') }}
-                                         </span>
-                                     </span>
-                                  </a>
-                                </li>
-
-                                
-                                <li class="nav-item sub-item subitem-1">
-                                  <a class="text-{{$alignreverse}} nav-link" data-toggle="tab" data-parent-id="1" href="#deposits">
-                                     <span class="step-parent" ></span>
-                                     <span class="step-text">
-                                         <span>
-                                             {{ trans('lang.wizard_q.deposits') }}
                                          </span>
                                      </span>
                                   </a>

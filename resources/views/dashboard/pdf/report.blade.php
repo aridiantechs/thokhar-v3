@@ -391,7 +391,8 @@
 						    <!--graph inner-->
 						    <br>
 						    <p class="text-center inner_price donut_inner">
-						    	{{ currencyR($data['totalAssetsToday'] ?? 0) }} 
+						    	{{ currencyR($data['totalCurrentAssetAllocation'] ?? 0) }} 
+						    	{{-- {{ currencyR($data['totalAssetsToday'] ?? 0) }}  --}}
 						    </p>
 						    <p class="text-center donut_inner">
 						    	{{-- {{ percentage(100) }} --}}

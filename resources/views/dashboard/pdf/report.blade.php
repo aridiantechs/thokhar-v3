@@ -421,7 +421,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['assetAllocationDonutChartValues']['cashAndEquivlent']) }}
+												{{ currencyR($data['cashAndEquivlent']) }}
 												{{-- {{ currencyR((($data['cashAndEquivlentPercentage']) * $data['totalAssetsToday']) / 100 ) }} --}}
 												{{-- {{ currencyR((percentage($data['cashAndEquivlentPercentage'],1) * $data['totalAssetsToday']) / 100 ) }} --}}
 											</p>
@@ -441,7 +441,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['assetAllocationDonutChartValues']['equities']) }}
+												{{ currencyR($data['equities']) }}
 												{{-- {{ currencyR((($data['equitiesPercentage']) * $data['totalAssetsToday'])/100) }}  --}}
 												{{-- {{ currencyR((percentage($data['equitiesPercentage'], 1) * $data['totalAssetsToday'])/100) }}  --}}
 											</p>
@@ -461,7 +461,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['assetAllocationDonutChartValues']['fixIncome']) }}
+												{{ currencyR($data['fixIncome']) }}
 												{{-- {{ currencyR((($data['fixIncomePercentage']) * $data['totalAssetsToday']) / 100) }}  --}}
 												{{-- {{ currencyR((percentage($data['fixIncomePercentage'], 1) * $data['totalAssetsToday']) / 100) }}  --}}
 											</p>
@@ -481,7 +481,7 @@
 										</td>
 										<td>
 											<p class="text_black text-left">
-												{{ currencyR($data['assetAllocationDonutChartValues']['alternativeInvestments']) }}
+												{{ currencyR($data['alternativeInvestments']) }}
 												{{-- {{ currencyR((($data['alternativeInvestmentsPercentage']) * $data['totalAssetsToday']) / 100) }}  --}}
 												{{-- {{ currencyR((percentage($data['alternativeInvestmentsPercentage'], 1) * $data['totalAssetsToday']) / 100) }} --}}
 											</p>

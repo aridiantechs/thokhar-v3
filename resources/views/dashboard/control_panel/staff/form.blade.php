@@ -156,7 +156,7 @@
 				<div class="row">
 					<div class=col-md-12>
 						<div class="form-group">
-							<button type="submit" class="button">{{ trans('lang.question.save') }}</button>
+							<button type="submit" class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary">{{ trans('lang.question.save') }}</button>
 						</div>
 					</div>
 				</div>

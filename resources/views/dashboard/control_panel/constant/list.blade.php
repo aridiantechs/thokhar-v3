@@ -131,7 +131,7 @@ th {
                                             </button> --}}
                                         </td>
                                         <td scope="row">
-                                            <a href="{{ route('edit_constant', [app()->getLocale(), $constant]) }}" class="btn btn-althraa btn-sm" style="float: right;" title="Edit">
+                                            <a href="{{ route('edit_constant', [app()->getLocale(), $constant]) }}" class="btn btn-althraa btn-gradient btn-sm" style="float: right;" title="Edit">
                                                 <i class="fa fa-edit" aria-hidden="true"></i>
                                             </a>
                                         </td>

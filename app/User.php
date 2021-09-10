@@ -110,11 +110,11 @@ class User extends Authenticatable
             
         } catch (\Exception $e) 
         {
-            \Auth::logout();
+            // \Auth::logout();
 
-            $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
+            // $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");
 
-            session()->put('message', trans('lang.invalid_number_message'));
+            // session()->put('message', 'trans('lang.invalid_number_message')');
 
             // return redirect('/en/login');
 

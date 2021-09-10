@@ -93,7 +93,7 @@ class ConstantController extends Controller
 
         $constant->constant_value = $request->constant_value;
         $constant->save();
-        $status = array('msg' => "Constant Value updated successfully.", 'toastr' => "successToastr");
+        $status = array('msg' => trans('lang.Constant Value updated successfully.'), 'toastr' => "successToastr");
         Session::flash($status['toastr'], $status['msg']);
         return redirect()->route('constants', app()->getLocale());
     }

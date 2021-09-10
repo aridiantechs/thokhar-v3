@@ -68,6 +68,9 @@
         .btn-rad35{
             border-radius: 35px;
         }
+        body {
+            overflow-x: hidden;
+        }
 
     </style>
 </head>

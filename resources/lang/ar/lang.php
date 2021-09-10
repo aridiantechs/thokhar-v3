@@ -1311,5 +1311,11 @@ return [
 
     'invalid_number_message' => 'هناك شيء خاطئ. حاول مرة اخرى.',
 
+    'Constant Value updated successfully.' => 'تم تحديث القيمة الثابتة بنجاح.',
+
+    'save' => 'تم حفظ الإعداد',
+
+    'Invalid Selection for Settings' => 'تحديد غير صالح للإعدادات',
+
 ];
 

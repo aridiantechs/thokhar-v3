@@ -59,7 +59,7 @@
 										<img src="{{ isset($site_managements['logo']) ? asset($site_managements['logo']) : '' }}" class="img-responsive img-fluid logo_input" id="logo_image_img">
 									</div>
 									<div id="hoverbar">
-										<a id="new_logo" class="button" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
+										<a id="new_logo" class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
 										<input type="file" id="new_logo_button" style="display: none;" name="logo" accept="image/*">
 										
 								    </div>
@@ -78,7 +78,7 @@
 										
 									</div>
 									<div id="hoverbar">
-										<a id="new_favicon" class="button" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
+										<a id="new_favicon" class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
 										<input type="file" id="new_favicon_button" style="display: none;" name="favicon" accept="image/*">
 										
 								    </div>
@@ -90,7 +90,7 @@
 						  	<br>
 						  	<div class="mt-30"></div>
 						  	<div class="form-group">
-						  		<button class="button" type="submit" id="permission_role_button">
+						  		<button class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary" type="submit" id="permission_role_button">
 						  			{{ trans('lang.admin.save_changes') }}
 						  		</button>
 						  	</div>
@@ -129,7 +129,7 @@
 										
 									</div>
 									<div id="hoverbar">
-										<a id="maintenance_image" class="button" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
+										<a id="maintenance_image" class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary" >{{ trans('lang.admin.click_here_to_upload_new') }}</a>
 										<input type="file" id="maintenance_image_button" style="display: none;" name="maintenance_image" accept="image/*">
 										
 								    </div>
@@ -154,7 +154,7 @@
 						  	<hr>
 						  	<br>
 						  	<div class="form-group">
-						  		<button class="button" type="submit" id="maintenance_button">
+						  		<button class="button btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary" type="submit" id="maintenance_button">
 						  			{{ trans('lang.admin.save_changes') }}
 						  		</button>
 						  	</div>

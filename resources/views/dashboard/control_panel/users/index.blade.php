@@ -30,8 +30,8 @@ div#example_wrapper .row:first-child div:first-child div:first-child{
 }
 
 .page-item.active .page-link {
-    background-color: #01630a;
-    border-color: #01630a;
+    background-color: #22d09d;
+    border-color: #22d09d;
 }
 
 .page-link {
@@ -59,9 +59,9 @@ a.button {
     padding: 8px 18px !important;
 }
 button.del-button {
-    background: #01630a;
+    /*background: #01630a;*/
     border: unset;
-    padding: 12px 20px 11px 20px;
+    padding: 8px 20px 11px 20px;
     color: #fff;
 }
 
@@ -130,7 +130,7 @@ button.del-button {
                 <br>
             </div>
             <div class="col-md-3 col-sm-12 mt-sm-3">
-                <button type="submit" class="button btn-block">{{ trans('lang.search') }}</button>
+                <button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary btn-block">{{ trans('lang.search') }}</button>
             </div>
         </div>
     </form>
@@ -191,11 +191,11 @@ button.del-button {
                                     </p></td>
                                     <td>
                                         <div class="mt-4">
-                                            <a class="button" target="_blank" href="{{isset($user->report) ? route('download', ['q'=> $user->report->public_id, 'en']) :'#' }}{{-- {{ route('report', [app()->getLocale(), 'user' => $user]) }} --}}">Report</a>
+                                            <a class="btn-rtl btn btn-big btn-gradient btn-primary" target="_blank" href="{{isset($user->report) ? route('download', ['q'=> $user->report->public_id, 'en']) :'#' }}{{-- {{ route('report', [app()->getLocale(), 'user' => $user]) }} --}}">Report</a>
                                             <form method="POST" action="{{ route('remove-user', [app()->getLocale(), $user]) }}" style="display: inline-block;">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <button title="Delete record" type="submit" class="del-button"><i class="fa fa-trash"></i></button>
+                                                <button title="Delete record" type="submit" class="del-button btn-gradient btn-gradient"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </div>
                                         

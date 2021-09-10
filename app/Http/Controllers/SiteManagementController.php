@@ -77,15 +77,16 @@ class SiteManagementController extends Controller
         if(!(loggedInUserRole() instanceof Role && loggedInUserRole()->hasPermissionTo('site_management_add')))
             return $this->permission_denied('home');
         
-        // dd($option, $request->all());
         switch ($option) {
             case 'general':
+
                 $this->site_management->update_general_settings($request->except('_token'));
 
                 // ------------------------ logo ----------------------
                 $logo = $this->site_management->getGeneralLogo();
                 // --------------- if logo already exists
                 if ($logo) {
+
                     $destinationFilePath = 'backend_assets/site_assets/images/logo/'; 
                     $file_logo_name = null; 
                     $path_logo_filename = 'backend_assets/site_assets/images/logo/logo.png';
@@ -101,7 +102,9 @@ class SiteManagementController extends Controller
                     }
                     $logo->meta_value = ($file_logo_name != null) ? $path_logo_filename : $logo->meta_value;
                     $logo->save();
-                } else {
+
+                }
+                else {
                     // ---------------------- logo not exists
                     $destinationFilePath = 'backend_assets/site_assets/images/logo/'; 
                     $file_logo_name = ''; 
@@ -159,10 +162,12 @@ class SiteManagementController extends Controller
                     $general->meta_value = $path_favicon_filename;
                     $general->save();
                 }
-                $status = array('msg' => "General Settings saved", 'toastr' => "successToastr");
+                $status = array('msg' => trans('lang.save'), 'toastr' => "successToastr");
                 break;
 
-            case 'maintenance': 
+            case 'maintenance':
+
+                dd('asd');
                 $this->site_management->update_maintenance_settings($request->except('_token'));
 
                 $maintenance_image = $this->site_management->getMaintenanceImage();
@@ -202,11 +207,11 @@ class SiteManagementController extends Controller
                     $maintenance->save();
                 }
 
-                $status = array('msg' => "Settings saved for Maintenance Mode", 'toastr' => "successToastr");
+                $status = array('msg' => trans('lang.save'), 'toastr' => "successToastr");
                 break;
             
             default:
-                $status = array('msg' => "Invalid Selection for Settings", 'toastr' => "errorToastr");
+                $status = array('msg' => trans('lang.Invalid Selection for Settings'), 'toastr' => "errorToastr");
                 break;
         }
 

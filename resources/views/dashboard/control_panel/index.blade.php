@@ -292,9 +292,9 @@ p.setting_text:hover {
 		        datasets: [
 		            {
 		                label: "Users",
-		                backgroundColor: 'rgba(1,99,10,0.8)',
-		                borderColor: "rgba(1,99,10,1)",
-		                pointBackgroundColor: "rgba(1,99,10,1)",
+		                backgroundColor: 'rgba(34,208,155,1)',
+		                borderColor: "rgba(34,208,155,1)",
+		                pointBackgroundColor: "rgba(34,208,155,1)",
 		                pointBorderColor: "#fff",
 		                data: [{!! implode (", ", (($request->segment(1) == 'ar') ? array_reverse($bardata) : $bardata)) !!}],
 		            },

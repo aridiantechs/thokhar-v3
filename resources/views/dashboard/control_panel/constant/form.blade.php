@@ -97,7 +97,7 @@ th {
                             </div>
                             <br>
                             <div class="form-group">
-                                <button type="submit" class="button">{{ trans('lang.admin.save_changes') }}</button>
+                                <button type="submit" class="btn-rtl btn btn-big btn-gradient btn-rad35 btn-primary">{{ trans('lang.admin.save_changes') }}</button>
                             </div>
                         </form>
                     </div>

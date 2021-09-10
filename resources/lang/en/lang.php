@@ -1296,6 +1296,12 @@ return [
     'code_after_2_minutes' => 'You can resend the code after 2 minutes',
 
     'invalid_number_message' => 'There is some thing wrong. Please try again.',
+
+    'Constant Value updated successfully.' => 'Constant Value updated successfully.',
+
+    'save' => 'Setting saved',
+
+    'Invalid Selection for Settings' => 'Invalid Selection for Settings',
     
 
 ];

@@ -42,7 +42,7 @@ th {
 }
 
 p.setting_text:hover {
-    color: #01630a !important;
+    color: #22d09b !important;
     font-size: 21px;
 }
 

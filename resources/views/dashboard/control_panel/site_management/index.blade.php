@@ -4,7 +4,7 @@
 @section('styles')
 <style>
 .nav-pills .nav-link.active{
-	{{ ($request->segment(1) == 'ar') ? ' border-right: 5px solid #01630a !important;border-left: 0px solid #01630a !important;' : '' }}
+	{{ ($request->segment(1) == 'ar') ? ' border-right: 5px solid #22d09b !important;border-left: 0px solid #22d09b !important;' : '' }}
 }
 </style>
 @endsection

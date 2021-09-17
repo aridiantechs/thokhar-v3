@@ -19,6 +19,6 @@
     <br>
 @empty
     <div class="row">
-        <h5 class="col-md-12">No appointments found!</h5>
+        <h5 class="col-md-12">{{ trans('lang.No appointments found') }}</h5>
     </div>
 @endforelse

@@ -53,17 +53,16 @@ class ConsultationsController extends Controller
             
             return view('dashboard.control_panel.moderator.list')
                     ->with([
-                        'title' => 'Counseling',
-                        'page_title' => 'Counseling',
+                        'title' => trans('lang.counseling'),
+                        'page_title' => trans('lang.counseling'),
                         'consultations'=>$consultations,
                     ]);
         }
         
-        // dd($working_hours->where("date","2021-05-05")->first()->duplicate_slot_locate());
-       return view('dashboard.control_panel.counseling.list')
+        return view('dashboard.control_panel.counseling.list')
                 ->with([
-                    'title' => 'Counseling',
-                    'page_title' => 'Counseling',
+                    'title' => trans('lang.counseling'),
+                    'page_title' => trans('lang.counseling'),
                     'week' => $week,
                     'slots'=>$slots,
                     'working_hours'=>$working_hours,

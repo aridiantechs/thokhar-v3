@@ -463,7 +463,7 @@ border-radius: .5rem;
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm" pd-popup-open="popupNew">
-                                    <span class="d-inline-block">Change work hours</span>
+                                    <span class="d-inline-block">{{ trans('lang.Change work hours') }}</span>
                                 </button>
                             </div>
                         </div>
@@ -489,7 +489,7 @@ border-radius: .5rem;
     <div class="popup" pd-popup="popupNew">
         <div class="popup-inner">
            <div class="popup-contact-wrapper">
-                <h4 class="popup-header mx-auto">Change Work Hours</h4>
+                <h4 class="popup-header mx-auto">{{ trans('lang.Change work hours') }}</h4>
                 <p class="pl-0 text-left sub_head"><em>Next 7 days</em></p>
                 <hr>
               
@@ -584,7 +584,7 @@ border-radius: .5rem;
     <div class="popup" pd-popup="counselling_session">
         <div class="popup-inner counseling-pop-up">
            <div class="popup-contact-wrapper">
-                <h4 class="popup-header mx-auto">Counseling Session</h4>
+                <h4 class="popup-header mx-auto">{{ trans('lang.Counseling Session') }}</h4>
                 <hr>
                 <form action="{{route('assign_consultation', locale())}}" method="POST" id="counsel_session_form">
                     @csrf
@@ -638,7 +638,7 @@ border-radius: .5rem;
                         </div>
                         <div class="col-md-12">
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label f-size-14">Delegate  To :</label>
+                                <label class="col-sm-3 col-form-label f-size-14">{{ trans('lang.Delegate To') }}</label>
                                 <div class="col-sm-9">
                                     <div class="input-group mb-3 cs__input">
                                         <select class="form-control bg-gray-1 cs__input ft-14" name="assign_to" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -656,7 +656,7 @@ border-radius: .5rem;
 
                         <div class="col-md-12">
                             <div class="input-group ft-17">
-                                <a href="#" id="report__btn" target="_blank">view report</a>
+                                <a href="#" id="report__btn" target="_blank">{{ trans('lang.view report') }}</a>
                             </div>
                         </div>
                         
@@ -665,13 +665,13 @@ border-radius: .5rem;
                     <div class="row mt-5">
                         <div class="col-md-6">
                             <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left cancel_session">
-                                <span class="d-inline-block">Cancel the Session</span>
+                                <span class="d-inline-block">{{ trans('lang.Cancel the Session') }}</span>
                             </button>
                         </div>
 
                         <div class="col-md-6">
                             <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
-                                <span class="d-inline-block">Save & Close</span>
+                                <span class="d-inline-block">{{ trans('lang.Save & Close') }}</span>
                             </button>
                         </div>
                     </div>
@@ -686,7 +686,7 @@ border-radius: .5rem;
     <div class="popup" pd-popup="userDetail">
         <div class="popup-inner counseling-pop-up">
            <div class="popup-contact-wrapper">
-                <h4 class="popup-header mx-auto">User Details</h4>
+                <h4 class="popup-header mx-auto">{{ trans('lang.User Details') }}</h4>
                 <hr>
               
                 <div class="row">
@@ -733,7 +733,7 @@ border-radius: .5rem;
                                     </div>
                                     <div class="col-md-12">
                                         <div class="d-flex">
-                                        <a href="#" class="text-left"> <h4 class=" mt-4">Download The Report</h4></a>
+                                        <a href="#" class="text-left"> <h4 class=" mt-4">{{ trans('lang.Download The Report') }}</h4></a>
                                         </div>
                                     </div>
                                 </div>
@@ -746,13 +746,13 @@ border-radius: .5rem;
                 <div class="row mt-5">
                     <div class="col-md-6 col-sm-6">
                         <button type="button" class="btn-ltr btn btn-big btn-rad35 btn-danger with-arrow w-100-sm flt-left">
-                            <span class="d-inline-block">Cancel the Session</span>
+                            <span class="d-inline-block">{{ trans('lang.Cancel the Session') }}</span>
                         </button>
                     </div>
 
                     <div class="col-md-6 col-sm-6">
                         <button type="submit" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-right">
-                            <span class="d-inline-block">Edit Session</span>
+                            <span class="d-inline-block">{{ trans('lang.Edit Session') }}</span>
                         </button>
                     </div>
                 </div>
@@ -884,10 +884,13 @@ border-radius: .5rem;
             
             var defaultConfig = {
                 weekDayLength: 1,
+                prevButton: '{{ trans('lang.Prev') }}',
+                nextButton: '{{ trans('lang.Next') }}',
                 date: new Date(),
                 onClickDate: selectDate,
                 showYearDropdown: true,
                 startOnMonday: true,
+                todayButtonContent: '',
                 /* disable: function (date) { 
                     return date < new Date();
 
@@ -912,7 +915,7 @@ border-radius: .5rem;
                         
                     });
                 } else {
-                    toastr.error("invalid date format");
+                    toastr.error("{{ trans('lang.invalid date format') }}");
                 }
             }
         

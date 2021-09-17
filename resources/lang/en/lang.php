@@ -1302,6 +1302,24 @@ return [
     'save' => 'Setting saved',
 
     'Invalid Selection for Settings' => 'Invalid Selection for Settings',
+
+    'Counseling Session'  => 'Counseling Session',
+    'Delegate To'  => 'Delegate  To :',
+    'view report'  => 'view report',
+    'Cancel the Session'  => 'Cancel the Session',
+    'Save & Close'  => 'Save & Close',
+    'User Details'  => 'User Details',
+    'Download The Report'  => 'Download The Report',
+    'Cancel the Session'  => 'Cancel the Session',
+    'invalid date format'  => 'invalid date format',
+    'Change work hours'  => 'Change work hours',
+    'counseling'  => 'Counseling',
+    'No appointments found'  => 'No appointments found !',
+    'Prev'  => 'Prev',
+    'Next'  => 'Next',
+
+    'Plans and Coupons' => 'Plans and Coupons',
+    'support' => 'Support',
     
 
 ];

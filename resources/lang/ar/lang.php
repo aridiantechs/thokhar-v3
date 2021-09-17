@@ -1317,5 +1317,23 @@ return [
 
     'Invalid Selection for Settings' => 'تحديد غير صالح للإعدادات',
 
+    'Counseling Session'  => 'جلسة المشورة',
+    'Delegate To'  => 'فوض :',
+    'view report'  => 'عرض التقرير',
+    'Cancel the Session'  => 'قم بإلغاء الجلسة',
+    'Save & Close'  => 'حفظ وإغلاق',
+    'User Details'  => 'بيانات المستخدم',
+    'Download The Report'  => 'قم بتنزيل التقرير',
+    'Cancel the Session'  => 'قم بإلغاء الجلسة',
+    'invalid date format'  => 'تنسيق التاريخ غير صالح',
+    'Change work hours'  => 'تغيير ساعات العمل',
+    'counseling'  => 'تقديم المشورة',
+    'No appointments found'  => 'لم يتم العثور على مواعيد!',
+    'Prev'  => 'سابق',
+    'Next'  => 'التالي',
+
+    'Plans and Coupons' => 'الخطط والقسائم',
+    'support' => 'الدعم',
+
 ];
 

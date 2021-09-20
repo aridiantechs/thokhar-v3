@@ -170,13 +170,13 @@ th {
                 <div class="row mb-4">
                     <div class="col-md-5 col-sm-6">
                         <nav class="nav nav-pills {{-- flex-column --}} flex-sm-row justify-center-sm mb-sm-2r">
-                            <a class="flex-sm-fill nav-link active" id="plans-tab" data-toggle="tab" href="#plans" role="tab" aria-controls="plans" aria-selected="true">Plans <div class="border_bottom"></div></a>
-                            <a class="flex-sm-fill nav-link" id="coupon-tab" data-toggle="tab" href="#coupon" role="tab" aria-controls="coupon" aria-selected="false">Coupons  <div class="border_bottom"></div></a>
+                            <a class="flex-sm-fill nav-link active" id="plans-tab" data-toggle="tab" href="#plans" role="tab" aria-controls="plans" aria-selected="true">{{ trans('lang.plans.Plans') }} <div class="border_bottom"></div></a>
+                            <a class="flex-sm-fill nav-link" id="coupon-tab" data-toggle="tab" href="#coupon" role="tab" aria-controls="coupon" aria-selected="false">{{ trans('lang.plans.Coupons') }}  <div class="border_bottom"></div></a>
                         </nav>
                     </div>
                     <div class="col-md-7 col-sm-6 align-center-sm">
                         <a href="{{ route('create_plan', app()->getLocale()) }}" class="btn-ltr btn btn-big btn-gradient btn-rad35 btn-primary with-arrow w-100-sm flt-{{$alignreverse}}">
-                            <span class="d-inline-block">Add Plans</span>
+                            <span class="d-inline-block">{{ trans('lang.plans.Add Plans') }}</span>
                         </a>
                     </div>
                 </div>
@@ -193,37 +193,37 @@ th {
                                         <tr class="table_stripped_head">
                                             <th scope="col">
                                                 <p>
-                                                    Name
+                                                    {{ trans('lang.plans.Name') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Description
+                                                    {{ trans('lang.plans.Description') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Features
+                                                    {{ trans('lang.plans.Features') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Price
+                                                    {{ trans('lang.plans.Price') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Coupons
+                                                    {{ trans('lang.plans.Coupons') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Status
+                                                    {{ trans('lang.plans.Status') }}
                                                 </p>
                                             </th>
                                             <th scope="col">
                                                 <p>
-                                                    Actions
+                                                    {{ trans('lang.plans.Actions') }}
                                                 </p>
                                             </th>
                                         </tr>
@@ -266,10 +266,10 @@ th {
                                                 </span>
                                             </td>
                                             <td scope="row">
-                                                <a href="#" class="btn btn-sm ft-size btn-edit" title="Edit">
+                                                <a href="#" class="btn btn-sm ft-size btn-edit" title="{{ trans('lang.plans.Edit') }}">
                                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-sm ft-size btn-delete" title="delete">
+                                                <a href="#" class="btn btn-sm ft-size btn-delete" title="{{ trans('lang.plans.Delete') }}">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>

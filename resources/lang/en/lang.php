@@ -1320,6 +1320,42 @@ return [
 
     'Plans and Coupons' => 'Plans and Coupons',
     'support' => 'Support',
+
+
+    'plans' => [
+        
+        'Name' => 'Name',
+        'Description' => 'Description',
+        'Features' => 'Features',
+        'Price' => 'Price',
+        'Coupons' => 'Coupons',
+        'Status' => 'Status',
+        'Actions' => 'Actions',
+
+        'Plans' => 'Plans',
+        'Coupons' => 'Coupons',
+        'Add Plans' => 'Add Plans',
+
+        'Edit' => 'Edit',
+        'Delete' => 'Delete',
+
+        'Add a coupon' => 'Add a coupon',
+        'Plan Name' => 'Plan Name',
+        'Plan Price' => 'Plan Price',
+        'Plan Descripion' => 'Plan Description',
+        'Plan Features' => 'Plan Features',
+        'Coupon Code' => 'Coupon Code',
+        'Coupons Quantity' => 'Coupons Quantity',
+        'Percentage Discount' => 'Percentage Discount',
+        'Add' => 'Add',
+        'Coupons List' => 'Coupons List',
+        'Code' => 'Code',
+        'Quantity' => 'Quantity',
+        'Discount' => 'Discount',
+        'Feature' => 'Feature',
+
+
+    ],
     
 
 ];

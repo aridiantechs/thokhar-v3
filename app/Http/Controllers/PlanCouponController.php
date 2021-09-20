@@ -14,8 +14,8 @@ class PlanCouponController extends Controller
      */
     public function index()
     {
-       /* dd(123); */
-       return view('dashboard.control_panel.plans_coupons.list')
+
+        return view('dashboard.control_panel.plans_coupons.list')
                 ->with([
                     'title' => 'Plans and Coupons',
                     'page_title' => 'Plans and Coupons',
@@ -24,8 +24,7 @@ class PlanCouponController extends Controller
 
     public function create_plan()
     {
-       /* dd(123); */
-       return view('dashboard.control_panel.plans_coupons.create_plan')
+        return view('dashboard.control_panel.plans_coupons.create_plan')
                 ->with([
                     'title' => 'Plans and Coupons',
                     'page_title' => 'Add a Plan',

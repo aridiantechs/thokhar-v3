@@ -1335,5 +1335,38 @@ return [
     'Plans and Coupons' => 'الخطط والقسائم',
     'support' => 'الدعم',
 
+    'plans' => [
+        
+        'Name' => 'اسم',
+        'Description' => 'وصف',
+        'Features' => 'سمات',
+        'Price' => 'سعر',
+        'Coupons' => 'كوبونات',
+        'Status' => 'حالة',
+        'Actions' => 'أجراءات',
+
+        'Plans' => 'الخطط',
+        'Coupons' => 'كوبونات',
+        'Add Plans' => 'أضف الخطط',
+
+        'Edit' => 'تعديل',
+        'Delete' => 'حذف',
+
+        'Add a coupon' => ' أضف قسيمة',
+        'Plan Name' => 'اسم الخطة',
+        'Plan Price' => 'سعر الخطة',
+        'Plan Descripion' => 'وصف الخطة',
+        'Plan Features' => 'ميزات الخطة',
+        'Coupon Code' => 'رمز الكوبون',
+        'Coupons Quantity' => 'كمية القسائم',
+        'Percentage Discount' => 'نسبة الخصم',
+        'Add' => 'يضيف',
+        'Coupons List' => 'قائمة القسائم',
+        'Code' => 'الشفرة',
+        'Quantity' => 'كمية',
+        'Discount' => 'خصم',
+        'Feature' => 'ميزة',
+    ],
+
 ];
 

@@ -2137,6 +2137,11 @@ class Questionnaire extends Model
 
         return $gosi_value_with_dependents = $gosi_value_with_year + $dependent_percentage_value;
 
+        // return (integer)$this->getGosi($user)['gosi']['monthly_subscription'] ?? 0;
+    }
+
+    public function getGosiMonthlySubscription(User $user = null)
+    {
         return (integer)$this->getGosi($user)['gosi']['monthly_subscription'] ?? 0;
     }
 

@@ -29,6 +29,9 @@
             line-height: 23px;
             transform: rotate(-37deg);
         }  
+        body{
+          overflow-x: hidden;
+        }
   </style>
 
 </head>

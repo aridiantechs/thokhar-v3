@@ -80,6 +80,11 @@ class ReportController extends Controller
 
         }
 
+        if(loggedInUser() && loggedInUser()->hasRole('admin')){
+            Session::put('verified', 1);
+            Session::put('public_id', $report->public_id);
+        }
+
         if(Session::get('verified') && Session::get('public_id') == $report->public_id){
 
             Session::put('verified', 0);

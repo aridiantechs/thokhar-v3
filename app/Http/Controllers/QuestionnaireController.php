@@ -435,7 +435,7 @@ class QuestionnaireController extends Controller
         $netReturnAfterRetirement   = $this->questionnaire->getNetReturnAfterRetirement($user);
         // $porfolioExpectedReturn     = 7.85;
         
-        dd($$accomulativeSavingtoday,$$annualSavingToday);
+        dd($accomulativeSavingtoday,$annualSavingToday);
         $valueBegYear = [];
         $plan         = [];
         $graphContribution = [];

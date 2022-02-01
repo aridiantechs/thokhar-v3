@@ -464,8 +464,8 @@ class QuestionnaireController extends Controller
                     $plan[$i]['value_end_year'] = $plan[$i]['value_beginning_of_year'] + $plan[$i]['contribution'] + $plan[$i]['returns'];
 
     
+                dd($plan);
                 }
-dd($plan);
 
                 else
                 {

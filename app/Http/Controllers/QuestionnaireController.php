@@ -496,7 +496,9 @@ class QuestionnaireController extends Controller
     {
         $asset_class         = $this->getRecomendedAssetClass();  
 
-        $value_at_retirement = $this->getValueAtRetirement(8.85);
+        dd($asset_class);
+
+        $value_at_retirement = $this->getValueAtRetirement(8.00);
         
         $user_questionnaire  = $this->loggedInUser->user_latest_questionnaire();
 

@@ -459,7 +459,7 @@ class QuestionnaireController extends Controller
                     
                     $plan[$i]['contribution'] = $annualSavingToday * 12;
     
-                    $plan[$i]['returns']      = ($plan[$i]['value_beginning_of_year'] + ($plan[$i]['contribution'])/2)*($porfolioExpectedReturn / 100);
+                    $plan[$i]['returns']      = ($plan[$i]['value_beginning_of_year'] + ($plan[$i]['contribution'])/2);
     
                     $plan[$i]['value_end_year'] = $plan[$i]['value_beginning_of_year'] + $plan[$i]['contribution'] + $plan[$i]['returns'];
 

@@ -476,7 +476,7 @@ class QuestionnaireController extends Controller
                     $plan[$i]['contribution'] = ($i >= $retirement_age) ? 0 : ($plan[$i-1]['contribution'] * ((100 + $annualIncreaseInSavingPlan) / 100));
 
                     if($i > $retirement_age)
-                        $plan[$i]['retirementValue'] = $retirementValue = $netReturnAfterRetirement;
+                        $plan[$i]['retirementValue'] = $retirementValue = $porfolioExpectedReturn;
                     else
                         $plan[$i]['retirementValue'] = $retirementValue = $porfolioExpectedReturn;
     

@@ -429,8 +429,8 @@ class QuestionnaireController extends Controller
 
         $current_age    = $this->questionnaire->getCurrentAge($user);
 
-        $accomulativeSavingtoday    = $this->questionnaire->getAccomulativeSavingtoday($user);
-        $annualSavingToday          = $this->questionnaire->getInitialAccomulativeSavingtoday($user);
+        $accomulativeSavingtoday    = $this->questionnaire->getInitialAccomulativeSavingtoday($user);
+        $annualSavingToday          = $this->questionnaire->getInitialInvestingAmount($user);
         $annualIncreaseInSavingPlan = $this->questionnaire->getAnnualIncreaseInInitialInvestment($user);
         $netReturnAfterRetirement   = $this->questionnaire->getNetReturnAfterRetirement($user);
         // $porfolioExpectedReturn     = 7.85;

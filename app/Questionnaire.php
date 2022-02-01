@@ -2160,6 +2160,11 @@ class Questionnaire extends Model
         return (integer)$this->getInvestingAmount($user)['investing_amount']['initial_amount'] ?? 0;
     }
 
+    public function getInitialInvestingAmount(User $user = null)
+    {
+        return (integer)$this->getInvestingAmount($user)['investing_amount']['monthly_amount'] ?? 0;
+    }
+
     public function getCurrentAge(User $user = null)
     {
         return (integer)$this->getPersonalInfo($user)['personal_info']['years_old'];

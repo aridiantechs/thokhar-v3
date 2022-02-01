@@ -530,7 +530,7 @@ class QuestionnaireController extends Controller
         else if($request->val == 'Conservative_Investor')
             $net_return_per_year = 7.95;
         else if($request->val == 'Natrual_Investor')
-            $net_return_per_year = 8.85;
+            $net_return_per_year = 8.00;
         else if($request->val == 'Aggressive_Investor')
             $net_return_per_year = 9.9;
         else if($request->val == 'Very_Aggressive_Investor')

@@ -496,14 +496,14 @@ class QuestionnaireController extends Controller
     {
         $asset_class         = $this->getRecomendedAssetClass();  
 
-        dd($asset_class);
-
         $value_at_retirement = $this->getValueAtRetirement(8.00);
         
         $user_questionnaire  = $this->loggedInUser->user_latest_questionnaire();
 
         $current_age         = $this->questionnaire->getCurrentAge(auth()->user());
         
+        // dd($asset_class,$value_at_retirement,$user_questionnaire,$current_age);
+
         if(($user_questionnaire->investing_amount ?? null) == null){
             return redirect()->route('investing-amount', locale())->with(['message' => 'previous step not completed']);
         }

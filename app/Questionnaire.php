@@ -2074,15 +2074,15 @@ class Questionnaire extends Model
 
     public function getRetirementGOCIMonthlyIncome(User $user = null)
     {
-        if($month <= 2001){
+        // if($month <= 2001){
 
             return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
         
-        }elseif($month > 2001){
+        // }elseif($month > 2001){
             
-            return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
+        //     return ((integer)$this->getExpectedSalaryAtRetirement())*($this->getSubscriptionMonth()/480);
 
-        }
+        // }
     }
 
     public function getCashAndEquivlent(User $user = null)

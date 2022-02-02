@@ -74,6 +74,10 @@
 		    margin-right: 4px;
 		}
 
+		h3.txt-blue-light{
+		    font-size: 1.65rem;
+		}
+
 		/*Radio buttons EN case*/
 		
 

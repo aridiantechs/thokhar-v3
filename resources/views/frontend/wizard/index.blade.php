@@ -48,6 +48,13 @@
 	}
 
 
+	@if (app()->getLocale() == 'ar')
+
+		h3.txt-blue-light{
+		    font-size: 1.65rem;
+		}
+
+	@endif
 	@if (app()->getLocale() == 'en') 
 		/*Steps EN case*/
 		.step-parent {
@@ -74,9 +81,7 @@
 		    margin-right: 4px;
 		}
 
-		h3.txt-blue-light{
-		    font-size: 1.65rem;
-		}
+
 
 		/*Radio buttons EN case*/
 		

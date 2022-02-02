@@ -548,7 +548,7 @@ var value_at_retirement_data = {
             label: '',
             data: [
             		@foreach ($value_at_retirement as $key => $element)
-	        			{!! $element['value_end_year'] . ',' !!}
+	        			{!! round($element['value_end_year']) . ',' !!}
 	        		@endforeach
             	],
             backgroundColor: [

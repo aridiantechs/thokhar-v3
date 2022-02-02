@@ -51,7 +51,7 @@
 	@if (app()->getLocale() == 'ar')
 
 		h3.txt-blue-light{
-		    font-size: 1.65rem;
+		    font-size: 1.65rem !important;
 		}
 
 	@endif

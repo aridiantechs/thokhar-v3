@@ -686,7 +686,7 @@ function indicator(value){
         	var dataset = [];
 
         	$.each(response.value_at_retirement_graph, function( index, value ) {
-				dataset.push(value['value_end_year']);
+				dataset.push(Math.round(value['value_end_year']));
 			});
            	
 		    myLineChart.data.datasets[0].data = dataset

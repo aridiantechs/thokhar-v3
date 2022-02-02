@@ -1,7 +1,7 @@
 <div class="card card-shadow has-bg-right">
 	<div class="card-body p-0">
 		<div class="row row-grid">
-			<div class="col-12 col-md-6 col-lg-6">
+			<div class="col-12 col-md-7 col-lg-7">
 				<div class="p-5 p{{$alignShort}}-lg-0">
 					<h1 class="display-4 text-center text-md-{{$align}} mb-3 ">
 						<strong class="text-primary-1 font-arabic">{{ $heading }}</strong>
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-6 text-{{$align}} d-flex align-items-end">
+			<div class="col-12 col-md-5 col-lg-5 text-{{$align}} d-flex align-items-end">
 				<figure class="w-100 pt-5">
 					<img alt="" src="{{ asset('frontend_assets/'. $image ?? '') }}" class="img-fluid float-left">
 				</figure>

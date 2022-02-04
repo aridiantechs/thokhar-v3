@@ -168,7 +168,7 @@ class QuestionnaireRequest extends FormRequest
                                 'gosi.strating_year_in_plan' => 'required|date_format:Y',
                                 'gosi.expecting_salary_at_retirement' => 'required|numeric|max:45000',
                                 'gosi.monthly_subscription' => 'required|numeric',
-                                'gosi.no_of_dependents' => 'required|integer|min:0',
+                                'gosi.no_of_dependents' => 'required|integer|min:0|max:3',
                                 // 'gosi.mothly_life_expenses_after_retirement' => 'required|numeric',
                             ];
                             break;

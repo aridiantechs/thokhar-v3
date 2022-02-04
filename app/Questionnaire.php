@@ -2119,7 +2119,13 @@ class Questionnaire extends Model
 
         $gosi_value_with_year = (((($current_year - $year)) * 12) * $this->getExpectedSalaryAtRetirement($user))/$diviser;
 
-        
+        // If the registeration year is more than 2001 we will not consider number of dependents
+        if($year < 2001)
+            $dependents = (integer)$this->getGosi($user)['gosi']['no_of_dependents'] ?? 0;
+        else
+            $dependents = 0;
+
+
         // Apply dependents
         $dependents = (integer)$this->getGosi($user)['gosi']['no_of_dependents'] ?? 0;
 

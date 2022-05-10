@@ -157,6 +157,9 @@ class UserController extends Controller
             'expected_retirement_age' => 'required|numeric|max:20',
         ]);
 
+
+        $age = /Carbon::parse($request->dob)->age;
+
         $destinationFilePath = 'backend_assets/user_uploads/'; 
         $file_profile_name = null; 
         $path_profile_filename = 'backend_assets/user_uploads/default.png';
@@ -314,10 +317,13 @@ class UserController extends Controller
     {
         $user = $this->loggedInUser;
         
-
         $destinationFilePath = 'user_assets/user_uploads/'; 
         $file_profile_name = null; 
         $path_profile_filename = 'user_assets/user_uploads/default.png';
+
+        $age = \Carbon\Carbon::parse($request->dob)->age;
+
+        dd($age);
 
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');

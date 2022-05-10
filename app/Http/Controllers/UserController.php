@@ -323,7 +323,7 @@ class UserController extends Controller
 
         if($request->expected_retirement_age < $age){
             $status = array('message' => "Age is not correct");
-            Session::flash($status['message']);
+            Session::flash('message' , "Age is not correct");
             return redirect()->back();
         }
 

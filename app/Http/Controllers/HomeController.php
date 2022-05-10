@@ -205,8 +205,8 @@ class HomeController extends Controller
 
         $user = User::find(Session::get('user_id'));
 
-        // if (implode("", $request->mobile) == substr($user->phone_number, -4)) {
-        if (implode("", $request->mobile) == $user->two_factor_code) {
+        if (implode("", $request->mobile) == substr($user->phone_number, -4)) {
+        // if (implode("", $request->mobile) == $user->two_factor_code) {
             
             Session::put('verified', 1);
             $report = Report::where('public_id', Session::get('public_id'))->where('user_id', Session::get('user_id'))->first();

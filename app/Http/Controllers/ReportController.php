@@ -100,7 +100,7 @@ class ReportController extends Controller
 
         $user = User::where('id',$report->user_id)->first();
 
-        $user->twoFactorAndSendText($user);
+        // $user->twoFactorAndSendText($user);
         
         return view('auth.mobile_verify')->with('user',$user);
 

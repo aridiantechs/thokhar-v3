@@ -165,19 +165,28 @@ class User extends Authenticatable
 
     public function profile()
     {
-        $questionnaire=$this->user_latest_questionnaire();
+        $questionnaire = $this->user_latest_questionnaire();
+
         if ($questionnaire) {
-            $profile=$questionnaire->personal_info ?? false;
+
+            $profile = $questionnaire->personal_info ?? false;
+
             if ($profile) {
-                $res= $profile;
-            } else {
-                $res= false;
+
+                $res = $profile;
+
+            } 
+            else {
+
+                $res = false;
+
             }
             
-        }else{
-            $res=false;
         }
+        else
 
+            $res = false;
+        
         return $res;
     }
 }

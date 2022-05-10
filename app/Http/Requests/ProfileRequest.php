@@ -27,10 +27,10 @@ class ProfileRequest extends FormRequest
             'name'  => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,'. auth()->user()->id,
             'dob'   => 'required|date|max:255',
-            'education_level' => 'required|string|max:255',
-            'gender'          => 'required|string|max:255',
+            'education_level' => 'required|string|mimes:lang.question.education_level_options.highschool,lang.question.education_level_options.bachlore,lang.question.education_level_options.master,lang.question.education_level_options.above',
+            'gender'          => 'required|string|mimes:Male,Female',
             'profile_image'   => 'nullable|image|max:1000|mimes:jpeg,png,jpg',
-            'expected_retirement_age' => 'required|numeric|max:255',
+            'expected_retirement_age' => 'required|numeric|max:100',
         ];
     }
 

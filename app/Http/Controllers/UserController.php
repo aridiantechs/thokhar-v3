@@ -321,8 +321,8 @@ class UserController extends Controller
 
         $age = \Carbon\Carbon::parse($request->dob)->age;
 
-        if($request->expected_retirement_age > $age){
-            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+        if($request->expected_retirement_age < $age){
+            $status = array('message' => "Age is not correct");
             Session::flash($status['toastr'], $status['msg']);
             return redirect()->back();
         }

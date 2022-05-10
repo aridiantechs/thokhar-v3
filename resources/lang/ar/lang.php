@@ -1335,6 +1335,10 @@ return [
     'Plans and Coupons' => 'الخطط والقسائم',
     'support' => 'الدعم',
 
+    'mobile_verification' => [
+       'message' => 'الرجاء ادخال اخر اربع ارقام من رقم هاتفك الجوال',
+    ],
+
     'plans' => [
         
         'Name' => 'اسم',

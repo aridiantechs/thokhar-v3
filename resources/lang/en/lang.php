@@ -1322,6 +1322,10 @@ return [
     'support' => 'Support',
 
 
+    'mobile_verification' => [
+       'message' => 'Put your last 4 digits of your mobile number',
+    ],
+    
     'plans' => [
         
         'Name' => 'Name',

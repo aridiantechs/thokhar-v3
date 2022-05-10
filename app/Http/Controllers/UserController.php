@@ -154,6 +154,7 @@ class UserController extends Controller
             'email' => 'required|email|max:255|unique:users,email,'.$user->id,
             'phone_number' => 'required|string|max:255|unique:users,phone_number,'.$user->id,
             'profile_image' => 'nullable|image|max:1000|mimes:jpeg,png,jpg',
+            'expected_retirement_age' => 'required|numeric|max:20',
         ]);
 
         $destinationFilePath = 'backend_assets/user_uploads/'; 

@@ -1326,6 +1326,8 @@ return [
        'message' => 'Put the last 4 digits of your mobile number',
     ],
 
+    'retirement_age_message' => 'Retirement age is must not be smaller than current age',
+
     'plans' => [
         
         'Name' => 'Name',

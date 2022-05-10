@@ -321,7 +321,12 @@ class UserController extends Controller
 
         $age = \Carbon\Carbon::parse($request->dob)->age;
 
-        dd($age);
+        if($request->expected_retirement_age > $age){
+            $status = array('msg' => "Previous Step not completed yet.", 'toastr' => "errorToastr");
+            Session::flash($status['toastr'], $status['msg']);
+            return redirect()->back();
+        }
+
 
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');

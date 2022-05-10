@@ -158,8 +158,6 @@ class UserController extends Controller
         ]);
 
 
-        $age = /Carbon::parse($request->dob)->age;
-
         $destinationFilePath = 'backend_assets/user_uploads/'; 
         $file_profile_name = null; 
         $path_profile_filename = 'backend_assets/user_uploads/default.png';

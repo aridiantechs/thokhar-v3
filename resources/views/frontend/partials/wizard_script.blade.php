@@ -71,6 +71,7 @@
                   bar = bar.data('bar');
                   $(this).find('.nav-link').addClass('success');
                   $('.nav-tabs-wrapper.desktop .step-parent-bar-'+bar).addClass('success');
+                  $('html, body').stop().animate({ scrollTop : 0 }, 500);
 
               });
 

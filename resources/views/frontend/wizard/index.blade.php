@@ -156,7 +156,8 @@
 
 				success: function(html){
 					$(".wizard-wrapper").html(html);
-					$('body').addClass('loaded')
+					$('body').addClass('loaded');
+					$('html, body').stop().animate({ scrollTop : 0 }, 500);
 				},
 				error: function(error){
 					window.location.href='{{ route('login',locale()) }}';

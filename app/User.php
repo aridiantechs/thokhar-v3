@@ -81,7 +81,7 @@ class User extends Authenticatable
 
     public function twoFactorAndSendText(User $user)
     {
-        dd('here');
+
         $code = $this->generateTwoFactorCode();
         try 
         {
@@ -111,6 +111,8 @@ class User extends Authenticatable
             
         } catch (\Exception $e) 
         {
+
+            dd('catch');
             // \Auth::logout();
 
             // $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");

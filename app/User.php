@@ -81,6 +81,7 @@ class User extends Authenticatable
 
     public function twoFactorAndSendText(User $user)
     {
+        dd('here');
         $code = $this->generateTwoFactorCode();
         try 
         {

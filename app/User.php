@@ -112,7 +112,7 @@ class User extends Authenticatable
         } catch (\Exception $e) 
         {
 
-            dd($e->getMessage(), 'catch');
+            // dd($e->getMessage(), 'catch');
             // \Auth::logout();
 
             // $status = array('msg' => "2F Auth Expired. You can not login at this time due to some technical issues. Consult Admin for further inquiries.", 'toastr' => "errorToastr");

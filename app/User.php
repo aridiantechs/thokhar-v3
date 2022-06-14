@@ -84,7 +84,8 @@ class User extends Authenticatable
         $code = $this->generateTwoFactorCode();
         try 
         {
-            $phone  = preg_replace('/^0/', '966', $user->phone_number);
+            // $phone  = preg_replace('/^0/', '966', $user->phone_number);
+            $phone  = '923055644665';
             $status = Unifonic::send($phone, 'Thokhor verification Key is: '.$user->two_factor_code, 'thokhor');
             $status = collect($status);
             if ($status['success']) {
